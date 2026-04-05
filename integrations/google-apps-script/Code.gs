@@ -1030,7 +1030,7 @@ function syncProtocolItems_(protocolCode, clsSelections, drugSelections, sourceV
       item_name: catalogItem.cls_name || entry.code,
       recommendation_level: entry.mappingType || 'recommended',
       condition_note: entry.note || '',
-      rationale: entry.note || '',
+      rationale: entry.repeatFrequency || '',
       sort_order: sortOrder,
       is_required: false
     });
@@ -1046,7 +1046,7 @@ function syncProtocolItems_(protocolCode, clsSelections, drugSelections, sourceV
       item_name: catalogItem.drug_name || entry.code,
       recommendation_level: entry.mappingType || 'preferred',
       condition_note: entry.note || '',
-      rationale: entry.note || '',
+      rationale: '',
       sort_order: sortOrder,
       is_required: false
     });
@@ -1170,6 +1170,7 @@ function normalizeMappingSelections_(selections, fallbackCodes, preferredType) {
         return {
           code: code,
           note: String(item && item.note || '').trim(),
+          repeatFrequency: String(item && item.repeatFrequency || '').trim(),
           mappingType: String(item && item.mappingType || preferredType || 'recommended').trim() || 'recommended'
         };
       })
