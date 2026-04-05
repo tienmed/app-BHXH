@@ -1,48 +1,48 @@
-# App BHXH Clinical Decision Support
+# Ứng dụng Hỗ trợ Quyết định Lâm sàng BHXH (App BHXH)
 
-This repository is the proposed project skeleton for a doctor-facing application that helps:
+Kho lưu trữ này chứa bộ khung dự án được đề xuất cho một ứng dụng dành cho bác sĩ nhằm hỗ trợ:
 
-- suggest appropriate paraclinical orders, tests, and medications from recommended treatment protocols
-- evaluate ICD, CLS, and medication combinations against cost composition constraints
-- warn about claim denial risk before orders are finalized
-- keep every suggestion explainable, versioned, and auditable
+- gợi ý các chỉ định cận lâm sàng, xét nghiệm và thuốc phù hợp từ các phác đồ điều trị được khuyến nghị
+- đánh giá sự kết hợp giữa mã ICD, CLS, và thuốc dựa trên các ràng buộc về cơ cấu chi phí
+- cảnh báo nguy cơ bị từ chối thanh toán bảo hiểm trước khi hoàn tất chỉ định
+- đảm bảo mỗi gợi ý đều có thể giải thích, được quản lý phiên bản và có thể kiểm toán
 
-This started as a planning-first scaffold and now includes a runnable skeleton for the confirmed pilot scope.
+Dự án này bắt đầu như một bản dựng cấu trúc tập trung vào kế hoạch và hiện tại đã bao gồm một bộ khung có thể chạy được cho phạm vi triển khai thử nghiệm (pilot) đã được xác nhận.
 
-## Proposed Product Direction
+## Định hướng Sản phẩm Đề xuất
 
-The app is positioned as a **clinical decision support + reimbursement guard** platform, not an autonomous prescribing system.
+Ứng dụng được định vị là một nền tảng **hỗ trợ quyết định lâm sàng + rào chắn thanh toán bảo hiểm**, không phải là một hệ thống kê đơn tự động.
 
-Core design principles:
+Các nguyên tắc thiết kế cốt lõi:
 
-1. Doctor remains the final decision maker.
-2. Every recommendation must show reason, source, and version.
-3. Protocol rules and reimbursement rules must be managed separately.
-4. Every override must be logged for audit and later review.
-5. The system should reduce denial risk without blocking justified clinical care.
+1. Bác sĩ vẫn là người đưa ra quyết định cuối cùng.
+2. Mỗi khuyến nghị phải hiển thị lý do, nguồn và phiên bản rõ ràng.
+3. Các quy tắc phác đồ và quy tắc thanh toán bảo hiểm phải được quản lý riêng biệt.
+4. Mọi quyết định thay đổi (override) đều phải được ghi lại để kiểm toán và xem xét sau này.
+5. Hệ thống nên giảm thiểu rủi ro bị xuất toán bảo hiểm mà không làm gián đoạn việc chăm sóc lâm sàng hợp lý.
 
-## Core Capability Groups
+## Nhóm Năng lực Cốt lõi
 
-- Encounter intake: patient, encounter, ICD primary and secondary diagnoses
-- Protocol matching: recommend order sets and treatment paths by diagnosis/context
-- CLS and test recommendation: suggest tests, frequency, and rationale
-- Medication support: suggest formulary-safe medication groups and dosage guidance hooks
-- Cost guard: estimate configured cost composition across ICD, CLS, and medications
-- Claim-risk check: flag combinations likely to be denied or queried
-- Explainability: show protocol source, payer rule source, and confidence level
-- Override and audit: allow physician confirmation with reason
-- Admin portal: manage protocols, mappings, catalogs, and rule versions
+- Tiếp nhận lượt khám: bệnh nhân, lượt khám, chẩn đoán ICD chính và phụ
+- Phân tích phác đồ: đề xuất các bộ chỉ định và lộ trình điều trị theo chẩn đoán/bối cảnh
+- Khuyến nghị CLS và xét nghiệm: đề xuất xét nghiệm, tần suất và lý do
+- Hỗ trợ thuốc: đề xuất các nhóm thuốc trong danh mục an toàn và hướng dẫn liều lượng
+- Quản lý chi phí: ước tính cơ cấu chi phí được cấu hình trên ICD, CLS và thuốc
+- Kiểm tra rủi ro thanh toán: đánh dấu các chỉ định kết hợp có khả năng bị từ chối hoặc truy vấn
+- Khả năng giải thích: hiển thị nguồn phác đồ, nguồn quy tắc thanh toán và mức độ tin cậy
+- Thay đổi và kiểm toán: cho phép bác sĩ xác nhận với lý do cụ thể
+- Cổng quản trị (Admin portal): quản lý phác đồ, ánh xạ, danh mục và phiên bản quy tắc
 
-## Confirmed Pilot Scope
+## Phạm vi Triển khai Thử nghiệm (Pilot) Đã xác nhận
 
-Confirmed on April 3, 2026:
+Xác nhận vào ngày 3 tháng 4, 2026:
 
-- care setting: outpatient only
-- pilot specialty: internal medicine
-- product behavior: recommendation only, no autonomous order submission
-- protocol source: Ministry of Health guidance first, with future clinic-level customization
+- Cài đặt chăm sóc: chỉ dành cho ngoại trú
+- Chuyên khoa thử nghiệm: mở rộng đa khoa
+- Hành vi sản phẩm: chỉ mang tính chất đề xuất, không tự động chuyển chỉ định
+- Nguồn phác đồ: ưu tiên hướng dẫn của Bộ Y tế, với khả năng tùy biến cấp phòng khám trong tương lai
 
-## Repository Layout
+## Cấu trúc Kho lưu trữ
 
 ```text
 .
@@ -101,14 +101,14 @@ Confirmed on April 3, 2026:
         `-- README.md
 ```
 
-## Suggested Build Strategy
+## Chiến lược Xây dựng Đề xuất
 
-- Stage 1: confirm product scope, data sources, and operational ownership
-- Stage 2: ship runnable web, admin, and api skeleton for the pilot
-- Stage 3: implement protocol editor, rule versioning, and audit dashboards
-- Stage 4: integrate with HIS, LIS, pharmacy, and claim export systems
+- Giai đoạn 1: xác nhận phạm vi sản phẩm, nguồn dữ liệu và quyền sở hữu vận hành
+- Giai đoạn 2: cung cấp khung web, admin và api có thể chạy được cho đợt pilot
+- Giai đoạn 3: triển khai trình soạn thảo phác đồ, quản lý phiên bản quy tắc và bảng điều khiển kiểm toán
+- Giai đoạn 4: tích hợp với hệ thống HIS, LIS, nhà thuốc và hệ thống xuất báo cáo BHYT
 
-## Quick Start
+## Khởi động Dành cho Lập trình viên
 
 ```bash
 npm install
@@ -117,24 +117,24 @@ npm run dev:admin
 npm run dev:api
 ```
 
-Build all apps:
+Xây dựng tất cả các ứng dụng:
 
 ```bash
 npm run build
 ```
 
-Optional doctor UI config for Google Apps Script pilot:
+Cấu hình cho giao diện người dùng bác sĩ đối với Google Apps Script pilot (tùy chọn):
 
 ```bash
 NEXT_PUBLIC_RECOMMENDATION_API_URL=https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
 ```
 
-## What Needs Confirmation Before Coding
+## Những Vấn đề Cần Xác nhận Trước khi Bắt đầu Viết Mã
 
-- target deployment: internal web app, desktop wrapper, or mobile companion
-- availability of ICD, CLS, medication, and protocol master data
-- ownership of clinical protocol updates and BHYT rule updates
-- approval workflow for doctor overrides
-- integration boundary with existing HIS/EMR/BHYT processes
+- Triển khai mục tiêu: ứng dụng web nội bộ, ứng dụng desktop, hay ứng dụng di động đi kèm
+- Có sẵn dữ liệu danh mục ICD, CLS, Thuốc và phác đồ lâm sàng
+- Quyền sở hữu đối với việc cập nhật các phác đồ lâm sàng và các quy định của BHYT
+- Quy trình phê duyệt đối với các quyết định thay đổi (override) của bác sĩ
+- Ranh giới Tích hợp với các quy trình HIS/EMR/BHYT hiện tại
 
-See the `docs/` folder for the detailed proposal.
+Tham khảo thư mục `docs/` để xem thêm bản đề xuất chi tiết.

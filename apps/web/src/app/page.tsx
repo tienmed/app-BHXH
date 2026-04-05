@@ -592,7 +592,15 @@ export default function DoctorWorkspace() {
                 <p>{state.reimbursementNote}</p>
               </article>
             ) : null}
-            {!state.warningMessage && !state.recommendedAction && !state.reimbursementNote ? (
+            {state.alerts.length > 0 ? (
+              state.alerts.map((alert) => (
+                <article className={`alertSimple alertSimple-${alert.severity}`} key={alert.title}>
+                  <strong>{alert.title}</strong>
+                  <p>{alert.description}</p>
+                </article>
+              ))
+            ) : null}
+            {!state.warningMessage && !state.recommendedAction && !state.reimbursementNote && state.alerts.length === 0 ? (
               <p className="emptyText">Hệ thống chưa phát hiện rủi ro thanh toán cho chẩn đoán này.</p>
             ) : null}
           </div>
