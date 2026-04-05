@@ -1,0 +1,2 @@
+protocol_code,protocol_name,specialty_code,care_setting,source_type,source_version,effective_from,effective_to,status,owner_name
+IM-OP-HTN-DM-2026,Noi khoa ngoai tru tang huyet ap dai thao duong,INTERNAL_MEDICINE,outpatient,MOH,2026.01,2026-01-01,,active,Clinical Council

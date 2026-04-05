@@ -1,0 +1,5 @@
+rule_code,rule_name,severity,applies_to_icd,applies_to_cls,applies_to_drug,condition_expression,warning_message,recommended_action,source_version,is_active
+RISK001,Lap lai HbA1c qua som,high,E11.9,CLS003,,repeat_within_90_days,HbA1c lap lai trong khoang qua ngan co nguy co bi query hoac xuat toan,Chi lap lai khi co ly do lam sang ro rang va ghi chu giai trinh,RULE-PILOT-2026.01,TRUE
+RISK002,Chi dinh creatinine khong gan boi canh,medium,I10,CLS004,,cls_without_supported_context,Creatinine can duoc gan voi theo doi tang huyet ap dai thao duong hoac chuc nang than,Giai trinh boi canh lam sang neu chi dinh ngoai goi y thong thuong,RULE-PILOT-2026.01,TRUE
+RISK003,Statin can lien ket nguy co tim mach,low,E78.5,,DR006,drug_without_icd_support,Thuoc statin nen co lien ket chan doan roi loan lipid hoac nguy co tim mach,Ghi nhan chan doan lien quan hoac nguy co tim mach dong mac,RULE-PILOT-2026.01,TRUE
+RISK004,Dien tam do can boi canh tim mach,medium,R07.4,CLS008,,ecg_context_review,Dien tam do ngoai tru nen co trieu chung hoac nguy co tim mach phu hop,Bo sung trieu chung hoac ly do chi dinh trong ghi chu,RULE-PILOT-2026.01,TRUE

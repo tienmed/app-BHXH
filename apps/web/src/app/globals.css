@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Vibrant & Premium Palette */
+  --bg: #f8fafc;
+  --surface: rgba(255, 255, 255, 0.85);
+  --line: rgba(15, 123, 99, 0.08);
+  --text: #0f172a;
+  --muted: #64748b;
+  
+  /* Primary Actions (Clinical Focus) */
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --accent-soft: rgba(16, 185, 129, 0.1);
+  
+  /* Status Colors */
+  --high: #ef4444;       /* High Alert */
+  --medium: #f59e0b;     /* Medium Warning */
+  --low: #10b981;        /* Low / Standard */
+  --info: #3b82f6;       /* Information / Medication */
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-blur: blur(12px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.doctorWorkspace {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.05) 0px, transparent 50%);
+}
+
+.doctorShell {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+/* Glass Panels */
+.doctorHero,
+.doctorPanel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.doctorHero {
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,253,244,0.8) 100%);
+}
+
+.doctorHero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 12px 0;
+  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.doctorHero p {
+  color: var(--muted);
+  font-size: 1.125rem;
+  max-width: 50ch;
+}
+
+/* SEARCH SECTION */
+.doctorPanel {
+  padding: 32px;
+}
+
+.doctorPanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.doctorPanelHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.searchField {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.searchField span {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchField input {
+  width: 100%;
+  padding: 18px 24px;
+  padding-right: 50px; /* Space for clear button */
+  font-size: 1.125rem;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background: white;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.clearSearch {
+  position: absolute;
+  right: 16px;
+  background: var(--bg);
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.clearSearch:hover {
+  background: var(--line);
+  color: var(--text);
+}
+
+.searchField input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.searchResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.searchOption {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 16px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.searchOption:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.searchOption-selected {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.searchOption-selected strong {
+  color: white;
+}
+
+.searchOption-selected span {
+  color: rgba(255,255,255,0.8);
+}
+
+.selectedDiagnosisRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.selectedDiagnosisChip {
+  background: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.selectedDiagnosisChip:hover {
+  background: #fef2f2;
+  border-color: var(--high);
+}
+
+.selectedDiagnosisChip strong {
+  color: var(--accent-hover);
+  font-size: 0.95rem;
+}
+
+/* COST CHART */
+.topCostPanel {
+  margin-top: 32px;
+  padding: 24px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 24px;
+  border: 1px solid var(--line);
+}
+
+.topCostHeader {
+  margin-bottom: 20px;
+}
+
+.stackedCostTrack {
+  height: 24px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  display: flex;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.stackedCostFill-icd { background: var(--accent); }
+.stackedCostFill-cls { background: var(--medium); }
+.stackedCostFill-drug { background: var(--info); }
+
+.stackedCostLegend {
+  margin-top: 20px;
+  display: flex;
+  gap: 24px;
+}
+
+.stackedCostLegendItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stackedCostDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+}
+
+/* GRID LAYOUT */
+.doctorGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.doctorList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.doctorListItem {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.doctorListItem:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-soft);
+}
+
+.doctorListItem strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+/* ALERTS */
+.alertListSimple {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.alertSimple {
+  padding: 20px;
+  border-radius: 20px;
+  border-left: 6px solid #ccc;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alertSimple-high { border-left-color: var(--high); background: rgba(239, 68, 68, 0.02); }
+.alertSimple-medium { border-left-color: var(--medium); background: rgba(245, 158, 11, 0.02); }
+.alertSimple-low { border-left-color: var(--low); background: rgba(16, 185, 129, 0.02); }
+
+.alertSimple strong {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+/* ANIMATIONS */
+.fade-1 { animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.fade-2 { animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards; }
+.fade-3 { animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; }
+.fade-4 { animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .doctorWorkspace { padding: 16px; }
+  .doctorGrid { grid-template-columns: 1fr; }
+  .doctorHero { padding: 24px; }
+  .doctorHero h1 { font-size: 2.2rem; }
+}

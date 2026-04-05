@@ -1,0 +1,11 @@
+{
+  "name": "@app-bhxh/database",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "dependencies": {
+    "@prisma/client": "^6.4.1"
+  },
+  "devDependencies": {
+    "prisma": "^6.4.1"
+  }
+}

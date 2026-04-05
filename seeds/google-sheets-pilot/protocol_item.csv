@@ -1,0 +1,14 @@
+protocol_code,item_type,item_code,item_name,recommendation_level,condition_note,rationale,sort_order,is_required
+IM-OP-HTN-DM-2026,cls,CLS001,Cong thuc mau,standard,Ap dung benh nhan ngoai tru noi khoa co tang huyet ap/dai thao duong,Danh gia tong quat truoc dieu chinh dieu tri,1,TRUE
+IM-OP-HTN-DM-2026,cls,CLS002,Duong huyet,standard,Ap dung benh nhan co dai thao duong hoac nghi ngo,Tam soat va theo doi kiem soat duong huyet,2,TRUE
+IM-OP-HTN-DM-2026,cls,CLS003,HbA1c,standard,Ap dung benh nhan dai thao duong,Theo doi muc tieu kiem soat lau dai,3,TRUE
+IM-OP-HTN-DM-2026,cls,CLS004,Creatinine huyet thanh,standard,Ap dung benh nhan tang huyet ap va dai thao duong,Theo doi chuc nang than va dieu chinh thuoc,4,TRUE
+IM-OP-HTN-DM-2026,cls,CLS005,AST ALT,suggested,Can nhac khi theo doi thuoc va benh dong mac,Danh gia nen chuyen hoa va an toan dieu tri,5,FALSE
+IM-OP-HTN-DM-2026,cls,CLS006,Tong phan tich nuoc tieu,standard,Ap dung benh nhan dai thao duong,Tam soat ton thuong than va bien chung,6,TRUE
+IM-OP-HTN-DM-2026,cls,CLS007,Microalbumin nieu,suggested,Can nhac khi theo doi bien chung than,Danh gia ton thuong than som,7,FALSE
+IM-OP-HTN-DM-2026,cls,CLS008,Dien tam do 12 chuyen dao,suggested,Can nhac benh nhan co nguy co tim mach,Tam soat bien doi tim mach nen,8,FALSE
+IM-OP-HTN-DM-2026,cls,CLS009,Ho so lipid mau,standard,Ap dung benh nhan roi loan lipid hoac nguy co tim mach,Dinh huong can thiep statin va theo doi,9,TRUE
+IM-OP-HTN-DM-2026,medication,DR001,Perindopril,preferred,Uu tien khi benh nhan tang huyet ap kem dai thao duong,Uu tien bao ve than va kiem soat huyet ap,10,FALSE
+IM-OP-HTN-DM-2026,medication,DR002,Losartan,preferred,Lua chon thay the cung nhom khi can,Uu tien bao ve than va kiem soat huyet ap,11,FALSE
+IM-OP-HTN-DM-2026,medication,DR004,Metformin,preferred,Neu phu hop lam sang va khong co chong chi dinh,Lua chon nen trong dai thao duong typ 2,12,FALSE
+IM-OP-HTN-DM-2026,medication,DR006,Atorvastatin,suggested,Can nhac khi co roi loan lipid hoac nguy co tim mach,Giam nguy co tim mach lau dai,13,FALSE

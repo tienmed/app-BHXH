@@ -1,0 +1,8 @@
+icd_code,drug_code,mapping_type,priority,source_version,note
+I10,DR001,preferred,1,MAP-2026.01,Uu tien UCMC
+I10,DR002,preferred,2,MAP-2026.01,Lua chon UCTT thay the
+I10,DR003,suggested,3,MAP-2026.01,Them khi can phoi hop
+E11.9,DR004,preferred,1,MAP-2026.01,Thuoc nen trong dai thao duong typ 2
+E11.9,DR005,suggested,2,MAP-2026.01,Can nhac khi can tang cuong kiem soat
+E78.5,DR006,preferred,1,MAP-2026.01,Statin cho roi loan lipid
+E78.5,DR007,suggested,2,MAP-2026.01,Statin thay the

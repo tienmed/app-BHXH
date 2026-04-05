@@ -1,0 +1,8 @@
+drug_code,drug_name,drug_group,route,strength,is_bhyt_covered,is_active,source_ref
+DR001,Perindopril,UCMC,Uong,5mg,TRUE,TRUE,FORMULARY-PILOT-2026
+DR002,Losartan,UCTT,Uong,50mg,TRUE,TRUE,FORMULARY-PILOT-2026
+DR003,Amlodipine,Chen kenh calci,Uong,5mg,TRUE,TRUE,FORMULARY-PILOT-2026
+DR004,Metformin,Ha duong huyet,Uong,500mg,TRUE,TRUE,FORMULARY-PILOT-2026
+DR005,Gliclazide MR,Ha duong huyet,Uong,30mg,TRUE,TRUE,FORMULARY-PILOT-2026
+DR006,Atorvastatin,Statin,Uong,10mg,TRUE,TRUE,FORMULARY-PILOT-2026
+DR007,Rosuvastatin,Statin,Uong,10mg,TRUE,TRUE,FORMULARY-PILOT-2026

@@ -1,0 +1,10 @@
+cls_code,cls_name,cls_group,unit,default_frequency,is_active,source_ref
+CLS001,Cong thuc mau,Xet nghiem,mau,Theo dot kham,TRUE,MOH-IM-2026
+CLS002,Duong huyet,Xet nghiem,mau,Theo dot kham,TRUE,MOH-IM-2026
+CLS003,HbA1c,Xet nghiem,mau,3 thang,TRUE,MOH-IM-2026
+CLS004,Creatinine huyet thanh,Xet nghiem,mau,Theo dot kham,TRUE,MOH-IM-2026
+CLS005,AST ALT,Xet nghiem,mau,Theo dot kham,TRUE,MOH-IM-2026
+CLS006,Tong phan tich nuoc tieu,Xet nghiem,mau,Theo dot kham,TRUE,MOH-IM-2026
+CLS007,Microalbumin nieu,Xet nghiem,mau,6 thang,TRUE,MOH-IM-2026
+CLS008,Dien tam do 12 chuyen dao,Chan doan hinh anh/tham do,lan,Theo dot kham,TRUE,MOH-IM-2026
+CLS009,Ho so lipid mau,Xet nghiem,mau,6 thang,TRUE,MOH-IM-2026

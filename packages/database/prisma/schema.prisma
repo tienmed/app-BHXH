@@ -1,0 +1,227 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// --- Import Governance Tables ---
+
+model ImportDataset {
+  id               String   @id @default(uuid())
+  datasetType      String   // e.g., 'protocol', 'catalog', 'reimbursement'
+  datasetVersion   String
+  sourceWorkbookId String?
+  sourceTabName    String?
+  importedAt       DateTime @default(now())
+  importedBy       String?
+  approvalStatus   String   @default("pending") // pending, approved, archived
+
+  // Relations
+  catalogsIcd      CatalogIcd[]
+  catalogsCls      CatalogCls[]
+  catalogsMed      CatalogMedication[]
+  protocolVersions ProtocolVersion[]
+  claimRiskRules   ClaimRiskRule[]
+  costCompRules    CostCompositionRule[]
+}
+
+// --- Catalog Tables ---
+
+model CatalogIcd {
+  id        String        @id @default(uuid())
+  code      String        @unique
+  label     String
+  datasetId String
+  dataset   ImportDataset @relation(fields: [datasetId], references: [id])
+}
+
+model CatalogCls {
+  id        String        @id @default(uuid())
+  code      String        @unique
+  label     String
+  datasetId String
+  dataset   ImportDataset @relation(fields: [datasetId], references: [id])
+}
+
+model CatalogMedication {
+  id        String        @id @default(uuid())
+  code      String        @unique
+  label     String
+  datasetId String
+  dataset   ImportDataset @relation(fields: [datasetId], references: [id])
+}
+
+// --- Protocol Tables ---
+
+model ProtocolSet {
+  id          String            @id @default(uuid())
+  name        String
+  description String?
+  versions    ProtocolVersion[]
+}
+
+model ProtocolVersion {
+  id                String        @id @default(uuid())
+  protocolSetId     String
+  protocolSet       ProtocolSet   @relation(fields: [protocolSetId], references: [id])
+  datasetId         String
+  dataset           ImportDataset @relation(fields: [datasetId], references: [id])
+  sourceVersion     String
+  careSetting       String        @default("outpatient")
+  specialtyCode     String?
+  effectiveFrom     DateTime?
+  effectiveTo       DateTime?
+  status            String        @default("draft")
+
+  items             ProtocolItem[]
+  recommendationRuns RecommendationRun[]
+}
+
+model ProtocolItem {
+  id                String          @id @default(uuid())
+  protocolVersionId String
+  protocolVersion   ProtocolVersion @relation(fields: [protocolVersionId], references: [id])
+  itemType          String          // CLS, MEDICATION
+  catalogCode       String
+  priority          Int             @default(0)
+  note              String?
+}
+
+// --- Reimbursement Tables ---
+
+model ClaimRiskRuleSet {
+  id    String          @id @default(uuid())
+  name  String
+  rules ClaimRiskRule[]
+}
+
+model ClaimRiskRule {
+  id                  String           @id @default(uuid())
+  ruleSetId           String
+  ruleSet             ClaimRiskRuleSet @relation(fields: [ruleSetId], references: [id])
+  datasetId           String
+  dataset             ImportDataset    @relation(fields: [datasetId], references: [id])
+  severity            String           // high, medium, low
+  conditionExpression String
+  warningMessage      String
+  recommendedAction   String?
+  status              String           @default("active")
+}
+
+model CostCompositionRuleSet {
+  id    String                @id @default(uuid())
+  name  String
+  rules CostCompositionRule[]
+}
+
+model CostCompositionRule {
+  id                  String                 @id @default(uuid())
+  ruleSetId           String
+  ruleSet             CostCompositionRuleSet @relation(fields: [ruleSetId], references: [id])
+  datasetId           String
+  dataset             ImportDataset          @relation(fields: [datasetId], references: [id])
+  targetScope         String                 // ICD, specialty
+  targetValue         String
+  limitPercent        Float
+  status              String                 @default("active")
+}
+
+// --- Mapping Tables ---
+
+model IcdClsMapping {
+  id          String   @id @default(uuid())
+  icdCode     String
+  clsCode     String
+  mappingNote String?
+}
+
+model IcdMedicationMapping {
+  id        String   @id @default(uuid())
+  icdCode   String
+  medCode   String
+  mappingNote String?
+}
+
+// --- Runtime Tables ---
+
+model Patient {
+  id               String      @id @default(uuid())
+  externalPatientId String      @unique
+  demographics     Json?
+  insuranceInfo    Json?
+  encounters       Encounter[]
+}
+
+model Encounter {
+  id               String      @id @default(uuid())
+  patientId        String
+  patient          Patient     @relation(fields: [patientId], references: [id])
+  facilityId       String?
+  specialtyId      String?
+  encounterType    String?
+  attendingDoctorId String?
+  status           String      @default("open")
+  createdAt        DateTime    @default(now())
+
+  diagnoses        Diagnosis[]
+  orderedItems     OrderedItem[]
+  recommendationRuns RecommendationRun[]
+}
+
+model Diagnosis {
+  id             String    @id @default(uuid())
+  encounterId    String
+  encounter      Encounter @relation(fields: [encounterId], references: [id])
+  icdCode        String
+  diagnosisType  String    @default("secondary") // primary, secondary
+  certaintyLevel String?
+  note           String?
+}
+
+model OrderedItem {
+  id          String    @id @default(uuid())
+  encounterId String
+  encounter   Encounter @relation(fields: [encounterId], references: [id])
+  itemType    String
+  catalogCode String
+  quantity    Float     @default(1.0)
+  dosage      String?
+  status      String    @default("draft")
+}
+
+model RecommendationRun {
+  id                 String          @id @default(uuid())
+  encounterId        String
+  encounter          Encounter       @relation(fields: [encounterId], references: [id])
+  protocolVersionId  String?
+  protocolVersion    ProtocolVersion? @relation(fields: [protocolVersionId], references: [id])
+  inputSnapshot      Json
+  outputSnapshot     Json
+  generatedAt        DateTime        @default(now())
+
+  alerts             Alert[]
+  overrides          Override[]
+}
+
+model Alert {
+  id                  String            @id @default(uuid())
+  recommendationRunId String
+  recommendationRun   RecommendationRun @relation(fields: [recommendationRunId], references: [id])
+  severity            String
+  title               String
+  message             String
+  actionHint          String?
+}
+
+model Override {
+  id                  String            @id @default(uuid())
+  recommendationRunId String
+  recommendationRun   RecommendationRun @relation(fields: [recommendationRunId], references: [id])
+  overriddenBy        String
+  reasonCode          String
+  freeTextReason      String?
+  createdAt           DateTime          @default(now())
+}

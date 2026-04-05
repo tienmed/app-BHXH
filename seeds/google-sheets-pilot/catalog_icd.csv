@@ -1,0 +1,6 @@
+icd_code,icd_name,chapter,is_active,effective_from,effective_to,source_ref
+I10,Tang huyet ap nguyen phat,Benh he tuan hoan,TRUE,2026-01-01,,MOH-IM-2026
+E11.9,Dai thao duong typ 2 khong bien chung,Benh noi tiet dinh duong va chuyen hoa,TRUE,2026-01-01,,MOH-IM-2026
+E78.5,Roi loan lipid mau,Benh noi tiet dinh duong va chuyen hoa,TRUE,2026-01-01,,MOH-IM-2026
+N18.1,Benh than man giai doan 1,He tiet nieu,TRUE,2026-01-01,,MOH-IM-2026
+R07.4,Dau nguc khong dac hieu,Trieu chung dau hieu bat thuong,TRUE,2026-01-01,,MOH-IM-2026

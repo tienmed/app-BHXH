@@ -1,0 +1,9 @@
+icd_code,cls_code,mapping_type,priority,source_version,note
+I10,CLS001,recommended,1,MAP-2026.01,Bo xet nghiem nen cho tang huyet ap
+I10,CLS004,recommended,2,MAP-2026.01,Theo doi chuc nang than khi dieu tri
+I10,CLS008,suggested,3,MAP-2026.01,Can nhac khi co nguy co tim mach
+E11.9,CLS002,recommended,1,MAP-2026.01,Theo doi duong huyet
+E11.9,CLS003,recommended,2,MAP-2026.01,Theo doi HbA1c
+E11.9,CLS006,recommended,3,MAP-2026.01,Theo doi bien chung than
+E11.9,CLS007,suggested,4,MAP-2026.01,Can nhac microalbumin nieu
+E78.5,CLS009,recommended,1,MAP-2026.01,Theo doi lipid mau
