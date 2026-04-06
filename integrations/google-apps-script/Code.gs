@@ -36,6 +36,10 @@ function doGet(e) {
     return jsonOutput(getPilotContextPayload());
   }
 
+  if (action === 'doctor-feedback') {
+    return jsonOutput(listDoctorFeedback_(e));
+  }
+
   return jsonOutput({
     error: 'Unsupported action',
     action: action
@@ -60,6 +64,14 @@ function doPost(e) {
 
   if (action === 'create-catalog-entry') {
     return jsonOutput(createCatalogEntry_(body));
+  }
+
+  if (action === 'submit-doctor-feedback') {
+    return jsonOutput(submitDoctorFeedback_(body));
+  }
+
+  if (action === 'resolve-doctor-feedback') {
+    return jsonOutput(resolveDoctorFeedback_(body));
   }
 
   return jsonOutput({
@@ -1309,6 +1321,230 @@ function getRequiredColumnsForTab_(tabName) {
   };
 
   return template[tabName] || [];
+}
+
+function ensureDoctorFeedbackSheet_() {
+  var workbook = getWorkbook_();
+  var sheetName = 'doctor_feedback';
+  var sheet = workbook.getSheetByName(sheetName);
+
+  if (!sheet) {
+    sheet = workbook.insertSheet(sheetName);
+    sheet.appendRow([
+      'feedback_id',
+      'submitted_at',
+      'icd_code',
+      'icd_name',
+      'feedback_type',
+      'target_type',
+      'target_name',
+      'note',
+      'doctor_id',
+      'status',
+      'resolved_at',
+      'resolved_by',
+      'resolution_note'
+    ]);
+  }
+
+  return sheet;
+}
+
+function submitDoctorFeedback_(body) {
+  var icdCode = String(body.icdCode || '').trim();
+  var icdName = String(body.icdName || '').trim();
+  var feedbackType = String(body.feedbackType || 'general').trim();
+  var targetType = String(body.targetType || '').trim();
+  var targetName = String(body.targetName || '').trim();
+  var note = String(body.note || '').trim();
+  var doctorId = String(body.doctorId || 'doctor-web').trim();
+
+  if (!icdCode) {
+    return {
+      ok: false,
+      error: 'missing_icd',
+      message: 'Can cung cap ma ICD lien quan.'
+    };
+  }
+
+  if (!note) {
+    return {
+      ok: false,
+      error: 'missing_note',
+      message: 'Can nhap noi dung phan hoi.'
+    };
+  }
+
+  var sheet = ensureDoctorFeedbackSheet_();
+  var feedbackId = 'FB-' + new Date().getTime();
+
+  sheet.appendRow([
+    feedbackId,
+    new Date(),
+    icdCode,
+    icdName,
+    feedbackType,
+    targetType,
+    targetName,
+    note,
+    doctorId,
+    'pending',
+    '',
+    '',
+    ''
+  ]);
+
+  return {
+    ok: true,
+    feedbackId: feedbackId,
+    message: 'Da ghi nhan phan hoi thanh cong.'
+  };
+}
+
+function listDoctorFeedback_(e) {
+  var statusFilter = (e && e.parameter && e.parameter.status) || '';
+  var icdFilter = (e && e.parameter && e.parameter.icd) || '';
+  var limit = 30;
+
+  if (e && e.parameter && e.parameter.limit) {
+    limit = Math.max(1, Math.min(100, Number(e.parameter.limit) || 30));
+  }
+
+  var workbook = getWorkbook_();
+  var sheet = workbook.getSheetByName('doctor_feedback');
+
+  if (!sheet) {
+    return {
+      total: 0,
+      rows: []
+    };
+  }
+
+  var values = sheet.getDataRange().getValues();
+
+  if (!values || values.length < 2) {
+    return {
+      total: 0,
+      rows: []
+    };
+  }
+
+  var headers = values[0].map(function (item) { return String(item); });
+  var rows = values.slice(1)
+    .filter(function (row) {
+      return row.some(function (cell) {
+        return String(cell).trim() !== '';
+      });
+    })
+    .map(function (row) {
+      var obj = {};
+      headers.forEach(function (header, index) {
+        obj[header] = row[index];
+      });
+      return obj;
+    });
+
+  if (statusFilter) {
+    rows = rows.filter(function (row) {
+      return String(row.status || '') === statusFilter;
+    });
+  }
+
+  if (icdFilter) {
+    rows = rows.filter(function (row) {
+      return String(row.icd_code || '') === icdFilter;
+    });
+  }
+
+  var total = rows.length;
+  var recentRows = rows.slice(Math.max(rows.length - limit, 0)).reverse();
+
+  return {
+    total: total,
+    rows: recentRows
+  };
+}
+
+function resolveDoctorFeedback_(body) {
+  var feedbackId = String(body.feedbackId || '').trim();
+  var resolvedBy = String(body.resolvedBy || 'admin-ui').trim();
+  var resolutionNote = String(body.resolutionNote || '').trim();
+
+  if (!feedbackId) {
+    return {
+      ok: false,
+      error: 'missing_feedback_id',
+      message: 'Can cung cap feedback_id de cap nhat.'
+    };
+  }
+
+  var sheet = ensureDoctorFeedbackSheet_();
+  var values = sheet.getDataRange().getValues();
+  var headers = values[0].map(function (item) { return String(item); });
+  var idIndex = headers.indexOf('feedback_id');
+  var statusIndex = headers.indexOf('status');
+  var resolvedAtIndex = headers.indexOf('resolved_at');
+  var resolvedByIndex = headers.indexOf('resolved_by');
+  var resolutionNoteIndex = headers.indexOf('resolution_note');
+
+  if (idIndex < 0) {
+    return {
+      ok: false,
+      error: 'invalid_sheet',
+      message: 'Sheet doctor_feedback khong dung cau truc.'
+    };
+  }
+
+  var rowIndex = -1;
+
+  for (var i = 1; i < values.length; i += 1) {
+    if (String(values[i][idIndex]) === feedbackId) {
+      rowIndex = i + 1;
+      break;
+    }
+  }
+
+  if (rowIndex < 0) {
+    return {
+      ok: false,
+      error: 'feedback_not_found',
+      message: 'Khong tim thay phan hoi voi ID: ' + feedbackId
+    };
+  }
+
+  if (statusIndex >= 0) {
+    sheet.getRange(rowIndex, statusIndex + 1).setValue('resolved');
+  }
+
+  if (resolvedAtIndex >= 0) {
+    sheet.getRange(rowIndex, resolvedAtIndex + 1).setValue(new Date());
+  }
+
+  if (resolvedByIndex >= 0) {
+    sheet.getRange(rowIndex, resolvedByIndex + 1).setValue(resolvedBy);
+  }
+
+  if (resolutionNoteIndex >= 0) {
+    sheet.getRange(rowIndex, resolutionNoteIndex + 1).setValue(resolutionNote);
+  }
+
+  appendAuditLog_({
+    tabName: 'doctor_feedback',
+    keyField: 'feedback_id',
+    keyValue: feedbackId,
+    actor: resolvedBy,
+    note: 'Da xu ly phan hoi bac si',
+    changedFields: [
+      { field: 'status', oldValue: 'pending', newValue: 'resolved' },
+      { field: 'resolution_note', newValue: resolutionNote }
+    ]
+  });
+
+  return {
+    ok: true,
+    feedbackId: feedbackId,
+    message: 'Da cap nhat trang thai phan hoi thanh cong.'
+  };
 }
 
 function parseBody_(e) {

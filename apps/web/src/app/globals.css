@@ -370,6 +370,195 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* CLEAR ALL BUTTON */
+.clearAllBtn {
+  background: none;
+  border: 1px solid var(--high);
+  color: var(--high);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clearAllBtn:hover {
+  background: var(--high);
+  color: white;
+}
+
+/* ITEM HEADER (accept/dismiss/feedback) */
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.itemActions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.actionBtn:hover {
+  background: white;
+  border-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.actionBtn-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.actionBtn-dismissed {
+  background: var(--high);
+  border-color: var(--high);
+  color: white;
+}
+
+.actionBtn-feedback {
+  font-size: 16px;
+}
+
+/* ITEM STATUS STATES */
+.doctorListItem-accepted {
+  border-color: var(--accent);
+  background: rgba(16, 185, 129, 0.04);
+}
+
+.doctorListItem-dismissed {
+  opacity: 0.5;
+  border-color: var(--line);
+  background: #f8f8f8;
+}
+
+/* FEEDBACK OVERLAY */
+.feedbackOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.feedbackPanel {
+  background: white;
+  border-radius: 28px;
+  padding: 32px;
+  width: min(520px, 90vw);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.feedbackPanel h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.feedbackContext {
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  background: var(--bg);
+  border-radius: 14px;
+}
+
+.feedbackPanel label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.feedbackPanel select,
+.feedbackPanel textarea {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 2px solid var(--line);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.feedbackPanel select:focus,
+.feedbackPanel textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.feedbackActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.feedbackActions button {
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.feedbackActions button:hover {
+  background: var(--bg);
+}
+
+.feedbackSubmit {
+  background: var(--accent) !important;
+  color: white !important;
+  border-color: var(--accent) !important;
+}
+
+.feedbackSubmit:hover {
+  background: var(--accent-hover) !important;
+}
+
+.feedbackStatusText {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 8px 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .doctorWorkspace { padding: 16px; }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 
 type Diagnosis = {
   code: string;
@@ -40,6 +40,17 @@ type RecommendationState = {
     medications: number;
   };
   alerts: AlertItem[];
+};
+
+type ItemStatus = "pending" | "accepted" | "dismissed";
+
+type FeedbackPayload = {
+  icdCode: string;
+  icdName: string;
+  feedbackType: "not_appropriate" | "missing" | "need_adjustment" | "general";
+  targetType: "cls" | "medication" | "alert" | "general";
+  targetName: string;
+  note: string;
 };
 
 const defaultDiagnosisOptions: DiagnosisOption[] = [
@@ -185,10 +196,10 @@ function normalizeRecommendationPayload(payload: any): RecommendationState {
     reimbursementNote: String(payload?.claimRisk?.reimbursementNote ?? ""),
     costComposition: payload?.reimbursementGuard?.costComposition
       ? {
-          icd: Number(payload.reimbursementGuard.costComposition.icd ?? 0),
-          cls: Number(payload.reimbursementGuard.costComposition.cls ?? 0),
-          medications: Number(payload.reimbursementGuard.costComposition.medications ?? 0)
-        }
+        icd: Number(payload.reimbursementGuard.costComposition.icd ?? 0),
+        cls: Number(payload.reimbursementGuard.costComposition.cls ?? 0),
+        medications: Number(payload.reimbursementGuard.costComposition.medications ?? 0)
+      }
       : undefined,
     alerts
   };
@@ -308,6 +319,17 @@ export default function DoctorWorkspace() {
   const [status, setStatus] = useState("Sẵn sàng tra ICD.");
   const [loading, setLoading] = useState(false);
   const [catalogReady, setCatalogReady] = useState(false);
+  const [itemStatuses, setItemStatuses] = useState<Record<string, ItemStatus>>({});
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
+  const [feedbackPayload, setFeedbackPayload] = useState<FeedbackPayload>({
+    icdCode: "",
+    icdName: "",
+    feedbackType: "general",
+    targetType: "general",
+    targetName: "",
+    note: ""
+  });
+  const [feedbackStatus, setFeedbackStatus] = useState("");
   const costSegments = useMemo(() => buildCostCompositionSegments(state.costComposition), [state.costComposition]);
 
   const filteredOptions = useMemo(() => {
@@ -322,16 +344,79 @@ export default function DoctorWorkspace() {
       .slice(0, 12);
   }, [diagnosisCatalog, searchTerm]);
 
-  function selectDiagnosis(code: string) {
-    setSelectedCodes([code]);
+  function toggleDiagnosis(code: string) {
+    setSelectedCodes((current) => {
+      if (current.includes(code)) {
+        return current.filter((item) => item !== code);
+      }
+
+      if (current.length >= 5) {
+        setStatus("Tối đa 5 chẩn đoán cùng lúc.");
+        return current;
+      }
+
+      return [...current, code];
+    });
     setSearchTerm("");
+    setItemStatuses({});
   }
 
-  function clearDiagnosis() {
+  function removeDiagnosis(code: string) {
+    setSelectedCodes((current) => current.filter((item) => item !== code));
+    setItemStatuses({});
+  }
+
+  function clearAllDiagnoses() {
     setSelectedCodes([]);
     setState(emptyState);
     setStatus("Sẵn sàng tra ICD.");
+    setItemStatuses({});
   }
+
+  function setItemStatus(name: string, status: ItemStatus) {
+    setItemStatuses((current) => ({ ...current, [name]: status }));
+  }
+
+  function openFeedback(targetType: FeedbackPayload["targetType"], targetName: string) {
+    const primaryDiag = state.diagnoses[0];
+    setFeedbackPayload({
+      icdCode: primaryDiag?.code ?? "",
+      icdName: primaryDiag?.label ?? "",
+      feedbackType: "general",
+      targetType,
+      targetName,
+      note: ""
+    });
+    setFeedbackOpen(true);
+    setFeedbackStatus("");
+  }
+
+  const submitFeedback = useCallback(async () => {
+    if (!feedbackPayload.note.trim()) {
+      setFeedbackStatus("Vui lòng nhập nội dung phản hồi.");
+      return;
+    }
+
+    setFeedbackStatus("Đang gửi...");
+
+    try {
+      const response = await fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(feedbackPayload)
+      });
+      const data = await response.json();
+
+      if (!response.ok || data?.ok === false) {
+        throw new Error(data?.message ?? `HTTP ${response.status}`);
+      }
+
+      setFeedbackStatus("Đã gửi phản hồi thành công!");
+      setTimeout(() => setFeedbackOpen(false), 1500);
+    } catch (error) {
+      setFeedbackStatus(`Lỗi: ${(error as Error).message}`);
+    }
+  }, [feedbackPayload]);
 
   useEffect(() => {
     async function loadDiagnosisCatalog() {
@@ -427,7 +512,7 @@ export default function DoctorWorkspace() {
         <section className="doctorPanel fade-2">
           <div className="doctorPanelHeader">
             <h2>Tra cứu chẩn đoán (ICD-10)</h2>
-            <span>{selectedCodes.length} mục đang chọn</span>
+            <span>{selectedCodes.length}/5 chẩn đoán đang chọn</span>
           </div>
 
           <div className="searchField">
@@ -452,7 +537,7 @@ export default function DoctorWorkspace() {
                 <button
                   className={selected ? "searchOption searchOption-selected" : "searchOption"}
                   key={option.code}
-                  onClick={() => selectDiagnosis(option.code)}
+                  onClick={() => toggleDiagnosis(option.code)}
                   type="button"
                 >
                   <strong>{option.label}</strong>
@@ -464,11 +549,14 @@ export default function DoctorWorkspace() {
 
           <div className="selectedDiagnosisRow">
             {state.diagnoses.map((diagnosis) => (
-              <button className="selectedDiagnosisChip" key={`${diagnosis.code}-${diagnosis.label}`} onClick={() => clearDiagnosis()} type="button" title="Nhấp để xóa">
+              <button className="selectedDiagnosisChip" key={`${diagnosis.code}-${diagnosis.label}`} onClick={() => removeDiagnosis(diagnosis.code)} type="button" title="Nhấp để xóa">
                 <strong>{diagnosis.label}</strong>
                 <span>{diagnosis.code}</span>
               </button>
             ))}
+            {state.diagnoses.length > 1 ? (
+              <button className="clearAllBtn" onClick={clearAllDiagnoses} type="button">Xóa tất cả</button>
+            ) : null}
           </div>
 
           {state.costComposition ? (
@@ -511,24 +599,49 @@ export default function DoctorWorkspace() {
             <div className="doctorList">
               {state.investigationsNote ? <div className="groupNote">{state.investigationsNote}</div> : null}
               {state.investigations.length > 0 ? (
-                state.investigations.map((item) => (
-                  <article className="doctorListItem" key={item.name}>
-                    <strong>{item.name}</strong>
-                    {shouldShowMappingNote(item.mappingNote, state.investigationsNote) ? (
-                      <div className="itemMetaLabel">Ghi chú ICD: {item.mappingNote}</div>
-                    ) : null}
-                    {shouldShowSupplementalText(item.detail, state.investigationsNote, item.mappingNote || item.rationale) ? (
-                      <div className="itemMetaLabel">Thông tin thêm: {item.detail}</div>
-                    ) : null}
-                    {shouldShowDistinctRationale(
-                      item.rationale,
-                      state.investigationsNote,
-                      item.mappingNote || item.detail
-                    ) ? (
-                      <p>{item.rationale}</p>
-                    ) : null}
-                  </article>
-                ))
+                state.investigations.map((item) => {
+                  const itemStatus = itemStatuses[`cls-${item.name}`] ?? "pending";
+                  return (
+                    <article className={`doctorListItem doctorListItem-${itemStatus}`} key={item.name}>
+                      <div className="itemHeader">
+                        <strong>{item.name}</strong>
+                        <div className="itemActions">
+                          <button
+                            className={itemStatus === "accepted" ? "actionBtn actionBtn-active" : "actionBtn"}
+                            onClick={() => setItemStatus(`cls-${item.name}`, itemStatus === "accepted" ? "pending" : "accepted")}
+                            title="Đồng ý"
+                            type="button"
+                          >✓</button>
+                          <button
+                            className={itemStatus === "dismissed" ? "actionBtn actionBtn-dismissed" : "actionBtn"}
+                            onClick={() => setItemStatus(`cls-${item.name}`, itemStatus === "dismissed" ? "pending" : "dismissed")}
+                            title="Bỏ qua"
+                            type="button"
+                          >✕</button>
+                          <button
+                            className="actionBtn actionBtn-feedback"
+                            onClick={() => openFeedback("cls", item.name)}
+                            title="Gửi phản hồi"
+                            type="button"
+                          >💬</button>
+                        </div>
+                      </div>
+                      {shouldShowMappingNote(item.mappingNote, state.investigationsNote) ? (
+                        <div className="itemMetaLabel">Ghi chú ICD: {item.mappingNote}</div>
+                      ) : null}
+                      {shouldShowSupplementalText(item.detail, state.investigationsNote, item.mappingNote || item.rationale) ? (
+                        <div className="itemMetaLabel">Thông tin thêm: {item.detail}</div>
+                      ) : null}
+                      {shouldShowDistinctRationale(
+                        item.rationale,
+                        state.investigationsNote,
+                        item.mappingNote || item.detail
+                      ) ? (
+                        <p>{item.rationale}</p>
+                      ) : null}
+                    </article>
+                  );
+                })
               ) : (
                 <p className="emptyText">Chỉ chọn mã ICD để xem các đề xuất cận lâm sàng.</p>
               )}
@@ -543,24 +656,49 @@ export default function DoctorWorkspace() {
             <div className="doctorList">
               {state.medicationsNote ? <div className="groupNote">{state.medicationsNote}</div> : null}
               {state.medications.length > 0 ? (
-                state.medications.map((item) => (
-                  <article className="doctorListItem" key={item.name}>
-                    <strong>{item.name}</strong>
-                    {shouldShowMappingNote(item.mappingNote, state.medicationsNote) ? (
-                      <div className="itemMetaLabel">Ghi chú ICD: {item.mappingNote}</div>
-                    ) : null}
-                    {shouldShowSupplementalText(item.detail, state.medicationsNote, item.mappingNote || item.rationale) ? (
-                      <div className="itemMetaLabel">Thông tin thêm: {item.detail}</div>
-                    ) : null}
-                    {shouldShowDistinctRationale(
-                      item.rationale,
-                      state.medicationsNote,
-                      item.mappingNote || item.detail
-                    ) ? (
-                      <p>{item.rationale}</p>
-                    ) : null}
-                  </article>
-                ))
+                state.medications.map((item) => {
+                  const itemStatus = itemStatuses[`drug-${item.name}`] ?? "pending";
+                  return (
+                    <article className={`doctorListItem doctorListItem-${itemStatus}`} key={item.name}>
+                      <div className="itemHeader">
+                        <strong>{item.name}</strong>
+                        <div className="itemActions">
+                          <button
+                            className={itemStatus === "accepted" ? "actionBtn actionBtn-active" : "actionBtn"}
+                            onClick={() => setItemStatus(`drug-${item.name}`, itemStatus === "accepted" ? "pending" : "accepted")}
+                            title="Đồng ý"
+                            type="button"
+                          >✓</button>
+                          <button
+                            className={itemStatus === "dismissed" ? "actionBtn actionBtn-dismissed" : "actionBtn"}
+                            onClick={() => setItemStatus(`drug-${item.name}`, itemStatus === "dismissed" ? "pending" : "dismissed")}
+                            title="Bỏ qua"
+                            type="button"
+                          >✕</button>
+                          <button
+                            className="actionBtn actionBtn-feedback"
+                            onClick={() => openFeedback("medication", item.name)}
+                            title="Gửi phản hồi"
+                            type="button"
+                          >💬</button>
+                        </div>
+                      </div>
+                      {shouldShowMappingNote(item.mappingNote, state.medicationsNote) ? (
+                        <div className="itemMetaLabel">Ghi chú ICD: {item.mappingNote}</div>
+                      ) : null}
+                      {shouldShowSupplementalText(item.detail, state.medicationsNote, item.mappingNote || item.rationale) ? (
+                        <div className="itemMetaLabel">Thông tin thêm: {item.detail}</div>
+                      ) : null}
+                      {shouldShowDistinctRationale(
+                        item.rationale,
+                        state.medicationsNote,
+                        item.mappingNote || item.detail
+                      ) ? (
+                        <p>{item.rationale}</p>
+                      ) : null}
+                    </article>
+                  );
+                })
               ) : (
                 <p className="emptyText">Chỉ chọn mã ICD để xem các đề xuất kê đơn.</p>
               )}
@@ -607,6 +745,43 @@ export default function DoctorWorkspace() {
         </section>
 
       </section>
+
+      {feedbackOpen ? (
+        <div className="feedbackOverlay" onClick={() => setFeedbackOpen(false)}>
+          <div className="feedbackPanel" onClick={(e) => e.stopPropagation()}>
+            <h3>Gửi phản hồi cho Admin</h3>
+            <p className="feedbackContext">
+              ICD: <strong>{feedbackPayload.icdCode}</strong> — {feedbackPayload.targetType !== "general" ? `${feedbackPayload.targetType}: ${feedbackPayload.targetName}` : "Phản hồi chung"}
+            </p>
+            <label>
+              Loại phản hồi
+              <select
+                value={feedbackPayload.feedbackType}
+                onChange={(e) => setFeedbackPayload((c) => ({ ...c, feedbackType: e.target.value as FeedbackPayload["feedbackType"] }))}
+              >
+                <option value="not_appropriate">Không phù hợp</option>
+                <option value="missing">Thiếu gợi ý</option>
+                <option value="need_adjustment">Cần điều chỉnh</option>
+                <option value="general">Ý kiến chung</option>
+              </select>
+            </label>
+            <label>
+              Nội dung phản hồi
+              <textarea
+                rows={3}
+                value={feedbackPayload.note}
+                onChange={(e) => setFeedbackPayload((c) => ({ ...c, note: e.target.value }))}
+                placeholder="Mô tả vấn đề hoặc gợi ý cải thiện..."
+              />
+            </label>
+            <div className="feedbackActions">
+              <button onClick={() => setFeedbackOpen(false)} type="button">Hủy</button>
+              <button className="feedbackSubmit" onClick={submitFeedback} type="button">Gửi phản hồi</button>
+            </div>
+            {feedbackStatus ? <p className="feedbackStatusText">{feedbackStatus}</p> : null}
+          </div>
+        </div>
+      ) : null}
     </main>
   );
 }
