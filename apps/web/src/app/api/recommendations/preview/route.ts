@@ -105,6 +105,7 @@ function enrichRecommendations(data: any, workbookPreview: any, diagnosisCodes: 
   return {
     ...data,
     claimRisk: {
+      alerts: [],
       warningMessage: String(selectedRule?.warning_message ?? ""),
       recommendedAction: String(selectedRule?.recommended_action ?? ""),
       reimbursementNote: String(professionalProfile.reimbursementNote ?? "")
@@ -178,8 +179,49 @@ export async function POST(request: NextRequest) {
 
     try {
       const workbookPreview = await loadWorkbookPreview();
-      return NextResponse.json(enrichRecommendations(data, workbookPreview, diagnosisCodes));
-    } catch {
+      const enriched = enrichRecommendations(data, workbookPreview, diagnosisCodes);
+
+      // Tích hợp Dynamic Rule Engine
+      const { runDecisionEngine } = await import("@app-bhxh/decision-engine");
+
+      const dynamicEngineResult = await runDecisionEngine({
+        diagnoses: diagnosisCodes.map((icd: string) => ({ icd })),
+        protocols: [
+          {
+            code: "MOCK_PROTOCOL",
+            items: [
+              ...(enriched.recommendations.investigations || []).map((i: any) => ({ type: "CLS", code: i.name, name: i.name })),
+              ...(enriched.recommendations.medicationGroups || []).map((m: any) => ({ type: "MEDICATION", code: m.name, name: m.name }))
+            ]
+          }
+        ],
+        rules: {
+          claimRisk: [],
+          dynamicRules: [
+            {
+              conditions: {
+                all: [
+                  { fact: "patient", path: "$.diagnoses", operator: "contains", value: "J00" },
+                  { fact: "patient", path: "$.investigations", operator: "contains", value: "Siêu âm tim" }
+                ]
+              },
+              event: {
+                type: "block",
+                params: { message: "Kiểm định tự động (Rule Engine): Không thể kê Siêu âm tim cho hội chứng viêm họng J00." }
+              }
+            }
+          ]
+        }
+      });
+
+      enriched.claimRisk.alerts = [
+        ...enriched.claimRisk.alerts,
+        ...dynamicEngineResult.alerts
+      ];
+
+      return NextResponse.json(enriched);
+    } catch(err) {
+      console.error("Route error:", err);
       return NextResponse.json(data);
     }
   } catch (error) {

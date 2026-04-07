@@ -1,66 +1,104 @@
 protocol_code,item_type,item_code,item_name,recommendation_level,condition_note,rationale,sort_order,is_required
-IM-OP-HTN-DM-2026,cls,CLS001,Cong thuc mau,standard,Ap dung benh nhan ngoai tru noi khoa co tang huyet ap/dai thao duong,Danh gia tong quat truoc dieu chinh dieu tri,1,TRUE
-IM-OP-HTN-DM-2026,cls,CLS002,Duong huyet,standard,Ap dung benh nhan co dai thao duong hoac nghi ngo,Tam soat va theo doi kiem soat duong huyet,2,TRUE
-IM-OP-HTN-DM-2026,cls,CLS003,HbA1c,standard,Ap dung benh nhan dai thao duong,Theo doi muc tieu kiem soat lau dai,3,TRUE
-IM-OP-HTN-DM-2026,cls,CLS004,Creatinine huyet thanh,standard,Ap dung benh nhan tang huyet ap va dai thao duong,Theo doi chuc nang than va dieu chinh thuoc,4,TRUE
-IM-OP-HTN-DM-2026,cls,CLS005,AST ALT,suggested,Can nhac khi theo doi thuoc va benh dong mac,Danh gia nen chuyen hoa va an toan dieu tri,5,FALSE
-IM-OP-HTN-DM-2026,cls,CLS006,Tong phan tich nuoc tieu,standard,Ap dung benh nhan dai thao duong,Tam soat ton thuong than va bien chung,6,TRUE
-IM-OP-HTN-DM-2026,cls,CLS007,Microalbumin nieu,suggested,Can nhac khi theo doi bien chung than,Danh gia ton thuong than som,7,FALSE
-IM-OP-HTN-DM-2026,cls,CLS008,Dien tam do 12 chuyen dao,suggested,Can nhac benh nhan co nguy co tim mach,Tam soat bien doi tim mach nen,8,FALSE
-IM-OP-HTN-DM-2026,cls,CLS009,Ho so lipid mau,standard,Ap dung benh nhan roi loan lipid hoac nguy co tim mach,Dinh huong can thiep statin va theo doi,9,TRUE
-IM-OP-HTN-DM-2026,medication,DR001,Perindopril,preferred,Uu tien khi benh nhan tang huyet ap kem dai thao duong,Uu tien bao ve than va kiem soat huyet ap,10,FALSE
-IM-OP-HTN-DM-2026,medication,DR002,Losartan,preferred,Lua chon thay the cung nhom khi can,Uu tien bao ve than va kiem soat huyet ap,11,FALSE
-IM-OP-HTN-DM-2026,medication,DR004,Metformin,preferred,Neu phu hop lam sang va khong co chong chi dinh,Lua chon nen trong dai thao duong typ 2,12,FALSE
-IM-OP-HTN-DM-2026,medication,DR006,Atorvastatin,suggested,Can nhac khi co roi loan lipid hoac nguy co tim mach,Giam nguy co tim mach lau dai,13,FALSE
-ENT-OP-2026,cls,CLS-NOI-SOI-TMH,Noi soi tai mui hong,standard,Ap dung tat ca benh nhan TMH ngoai tru,Danh gia truc tiep ton thuong niem mac TMH,1,TRUE
-ENT-OP-2026,cls,CLS-XQUANG-BLATT,X-quang Blondeau,suggested,Can nhac khi nghi viem xoang hoac polyp,Ho tro chan doan viem xoang khi chua co noi soi,2,FALSE
-ENT-OP-2026,cls,CLS-DO-THINH-LUC,Do thinh luc don am,standard,Ap dung benh nhan viem tai giua hoac giam thinh,Danh gia muc do giam thinh luc,3,TRUE
-ENT-OP-2026,cls,CLS-NHI-LUONG-DO,Nhi luong do,standard,Ap dung benh nhan viem tai giua,Do ap luc tai giua va do dan mang nhi,4,TRUE
-ENT-OP-2026,medication,DRUG-AMOX-CLAV,Nhom Penicillin pho rong (Amoxicillin/Clavulanate),preferred,Khang sinh dau tay cho nhiem khuan TMH,Pho rong phu hop vi khuan thuong gap TMH,5,FALSE
-ENT-OP-2026,medication,DRUG-CEFUROXIME,Nhom Cephalosporin the he 2 (Cefuroxime),suggested,Thay the khi di ung Penicillin nhe,Lua chon thay the co pho tuong duong,6,FALSE
-ENT-OP-2026,medication,DRUG-AZITHROMYCIN,Nhom Macrolide (Azithromycin),suggested,Thay the khi di ung beta-lactam,Tien loi phac do 3-5 ngay,7,FALSE
-ENT-OP-2026,medication,DRUG-BUDESONIDE-NS,Nhom Corticoid xit mui (Budesonide),standard,Ap dung viem xoang man va viem mui di ung,Giam phu ne niem mac mui xoang,8,TRUE
-ENT-OP-2026,medication,DRUG-LORATADINE,Nhom Khang Histamin H1 the he 2 (Loratadine),suggested,Phu hop khi co thanh phan di ung,Kiem soat trieu chung di ung kem theo,9,FALSE
-ENT-OP-2026,medication,DRUG-OXYMETAZOLINE,Nhom Thong mui tai cho (Oxymetazoline),suggested,Chi dung ngan han duoi 5 ngay,Thong mui nhanh ho tro dieu tri,10,FALSE
-RHM-OP-2026,cls,CLS-XQUANG-PERIAPICAL,X-quang quanh chop rang,standard,Ap dung khi can danh gia ton thuong rang don le,Danh gia chinh xac vung quanh chop,1,TRUE
-RHM-OP-2026,cls,CLS-XQUANG-PANORAMA,X-quang toan canh ham,suggested,Can nhac khi can tong quan nhieu rang hoac phuc hinh,Danh gia tong the bo rang va xuong ham,2,FALSE
-RHM-OP-2026,cls,CLS-TEST-TUY,Test thu tuy rang,standard,Ap dung khi nghi ton thuong tuy,Xac dinh rang con song tuy hay hoai tu,3,TRUE
-RHM-OP-2026,medication,DRUG-LIDOCAIN-TE,Nhom Gay te tai cho (Lidocaine + Epinephrine),preferred,Ap dung truoc moi thu thuat nha khoa,Gay te an toan va hieu qua,4,TRUE
-RHM-OP-2026,medication,DRUG-AMOX-RHM,Nhom Penicillin (Amoxicillin),preferred,Khang sinh khi co nhiem trung rang mieng,Phu hop vi khuan rang mieng,5,FALSE
-RHM-OP-2026,medication,DRUG-METRONIDAZOLE,Nhom Nitroimidazole (Metronidazole),suggested,Phoi hop khi nghi ky khi hoac ap-xe,Dieu tri bo sung nhiem trung ky khi,6,FALSE
-RHM-OP-2026,medication,DRUG-IBUPROFEN,Nhom NSAID (Ibuprofen),preferred,Giam dau khang viem sau thu thuat,Hieu qua tot cho dau rang va sau thu thuat,7,FALSE
-RHM-OP-2026,medication,DRUG-PARACETAMOL,Nhom Giam dau ha sot (Paracetamol),suggested,Thay the khi chong chi dinh NSAID,An toan hon cho nguoi co benh da day,8,FALSE
-RHM-OP-2026,medication,DRUG-CHLORHEXIDINE,Dung dich sat khuan (Chlorhexidine 0.12%),standard,Suc mieng truoc va sau thu thuat,Giam vi khuan vung mieng hieu qua,9,TRUE
-MSK-OP-2026,cls,CLS-XQUANG-KHOP,Chụp X-quang khớp,standard,Có đau khớp hoặc biến dạng,Đánh giá cấu trúc xương khớp,1,TRUE
-MSK-OP-2026,cls,CLS-SIEU-AM-KHOP,Siêu âm khớp,standard,Theo dõi tiến triển viêm tràn dịch,Đánh giá phần mềm và dịch khớp,2,TRUE
+IM-OP-HTN-DM-2026,cls,CLS-XN-CONG-THUC-MAU,Công thức máu,standard,Áp dụng bệnh nhân ngoại trú nội khoa có tăng huyết áp/đái tháo đường,Đánh giá tổng quát trước điều chỉnh điều trị,1,TRUE
+IM-OP-HTN-DM-2026,cls,CLS-XN-DUONG-HUYET,Đường huyết,standard,Áp dụng bệnh nhân có đái tháo đường hoặc nghi ngờ,Tầm soát và theo dõi kiểm soát đường huyết,2,TRUE
+IM-OP-HTN-DM-2026,cls,CLS-XN-HBA1C,Xét nghiệm HbA1c,standard,Áp dụng bệnh nhân đái tháo đường,Theo dõi mục tiêu kiểm soát lâu dài,3,TRUE
+IM-OP-HTN-DM-2026,cls,CLS-XN-CREATININE,Creatinine huyết thanh,standard,Áp dụng bệnh nhân tăng huyết áp và đái tháo đường,Theo dõi chức năng thận và điều chỉnh thuốc,4,TRUE
+IM-OP-HTN-DM-2026,cls,CLS-XN-AST-ALT,Xét nghiệm AST ALT (Men gan),suggested,Cân nhắc khi theo dõi thuốc và bệnh đồng mắc,Đánh giá nền chuyển hóa và an toàn điều trị,5,FALSE
+IM-OP-HTN-DM-2026,cls,CLS-XN-NUOC-TIEU,Tổng phân tích nước tiểu,standard,Áp dụng bệnh nhân đái tháo đường,Tầm soát tổn thương thận và biến chứng,6,TRUE
+IM-OP-HTN-DM-2026,cls,CLS-XN-MICROALBUMIN,Xét nghiệm Microalbumin niệu,suggested,Cân nhắc khi theo dõi biến chứng thận,Đánh giá tổn thương thận sớm,7,FALSE
+IM-OP-HTN-DM-2026,cls,CLS-TDCN-ECG-12,Điện tâm đồ 12 chuyển đạo,suggested,Cân nhắc bệnh nhân có nguy cơ tim mạch,Tầm soát biến đổi tim mạch nền,8,FALSE
+IM-OP-HTN-DM-2026,cls,CLS-XN-LIPID,Hồ sơ lipid máu,standard,Áp dụng bệnh nhân rối loạn lipid hoặc nguy cơ tim mạch,Định hướng can thiệp statin và theo dõi,9,TRUE
+IM-OP-HTN-DM-2026,medication,MED-ACEI-PERINDOPRIL,Perindopril,preferred,Ưu tiên khi bệnh nhân tăng huyết áp kèm đái tháo đường,Ưu tiên bảo vệ thận và kiểm soát huyết áp,10,FALSE
+IM-OP-HTN-DM-2026,medication,MED-ARB-LOSARTAN,Losartan,preferred,Lựa chọn thay thế cùng nhóm khi cần,Ưu tiên bảo vệ thận và kiểm soát huyết áp,11,FALSE
+IM-OP-HTN-DM-2026,medication,MED-DM-METFORMIN,Metformin,preferred,Nếu phù hợp lâm sàng và không có chống chỉ định,Lựa chọn nền trong đái tháo đường typ 2,12,FALSE
+IM-OP-HTN-DM-2026,medication,MED-STATIN-ATORVASTATIN,Atorvastatin,suggested,Cân nhắc khi có rối loạn lipid hoặc nguy cơ tim mạch,Giảm nguy cơ tim mạch lâu dài,13,FALSE
+ENT-OP-2026,cls,CLS-TDCN-NOI-SOI-TMH,Nội soi tai mũi họng,standard,Áp dụng tất cả bệnh nhân TMH ngoại trú,Đánh giá trực tiếp tổn thương niêm mạc TMH,1,TRUE
+ENT-OP-2026,cls,CLS-CDHA-XQUANG-BLATT,X-quang Blondeau,suggested,Cân nhắc khi nghi viêm xoang hoặc polyp,Hỗ trợ chẩn đoán viêm xoang khi chưa có nội soi,2,FALSE
+ENT-OP-2026,cls,CLS-TDCN-DO-THINH-LUC,Đo thính lực đơn âm,standard,Áp dụng bệnh nhân viêm tai giữa hoặc giảm thính,Đánh giá mức độ giảm thính lực,3,TRUE
+ENT-OP-2026,cls,CLS-TDCN-NHI-LUONG-DO,Nhi lượng đồ,standard,Áp dụng bệnh nhân viêm tai giữa,Đo áp lực tai giữa và độ đàn màng nhĩ,4,TRUE
+ENT-OP-2026,medication,MED-ABX-AMOX-CLAV,Amoxicillin/Clavulanate,preferred,Kháng sinh đầu tay cho nhiễm khuẩn TMH,Phổ rộng phù hợp vi khuẩn thường gặp TMH,5,FALSE
+ENT-OP-2026,medication,MED-ABX-CEFUROXIME,Cefuroxime,suggested,Thay thế khi dị ứng Penicillin nhẹ,Lựa chọn thay thế có phổ tương đương,6,FALSE
+ENT-OP-2026,medication,MED-ABX-AZITHROMYCIN,Azithromycin,suggested,Thay thế khi dị ứng beta-lactam,Tiện lợi phác đồ 3-5 ngày,7,FALSE
+ENT-OP-2026,medication,MED-CORT-BUDESONIDE-NS,Budesonide xịt mũi,standard,Áp dụng viêm xoang mạn và viêm mũi dị ứng,Giảm phù nề niêm mạc mũi xoang,8,TRUE
+ENT-OP-2026,medication,MED-ANTIH-LORATADINE,Loratadine,suggested,Phù hợp khi có thành phần dị ứng,Kiểm soát triệu chứng dị ứng kèm theo,9,FALSE
+ENT-OP-2026,medication,MED-COMACH-OXYMETAZOLINE,Oxymetazoline nhỏ mũi,suggested,Chỉ dùng ngắn hạn dưới 5 ngày,Thông mũi nhanh hỗ trợ điều trị,10,FALSE
+RHM-OP-2026,cls,CLS-CDHA-XQUANG-PERIAPICAL,X-quang quanh chóp răng,standard,Áp dụng khi cần đánh giá tổn thương răng đơn lẻ,Đánh giá chính xác vùng quanh chóp,1,TRUE
+RHM-OP-2026,cls,CLS-CDHA-XQUANG-PANORAMA,X-quang toàn cảnh hàm,suggested,Cân nhắc khi cần tổng quan nhiều răng hoặc phục hình,Đánh giá tổng thể bộ răng và xương hàm,2,FALSE
+RHM-OP-2026,cls,CLS-TDCN-TEST-TUY,Test thử tủy răng,standard,Áp dụng khi nghi tổn thương tủy,Xác định răng còn sống tủy hay hoại tử,3,TRUE
+RHM-OP-2026,medication,MED-ANES-LIDOCAINE,Lidocaine + Epinephrine,preferred,Áp dụng trước mỗi thủ thuật nha khoa,Gây tê an toàn và hiệu quả,4,TRUE
+RHM-OP-2026,medication,MED-ABX-AMOXICILLIN,Amoxicillin,preferred,Kháng sinh khi có nhiễm trùng răng miệng,Phù hợp vi khuẩn răng miệng,5,FALSE
+RHM-OP-2026,medication,MED-ABX-METRONIDAZOLE,Metronidazole,suggested,Phối hợp khi nghi kỵ khí hoặc áp-xe,Điều trị bổ sung nhiễm trùng kỵ khí,6,FALSE
+RHM-OP-2026,medication,MED-NSAID-IBUPROFEN,Ibuprofen,preferred,Giảm đau kháng viêm sau thủ thuật,Hiệu quả tốt cho đau răng và sau thủ thuật,7,FALSE
+RHM-OP-2026,medication,MED-ANAL-PARACETAMOL,Paracetamol,suggested,Thay thế khi chống chỉ định NSAID,An toàn hơn cho người có bệnh dạ dày,8,FALSE
+RHM-OP-2026,medication,MED-ANTI-CHLORHEXIDINE,Dung dịch sát khuẩn miệng,standard,Súc miệng trước và sau thủ thuật,Giảm vi khuẩn vùng miệng hiệu quả,9,TRUE
+MSK-OP-2026,cls,CLS-CDHA-XQUANG-KHOP,Chụp X-quang khớp,standard,Có đau khớp hoặc biến dạng,Đánh giá cấu trúc xương khớp,1,TRUE
+MSK-OP-2026,cls,CLS-CDHA-SIEU-AM-KHOP,Siêu âm khớp,standard,Theo dõi tiến triển viêm tràn dịch,Đánh giá phần mềm và dịch khớp,2,TRUE
 MSK-OP-2026,cls,CLS-XN-DICH-KHOP,Xét nghiệm dịch khớp,suggested,Nghi ngờ Gout hoặc viêm khớp nhiễm khuẩn,Tìm tinh thể urat hoặc vi khuẩn,3,FALSE
 MSK-OP-2026,cls,TT-HUT-DICH-KHOP,Chọc hút dịch khớp,suggested,Khi siêu âm có dịch nhiều gây đau,Giảm áp lực khớp,4,FALSE
 MSK-OP-2026,cls,TT-TIEM-NOI-KHOP,Tiêm nội khớp,suggested,Viêm khớp kéo dài đáp ứng kém thuốc uống,Chống viêm tại chỗ mạnh,5,FALSE
 MSK-OP-2026,cls,PHCN-VAT-LY-TL,Vật lý trị liệu,standard,Sau đợt viêm cấp nhằm duy trì tầm vận động,Phục hồi chức năng quan trọng ở bệnh mạn tính,6,TRUE
 MSK-OP-2026,cls,PHCN-GIAO-DUC,Giáo dục hướng dẫn vận động,standard,Luôn luôn cần thiết,Kiểm soát cân nặng và bảo vệ khớp,7,TRUE
-MSK-OP-2026,medication,DRUG-IBUPROFEN,Ibuprofen,preferred,Giảm đau kháng viêm,NSAID cơ bản cho đau cơ hàm mặt lẫn khớp,8,TRUE
-MSK-OP-2026,medication,DR-SYSADOA-GLUCO,Glucosamine sulfate,recommended,Thoái hóa khớp gối,Giúp chậm quá trình thoái hóa sụn,9,FALSE
-MSK-OP-2026,medication,DR-CORTICOID-TIEM,Methylprednisolone tiêm,suggested,Viêm khớp khu trú,Tác dụng kéo dài tại chỗ,10,FALSE
-MSK-OP-2026,medication,DR-GOUT-COLCHICINE,Colchicine,standard,Cơn gút cấp tính,Đặc trị cắt cơn,11,FALSE
-MSK-OP-2026,medication,DR-GOUT-ALLOPURINOL,Allopurinol,standard,Gút mạn tính ngoài đợt cấp,Hạ acid uric duy trì,12,FALSE
-CARDIO-OP-2026,cls,CLS-SIEU-AM-TIM,Siêu âm Doppler tim màu,standard,Cho bệnh TM mạn tính,Đánh giá cấu trúc và chức năng,1,TRUE
-CARDIO-OP-2026,cls,CLS-NT-PROBNP,Xét nghiệm NT-proBNP,suggested,Suy tim,Đánh giá theo dõi suy tim,2,FALSE
-CARDIO-OP-2026,cls,CLS-TROPONIN,Troponin T,suggested,Đau ngực,Loại trừ Nhồi máu cấp,3,FALSE
-CARDIO-OP-2026,cls,CLS-HOLTER-ECG,Holter ECG,suggested,Rối loạn nhịp,Tìm rối loạn nhịp thoảng qua,4,FALSE
-CARDIO-OP-2026,cls,CLS-HOLTER-HA,Holter Huyết áp,suggested,THA không ổn định,Theo dõi dao động HA,5,FALSE
-CARDIO-OP-2026,medication,DR-BETA-BISOPROLOL,Bisoprolol,preferred,Suy tim hoặc THA kèm nhịp nhanh,Cải thiện tỉ lệ tử vong suy tim,6,FALSE
-CARDIO-OP-2026,medication,DR-DIU-FUROSEMIDE,Furosemide,preferred,Suy tim ứ huyết,Giảm triệu chứng sung huyết,7,FALSE
-CARDIO-OP-2026,medication,DR-SGLT2I-DAPA,Dapagliflozin,preferred,Suy tim,Tứ trụ suy tim,8,FALSE
-CARDIO-OP-2026,medication,DR-DOAC-RIVAROXABAN,Rivaroxaban,preferred,Rung nhĩ,Ngăn ngừa thuyên tắc,9,FALSE
-CARDIO-OP-2026,medication,DR-ASA-ASPIRIN,Aspirin,preferred,Bệnh mạch vành,Dự phòng huyết khối vành,10,FALSE
-GAS-OP-2026,cls,CLS-SIEU-AM-BUNG,Siêu âm bụng,standard,Đau bụng,Sàng lọc sỏi mật,1,TRUE
-GAS-OP-2026,cls,CLS-NOI-SOI-DD,Nội soi dạ dày,standard,Trào ngược có dấu hiệu báo động,Làm rõ chẩn đoán,2,FALSE
-GAS-OP-2026,cls,CLS-NOI-SOI-DT,Nội soi đại trực tràng,standard,Bệnh đại trực tràng,Tầm soát ung thư,3,FALSE
-GAS-OP-2026,cls,CLS-TEST-HP,Test HP,suggested,Tiền sử loét,Diệt trừ HP,4,FALSE
-GAS-OP-2026,cls,CLS-XN-PHAN,XN Phân,suggested,Đại tràng,Phân biệt hội chứng,5,FALSE
-GAS-OP-2026,medication,DR-PPI-ESOMEPRAZOLE,Esomeprazole,preferred,Trào ngược,Liều khởi đầu,6,FALSE
-GAS-OP-2026,medication,DR-PROKINETIC-ITOPRIDE,Itopride,suggested,Khó tiêu,Trợ vận động,7,FALSE
-GAS-OP-2026,medication,DR-ANTISPAS-MEBEVERINE,Mebeverine,preferred,Hội chứng kích thích,Chống co thắt,8,FALSE
-GAS-OP-2026,medication,DR-HEMORRHOID-DIOSMIN,Diosmin,preferred,Trĩ,Trợ tĩnh mạch,9,FALSE
-GAS-OP-2026,medication,DR-TOPICAL-PROCTOLOG,Bôi trĩ,suggested,Trĩ,Giảm đau ngứa,10,FALSE
-GAS-OP-2026,medication,DR-BILIARY-UDCA,Urodeoxycholic acid,suggested,Sỏi mật,Hỗ trợ tan sỏi nhỏ,11,FALSE
+MSK-OP-2026,medication,MED-NSAID-IBUPROFEN,Ibuprofen,preferred,Giảm đau kháng viêm,NSAID cơ bản cho đau cơ hàm mặt lẫn khớp,8,TRUE
+MSK-OP-2026,medication,MED-OA-GLUCOSAMINE,Glucosamine sulfate,recommended,Thoái hóa khớp gối,Giúp chậm quá trình thoái hóa sụn,9,FALSE
+MSK-OP-2026,medication,MED-CORT-METHYLPRED-ACETATE,Methylprednisolone tiêm,suggested,Viêm khớp khu trú,Tác dụng kéo dài tại chỗ,10,FALSE
+MSK-OP-2026,medication,MED-GOUT-COLCHICINE,Colchicine,standard,Cơn gút cấp tính,Đặc trị cắt cơn,11,FALSE
+MSK-OP-2026,medication,MED-GOUT-ALLOPURINOL,Allopurinol,standard,Gút mạn tính ngoài đợt cấp,Hạ acid uric duy trì,12,FALSE
+CARDIO-OP-2026,cls,CLS-CDHA-SIEU-AM-TIM,Siêu âm Doppler tim màu,standard,Cho bệnh tim mạch mạn tính,Đánh giá cấu trúc và chức năng,1,TRUE
+CARDIO-OP-2026,cls,CLS-XN-NT-PROBNP,Xét nghiệm NT-proBNP,suggested,Suy tim,Đánh giá theo dõi suy tim,2,FALSE
+CARDIO-OP-2026,cls,CLS-XN-TROPONIN,Troponin T,suggested,Đau ngực,Loại trừ Nhồi máu cấp,3,FALSE
+CARDIO-OP-2026,cls,CLS-TDCN-HOLTER-ECG,Holter ECG,suggested,Rối loạn nhịp,Tìm rối loạn nhịp thoảng qua,4,FALSE
+CARDIO-OP-2026,cls,CLS-TDCN-HOLTER-HA,Holter Huyết áp,suggested,THA không ổn định,Theo dõi dao động HA,5,FALSE
+CARDIO-OP-2026,medication,MED-BETA-BISOPROLOL,Bisoprolol,preferred,Suy tim hoặc THA kèm nhịp nhanh,Cải thiện tỉ lệ tử vong suy tim,6,FALSE
+CARDIO-OP-2026,medication,MED-DIU-FUROSEMIDE,Furosemide,preferred,Suy tim ứ huyết,Giảm triệu chứng sung huyết,7,FALSE
+CARDIO-OP-2026,medication,MED-DM-DAPAGLIFLOZIN,Dapagliflozin,preferred,Suy tim,Tứ trụ suy tim,8,FALSE
+CARDIO-OP-2026,medication,MED-ANTICOA-RIVAROXABAN,Rivaroxaban,preferred,Rung nhĩ,Ngăn ngừa thuyên tắc,9,FALSE
+CARDIO-OP-2026,medication,MED-ANTIPLAT-ASPIRIN,Aspirin,preferred,Bệnh mạch vành,Dự phòng huyết khối vành,10,FALSE
+GAS-OP-2026,cls,CLS-CDHA-SIEU-AM-BUNG,Siêu âm bụng,standard,Đau bụng,Sàng lọc sỏi mật,1,TRUE
+GAS-OP-2026,cls,CLS-TDCN-NOI-SOI-DD,Nội soi dạ dày,standard,Trào ngược có dấu hiệu báo động,Làm rõ chẩn đoán,2,FALSE
+GAS-OP-2026,cls,CLS-TDCN-NOI-SOI-DT,Nội soi đại trực tràng,standard,Bệnh đại trực tràng,Tầm soát ung thư,3,FALSE
+GAS-OP-2026,cls,CLS-XN-TEST-HP,Test HP,suggested,Tiền sử loét,Diệt trừ HP,4,FALSE
+GAS-OP-2026,cls,CLS-XN-PHAN,Xét nghiệm phân,suggested,Bệnh đại trực tràng,Phân biệt hội chứng,5,FALSE
+GAS-OP-2026,medication,MED-PPI-ESOMEPRAZOLE,Esomeprazole,preferred,Trào ngược dạ dày thực quản,Liều khởi đầu,6,FALSE
+GAS-OP-2026,medication,MED-PROKI-ITOPRIDE,Itopride,suggested,Khó tiêu,Trợ vận động dạ dày,7,FALSE
+GAS-OP-2026,medication,MED-ANTISPAS-MEBEVERINE,Mebeverine,preferred,Hội chứng kích thích,Chống co thắt đại tràng,8,FALSE
+GAS-OP-2026,medication,MED-HEMORR-DIOSMIN,Diosmin,preferred,Bệnh trĩ,Trợ tĩnh mạch,9,FALSE
+GAS-OP-2026,medication,MED-HEMORR-PROCTOLOG,Bôi trĩ,suggested,Bệnh trĩ,Giảm đau ngứa hậu môn,10,FALSE
+GAS-OP-2026,medication,MED-BILI-UDCA,Ursodeoxycholic acid,suggested,Sỏi túi mật,Hỗ trợ tan sỏi nhỏ,11,FALSE
+NEURO-OP-2026,cls,CLS-TDCN-DIEN-CO,Đo điện cơ (EMG),standard,Đau tê ngoại biên,Khảo sát dẫn truyền thần kinh,1,TRUE
+NEURO-OP-2026,cls,CLS-XN-VIT-B12,Định lượng Vitamin B12,suggested,Tê bì do dị cảm nghi thiếu hụt,Xác định nguyên nhân dinh dưỡng,2,FALSE
+NEURO-OP-2026,cls,CLS-CDHA-SA-THAN-KINH,Siêu âm dây thần kinh ngoại biên,suggested,Nghi ngờ hội chứng chèn ép ống cổ tay,Chẩn đoán hình ảnh tổn thương,3,FALSE
+NEURO-OP-2026,medication,MED-NEURO-GABAPENTIN,Gabapentin,preferred,Giảm đau thần kinh,Lựa chọn ưu tiên cho dị cảm,4,TRUE
+NEURO-OP-2026,medication,MED-NEURO-PREGABALIN,Pregabalin,preferred,Giảm đau thần kinh,Thay thế khi không dung nạp Gabapentin,5,FALSE
+NEURO-OP-2026,medication,MED-NEURO-AMITRIPTYLINE,Amitriptyline,suggested,Khó ngủ vì đau thần kinh ban đêm,Phối hợp an thần,6,FALSE
+NEURO-OP-2026,medication,MED-NEURO-VITAMIN-B,Vitamin B complex,standard,Viêm đa dây thần kinh,Bổ trợ thần kinh,7,TRUE
+OBGYN-OP-2026,cls,CLS-CDHA-SA-THAI,Siêu âm thai,standard,Triệu chứng thai kỳ,Kiểm tra thai,1,TRUE
+OBGYN-OP-2026,cls,CLS-CDHA-SA-PHU-KHOA,Siêu âm tử cung phần phụ,standard,Phụ khoa định kỳ,Kiểm tra tử cung và phần phụ,2,TRUE
+OBGYN-OP-2026,cls,CLS-XN-SOI-TUOI,Soi tươi dịch âm đạo,suggested,Triệu chứng viêm âm đạo,Xác định tác nhân gây viêm,3,FALSE
+OBGYN-OP-2026,cls,CLS-XN-BETA-HCG,Xét nghiệm định lượng Beta-hCG,suggested,Nghi ngờ có thai,Khẳng định có thai,4,FALSE
+OBGYN-OP-2026,cls,TT-DAT-VONG,Thủ thuật đặt DCTC (Đặt vòng),suggested,Kế hoạch hóa gia đình,Đặt dụng cụ tránh thai,5,FALSE
+OBGYN-OP-2026,medication,MED-OBGYN-VITAMIN,Vitamin thai kỳ,standard,Thai kỳ,Bổ sung vitamin,6,TRUE
+OBGYN-OP-2026,medication,MED-OBGYN-METRO-NEO,Viên đặt Metronidazole Neomycin,preferred,Viêm âm đạo do vi khuẩn,Kháng sinh đặt phụ khoa,7,FALSE
+OBGYN-OP-2026,medication,MED-OBGYN-CONTRACEPTIVE,Thuốc tránh thai hàng ngày,suggested,Tránh thai hoặc điều hòa kinh nguyệt,Phụ khoa,8,FALSE
+EYE-OP-2026,cls,CLS-TDCN-THI-LUC,Đo thị lực khách quan,standard,Đánh giá mức nhìn chung,Thăm dò cơ bản,1,TRUE
+EYE-OP-2026,cls,CLS-TDCN-NHAN-AP,Đo nhãn áp,standard,Kiểm tra áp lực nội nhãn,Tầm soát / theo dõi Glôcôm,2,TRUE
+EYE-OP-2026,cls,CLS-TDCN-THI-TRUONG,Đo phần thị trường,suggested,Tổn thương thần kinh thị giác,Đánh giá hẹp thị trường,3,FALSE
+EYE-OP-2026,cls,TT-LAY-DI-VAT-MAT,Lấy dị vật kết mạc nông,suggested,Dị vật bay vào mắt,Sơ cứu / điều trị,4,FALSE
+EYE-OP-2026,cls,CLS-TDCN-BAN-DO-GM,Đo bản đồ giác mạc,suggested,Nghi loạn thị cao hoặc giác mạc chóp,Lập bản đồ độ cong giác mạc,5,FALSE
+EYE-OP-2026,cls,CLS-TDCN-KHAM-LAC,Khám lác đo độ lác,suggested,Lệch trục nhãn cầu,Đánh giá lác,6,FALSE
+EYE-OP-2026,cls,TT-TAP-NHUOC-THI,Tập nhược thị bằng máy,suggested,Luyện tập kích thích thị giác,Phục hồi nhược thị trẻ em,7,FALSE
+EYE-OP-2026,medication,MED-EYE-TOBRAMYCIN,Tobramycin nhỏ mắt,standard,Nhiễm khuẩn mắt,Điều trị viêm kết giác mạc,8,TRUE
+EYE-OP-2026,medication,MED-EYE-ARTIFICIAL-TEAR,Nước mắt nhân tạo,preferred,Dưỡng ẩm mắt,Bôi trơn bề mặt nhãn cầu,9,FALSE
+EYE-OP-2026,medication,MED-EYE-TIMOLOL,Timolol 0.5%,standard,Hạ nhãn áp,Mũi đầu điều trị Glôcôm,10,TRUE
+EYE-OP-2026,medication,MED-EYE-DICLOFENAC,Diclofenac nhỏ mắt,suggested,Kháng viêm không steroid,Giảm đau sau lấy dị vật,11,FALSE
+EYE-OP-2026,medication,MED-EYE-TROPICAMIDE,Tropicamide nhỏ mắt,suggested,Liệt điều tiết,Đo khúc xạ chính xác hoặc soi đáy mắt,12,FALSE
+PED-OP-2026,cls,CLS-TDCN-DO-HO-HAP,Đo chức năng hô hấp Nhi,suggested,Hen phế quản trẻ em,Đánh giá mức độ tắc nghẽn,1,FALSE
+PED-OP-2026,cls,CLS-TDCN-EEG,Đo điện não đồ (EEG),standard,Động kinh trẻ em,Chẩn đoán co giật,2,TRUE
+PED-OP-2026,cls,CLS-TDCN-OAE,Đo âm ốc tai (OAE),standard,Sàng lọc thính giác,Phát hiện sớm giảm thính lực,3,TRUE
+PED-OP-2026,cls,CLS-TDCN-ABR,Đo đáp ứng thính giác thân não,suggested,Nghi ngờ điếc,Chẩn đoán xác định,4,FALSE
+PED-OP-2026,cls,CLS-TDCN-DANH-GIA-PT,Đánh giá phát triển tâm thần vận động,standard,Tự kỷ/Chậm phát triển,Theo dõi cột mốc phát triển,5,TRUE
+PED-OP-2026,medication,MED-PED-SALBUTAMOL,Salbutamol khí dung,standard,Cơn hen cấp,Cắt cơn khò khè,6,TRUE
+PED-OP-2026,medication,MED-PED-BUDESONIDE,Budesonide khí dung,preferred,Dự phòng hen,Dự phòng hoặc đợt cấp,7,FALSE
+PED-OP-2026,medication,MED-PED-AMOXICILLIN,Amoxicillin hỗn dịch,suggested,Nghi bội nhiễm,Kháng sinh khi cần,8,FALSE
+PED-OP-2026,medication,MED-PED-H-VALPROATE,Valproate (NHÓM H),standard,Động kinh - Cần duyệt đặc biệt,Chống co giật,9,TRUE
+PED-OP-2026,medication,MED-PED-H-METHYLPHENIDATE,Methylphenidate (NHÓM H),suggested,ADHD - Cần duyệt HĐ Thuốc,Kích thích TK trung ương,10,FALSE
+PED-OP-2026,medication,MED-PED-H-RISPERIDONE,Risperidone liều thấp (NHÓM H),suggested,Tự kỷ - Cần duyệt đặc biệt,Kiểm soát hành vi,11,FALSE

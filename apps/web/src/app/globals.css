@@ -94,6 +94,7 @@ body {
   margin: 12px 0;
   background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -776,29 +777,83 @@ body {
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .doctorWorkspace {
-    padding: 16px;
+    padding: 12px;
   }
 
   .doctorGrid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .doctorHero {
-    padding: 24px;
+    padding: 20px;
+    border-radius: 20px;
   }
 
   .doctorHero h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+  }
+
+  .doctorPanel {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .doctorPanelHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Premium Touch Targets for Mobile */
+  .actionBtn {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    border-radius: 12px;
+  }
+
+  /* Bottom-sheet style modal for Feedback on mobile */
+  .feedbackPanel {
+    width: 100%;
+    max-height: 90vh;
+    border-radius: 28px 28px 0 0;
+    margin-top: auto;
+    padding: 24px 20px;
+    padding-bottom: env(safe-area-inset-bottom, 24px);
+    animation: slideUpBottom 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes slideUpBottom {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /* Sticky Search Bar on Mobile */
+  .searchField input {
+    font-size: 1rem;
+    padding: 16px 20px;
+    padding-right: 48px;
+  }
+
+  .selectedDiagnosisRow {
+    gap: 8px;
   }
 
   .toastContainer {
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
   }
 
   .toastItem {
     max-width: 100%;
+    padding: 12px 16px;
+    font-size: 0.9rem;
   }
 }
 
@@ -834,6 +889,7 @@ body {
   .doctorHero h1 {
     background: linear-gradient(135deg, #f1f5f9 0%, #94a3b8 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 

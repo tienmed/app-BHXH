@@ -1,35 +1,53 @@
 drug_code,drug_name,drug_group,route,strength,is_bhyt_covered,is_active,source_ref
-DR001,Perindopril,UCMC,Uong,5mg,TRUE,TRUE,FORMULARY-PILOT-2026
-DR002,Losartan,UCTT,Uong,50mg,TRUE,TRUE,FORMULARY-PILOT-2026
-DR003,Amlodipine,Chen kenh calci,Uong,5mg,TRUE,TRUE,FORMULARY-PILOT-2026
-DR004,Metformin,Ha duong huyet,Uong,500mg,TRUE,TRUE,FORMULARY-PILOT-2026
-DR005,Gliclazide MR,Ha duong huyet,Uong,30mg,TRUE,TRUE,FORMULARY-PILOT-2026
-DR006,Atorvastatin,Statin,Uong,10mg,TRUE,TRUE,FORMULARY-PILOT-2026
-DR007,Rosuvastatin,Statin,Uong,10mg,TRUE,TRUE,FORMULARY-PILOT-2026
-DRUG-AMOX-CLAV,Nhom Penicillin pho rong (Amoxicillin/Clavulanate),Khang sinh,Uong,625mg,TRUE,TRUE,FORMULARY-ENT-2026
-DRUG-CEFUROXIME,Nhom Cephalosporin the he 2 (Cefuroxime),Khang sinh,Uong,500mg,TRUE,TRUE,FORMULARY-ENT-2026
-DRUG-AZITHROMYCIN,Nhom Macrolide (Azithromycin),Khang sinh,Uong,500mg,TRUE,TRUE,FORMULARY-ENT-2026
-DRUG-BUDESONIDE-NS,Nhom Corticoid xit mui (Budesonide),Corticoid tai cho,Xit mui,64mcg/nhap,TRUE,TRUE,FORMULARY-ENT-2026
-DRUG-LORATADINE,Nhom Khang Histamin H1 the he 2 (Loratadine),Khang di ung,Uong,10mg,TRUE,TRUE,FORMULARY-ENT-2026
-DRUG-OXYMETAZOLINE,Nhom Thong mui tai cho (Oxymetazoline),Co mach mui,Nho mui,0.05%,TRUE,TRUE,FORMULARY-ENT-2026
-DRUG-AMOX-RHM,Nhom Penicillin (Amoxicillin),Khang sinh,Uong,500mg,TRUE,TRUE,FORMULARY-RHM-2026
-DRUG-METRONIDAZOLE,Nhom Nitroimidazole (Metronidazole),Khang sinh ky khi,Uong,250mg,TRUE,TRUE,FORMULARY-RHM-2026
-DRUG-IBUPROFEN,Nhom NSAID (Ibuprofen),Giam dau khang viem,Uong,400mg,TRUE,TRUE,FORMULARY-RHM-2026
-DRUG-PARACETAMOL,Nhom Giam dau ha sot (Paracetamol),Giam dau,Uong,500mg,TRUE,TRUE,FORMULARY-RHM-2026
-DRUG-LIDOCAIN-TE,Nhom Gay te tai cho (Lidocaine + Epinephrine),Gay te,Tiem tai cho,2%/1:100000,TRUE,TRUE,FORMULARY-RHM-2026
-DRUG-CHLORHEXIDINE,Dung dich sat khuan (Chlorhexidine 0.12%),Sat khuan mieng,Suc mieng,0.12%,TRUE,TRUE,FORMULARY-RHM-2026
-DR-SYSADOA-GLUCO,Glucosamine sulfate 1500mg,Thuốc chống thoái hóa chậm,Uống,1500mg,TRUE,TRUE,FORMULARY-MSK-2026
-DR-CORTICOID-TIEM,Methylprednisolone acetate,Corticoid tác dụng kéo dài,Tiêm khớp,40mg/ml,TRUE,TRUE,FORMULARY-MSK-2026
-DR-GOUT-COLCHICINE,Colchicine 1mg,Điều trị gút cấp,Uống,1mg,TRUE,TRUE,FORMULARY-MSK-2026
-DR-GOUT-ALLOPURINOL,Allopurinol 300mg,Hạ Axit Uric máu,Uống,300mg,TRUE,TRUE,FORMULARY-MSK-2026
-DR-BETA-BISOPROLOL,Bisoprolol 5mg,Chẹn Beta giao cảm,Uống,5mg,TRUE,TRUE,FORMULARY-CARDIO-2026
-DR-DIU-FUROSEMIDE,Furosemide 40mg,Lợi tiểu quai,Uống,40mg,TRUE,TRUE,FORMULARY-CARDIO-2026
-DR-SGLT2I-DAPA,Dapagliflozin 10mg,Ức chế SGLT2,Uống,10mg,TRUE,TRUE,FORMULARY-CARDIO-2026
-DR-DOAC-RIVAROXABAN,Rivaroxaban 15mg,Kháng đông đường uống (DOAC),Uống,15mg,TRUE,TRUE,FORMULARY-CARDIO-2026
-DR-ASA-ASPIRIN,Aspirin 81mg,Chống kết tập tiểu cầu,Uống,81mg,TRUE,TRUE,FORMULARY-CARDIO-2026
-DR-PPI-ESOMEPRAZOLE,Esomeprazole 40mg,Thuốc ức chế bơm proton,Uống,40mg,TRUE,TRUE,FORMULARY-GAS-2026
-DR-PROKINETIC-ITOPRIDE,Itopride 50mg,Thuốc trợ vận động dạ dày,Uống,50mg,TRUE,TRUE,FORMULARY-GAS-2026
-DR-ANTISPAS-MEBEVERINE,Mebeverine 200mg,Chống co thắt đại tràng,Uống,200mg,TRUE,TRUE,FORMULARY-GAS-2026
-DR-HEMORRHOID-DIOSMIN,Diosmin/Hesperidin 500mg,Trợ tĩnh mạch,Uống,500mg,TRUE,TRUE,FORMULARY-GAS-2026
-DR-TOPICAL-PROCTOLOG,Thuốc bôi trĩ,Thuốc bôi hậu môn,Bôi,típ,TRUE,TRUE,FORMULARY-GAS-2026
-DR-BILIARY-UDCA,Ursodeoxycholic acid 250mg,Thuốc lợi mật,Uống,250mg,TRUE,TRUE,FORMULARY-GAS-2026
+MED-ACEI-PERINDOPRIL,Perindopril,Ức chế men chuyển (ACEi),Uống,5mg,TRUE,TRUE,FORMULARY-PILOT-2026
+MED-ARB-LOSARTAN,Losartan,Ức chế thụ thể (ARB),Uống,50mg,TRUE,TRUE,FORMULARY-PILOT-2026
+MED-CCB-AMLODIPINE,Amlodipine,Chẹn kênh calci (CCB),Uống,5mg,TRUE,TRUE,FORMULARY-PILOT-2026
+MED-DM-METFORMIN,Metformin,Thuốc hạ đường huyết,Uống,500mg,TRUE,TRUE,FORMULARY-PILOT-2026
+MED-DM-GLICLAZIDE,Gliclazide MR,Thuốc hạ đường huyết,Uống,30mg,TRUE,TRUE,FORMULARY-PILOT-2026
+MED-STATIN-ATORVASTATIN,Atorvastatin,Thuốc Statin (Hạ mỡ máu),Uống,10mg,TRUE,TRUE,FORMULARY-PILOT-2026
+MED-STATIN-ROSUVASTATIN,Rosuvastatin,Thuốc Statin (Hạ mỡ máu),Uống,10mg,TRUE,TRUE,FORMULARY-PILOT-2026
+MED-ABX-AMOX-CLAV,Amoxicillin/Clavulanate,Thuốc kháng sinh,Uống,625mg,TRUE,TRUE,FORMULARY-ENT-2026
+MED-ABX-CEFUROXIME,Cefuroxime,Thuốc kháng sinh,Uống,500mg,TRUE,TRUE,FORMULARY-ENT-2026
+MED-ABX-AZITHROMYCIN,Azithromycin,Thuốc kháng sinh,Uống,500mg,TRUE,TRUE,FORMULARY-ENT-2026
+MED-CORT-BUDESONIDE-NS,Budesonide xịt mũi,Corticoid tại chỗ,Xịt mũi,64mcg/nháy,TRUE,TRUE,FORMULARY-ENT-2026
+MED-ANTIH-LORATADINE,Loratadine,Thuốc kháng Histamin H1,Uống,10mg,TRUE,TRUE,FORMULARY-ENT-2026
+MED-COMACH-OXYMETAZOLINE,Oxymetazoline nhỏ mũi,Thuốc co mạch mũi,Nhỏ mũi,0.05%,TRUE,TRUE,FORMULARY-ENT-2026
+MED-ABX-AMOXICILLIN,Amoxicillin,Thuốc kháng sinh,Uống,500mg,TRUE,TRUE,FORMULARY-RHM-2026
+MED-ABX-METRONIDAZOLE,Metronidazole,Thuốc kháng sinh kỵ khí,Uống,250mg,TRUE,TRUE,FORMULARY-RHM-2026
+MED-NSAID-IBUPROFEN,Ibuprofen,Thuốc giảm đau kháng viêm (NSAID),Uống,400mg,TRUE,TRUE,FORMULARY-RHM-2026
+MED-ANAL-PARACETAMOL,Paracetamol,Thuốc giảm đau hạ sốt,Uống,500mg,TRUE,TRUE,FORMULARY-RHM-2026
+MED-ANES-LIDOCAINE,Lidocaine + Epinephrine,Thuốc gây tê tại chỗ,Tiêm tại chỗ,2%/1:100000,TRUE,TRUE,FORMULARY-RHM-2026
+MED-ANTI-CHLORHEXIDINE,Chlorhexidine 0.12%,Dung dịch sát khuẩn miệng,Súc miệng,0.12%,TRUE,TRUE,FORMULARY-RHM-2026
+MED-OA-GLUCOSAMINE,Glucosamine sulfate,Thuốc chống thoái hóa khớp,Uống,1500mg,TRUE,TRUE,FORMULARY-MSK-2026
+MED-CORT-METHYLPRED-ACETATE,Methylprednisolone acetate,Corticoid tác dụng kéo dài,Tiêm khớp,40mg/ml,TRUE,TRUE,FORMULARY-MSK-2026
+MED-GOUT-COLCHICINE,Colchicine,Thuốc điều trị gút cấp,Uống,1mg,TRUE,TRUE,FORMULARY-MSK-2026
+MED-GOUT-ALLOPURINOL,Allopurinol,Thuốc hạ Axit Uric máu,Uống,300mg,TRUE,TRUE,FORMULARY-MSK-2026
+MED-BETA-BISOPROLOL,Bisoprolol,Thuốc chẹn Beta giao cảm,Uống,5mg,TRUE,TRUE,FORMULARY-CARDIO-2026
+MED-DIU-FUROSEMIDE,Furosemide,Thuốc lợi tiểu quai,Uống,40mg,TRUE,TRUE,FORMULARY-CARDIO-2026
+MED-DM-DAPAGLIFLOZIN,Dapagliflozin,Thuốc ức chế SGLT2,Uống,10mg,TRUE,TRUE,FORMULARY-CARDIO-2026
+MED-ANTICOA-RIVAROXABAN,Rivaroxaban,Thuốc kháng đông (DOAC),Uống,15mg,TRUE,TRUE,FORMULARY-CARDIO-2026
+MED-ANTIPLAT-ASPIRIN,Aspirin,Thuốc chống kết tập tiểu cầu,Uống,81mg,TRUE,TRUE,FORMULARY-CARDIO-2026
+MED-PPI-ESOMEPRAZOLE,Esomeprazole,Thuốc ức chế bơm proton (PPI),Uống,40mg,TRUE,TRUE,FORMULARY-GAS-2026
+MED-PROKI-ITOPRIDE,Itopride,Thuốc trợ vận động dạ dày,Uống,50mg,TRUE,TRUE,FORMULARY-GAS-2026
+MED-ANTISPAS-MEBEVERINE,Mebeverine,Thuốc chống co thắt đại tràng,Uống,200mg,TRUE,TRUE,FORMULARY-GAS-2026
+MED-HEMORR-DIOSMIN,Diosmin/Hesperidin,Thuốc trợ tĩnh mạch,Uống,500mg,TRUE,TRUE,FORMULARY-GAS-2026
+MED-HEMORR-PROCTOLOG,Thuốc bôi trĩ (Proctolog),Thuốc bôi trĩ,Bôi hậu môn,típ,TRUE,TRUE,FORMULARY-GAS-2026
+MED-BILI-UDCA,Ursodeoxycholic acid,Thuốc lợi mật (UDCA),Uống,250mg,TRUE,TRUE,FORMULARY-GAS-2026
+MED-NEURO-GABAPENTIN,Gabapentin,Thuốc giảm đau thần kinh,Uống,300mg,TRUE,TRUE,FORMULARY-NEURO-2026
+MED-NEURO-PREGABALIN,Pregabalin,Thuốc giảm đau thần kinh,Uống,75mg,TRUE,TRUE,FORMULARY-NEURO-2026
+MED-NEURO-AMITRIPTYLINE,Amitriptyline,Thuốc chống trầm cảm 3 vòng,Uống,25mg,TRUE,TRUE,FORMULARY-NEURO-2026
+MED-NEURO-VITAMIN-B,Vitamin B complex,Vitamin hướng thần kinh,Uống,viên,TRUE,TRUE,FORMULARY-NEURO-2026
+MED-OBGYN-VITAMIN,"Vitamin thai kỳ (Sắt, Acid Folic, Canxi)",Vitamin và Khoáng chất,Uống,viên,TRUE,TRUE,FORMULARY-OBGYN-2026
+MED-OBGYN-METRO-NEO,Viên đặt Metronidazole Neomycin,Kháng sinh phụ khoa,Đặt âm đạo,viên,TRUE,TRUE,FORMULARY-OBGYN-2026
+MED-OBGYN-CONTRACEPTIVE,Levonorgestrel/Ethinylestradiol (Thuốc TT hàng ngày),Thuốc tránh thai,Uống,viên,FALSE,TRUE,FORMULARY-OBGYN-2026
+MED-EYE-TOBRAMYCIN,Tobramycin nhỏ mắt,Kháng sinh nhỏ mắt,Tra mắt,lọ,TRUE,TRUE,FORMULARY-EYE-2026
+MED-EYE-ARTIFICIAL-TEAR,Sodium Hyaluronate 0.1%,Nước mắt nhân tạo,Tra mắt,lọ,TRUE,TRUE,FORMULARY-EYE-2026
+MED-EYE-TIMOLOL,Timolol 0.5%,Thuốc giảm nhãn áp,Tra mắt,lọ,TRUE,TRUE,FORMULARY-EYE-2026
+MED-EYE-DICLOFENAC,Diclofenac nhỏ mắt,Thuốc kháng viêm nhỏ mắt (NSAID),Tra mắt,lọ,TRUE,TRUE,FORMULARY-EYE-2026
+MED-EYE-TROPICAMIDE,Tropicamide nhỏ mắt,Thuốc giãn đồng tử,Tra mắt,lọ,TRUE,TRUE,FORMULARY-EYE-2026
+MED-PED-SALBUTAMOL,Salbutamol khí dung,Thuốc giãn phế quản,Khí dung,ống,TRUE,TRUE,FORMULARY-PED-2026
+MED-PED-BUDESONIDE,Budesonide khí dung,Corticoid hít dự phòng,Khí dung,ống,TRUE,TRUE,FORMULARY-PED-2026
+MED-PED-AMOXICILLIN,Amoxicillin hỗn dịch,Thuốc kháng sinh Nhi khoa,Uống,lọ,TRUE,TRUE,FORMULARY-PED-2026
+MED-PED-H-VALPROATE,Valproate (NHÓM H),Thuốc chống co giật (Nhóm H),Uống,viên,TRUE,TRUE,FORMULARY-PED-H-2026
+MED-PED-H-METHYLPHENIDATE,Methylphenidate (NHÓM H),Kích thích thần kinh trung ương (Nhóm H),Uống,viên,TRUE,TRUE,FORMULARY-PED-H-2026
+MED-PED-H-RISPERIDONE,Risperidone liều thấp (NHÓM H),Thuốc an thần kinh (Nhóm H),Uống,viên,TRUE,TRUE,FORMULARY-PED-H-2026
