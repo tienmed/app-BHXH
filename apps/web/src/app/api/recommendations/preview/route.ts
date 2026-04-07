@@ -4,6 +4,10 @@ const remoteUrl = process.env.GOOGLE_APPS_SCRIPT_URL || process.env.NEXT_PUBLIC_
 
 type WorkbookTabRow = Record<string, unknown>;
 
+// In-memory cache for workbook preview (TTL: 5 minutes)
+const CACHE_TTL_MS = 5 * 60 * 1000;
+let workbookCache: { data: unknown; timestamp: number } | null = null;
+
 function parseJsonSafe(value: unknown) {
   if (!value) {
     return {};
@@ -17,6 +21,11 @@ function parseJsonSafe(value: unknown) {
 }
 
 async function loadWorkbookPreview() {
+  // Return cached data if valid
+  if (workbookCache && Date.now() - workbookCache.timestamp < CACHE_TTL_MS) {
+    return workbookCache.data;
+  }
+
   const url = new URL(remoteUrl!);
   url.searchParams.set("action", "workbook-preview");
   url.searchParams.set(
@@ -33,8 +42,11 @@ async function loadWorkbookPreview() {
     throw new Error(`Workbook preview returned HTTP ${response.status}`);
   }
 
-  return response.json();
+  const data = await response.json();
+  workbookCache = { data, timestamp: Date.now() };
+  return data;
 }
+
 
 function getTabRows(payload: any, tabName: string): WorkbookTabRow[] {
   const tab = Array.isArray(payload?.tabs) ? payload.tabs.find((item: { name?: string }) => item?.name === tabName) : null;
