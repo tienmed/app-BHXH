@@ -1,2 +1,7 @@
 rule_code,scope_type,scope_code,icd_ratio_min,icd_ratio_max,cls_ratio_min,cls_ratio_max,drug_ratio_min,drug_ratio_max,warning_message,is_active
 COST001,protocol,IM-OP-HTN-DM-2026,20,35,30,50,20,40,Can theo doi ty trong CLS va thuoc de tranh lech qua muc minh hoa cua pilot,TRUE
+COST-ENT-001,protocol,ENT-OP-2026,25,40,25,45,20,40,TMH ngoai tru: ty trong CLS (noi soi + X-quang) va thuoc can can doi,TRUE
+COST-RHM-001,protocol,RHM-OP-2026,20,35,20,40,25,50,RHM ngoai tru: ty trong thuoc (gay te + khang sinh + giam dau) thuong cao hon CLS,TRUE
+COST-MSK-001,protocol,MSK-OP-2026,20,35,30,50,20,40,Khớp mạn tính: chi phí CLS (siêu âm xquang) và XN khá cao,TRUE
+COST-CARDIO-001,protocol,CARDIO-OP-2026,15,30,35,60,25,50,Tim mạch: chi phí Thuốc và CLS (Siêu âm tim/Holter) khá đắt,TRUE
+COST-GAS-001,protocol,GAS-OP-2026,10,30,40,60,20,40,Hạn mức thủ thuật nội soi chiếm tỷ trọng lớn,TRUE

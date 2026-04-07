@@ -169,7 +169,7 @@ function getWorkbookPreviewPayload(e) {
       return template.tabs.indexOf(tabName) >= 0;
     })
     .map(function (tabName) {
-      var rows = readSheetObjects_(tabName).slice(0, 50);
+      var rows = readSheetObjects_(tabName).slice(0, 500);
       var headers = rows.length > 0
         ? Object.keys(rows[0])
         : getRequiredColumnsForTab_(tabName);
@@ -400,8 +400,8 @@ function createIcdRuleBundle_(body) {
     summary: {
       icdCode: icdCode,
       icdName: icdName,
-      clsCount: clsCodes.length,
-      drugCount: drugCodes.length,
+      clsCount: clsSelections.length,
+      drugCount: drugSelections.length,
       severity: severity
     }
   };

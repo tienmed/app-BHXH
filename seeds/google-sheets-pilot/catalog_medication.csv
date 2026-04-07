@@ -6,3 +6,30 @@ DR004,Metformin,Ha duong huyet,Uong,500mg,TRUE,TRUE,FORMULARY-PILOT-2026
 DR005,Gliclazide MR,Ha duong huyet,Uong,30mg,TRUE,TRUE,FORMULARY-PILOT-2026
 DR006,Atorvastatin,Statin,Uong,10mg,TRUE,TRUE,FORMULARY-PILOT-2026
 DR007,Rosuvastatin,Statin,Uong,10mg,TRUE,TRUE,FORMULARY-PILOT-2026
+DRUG-AMOX-CLAV,Nhom Penicillin pho rong (Amoxicillin/Clavulanate),Khang sinh,Uong,625mg,TRUE,TRUE,FORMULARY-ENT-2026
+DRUG-CEFUROXIME,Nhom Cephalosporin the he 2 (Cefuroxime),Khang sinh,Uong,500mg,TRUE,TRUE,FORMULARY-ENT-2026
+DRUG-AZITHROMYCIN,Nhom Macrolide (Azithromycin),Khang sinh,Uong,500mg,TRUE,TRUE,FORMULARY-ENT-2026
+DRUG-BUDESONIDE-NS,Nhom Corticoid xit mui (Budesonide),Corticoid tai cho,Xit mui,64mcg/nhap,TRUE,TRUE,FORMULARY-ENT-2026
+DRUG-LORATADINE,Nhom Khang Histamin H1 the he 2 (Loratadine),Khang di ung,Uong,10mg,TRUE,TRUE,FORMULARY-ENT-2026
+DRUG-OXYMETAZOLINE,Nhom Thong mui tai cho (Oxymetazoline),Co mach mui,Nho mui,0.05%,TRUE,TRUE,FORMULARY-ENT-2026
+DRUG-AMOX-RHM,Nhom Penicillin (Amoxicillin),Khang sinh,Uong,500mg,TRUE,TRUE,FORMULARY-RHM-2026
+DRUG-METRONIDAZOLE,Nhom Nitroimidazole (Metronidazole),Khang sinh ky khi,Uong,250mg,TRUE,TRUE,FORMULARY-RHM-2026
+DRUG-IBUPROFEN,Nhom NSAID (Ibuprofen),Giam dau khang viem,Uong,400mg,TRUE,TRUE,FORMULARY-RHM-2026
+DRUG-PARACETAMOL,Nhom Giam dau ha sot (Paracetamol),Giam dau,Uong,500mg,TRUE,TRUE,FORMULARY-RHM-2026
+DRUG-LIDOCAIN-TE,Nhom Gay te tai cho (Lidocaine + Epinephrine),Gay te,Tiem tai cho,2%/1:100000,TRUE,TRUE,FORMULARY-RHM-2026
+DRUG-CHLORHEXIDINE,Dung dich sat khuan (Chlorhexidine 0.12%),Sat khuan mieng,Suc mieng,0.12%,TRUE,TRUE,FORMULARY-RHM-2026
+DR-SYSADOA-GLUCO,Glucosamine sulfate 1500mg,Thuốc chống thoái hóa chậm,Uống,1500mg,TRUE,TRUE,FORMULARY-MSK-2026
+DR-CORTICOID-TIEM,Methylprednisolone acetate,Corticoid tác dụng kéo dài,Tiêm khớp,40mg/ml,TRUE,TRUE,FORMULARY-MSK-2026
+DR-GOUT-COLCHICINE,Colchicine 1mg,Điều trị gút cấp,Uống,1mg,TRUE,TRUE,FORMULARY-MSK-2026
+DR-GOUT-ALLOPURINOL,Allopurinol 300mg,Hạ Axit Uric máu,Uống,300mg,TRUE,TRUE,FORMULARY-MSK-2026
+DR-BETA-BISOPROLOL,Bisoprolol 5mg,Chẹn Beta giao cảm,Uống,5mg,TRUE,TRUE,FORMULARY-CARDIO-2026
+DR-DIU-FUROSEMIDE,Furosemide 40mg,Lợi tiểu quai,Uống,40mg,TRUE,TRUE,FORMULARY-CARDIO-2026
+DR-SGLT2I-DAPA,Dapagliflozin 10mg,Ức chế SGLT2,Uống,10mg,TRUE,TRUE,FORMULARY-CARDIO-2026
+DR-DOAC-RIVAROXABAN,Rivaroxaban 15mg,Kháng đông đường uống (DOAC),Uống,15mg,TRUE,TRUE,FORMULARY-CARDIO-2026
+DR-ASA-ASPIRIN,Aspirin 81mg,Chống kết tập tiểu cầu,Uống,81mg,TRUE,TRUE,FORMULARY-CARDIO-2026
+DR-PPI-ESOMEPRAZOLE,Esomeprazole 40mg,Thuốc ức chế bơm proton,Uống,40mg,TRUE,TRUE,FORMULARY-GAS-2026
+DR-PROKINETIC-ITOPRIDE,Itopride 50mg,Thuốc trợ vận động dạ dày,Uống,50mg,TRUE,TRUE,FORMULARY-GAS-2026
+DR-ANTISPAS-MEBEVERINE,Mebeverine 200mg,Chống co thắt đại tràng,Uống,200mg,TRUE,TRUE,FORMULARY-GAS-2026
+DR-HEMORRHOID-DIOSMIN,Diosmin/Hesperidin 500mg,Trợ tĩnh mạch,Uống,500mg,TRUE,TRUE,FORMULARY-GAS-2026
+DR-TOPICAL-PROCTOLOG,Thuốc bôi trĩ,Thuốc bôi hậu môn,Bôi,típ,TRUE,TRUE,FORMULARY-GAS-2026
+DR-BILIARY-UDCA,Ursodeoxycholic acid 250mg,Thuốc lợi mật,Uống,250mg,TRUE,TRUE,FORMULARY-GAS-2026

@@ -1,9 +1,68 @@
 icd_code,cls_code,mapping_type,priority,source_version,note
-I10,CLS001,recommended,1,MAP-2026.01,Bo xet nghiem nen cho tang huyet ap
-I10,CLS004,recommended,2,MAP-2026.01,Theo doi chuc nang than khi dieu tri
-I10,CLS008,suggested,3,MAP-2026.01,Can nhac khi co nguy co tim mach
 E11.9,CLS002,recommended,1,MAP-2026.01,Theo doi duong huyet
 E11.9,CLS003,recommended,2,MAP-2026.01,Theo doi HbA1c
 E11.9,CLS006,recommended,3,MAP-2026.01,Theo doi bien chung than
 E11.9,CLS007,suggested,4,MAP-2026.01,Can nhac microalbumin nieu
 E78.5,CLS009,recommended,1,MAP-2026.01,Theo doi lipid mau
+J01.9,CLS-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Noi soi danh gia muc do viem xoang
+J01.9,CLS-XQUANG-BLATT,recommended,2,MAP-ENT-2026,X-quang Blondeau danh gia xoang
+J02.9,CLS-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Noi soi danh gia hong amidan
+J03.9,CLS-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Noi soi danh gia amidan viem
+J32.9,CLS-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Noi soi theo doi viem xoang man
+J32.9,CLS-XQUANG-BLATT,recommended,2,MAP-ENT-2026,X-quang Blondeau danh gia xoang man
+H66.9,CLS-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Noi soi tai danh gia mang nhi
+H66.9,CLS-DO-THINH-LUC,recommended,2,MAP-ENT-2026,Danh gia muc do giam thinh luc
+H66.9,CLS-NHI-LUONG-DO,recommended,3,MAP-ENT-2026,Danh gia chuc nang tai giua
+K02.1,CLS-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,X-quang danh gia muc do sau rang
+K02.1,CLS-TEST-TUY,suggested,2,MAP-RHM-2026,Test thu tuy khi nghi ton thuong tuy
+K04.0,CLS-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,X-quang danh gia vung quanh chop
+K04.0,CLS-TEST-TUY,recommended,2,MAP-RHM-2026,Test thu tuy xac dinh viem tuy
+K04.1,CLS-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,X-quang danh gia ton thuong quanh chop
+K04.1,CLS-XQUANG-PANORAMA,suggested,2,MAP-RHM-2026,Panorama danh gia tong the khi nhieu rang
+K05.1,CLS-XQUANG-PANORAMA,recommended,1,MAP-RHM-2026,Panorama danh gia tieu xuong o rang
+K08.1,CLS-XQUANG-PANORAMA,recommended,1,MAP-RHM-2026,Panorama danh gia truoc phuc hinh
+K12.1,CLS-XQUANG-PERIAPICAL,suggested,1,MAP-RHM-2026,Can nhac khi nghi ton thuong xuong ham
+M17.9,CLS-XQUANG-KHOP,recommended,1,MAP-MSK-2026,Đánh giá hẹp khe khớp gai xương
+M17.9,CLS-SIEU-AM-KHOP,recommended,2,MAP-MSK-2026,Đánh giá màng hoạt dịch và tràn dịch
+M17.9,CLS004,suggested,3,MAP-MSK-2026,Kiểm tra chức năng thận khi dùng thuốc kéo dài
+M17.9,CLS005,suggested,4,MAP-MSK-2026,Kiểm tra men gan khi dùng thuốc kéo dài
+M17.9,TT-HUT-DICH-KHOP,suggested,5,MAP-MSK-2026,Chỉ định khi siêu âm có tràn dịch nhiều
+M17.9,TT-TIEM-NOI-KHOP,suggested,6,MAP-MSK-2026,Chỉ định sau khi siêu âm hoặc hút dịch
+M17.9,PHCN-VAT-LY-TL,recommended,7,MAP-MSK-2026,Phục hồi chức năng vận động
+M17.9,PHCN-GIAO-DUC,recommended,8,MAP-MSK-2026,Hướng dẫn tập luyện tại nhà
+M15.9,CLS-XQUANG-KHOP,recommended,1,MAP-MSK-2026,Đánh giá tổn thương thoái hóa
+M19.9,CLS-XQUANG-KHOP,recommended,1,MAP-MSK-2026,Đánh giá tổn thương thoái hóa
+M05.9,CLS-XQUANG-KHOP,recommended,1,MAP-MSK-2026,Đánh giá hủy xương viêm khớp
+M05.9,CLS-SIEU-AM-KHOP,recommended,2,MAP-MSK-2026,Đánh giá mức độ viêm màng hoạt dịch
+M05.9,CLS001,recommended,3,MAP-MSK-2026,Đánh giá thiếu máu viêm mạn tính
+M10.9,CLS-XN-DICH-KHOP,suggested,1,MAP-MSK-2026,Tìm tinh thể urat nếu chọc được dịch
+M10.9,CLS004,recommended,2,MAP-MSK-2026,Theo dõi chức năng thận rất quan trọng ở bệnh nhân Gout
+M10.9,CLS-SIEU-AM-KHOP,suggested,3,MAP-MSK-2026,Siêu âm dấu hiệu đường đôi
+I50.9,CLS-SIEU-AM-TIM,recommended,1,MAP-CARDIO-2026,Đánh giá phân suất tống máu
+I50.9,CLS-NT-PROBNP,recommended,2,MAP-CARDIO-2026,Theo dõi đợt cấp suy tim
+I50.9,CLS008,recommended,3,MAP-CARDIO-2026,ECG cơ bản
+I50.9,CLS004,suggested,4,MAP-CARDIO-2026,Kiểm tra thận
+I48.9,CLS-HOLTER-ECG,recommended,1,MAP-CARDIO-2026,Theo dõi nhịp
+I48.9,CLS-SIEU-AM-TIM,recommended,2,MAP-CARDIO-2026,Phát hiện huyết khối bám vách
+I48.9,CLS008,recommended,3,MAP-CARDIO-2026,ECG cơ bản
+I48.9,CLS009,suggested,4,MAP-CARDIO-2026,Mỡ máu
+I20.9,CLS-TROPONIN,suggested,1,MAP-CARDIO-2026,Loại trừ NMCT
+I20.9,CLS008,recommended,2,MAP-CARDIO-2026,ECG cơ bản
+I20.9,CLS-SIEU-AM-TIM,recommended,3,MAP-CARDIO-2026,Đánh giá vận động vùng
+I10,CLS001,recommended,1,MAP-CARDIO-2026,Công thức máu đánh giá tổng quát
+I10,CLS004,recommended,2,MAP-CARDIO-2026,Theo dõi chức năng thận do THA
+I10,CLS008,recommended,3,MAP-CARDIO-2026,Siêu âm tim và ECG định kỳ
+I10,CLS-SIEU-AM-TIM,suggested,4,MAP-CARDIO-2026,Khảo sát dày thất trái
+I10,CLS-HOLTER-HA,suggested,5,MAP-CARDIO-2026,Khi nghi ngờ THA áo choàng trắng
+R07.4,CLS008,recommended,1,MAP-CARDIO-2026,ECG ngoại trừ
+R07.4,CLS-SIEU-AM-TIM,suggested,2,MAP-CARDIO-2026,Siêu âm tìm nguyên nhân
+R07.4,CLS-TROPONIN,suggested,3,MAP-CARDIO-2026,Loại trừ vành cấp
+K21.9,CLS-NOI-SOI-DD,suggested,1,MAP-GAS-2026,Chỉ định khi có dấu hiệu báo động hoặc không đáp ứng PPI
+K21.9,CLS-TEST-HP,suggested,2,MAP-GAS-2026,Test HP nếu soi có viêm
+K52.9,CLS-NOI-SOI-DT,recommended,1,MAP-GAS-2026,Nội soi chẩn đoán phân biệt
+K52.9,CLS-XN-PHAN,suggested,2,MAP-GAS-2026,Tầm soát Máu ẩn
+K52.9,CLS-SIEU-AM-BUNG,suggested,3,MAP-GAS-2026,Loại trừ đau bụng khác
+K64.9,CLS-NOI-SOI-DT,suggested,1,MAP-GAS-2026,Khám trĩ nên tầm soát K ở người lớn tuổi
+K80.2,CLS-SIEU-AM-BUNG,recommended,1,MAP-GAS-2026,Phát hiện sỏi
+K80.2,CLS005,recommended,2,MAP-GAS-2026,Men gan xem có tắc nghẽn mật
+K62.8,CLS-NOI-SOI-DT,recommended,1,MAP-GAS-2026,Nội soi loét trực tràng

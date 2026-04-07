@@ -8,3 +8,27 @@ CLS006,Tong phan tich nuoc tieu,Xet nghiem,mau,Theo dot kham,TRUE,MOH-IM-2026
 CLS007,Microalbumin nieu,Xet nghiem,mau,6 thang,TRUE,MOH-IM-2026
 CLS008,Dien tam do 12 chuyen dao,Chan doan hinh anh/tham do,lan,Theo dot kham,TRUE,MOH-IM-2026
 CLS009,Ho so lipid mau,Xet nghiem,mau,6 thang,TRUE,MOH-IM-2026
+CLS-NOI-SOI-TMH,Noi soi tai mui hong,Tham do chuc nang,lan,Theo dot kham,TRUE,MOH-ENT-2026
+CLS-DO-THINH-LUC,Do thinh luc don am (Audiometry),Tham do chuc nang,lan,Theo dot kham,TRUE,MOH-ENT-2026
+CLS-NHI-LUONG-DO,Nhi luong do (Tympanometry),Tham do chuc nang,lan,Theo dot kham,TRUE,MOH-ENT-2026
+CLS-XQUANG-BLATT,X-quang Blondeau (Tu the xoang),Chan doan hinh anh,phim,Theo dot kham,TRUE,MOH-ENT-2026
+CLS-XQUANG-PANORAMA,Chup X-quang toan canh ham (Panorama/OPG),Chan doan hinh anh,phim,Theo dot kham,TRUE,MOH-RHM-2026
+CLS-XQUANG-PERIAPICAL,Chup X-quang quanh chop rang (Periapical),Chan doan hinh anh,phim,Theo dot kham,TRUE,MOH-RHM-2026
+CLS-TEST-TUY,Test thu tuy rang (Vitality test),Tham do chuc nang,lan,Theo dot kham,TRUE,MOH-RHM-2026
+CLS-XQUANG-KHOP,Chụp X-quang khớp (thẳng nghiêng),Chẩn đoán hình ảnh,phim,Theo đợt khám,TRUE,MOH-MSK-2026
+CLS-SIEU-AM-KHOP,Siêu âm khớp,Chẩn đoán hình ảnh,lần,Theo đợt khám,TRUE,MOH-MSK-2026
+CLS-XN-DICH-KHOP,Xét nghiệm dịch khớp,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-MSK-2026
+TT-HUT-DICH-KHOP,Chọc hút dịch khớp,Thủ thuật,lần,Theo đợt khám,TRUE,MOH-MSK-2026
+TT-TIEM-NOI-KHOP,Tiêm nội khớp / quanh khớp,Thủ thuật,lần,Theo đợt khám,TRUE,MOH-MSK-2026
+PHCN-VAT-LY-TL,Phục hồi chức năng - Vật lý trị liệu,Phục hồi chức năng,lần,Theo đợt khám,TRUE,MOH-MSK-2026
+PHCN-GIAO-DUC,Phục hồi chức năng - Hướng dẫn vận động,Phục hồi chức năng,lần,Theo đợt khám,TRUE,MOH-MSK-2026
+CLS-SIEU-AM-TIM,Siêu âm Doppler tim màu,Chẩn đoán hình ảnh,lần,Theo đợt khám,TRUE,MOH-CARDIO-2026
+CLS-NT-PROBNP,Xét nghiệm NT-proBNP,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-CARDIO-2026
+CLS-TROPONIN,Troponin T siêu nhạy (hs-cTnT),Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-CARDIO-2026
+CLS-HOLTER-ECG,Đo Holter điện tâm đồ (24h),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-CARDIO-2026
+CLS-HOLTER-HA,Đo Holter huyết áp (24h),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-CARDIO-2026
+CLS-SIEU-AM-BUNG,Siêu âm ổ bụng tổng quát,Chẩn đoán hình ảnh,lần,Theo đợt khám,TRUE,MOH-GAS-2026
+CLS-NOI-SOI-DD,Nội soi dạ dày tá tràng,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-GAS-2026
+CLS-NOI-SOI-DT,Nội soi đại trực tràng toàn bộ,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-GAS-2026
+CLS-TEST-HP,Test HP qua hơi thở,Xét nghiệm,lần,Theo đợt khám,TRUE,MOH-GAS-2026
+CLS-XN-PHAN,Xét nghiệm máu ẩn trong phân,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-GAS-2026

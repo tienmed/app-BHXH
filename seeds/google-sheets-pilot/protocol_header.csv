@@ -1,2 +1,7 @@
 protocol_code,protocol_name,specialty_code,care_setting,source_type,source_version,effective_from,effective_to,status,owner_name
 IM-OP-HTN-DM-2026,Noi khoa ngoai tru tang huyet ap dai thao duong,INTERNAL_MEDICINE,outpatient,MOH,2026.01,2026-01-01,,active,Clinical Council
+ENT-OP-2026,Tai Mui Hong ngoai tru,ENT,outpatient,MOH,2026.01,2026-01-01,,active,Clinical Council
+RHM-OP-2026,Rang Ham Mat ngoai tru,DENTAL,outpatient,MOH,2026.01,2026-01-01,,active,Clinical Council
+MSK-OP-2026,Cơ xương khớp ngoại trú,RHEUMATOLOGY,outpatient,MOH,2026.01,2026-01-01,,active,Clinical Council
+CARDIO-OP-2026,Tim mạch ngoại trú chuyên sâu,CARDIOLOGY,outpatient,MOH,2026.01,2026-01-01,,active,Clinical Council
+GAS-OP-2026,Tiêu hóa ngoại trú,GASTROENTEROLOGY,outpatient,MOH,2026.01,2026-01-01,,active,Clinical Council

@@ -1,8 +1,73 @@
 icd_code,drug_code,mapping_type,priority,source_version,note
-I10,DR001,preferred,1,MAP-2026.01,Uu tien UCMC
-I10,DR002,preferred,2,MAP-2026.01,Lua chon UCTT thay the
-I10,DR003,suggested,3,MAP-2026.01,Them khi can phoi hop
 E11.9,DR004,preferred,1,MAP-2026.01,Thuoc nen trong dai thao duong typ 2
 E11.9,DR005,suggested,2,MAP-2026.01,Can nhac khi can tang cuong kiem soat
 E78.5,DR006,preferred,1,MAP-2026.01,Statin cho roi loan lipid
 E78.5,DR007,suggested,2,MAP-2026.01,Statin thay the
+J01.9,DRUG-AMOX-CLAV,preferred,1,MAP-ENT-2026,Khang sinh dau tay viem xoang cap
+J01.9,DRUG-CEFUROXIME,suggested,2,MAP-ENT-2026,Thay the khi di ung Penicillin nhe
+J01.9,DRUG-BUDESONIDE-NS,recommended,3,MAP-ENT-2026,Corticoid xit mui giam phu ne
+J01.9,DRUG-OXYMETAZOLINE,suggested,4,MAP-ENT-2026,Thong mui ngan han duoi 5 ngay
+J02.9,DRUG-AMOX-CLAV,preferred,1,MAP-ENT-2026,Khang sinh khi nghi nhiem khuan
+J02.9,DRUG-AZITHROMYCIN,suggested,2,MAP-ENT-2026,Thay the khi di ung Penicillin
+J02.9,DRUG-LORATADINE,suggested,3,MAP-ENT-2026,Giam trieu chung di ung kem theo
+J03.9,DRUG-AMOX-CLAV,preferred,1,MAP-ENT-2026,Khang sinh dau tay viem amidan
+J03.9,DRUG-CEFUROXIME,suggested,2,MAP-ENT-2026,Lua chon thay the
+J32.9,DRUG-AMOX-CLAV,preferred,1,MAP-ENT-2026,Khang sinh dot cap viem xoang man
+J32.9,DRUG-AZITHROMYCIN,suggested,2,MAP-ENT-2026,Macrolide thay the
+J32.9,DRUG-BUDESONIDE-NS,recommended,3,MAP-ENT-2026,Corticoid xit mui giam viem dai han
+J32.9,DRUG-LORATADINE,suggested,4,MAP-ENT-2026,Kiem soat di ung kem theo
+H66.9,DRUG-AMOX-CLAV,preferred,1,MAP-ENT-2026,Khang sinh dau tay viem tai giua
+H66.9,DRUG-CEFUROXIME,suggested,2,MAP-ENT-2026,Lua chon thay the
+K02.1,DRUG-PARACETAMOL,suggested,1,MAP-RHM-2026,Giam dau khi can thiet
+K04.0,DRUG-AMOX-RHM,preferred,1,MAP-RHM-2026,Khang sinh ho tro dieu tri tuy
+K04.0,DRUG-IBUPROFEN,recommended,2,MAP-RHM-2026,Giam dau khang viem
+K04.0,DRUG-PARACETAMOL,suggested,3,MAP-RHM-2026,Giam dau thay the khi chong chi dinh NSAID
+K04.1,DRUG-AMOX-RHM,preferred,1,MAP-RHM-2026,Khang sinh khi co nhiem trung
+K04.1,DRUG-METRONIDAZOLE,recommended,2,MAP-RHM-2026,Phoi hop dieu tri ky khi
+K04.1,DRUG-IBUPROFEN,recommended,3,MAP-RHM-2026,Giam dau khang viem
+K05.1,DRUG-CHLORHEXIDINE,recommended,1,MAP-RHM-2026,Suc mieng sat khuan ho tro dieu tri
+K05.1,DRUG-METRONIDAZOLE,suggested,2,MAP-RHM-2026,Khang sinh khi viem nuou nang
+K08.1,DRUG-LIDOCAIN-TE,preferred,1,MAP-RHM-2026,Gay te truoc thu thuat nho rang
+K08.1,DRUG-AMOX-RHM,recommended,2,MAP-RHM-2026,Khang sinh du phong sau nho
+K08.1,DRUG-IBUPROFEN,recommended,3,MAP-RHM-2026,Giam dau sau thu thuat
+K12.1,DRUG-CHLORHEXIDINE,recommended,1,MAP-RHM-2026,Suc mieng sat khuan giam viem
+K12.1,DRUG-PARACETAMOL,suggested,2,MAP-RHM-2026,Giam dau nhe
+M17.9,DRUG-IBUPROFEN,preferred,1,MAP-MSK-2026,Giảm đau kháng viêm cấp tính
+M17.9,DRUG-PARACETAMOL,suggested,2,MAP-MSK-2026,Giảm đau nhẹ hoặc khi chống chỉ định NSAID
+M17.9,DR-SYSADOA-GLUCO,recommended,3,MAP-MSK-2026,Duy trì thoái hóa khớp
+M17.9,DR-CORTICOID-TIEM,suggested,4,MAP-MSK-2026,Tiêm khớp khi viêm tràn dịch nặng
+M15.9,DRUG-IBUPROFEN,preferred,1,MAP-MSK-2026,Giảm đau
+M15.9,DRUG-PARACETAMOL,suggested,2,MAP-MSK-2026,Giảm đau thay thế
+M19.9,DRUG-IBUPROFEN,preferred,1,MAP-MSK-2026,Giảm đau
+M19.9,DRUG-PARACETAMOL,suggested,2,MAP-MSK-2026,Giảm đau thay thế
+M05.9,DRUG-IBUPROFEN,preferred,1,MAP-MSK-2026,Giảm đau kháng viêm
+M05.9,DR-CORTICOID-TIEM,suggested,2,MAP-MSK-2026,Tiêm khớp chống viêm tại chỗ
+M10.9,DR-GOUT-COLCHICINE,preferred,1,MAP-MSK-2026,Cắt cơn cấp
+M10.9,DR-GOUT-ALLOPURINOL,recommended,2,MAP-MSK-2026,Hạ acid uric máu duy trì
+M10.9,DRUG-IBUPROFEN,preferred,3,MAP-MSK-2026,Giảm đau viêm khớp gút
+I50.9,DR-DIU-FUROSEMIDE,preferred,1,MAP-CARDIO-2026,Giảm phù
+I50.9,DR-BETA-BISOPROLOL,preferred,2,MAP-CARDIO-2026,Chẹn Beta suy tim
+I50.9,DR-SGLT2I-DAPA,preferred,3,MAP-CARDIO-2026,Tứ trụ suy tim
+I50.9,DR001,recommended,4,MAP-CARDIO-2026,UCMC/ARB tứ trụ suy tim
+I48.9,DR-DOAC-RIVAROXABAN,preferred,1,MAP-CARDIO-2026,Chống đông
+I48.9,DR-BETA-BISOPROLOL,recommended,2,MAP-CARDIO-2026,Kiểm soát nhịp
+I20.9,DR-ASA-ASPIRIN,preferred,1,MAP-CARDIO-2026,Chống kết tập tiểu cầu
+I20.9,DR-BETA-BISOPROLOL,preferred,2,MAP-CARDIO-2026,Chẹn Beta
+I20.9,DR006,recommended,3,MAP-CARDIO-2026,Statin cường độ cao
+I10,DR001,preferred,1,MAP-CARDIO-2026,Ưu tiên UCMC
+I10,DR002,preferred,2,MAP-CARDIO-2026,Lựa chọn UCTT thay thế
+I10,DR003,suggested,3,MAP-CARDIO-2026,Thêm chẹn kênh canxi khi cần phối hợp
+I10,DR-BETA-BISOPROLOL,suggested,4,MAP-CARDIO-2026,Thêm chẹn Beta nếu kèm nhịp nhanh
+R07.4,DR-ASA-ASPIRIN,suggested,1,MAP-CARDIO-2026,Can nhắc dự phòng
+R07.4,DR006,suggested,2,MAP-CARDIO-2026,Can nhắc kiểm soát lipid
+K21.9,DR-PPI-ESOMEPRAZOLE,preferred,1,MAP-GAS-2026,PPI chuẩn
+K21.9,DR-PROKINETIC-ITOPRIDE,suggested,2,MAP-GAS-2026,Giảm đầy bụng
+K52.9,DR-ANTISPAS-MEBEVERINE,preferred,1,MAP-GAS-2026,Chống co thắt
+K52.9,DRUG-METRONIDAZOLE,suggested,2,MAP-GAS-2026,Nghi nhiễm khuẩn đường ruột
+K64.9,DR-HEMORRHOID-DIOSMIN,preferred,1,MAP-GAS-2026,Trợ tĩnh mạch trĩ
+K64.9,DR-TOPICAL-PROCTOLOG,preferred,2,MAP-GAS-2026,Mỡ bôi trĩ
+K64.9,DRUG-PARACETAMOL,suggested,3,MAP-GAS-2026,Giảm đau trĩ
+K80.2,DR-BILIARY-UDCA,recommended,1,MAP-GAS-2026,Tan sỏi mật cholesterol
+K80.2,DR-ANTISPAS-MEBEVERINE,suggested,2,MAP-GAS-2026,Chống co thắt cơn đau
+K62.8,DR-ANTISPAS-MEBEVERINE,suggested,1,MAP-GAS-2026,Chống co thắt
+K62.8,DR-TOPICAL-PROCTOLOG,suggested,2,MAP-GAS-2026,Bôi tại chỗ

@@ -4,3 +4,27 @@ E11.9,Dai thao duong typ 2 khong bien chung,Benh noi tiet dinh duong va chuyen h
 E78.5,Roi loan lipid mau,Benh noi tiet dinh duong va chuyen hoa,TRUE,2026-01-01,,MOH-IM-2026
 N18.1,Benh than man giai doan 1,He tiet nieu,TRUE,2026-01-01,,MOH-IM-2026
 R07.4,Dau nguc khong dac hieu,Trieu chung dau hieu bat thuong,TRUE,2026-01-01,,MOH-IM-2026
+J01.9,Viem xoang cap khong dac hieu,Benh he ho hap,TRUE,2026-01-01,,MOH-ENT-2026
+J02.9,Viem hong cap khong dac hieu,Benh he ho hap,TRUE,2026-01-01,,MOH-ENT-2026
+J03.9,Viem amidan cap khong dac hieu,Benh he ho hap,TRUE,2026-01-01,,MOH-ENT-2026
+J32.9,Viem xoang man khong dac hieu,Benh he ho hap,TRUE,2026-01-01,,MOH-ENT-2026
+H66.9,Viem tai giua khong dac hieu,Benh tai va xuong chum,TRUE,2026-01-01,,MOH-ENT-2026
+K02.1,Sau rang nga,Benh he tieu hoa,TRUE,2026-01-01,,MOH-RHM-2026
+K04.0,Viem tuy rang,Benh he tieu hoa,TRUE,2026-01-01,,MOH-RHM-2026
+K04.1,Hoai tu tuy rang,Benh he tieu hoa,TRUE,2026-01-01,,MOH-RHM-2026
+K05.1,Viem nuou man,Benh he tieu hoa,TRUE,2026-01-01,,MOH-RHM-2026
+K08.1,Mat rang do nho hoac tai nan,Benh he tieu hoa,TRUE,2026-01-01,,MOH-RHM-2026
+K12.1,Viem mieng dang ap-to,Benh he tieu hoa,TRUE,2026-01-01,,MOH-RHM-2026
+M15.9,Thoái hóa đa khớp không chỉ định,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,,MOH-MSK-2026
+M17.9,Thoái hóa khớp gối không chỉ định,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,,MOH-MSK-2026
+M19.9,Thoái hóa khớp không chỉ định,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,,MOH-MSK-2026
+M05.9,Viêm khớp dạng thấp có yếu tố dạng thấp,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,,MOH-MSK-2026
+M10.9,Bệnh gút không chỉ định,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,,MOH-MSK-2026
+I20.9,Cơn đau thắt ngực không chỉ định,Bệnh hệ tuần hoàn,TRUE,2026-01-01,,MOH-CARDIO-2026
+I50.9,Suy tim không chỉ định,Bệnh hệ tuần hoàn,TRUE,2026-01-01,,MOH-CARDIO-2026
+I48.9,Rung nhĩ và cuồng nhĩ không chỉ định,Bệnh hệ tuần hoàn,TRUE,2026-01-01,,MOH-CARDIO-2026
+K21.9,Bệnh trào ngược dạ dày-thực quản không viêm,Bệnh hệ tiêu hóa,TRUE,2026-01-01,,MOH-GAS-2026
+K52.9,Viêm dạ dày ruột và viêm đại tràng không nhiễm trùng,Bệnh hệ tiêu hóa,TRUE,2026-01-01,,MOH-GAS-2026
+K64.9,Bệnh trĩ không chỉ định,Bệnh hệ tiêu hóa,TRUE,2026-01-01,,MOH-GAS-2026
+K80.2,Sỏi túi mật không có viêm túi mật,Bệnh hệ tiêu hóa,TRUE,2026-01-01,,MOH-GAS-2026
+K62.8,Các bệnh xác định khác của hậu môn trực tràng,Bệnh hệ tiêu hóa,TRUE,2026-01-01,,MOH-GAS-2026
