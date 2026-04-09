@@ -4,6 +4,7 @@ const processes = [
   { name: 'web', color: '\x1b[32m', args: ['run', 'dev:web'] },
   { name: 'admin', color: '\x1b[33m', args: ['run', 'dev:admin'] },
   { name: 'api', color: '\x1b[34m', args: ['run', 'dev:api'] },
+  { name: 'sync', color: '\x1b[35m', args: ['run', 'sync:watch'] },
 ];
 
 const reset = '\x1b[0m';

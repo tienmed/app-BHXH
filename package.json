@@ -13,12 +13,14 @@
     "dev:web": "npm run dev --workspace @app-bhxh/web",
     "dev:admin": "npm run dev --workspace @app-bhxh/admin",
     "dev:api": "npm run dev --workspace @app-bhxh/api",
+    "sync:watch": "node scripts/watch-csv.mjs",
     "build:web": "npm run build --workspace @app-bhxh/web",
     "build:admin": "npm run build --workspace @app-bhxh/admin",
     "build:api": "npm run build --workspace @app-bhxh/api",
     "build": "npm run build:web && npm run build:admin && npm run build:api"
   },
   "devDependencies": {
-    "concurrently": "^9.2.1"
+    "concurrently": "^9.2.1",
+    "chokidar": "^3.6.0"
   }
 }

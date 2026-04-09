@@ -1,17 +1,21 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzfgoGvVv2hjHvLZ6pKOAr2728Q3DJ2MoprrPvKzUVLmRNlK8zMywn5u6s7P7mYhsvS/exec";
-const SEED_DIR = 'c:\\Users\\Thinkpad X280\\.gemini\\App BHXH\\seeds\\google-sheets-pilot';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const SEED_DIR = path.join(__dirname, '..', 'seeds', 'google-sheets-pilot');
 
 function readCSV(filename) {
     const filepath = path.join(SEED_DIR, filename);
     if (!fs.existsSync(filepath)) return [];
-    
+
     const content = fs.readFileSync(filepath, 'utf8');
     const lines = content.split('\n').filter(l => l.trim().length > 0);
     if (lines.length === 0) return [];
-    
+
     const header = lines[0].split(',').map(h => h.trim());
     const dataParts = lines.slice(1).map(line => {
         const parts = [];
@@ -47,9 +51,9 @@ function readCSV(filename) {
 
 async function postBatch(items, actionBuilder, label) {
     const BATCH_SIZE = 5;
-    for (let i = 0 ; i < items.length; i += BATCH_SIZE) {
+    for (let i = 0; i < items.length; i += BATCH_SIZE) {
         const batch = items.slice(i, i + BATCH_SIZE);
-        console.log(`Pushing ${label} batch ${i/BATCH_SIZE + 1}/${Math.ceil(items.length/BATCH_SIZE)}...`);
+        console.log(`Pushing ${label} batch ${i / BATCH_SIZE + 1}/${Math.ceil(items.length / BATCH_SIZE)}...`);
         await Promise.all(batch.map(async (item) => {
             try {
                 const payload = actionBuilder(item);
@@ -86,6 +90,9 @@ async function sync() {
         unit: item.unit,
         defaultFrequency: item.default_frequency,
         sourceRef: item.source_ref,
+        clinical_purpose: item.clinical_purpose,
+        indication_criteria: item.indication_criteria,
+        repeat_interval: item.repeat_interval,
         action: 'create-catalog-entry'
     }));
     await postBatch(clss, item => item, "CLS");
@@ -100,6 +107,9 @@ async function sync() {
         strength: item.strength,
         isBhytCovered: item.is_bhyt_covered === 'TRUE',
         sourceRef: item.source_ref,
+        therapeutic_purpose: item.therapeutic_purpose,
+        side_effects: item.side_effects,
+        drug_interactions: item.drug_interactions,
         action: 'create-catalog-entry'
     }));
     await postBatch(meds, item => item, "MED");

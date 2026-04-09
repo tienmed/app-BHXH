@@ -1,102 +1,102 @@
 icd_code,cls_code,mapping_type,priority,source_version,note
-E11.9,CLS-XN-DUONG-HUYET,recommended,1,MAP-2026.01,Theo dõi đường huyết
-E11.9,CLS-XN-HBA1C,recommended,2,MAP-2026.01,Theo dõi HbA1c
-E11.9,CLS-XN-NUOC-TIEU,recommended,3,MAP-2026.01,Theo dõi biến chứng thận
-E11.9,CLS-XN-MICROALBUMIN,suggested,4,MAP-2026.01,Cân nhắc microalbumin niệu
-E78.5,CLS-XN-LIPID,recommended,1,MAP-2026.01,Theo dõi lipid máu
-J01.9,CLS-TDCN-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Nội soi đánh giá mức độ viêm xoang
-J01.9,CLS-CDHA-XQUANG-BLATT,recommended,2,MAP-ENT-2026,X-quang Blondeau đánh giá xoang
-J02.9,CLS-TDCN-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Nội soi đánh giá họng amidan
-J03.9,CLS-TDCN-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Nội soi đánh giá amidan viêm
-J32.9,CLS-TDCN-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Nội soi theo dõi viêm xoang mãn
-J32.9,CLS-CDHA-XQUANG-BLATT,recommended,2,MAP-ENT-2026,X-quang Blondeau đánh giá xoang mãn
-H66.9,CLS-TDCN-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Nội soi tai đánh giá màng nhĩ
-H66.9,CLS-TDCN-DO-THINH-LUC,recommended,2,MAP-ENT-2026,Đánh giá mức độ giảm thính lực
-H66.9,CLS-TDCN-NHI-LUONG-DO,recommended,3,MAP-ENT-2026,Đánh giá chức năng tai giữa
-K02.1,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,Mục đích: Xác định độ sâu lỗ sâu. Lặp lại: Không cần lặp lại trừ khi nghi sâu tái phát.
-K02.1,CLS-TDCN-TEST-TUY,suggested,2,MAP-RHM-2026,Mục đích: Đánh giá sức sống tủy. Lặp lại: Khi tiếp tục có triệu chứng kịch phát.
-K02.5,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,Mục đích: Đánh giá tổn thương tủy và quanh chóp. Lặp lại: Sau điều trị tủy hoặc khi đau nhức tái diễn.
-K04.0,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,X-quang đánh giá vùng quanh chóp
-K04.0,CLS-TDCN-TEST-TUY,recommended,2,MAP-RHM-2026,Test thử tủy xác định viêm tủy
-K04.1,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,X-quang đánh giá tổn thương quanh chóp
-K04.1,CLS-CDHA-XQUANG-PANORAMA,suggested,2,MAP-RHM-2026,Panorama đánh giá tổng thể khi nhiều răng
-K05.1,CLS-CDHA-XQUANG-PANORAMA,recommended,1,MAP-RHM-2026,Panorama đánh giá tiêu xương ổ răng
-K08.1,CLS-CDHA-XQUANG-PANORAMA,recommended,1,MAP-RHM-2026,Panorama đánh giá trước phục hình
-K12.1,CLS-CDHA-XQUANG-PERIAPICAL,suggested,1,MAP-RHM-2026,Cân nhắc khi nghi tổn thương xương hàm
-M17.9,CLS-CDHA-XQUANG-KHOP,recommended,1,MAP-MSK-2026,Đánh giá hẹp khe khớp gai xương
-M17.9,CLS-CDHA-SIEU-AM-KHOP,recommended,2,MAP-MSK-2026,Đánh giá màng hoạt dịch và tràn dịch
-M17.9,CLS-XN-CREATININE,suggested,3,MAP-MSK-2026,Kiểm tra chức năng thận khi dùng thuốc kéo dài
-M17.9,CLS-XN-AST-ALT,suggested,4,MAP-MSK-2026,Kiểm tra men gan khi dùng thuốc kéo dài
-M17.9,TT-HUT-DICH-KHOP,suggested,5,MAP-MSK-2026,Chỉ định khi siêu âm có tràn dịch nhiều
-M17.9,TT-TIEM-NOI-KHOP,suggested,6,MAP-MSK-2026,Chỉ định sau khi siêu âm hoặc hút dịch
-M17.9,PHCN-VAT-LY-TL,recommended,7,MAP-MSK-2026,Phục hồi chức năng vận động
-M17.9,PHCN-GIAO-DUC,recommended,8,MAP-MSK-2026,Hướng dẫn tập luyện tại nhà
-M15.9,CLS-CDHA-XQUANG-KHOP,recommended,1,MAP-MSK-2026,Đánh giá tổn thương thoái hóa
-M19.9,CLS-CDHA-XQUANG-KHOP,recommended,1,MAP-MSK-2026,Đánh giá tổn thương thoái hóa
-M05.9,CLS-CDHA-XQUANG-KHOP,recommended,1,MAP-MSK-2026,Đánh giá hủy xương viêm khớp
-M05.9,CLS-CDHA-SIEU-AM-KHOP,recommended,2,MAP-MSK-2026,Đánh giá mức độ viêm màng hoạt dịch
-M05.9,CLS-XN-CONG-THUC-MAU,recommended,3,MAP-MSK-2026,Đánh giá thiếu máu viêm mãn tính
-M10.9,CLS-XN-DICH-KHOP,suggested,1,MAP-MSK-2026,Tìm tinh thể urat nếu chọc được dịch
-M10.9,CLS-XN-CREATININE,recommended,2,MAP-MSK-2026,Theo dõi chức năng thận rất quan trọng ở bệnh nhân Gout
-M10.9,CLS-CDHA-SIEU-AM-KHOP,suggested,3,MAP-MSK-2026,Siêu âm dấu hiệu đường đôi
-I50.9,CLS-CDHA-SIEU-AM-TIM,recommended,1,MAP-CARDIO-2026,Đánh giá phân suất tống máu
-I50.9,CLS-XN-NT-PROBNP,recommended,2,MAP-CARDIO-2026,Theo dõi đợt cấp suy tim
-I50.9,CLS-TDCN-ECG-12,recommended,3,MAP-CARDIO-2026,ECG cơ bản
-I50.9,CLS-XN-CREATININE,suggested,4,MAP-CARDIO-2026,Kiểm tra thận
-I48.9,CLS-TDCN-HOLTER-ECG,recommended,1,MAP-CARDIO-2026,Theo dõi nhịp
-I48.9,CLS-CDHA-SIEU-AM-TIM,recommended,2,MAP-CARDIO-2026,Phát hiện huyết khối bám vách
-I48.9,CLS-TDCN-ECG-12,recommended,3,MAP-CARDIO-2026,ECG cơ bản
-I48.9,CLS-XN-LIPID,suggested,4,MAP-CARDIO-2026,Mỡ máu
-I20.9,CLS-XN-TROPONIN,suggested,1,MAP-CARDIO-2026,Loại trừ NMCT
-I20.9,CLS-TDCN-ECG-12,recommended,2,MAP-CARDIO-2026,ECG cơ bản
-I20.9,CLS-CDHA-SIEU-AM-TIM,recommended,3,MAP-CARDIO-2026,Đánh giá vận động vùng
-I10,CLS-XN-CONG-THUC-MAU,recommended,1,MAP-CARDIO-2026,Công thức máu đánh giá tổng quát
-I10,CLS-XN-CREATININE,recommended,2,MAP-CARDIO-2026,Theo dõi chức năng thận do THA
-I10,CLS-TDCN-ECG-12,recommended,3,MAP-CARDIO-2026,Siêu âm tim và ECG định kỳ
-I10,CLS-CDHA-SIEU-AM-TIM,suggested,4,MAP-CARDIO-2026,Khảo sát dày thất trái
-I10,CLS-TDCN-HOLTER-HA,suggested,5,MAP-CARDIO-2026,Khi nghi ngờ THA áo choàng trắng
-R07.4,CLS-TDCN-ECG-12,recommended,1,MAP-CARDIO-2026,ECG ngoại trừ
-R07.4,CLS-CDHA-SIEU-AM-TIM,suggested,2,MAP-CARDIO-2026,Siêu âm tìm nguyên nhân
-R07.4,CLS-XN-TROPONIN,suggested,3,MAP-CARDIO-2026,Loại trừ vành cấp
-K21.9,CLS-TDCN-NOI-SOI-DD,suggested,1,MAP-GAS-2026,Chỉ định khi có dấu hiệu báo động hoặc không đáp ứng PPI
-K21.9,CLS-XN-TEST-HP,suggested,2,MAP-GAS-2026,Test HP nếu soi có viêm
-K52.9,CLS-TDCN-NOI-SOI-DT,recommended,1,MAP-GAS-2026,Nội soi chẩn đoán phân biệt
-K52.9,CLS-XN-PHAN,suggested,2,MAP-GAS-2026,Tầm soát Máu ẩn
-K52.9,CLS-CDHA-SIEU-AM-BUNG,suggested,3,MAP-GAS-2026,Loại trừ đau bụng khác
-K64.9,CLS-TDCN-NOI-SOI-DT,suggested,1,MAP-GAS-2026,Khám trĩ nên tầm soát K ở người lớn tuổi
-K80.2,CLS-CDHA-SIEU-AM-BUNG,recommended,1,MAP-GAS-2026,Phát hiện sỏi
-K80.2,CLS-XN-AST-ALT,recommended,2,MAP-GAS-2026,Men gan xem có tắc nghẽn mật
-K62.8,CLS-TDCN-NOI-SOI-DT,recommended,1,MAP-GAS-2026,Nội soi loét trực tràng
-G62.9,CLS-TDCN-DIEN-CO,recommended,1,MAP-NEURO-2026,Chẩn đoán xác định viêm đa dây thần kinh
-G62.9,CLS-XN-VIT-B12,suggested,2,MAP-NEURO-2026,Tìm nguyên nhân thiếu hụt B12
-G63.2,CLS-TDCN-DIEN-CO,recommended,1,MAP-NEURO-2026,Chẩn đoán biến chứng thần kinh đái tháo đường
-G63.2,CLS-XN-VIT-B12,suggested,2,MAP-NEURO-2026,Thiếu hụt do Metformin kéo dài
-G56.0,CLS-TDCN-DIEN-CO,recommended,1,MAP-NEURO-2026,Khẳng định mức độ chèn ép thần kinh giữa
-G56.0,CLS-CDHA-SA-THAN-KINH,recommended,2,MAP-NEURO-2026,Khảo sát hình thái thần kinh giữa tại cổ tay
-G56.0,TT-CHAM-CUU,suggested,3,MAP-NEURO-2026,Giảm đau bằng y học cổ truyền
-Z32.1,CLS-CDHA-SA-THAI,recommended,1,MOH-OBGYN-2026,Xác định tình trạng thai nhi
-Z32.1,CLS-XN-BETA-HCG,suggested,2,MOH-OBGYN-2026,Khẳng định có thai sinh hóa
-Z34.9,CLS-CDHA-SA-THAI,recommended,1,MOH-OBGYN-2026,Theo dõi thai kỳ định kỳ
-N76.0,CLS-XN-SOI-TUOI,recommended,1,MOH-OBGYN-2026,Chẩn đoán tác nhân gây viêm âm đạo
-N83.2,CLS-CDHA-SA-PHU-KHOA,recommended,1,MOH-OBGYN-2026,Theo dõi kích thước nang buồng trứng
-Z30.1,TT-DAT-VONG,standard,1,MOH-OBGYN-2026,Thủ thuật đặt vòng
-Z30.1,CLS-CDHA-SA-PHU-KHOA,recommended,2,MOH-OBGYN-2026,Kiểm tra vị trí vòng
-Z30.1,CLS-XN-SOI-TUOI,recommended,3,MOH-OBGYN-2026,Loại trừ viêm trước thủ thuật
-H10.9,CLS-TDCN-THI-LUC,recommended,1,MOH-EYE-2026,Kiểm tra thị lực do sung huyết
-H40.9,CLS-TDCN-NHAN-AP,standard,1,MOH-EYE-2026,Thông số quan trọng chẩn đoán cườm nước
-H40.9,CLS-TDCN-THI-TRUONG,standard,2,MOH-EYE-2026,Đánh giá độ thu hẹp thị trường
-T15.9,TT-LAY-DI-VAT-MAT,standard,1,MOH-EYE-2026,Gắp dị vật ngoài mắt
-T15.9,CLS-TDCN-THI-LUC,suggested,2,MOH-EYE-2026,Theo dõi thị lực sau gắp
-H52.2,CLS-TDCN-THI-LUC,standard,1,MOH-EYE-2026,Đo khúc xạ loạn thị
-H52.2,CLS-TDCN-BAN-DO-GM,recommended,2,MOH-EYE-2026,Đánh giá chi tiết loạn thị/giác mạc chóp
-H50.9,CLS-TDCN-KHAM-LAC,standard,1,MOH-EYE-2026,Thăm dò vận nhãn
-H53.0,TT-TAP-NHUOC-THI,standard,1,MOH-EYE-2026,Vật lý trị liệu nhãn khoa
-H53.0,CLS-TDCN-THI-LUC,recommended,2,MOH-EYE-2026,Theo dõi sau tập
-J45.9,CLS-TDCN-DO-HO-HAP,recommended,1,MOH-PED-2026,Đánh giá mức độ hen
-G40.9,CLS-TDCN-EEG,standard,1,MOH-PED-2026,Chẩn đoán xác định động kinh
-G80.9,CLS-TDCN-DANH-GIA-PT,recommended,1,MOH-PED-2026,Theo dõi phát triển bại não
-G80.9,CLS-TDCN-EEG,suggested,2,MOH-PED-2026,Động kinh kèm bại não
-H90.5,CLS-TDCN-OAE,standard,1,MOH-PED-2026,Sàng lọc thính giác
-H90.5,CLS-TDCN-ABR,recommended,2,MOH-PED-2026,Xác định ngưỡng nghe
-F84.0,CLS-TDCN-DANH-GIA-PT,standard,1,MOH-PED-2026,Đánh giá phát triển tự kỷ
-F70,CLS-TDCN-DANH-GIA-PT,standard,1,MOH-PED-2026,Đánh giá mức độ chậm
+E11.9,CLS-XN-DUONG-HUYET,recommended,1,MAP-2026.01,Mục đích: Đo đường huyết đói giám sát điều trị đái tháo đường. Ưu tiên: Bắt buộc ở mỗi đợt khám. Lặp lại: 1 tháng/lần.
+E11.9,CLS-XN-HBA1C,recommended,2,MAP-2026.01,Mục đích: Đánh giá đường huyết trung bình. Ưu tiên: Đóng vai trò then chốt điều chỉnh liều. Lặp lại: 3 tháng/lần.
+E11.9,CLS-XN-NUOC-TIEU,recommended,3,MAP-2026.01,Mục đích: Tầm soát biến chứng thận sơ bộ. Ưu tiên: Chọn khi kiểm tra sức khỏe tổng quát định kỳ. Lặp lại: 3-6 tháng/lần.
+E11.9,CLS-XN-MICROALBUMIN,suggested,4,MAP-2026.01,Mục đích: Phát hiện bệnh thận vi thể trước đạm niệu. Ưu tiên: Chọn khi nước tiểu chưa thấy đạm. Lặp lại: 6 tháng/lần.
+E78.5,CLS-XN-LIPID,recommended,1,MAP-2026.01,Mục đích: Đánh giá LDL-c kiểm soát mỡ máu. Ưu tiên: Tiêu chuẩn vàng điều trị Statin. Lặp lại: 3 tháng/lần tùy đáp ứng.
+J01.9,CLS-TDCN-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Mục đích: Nội soi chẩn đoán viêm xoang có mủ/polyp. Ưu tiên: Khám đầu tay ở chuyên khoa TMH. Lặp lại: 1 tháng/lần.
+J01.9,CLS-CDHA-XQUANG-BLATT,recommended,2,MAP-ENT-2026,Mục đích: X-quang Blondeau xem mờ xoang. Ưu tiên: Chỉ thay thế khi cơ sở không có nội soi. Lặp lại: 6 tháng/lần.
+J02.9,CLS-TDCN-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Mục đích: Đánh giá viêm họng/amidan. Ưu tiên: Nên kết hợp ngay lúc khám ban đầu để tiên lượng mức độ. Lặp lại: Khi đợt cấp mới.
+J03.9,CLS-TDCN-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Mục đích: Phát hiện ngách mủ amidan. Ưu tiên: Ưu tiên nội soi loại trừ u/hạch. Lặp lại: Khi tái viêm cấp.
+J32.9,CLS-TDCN-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Mục đích: Nội soi theo dõi mạn tính. Ưu tiên: Khám định kỳ quyết định phẫu thuật hay không. Lặp lại: 3-6 tháng/lần.
+J32.9,CLS-CDHA-XQUANG-BLATT,recommended,2,MAP-ENT-2026,Mục đích: Đánh giá xương xoang mờ/tiêu xương. Ưu tiên: Chọn khi có dấu hiệu lan ra ngoài xoang mạn tính. Lặp lại: 6 tháng/lần.
+H66.9,CLS-TDCN-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Mục đích: Xác định mức độ viêm tai và phồng màng nhĩ. Ưu tiên: Là cls hàng đầu tai mũi họng. Lặp lại: Hằng tuần khi theo dõi dịch.
+H66.9,CLS-TDCN-DO-THINH-LUC,recommended,2,MAP-ENT-2026,Mục đích: Đánh giá nghe kém do viêm tai giữa. Ưu tiên: Thực hiện khi nghe kém ảnh hưởng giao tiếp. Lặp lại: 3 tháng/lần.
+H66.9,CLS-TDCN-NHI-LUONG-DO,recommended,3,MAP-ENT-2026,Mục đích: Phát hiện dịch tai giữa. Ưu tiên: Hỗ trợ xác nhận chẩn đoán nội soi. Lặp lại: 1-3 tháng/lần.
+K02.1,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,Mục đích: Xác định độ sâu lỗ sâu. Ưu tiên: Tiêu chuẩn vàng để biết tủy chưa dính. Lặp lại: Không lặp lại trừ khi nghi sâu tái phát.
+K02.1,CLS-TDCN-TEST-TUY,suggested,2,MAP-RHM-2026,Mục đích: Đánh giá tủy còn sống. Ưu tiên: Chỉ khi răng có triệu chứng kịch phát. Lặp lại: Không lặp lại.
+K02.5,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,Mục đích: Khảo sát quanh chóp do tổn thương tủy. Ưu tiên: Bắt buộc để chỉ định chữa tủy an toàn. Lặp lại: Sau điều trị tủy (3 tháng).
+K04.0,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,Mục đích: X-quang xem vùng quanh chóp. Ưu tiên: Xác định trước khi can thiệp tủy. Lặp lại: Theo dõi sau 6 tháng.
+K04.0,CLS-TDCN-TEST-TUY,recommended,2,MAP-RHM-2026,Mục đích: Test sức sống tủy. Ưu tiên: Ưu tiên hàng đầu phân biệt hoại tử và viêm tủy. Lặp lại: Chỉ 1 lần đợt cấp.
+K04.1,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,Mục đích: Xem cấu trúc chóp tổn thương hoại tử nang. Ưu tiên: Ưu tiên trước tiểu phẫu nang. Lặp lại: Sau điều trị 6 tháng.
+K04.1,CLS-CDHA-XQUANG-PANORAMA,suggested,2,MAP-RHM-2026,Mục đích: Xem ổ viêm xquang toàn hàm. Ưu tiên: Cân nhắc nếu tổn thương lan tỏa. Lặp lại: 12 tháng/lần.
+K05.1,CLS-CDHA-XQUANG-PANORAMA,recommended,1,MAP-RHM-2026,Mục đích: Đánh giá tiêu xương viêm nướu nha chu mạn. Ưu tiên: Phương tiện duy nhất đo độ sâu tiêu xương toàn diện. Lặp lại: 12 tháng.
+K08.1,CLS-CDHA-XQUANG-PANORAMA,recommended,1,MAP-RHM-2026,Mục đích: X-quang phục hình. Ưu tiên: Tuyệt đối cần trước khi cấy ghép răng. Lặp lại: 12 tháng.
+K12.1,CLS-CDHA-XQUANG-PERIAPICAL,suggested,1,MAP-RHM-2026,Mục đích: Cân nhắc tổn thương xương ở ap-tơ dai dẳng. Ưu tiên: Chỉ chọn khi bệnh mạn tính kéo dài. Lặp lại: 12 tháng.
+M17.9,CLS-CDHA-XQUANG-KHOP,recommended,1,MAP-MSK-2026,Mục đích: Đánh giá hẹp khe khớp vôi hóa. Ưu tiên: Chỉ định hình ảnh tiết kiệm chi phí đầu tay. Lặp lại: 12 tháng/lần.
+M17.9,CLS-CDHA-SIEU-AM-KHOP,recommended,2,MAP-MSK-2026,Mục đích: Ước lượng lượng dịch viêm. Ưu tiên: Đặc biệt quan trọng nếu định chọc dịch/tiêm khớp. Lặp lại: 1 tháng/lần hoặc có yếu tố cấp.
+M17.9,CLS-XN-CREATININE,suggested,3,MAP-MSK-2026,Mục đích: Kiểm tra chức năng thận khi dùng thuốc kháng viêm dài. Ưu tiên: Bắt buộc ở người lớn tuổi. Lặp lại: 3-6 tháng/lần.
+M17.9,CLS-XN-AST-ALT,suggested,4,MAP-MSK-2026,Mục đích: An toàn gan (NSAIDs). Ưu tiên: Đi kèm bộ đông máu sinh hóa nền. Lặp lại: 3-6 tháng/lần.
+M17.9,TT-HUT-DICH-KHOP,suggested,5,MAP-MSK-2026,Mục đích: Giảm áp dịch màng bọc. Ưu tiên: Khi bệnh nhân hạn chế đi lại và siêu âm dịch nhiều. Lặp lại: Sau 1 tháng.
+M17.9,TT-TIEM-NOI-KHOP,suggested,6,MAP-MSK-2026,Mục đích: Tiêm nội khớp corticoid. Ưu tiên: Can thiệp thủ thuật sau cùng khi thuốc uống không tác dụng. Lặp lại: Sau tối thiểu 3 tháng.
+M17.9,PHCN-VAT-LY-TL,recommended,7,MAP-MSK-2026,Mục đích: Điều trị suy cơ cứng khớp phục hồi chức năng. Ưu tiên: Nền tảng điều trị phục hồi quan trọng lâu dài. Lặp lại: Liệu trình nhiều lần.
+M17.9,PHCN-GIAO-DUC,recommended,8,MAP-MSK-2026,Mục đích: Hướng dẫn giảm béo và vận động. Ưu tiên: Bắt buộc trên bệnh nhân BM cao. Lặp lại: Đợt thăm nom.
+M15.9,CLS-CDHA-XQUANG-KHOP,recommended,1,MAP-MSK-2026,Mục đích: Nhìn nhận tổn thương viêm tại đa khớp. Ưu tiên: Chụp các bề mặt khớp viêm lớn. Lặp lại: 12 tháng.
+M19.9,CLS-CDHA-XQUANG-KHOP,recommended,1,MAP-MSK-2026,Mục đích: Theo dõi biến dạng thoái hóa. Ưu tiên: Xem mật độ sụn. Lặp lại: Hằng năm.
+M05.9,CLS-CDHA-XQUANG-KHOP,recommended,1,MAP-MSK-2026,Mục đích: Theo dõi hủy xương của viêm đa khớp dạng thấp. Ưu tiên: X-quang thường quy chi tiết. Lặp lại: 6-12 tháng.
+M05.9,CLS-CDHA-SIEU-AM-KHOP,recommended,2,MAP-MSK-2026,Mục đích: Đo màng hoạt dịch tăng sinh (pannus). Ưu tiên: Để đánh giá đợt hoạt động. Lặp lại: Theo đợt cấp viêm.
+M05.9,CLS-XN-CONG-THUC-MAU,recommended,3,MAP-MSK-2026,Mục đích: Kiểm tra thiếu máu trong bệnh mạn tính. Ưu tiên: Thường xuyên làm cùng với VS hay CRP. Lặp lại: 3 tháng/lần.
+M10.9,CLS-XN-DICH-KHOP,suggested,1,MAP-MSK-2026,Mục đích: Tình tinh thể Monosodium Urate. Ưu tiên: Tiểu chuẩn vàng định bệnh ở khớp viêm chưa rõ nguyên nhân. Lặp lại: 1 lần.
+M10.9,CLS-XN-CREATININE,recommended,2,MAP-MSK-2026,Mục đích: XN máu để kiểm soát chức năng thận bài tiết axit uric. Ưu tiên: Bệnh gút luôn đi kèm với tổn thương thận. Lặp lại: 3 tháng/lần.
+M10.9,CLS-CDHA-SIEU-AM-KHOP,suggested,3,MAP-MSK-2026,Mục đích: Siêu âm dấu đường đôi của Gout. Ưu tiên: Chọn khi không thể chọc dịch tinh thể. Lặp lại: 1 tháng/lần.
+I50.9,CLS-CDHA-SIEU-AM-TIM,recommended,1,MAP-CARDIO-2026,Mục đích: Đo thông số EF tim đánh giá suy tim. Ưu tiên: Thăm dò trọng yếu với mọi chẩn đoán suy tim. Lặp lại: 6-12 tháng/lần tĩnh tâm.
+I50.9,CLS-XN-NT-PROBNP,recommended,2,MAP-CARDIO-2026,Mục đích: Pro-BNP tầm soát suy giảm cơ học tim cấp. Ưu tiên: Theo dõi đợt mất bù. Lặp lại: 3 tháng/lần hoặc suy tim cấp.
+I50.9,CLS-TDCN-ECG-12,recommended,3,MAP-CARDIO-2026,Mục đích: Khảo sát rối loạn nhịp hoặc thiếu máu cơ tim ở nền suy tim. Ưu tiên: Thực hiện nền tảng đầu. Lặp lại: Đợt thăm nom.
+I50.9,CLS-XN-CREATININE,suggested,4,MAP-CARDIO-2026,Mục đích: Đánh giá thận vì bệnh nhân suy tim thường dùng lợi tiểu. Ưu tiên: Chọn khi dùng lợi tiểu liều cao. Lặp lại: Từng đợt khám.
+I48.9,CLS-TDCN-HOLTER-ECG,recommended,1,MAP-CARDIO-2026,Mục đích: Đo nhịp 24h đánh giá đáp ứng rung nhĩ. Ưu tiên: Ưu tiên trên rung nhĩ kịch phát có triệu chứng. Lặp lại: 3-6 tháng/lần.
+I48.9,CLS-CDHA-SIEU-AM-TIM,recommended,2,MAP-CARDIO-2026,Mục đích: Xem tĩnh thất và nhĩ trái giãn hoặc huyết khối. Ưu tiên: Thực hiện để ra quyết định kháng đông. Lặp lại: Hằng năm.
+I48.9,CLS-TDCN-ECG-12,recommended,3,MAP-CARDIO-2026,Mục đích: Nhìn hoạt động điện cơ bản ghi rung nhĩ. Ưu tiên: Tiêu chuẩn cơ sở. Lặp lại: Mỗi đợt đến khám.
+I48.9,CLS-XN-LIPID,suggested,4,MAP-CARDIO-2026,Mục đích: Check nguy cơ xơ vữa mỡ máu đi kèm nhĩ rung. Ưu tiên: Không có chỉ định cao nhất nhưng nên kèm gói tổng thể. Lặp lại: Hằng năm.
+I20.9,CLS-XN-TROPONIN,suggested,1,MAP-CARDIO-2026,Mục đích: Tầm soát nhồi máu cơ tim sinh hóa. Ưu tiên: Cân nhắc kỹ lưỡng loại trừ hội chứng cấp - không lạm dụng phòng khám ngoại. Lặp lại: Chỉ 1 lần cấp.
+I20.9,CLS-TDCN-ECG-12,recommended,2,MAP-CARDIO-2026,Mục đích: Tìm sóng Q hoặc ST chênh báo động nhồi máu. Ưu tiên: Test an toàn và rẽ tiền làm ngay. Lặp lại: Bất cứ lúc nào đau ngực.
+I20.9,CLS-CDHA-SIEU-AM-TIM,recommended,3,MAP-CARDIO-2026,Mục đích: Tìm vùng giảm vận động của thiếu máu nhồi máu. Ưu tiên: Làm sâu hơn điện tim. Lặp lại: 6 tháng.
+I10,CLS-XN-CONG-THUC-MAU,recommended,1,MAP-CARDIO-2026,Mục đích: CTM chẩn đoán tổng thể. Ưu tiên: Check máu định kỳ. Lặp lại: 3 tháng/lần.
+I10,CLS-XN-CREATININE,recommended,2,MAP-CARDIO-2026,Mục đích: Theo dõi biến chứng thận do cao HA. Ưu tiên: Cực kỳ quan trọng để chọn thuốc. Lặp lại: Theo đợt dùng UCMC.
+I10,CLS-TDCN-ECG-12,recommended,3,MAP-CARDIO-2026,Mục đích: Khảo sát phì đại thất trái. Ưu tiên: Tiêu chuẩn chẩn đoán tổn thương cơ quan đích. Lặp lại: Từng đợt khám.
+I10,CLS-CDHA-SIEU-AM-TIM,suggested,4,MAP-CARDIO-2026,Mục đích: Đo độ dày vách thất trái cơ học tim. Ưu tiên: Quan trọng nếu ECG bất thường. Lặp lại: 1 năm.
+I10,CLS-TDCN-HOLTER-HA,suggested,5,MAP-CARDIO-2026,Mục đích: Holter 24h chẩn đoán THA áo choàng trắng/ẩn giấu. Ưu tiên: Làm khi đo phòng khám không tin cậy. Lặp lại: Hằng năm.
+R07.4,CLS-TDCN-ECG-12,recommended,1,MAP-CARDIO-2026,Mục đích: Đau ngực luôn cần loại trừ nguyên nhân tim. Ưu tiên: Bắt buộc đầu tiên. Lặp lại: Không cần nếu ổn định.
+R07.4,CLS-CDHA-SIEU-AM-TIM,suggested,2,MAP-CARDIO-2026,Mục đích: Tìm bất thường cấu trúc van tim hay màng ngoài tim. Ưu tiên: Cân nhắc nếu đau kéo dài chưa rõ nguyên nhân. Lặp lại: 1 lần.
+R07.4,CLS-XN-TROPONIN,suggested,3,MAP-CARDIO-2026,Mục đích: Giải bài toán loại Nhồi máu ở đau ngực không chỉ định. Ưu tiên: Xét nghiệm có BHYT nên cần giải trình kỹ. Lặp lại: Chỉ một đợt đau.
+K21.9,CLS-TDCN-NOI-SOI-DD,suggested,1,MAP-GAS-2026,Mục đích: Trào ngược GERD cần phân biệt u loét. Ưu tiên: Chọn khi bệnh nhân có biểu hiện báo động hoặc không đáp ứng PPI > 4 tuần. Lặp lại: 1 năm tuổi trên 40 nếu tái phát.
+K21.9,CLS-XN-TEST-HP,suggested,2,MAP-GAS-2026,Mục đích: Test qua hơi thở tìm khuẩn HP nếu không nội soi. Ưu tiên: Trừ HP để tránh tái trào ngược, viêm dạ dày dai dẳng. Lặp lại: Sau ngưng kháng sinh 4 tuần.
+K52.9,CLS-TDCN-NOI-SOI-DT,recommended,1,MAP-GAS-2026,Mục đích: Nội soi đại trực toàn bộ để tìm polyp/viêm/u. Ưu tiên: Ở ca tiêu chảy trên tuổi 50 hoặc máu vấy phân. Lặp lại: Phân độ hàng năm.
+K52.9,CLS-XN-PHAN,suggested,2,MAP-GAS-2026,Mục đích: Test máu ẩn và KST ruột. Ưu tiên: Thay thế nếu nội soi chưa thể can thiệp. Lặp lại: 6 tháng.
+K52.9,CLS-CDHA-SIEU-AM-BUNG,suggested,3,MAP-GAS-2026,Mục đích: Xem cấu trúc bụng dịch. Ưu tiên: Rẽ tiền loại trừ khẩn ở người đau bụng cấp. Lặp lại: Mỗi đợt khám.
+K64.9,CLS-TDCN-NOI-SOI-DT,suggested,1,MAP-GAS-2026,Mục đích: Loại trừ ung thư ở người có trĩ chảy máu tuổi > 50. Ưu tiên: Cân nhắc chỉ định theo hướng dẫn K tiêu hóa dưới. Lặp lại: 5 năm/lần.
+K80.2,CLS-CDHA-SIEU-AM-BUNG,recommended,1,MAP-GAS-2026,Mục đích: Siêu âm đo kích thước và vị trí sỏi túi mật. Ưu tiên: Bắt buộc để ra khuyến nghị mổ hay ngâm tan. Lặp lại: 6-12 tháng.
+K80.2,CLS-XN-AST-ALT,recommended,2,MAP-GAS-2026,Mục đích: Tìm men gan do tắc nghẽn sỏi mật. Ưu tiên: Nên thực hiện cùng chỉ định SA. Lặp lại: Tùy thời điểm.
+K62.8,CLS-TDCN-NOI-SOI-DT,recommended,1,MAP-GAS-2026,Mục đích: Định bệnh hậu môn trực tràng chảy máu. Ưu tiên: Tiêu chuẩn vàng để trị liệu ngoại/nội khoa. Lặp lại: 1 năm.
+G62.9,CLS-TDCN-DIEN-CO,recommended,1,MAP-NEURO-2026,Mục đích: EMG để đo vận tốc truyền qua dây thần kinh. Ưu tiên: Tiêu chuẩn vàng phân biệt bệnh tủy hay dây đơn lẻ. Lặp lại: 3-6 tháng/lần trừ khi cấp tính.
+G62.9,CLS-XN-VIT-B12,suggested,2,MAP-NEURO-2026,Mục đích: Tìm ngài nhân do thiếu Vit B12 sinh đa dây TN. Ưu tiên: Rất quan trọng ở bệnh nhân nhược/nhiều tuổi chay. Lặp lại: 6-12 tháng.
+G63.2,CLS-TDCN-DIEN-CO,recommended,1,MAP-NEURO-2026,Mục đích: EMG xem biến chứng Đái Tháo Đường ngoại vi. Ưu tiên: Làm ở người ĐTĐ lâu năm và bắt đầu mang tất tê bì. Lặp lại: 6 tháng.
+G63.2,CLS-XN-VIT-B12,suggested,2,MAP-NEURO-2026,Mục đích: Ngăn Metformin gây thiếu B12 nhạy cảm với ĐTĐ. Ưu tiên: Nếu dùng Metformin > 3 năm liên tục. Lặp lại: Hằng năm.
+G56.0,CLS-TDCN-DIEN-CO,recommended,1,MAP-NEURO-2026,Mục đích: Khẳng định bệnh cổ tay. Ưu tiên: Sâu cổ tay chẩn đoán phân biệt hội chứng thần kinh giữa lõi ống cổ. Lặp lại: 1 tháng/lần.
+G56.0,CLS-CDHA-SA-THAN-KINH,recommended,2,MAP-NEURO-2026,Mục đích: Siêu âm trực tiếp dây TK giữa tại cườm tay bị bóp dẹt. Ưu tiên: Đánh giá mô mềm giải phẫu phù chèn ống. Lặp lại: 6 tháng.
+G56.0,TT-CHAM-CUU,suggested,3,MAP-NEURO-2026,Mục đích: Giảm đau theo YHCT do chèn ép. Ưu tiên: An toàn và giảm đau đáng kể tránh mổ phẫu thuật. Lặp lại: Theo liệu trình.
+Z32.1,CLS-CDHA-SA-THAI,recommended,1,MOH-OBGYN-2026,Mục đích: Xác định vị trí/tim thai trong thai nghén chưa biết. Ưu tiên: Đặc biệt ưu tiên để khẳng định thai phụ 5-6w. Lặp lại: Lần khám thai tuần.
+Z32.1,CLS-XN-BETA-HCG,suggested,2,MOH-OBGYN-2026,Mục đích: Định lượng tuổi thai hoặc chẩn đoán phôi không về tổ ở siêu âm sớm 4w. Ưu tiên: Chỉ dùng khi siêu âm chưa thấy. Lặp lại: 48h nếu muốn theo dõi độ tăng đôi.
+Z34.9,CLS-CDHA-SA-THAI,recommended,1,MOH-OBGYN-2026,Mục đích: Sinh trắc thai học ở thai kỳ bình đạm tuần. Ưu tiên: Lựa chọn 12, 22, 32w sàng lọc dị tật hình hài. Lặp lại: Từng cấp khám.
+N76.0,CLS-XN-SOI-TUOI,recommended,1,MOH-OBGYN-2026,Mục đích: Test tác nhân bằng phết âm đạo nấm/vi khuẩn/trichomonas. Ưu tiên: Gần như bắt buộc để bốc đúng thuốc kháng trị. Lặp lại: Sau đợt chữa hết triệu chứng.
+N83.2,CLS-CDHA-SA-PHU-KHOA,recommended,1,MOH-OBGYN-2026,Mục đích: Theo dõi độ căng, kích cỡ (cm) nang buồng trứng. Ưu tiên: Cần thiết để đánh giá định hướng Mổ hay nội khoa. Lặp lại: 3-6 tháng siêu âm đều.
+Z30.1,TT-DAT-VONG,standard,1,MOH-OBGYN-2026,Mục đích: Thủ thuật Y khoa tránh mang thai. Ưu tiên: Chọn khi người nữ sạch khuẩn viêm/CTC ổn. Lặp lại: Sau hạn vong (5 năm).
+Z30.1,CLS-CDHA-SA-PHU-KHOA,recommended,2,MOH-OBGYN-2026,Mục đích: Xem vòng đã vào đúng vị trị chưa hay lọt màng bụng tử cung. Ưu tiên: Làm siêu âm đầu dò là thích cực kỳ hợp. Lặp lại: 3-6 tháng siêu âm.
+Z30.1,CLS-XN-SOI-TUOI,recommended,3,MOH-OBGYN-2026,Mục đích: Khám và test nấm tránh lây sâu khuẩn vào viêm vòi trứng tử cung qua đặt vòng. Ưu tiên: Tiêu chuẩn vàng tránh nhiễm trùng. Lặp lại: Tùy tình trạng.
+H10.9,CLS-TDCN-THI-LUC,recommended,1,MOH-EYE-2026,Mục đích: Đo thị lực phòng ngừa biến chứng loét giác mạc trên viêm kết mạc đỏ. Ưu tiên: Khám tất cả bệnh nhân. Lặp lại: Khám lại đợt tới.
+H40.9,CLS-TDCN-NHAN-AP,standard,1,MOH-EYE-2026,Mục đích: Nhãn áp tăng là mấu chốt của cườm/Glôcôm mắt tổn thương tủy thị. Ưu tiên: Kiểm tra không thể thiếu trong cườm nước. Lặp lại: Theo tháng 1-3.
+H40.9,CLS-TDCN-THI-TRUONG,standard,2,MOH-EYE-2026,Mục đích: Tầm soát vòng khiếm khuyết thị trường. Ưu tiên: Giúp định phân mức Glôcôm hẹp vùng nhìn của tủy mục. Lặp lại: 3-6 tháng.
+T15.9,TT-LAY-DI-VAT-MAT,standard,1,MOH-EYE-2026,Mục đích: Gắp mạt sắt hoặc bụi ra phòng xước mạc. Ưu tiên: Thủ thuật cơ bản không nên chần chừ nhắm tránh đục phù thủy giác. Lặp lại: Không bắt buộc.
+T15.9,CLS-TDCN-THI-LUC,suggested,2,MOH-EYE-2026,Mục đích: Đánh giá mờ xước xem tổn khuyết giác mạc tới đâu sau gắp móc dị vật. Ưu tiên: Nên làm theo chuẩn chăm sóc mắt. Lặp lại: Sau vài ngày gắp.
+H52.2,CLS-TDCN-THI-LUC,standard,1,MOH-EYE-2026,Mục đích: Refraction loét và độ kính khúc xạ của loạn thị 2 mắt. Ưu tiên: Kiểm soát mức độ nhìn thấy hàng ngày. Lặp lại: Đo 6 tháng.
+H52.2,CLS-TDCN-BAN-DO-GM,recommended,2,MOH-EYE-2026,Mục đích: Tạo lập dáng mắt trên ảnh ảo topo giác mạc. Ưu tiên: Đặc biệt cần để thấy có giác mạc chóp hay chỉ loạn thị. Lặp lại: 6-12 tháng.
+H50.9,CLS-TDCN-KHAM-LAC,standard,1,MOH-EYE-2026,Mục đích: Chức năng lác lé và định hình độ góc Deviation. Ưu tiên: Tiêu chuẩn cơ sở. Lặp lại: Mỗi khi mổ lác.
+H53.0,TT-TAP-NHUOC-THI,standard,1,MOH-EYE-2026,Mục đích: Tập trung lực điều tiết cứu chữa cho não nhận kích thích ảnh và làm sáng mắt trước khi con nít già. Ưu tiên: Tối trọng khi dứới 8-12 tuổi. Lặp lại: Tập đa liệu trình dài ngày.
+H53.0,CLS-TDCN-THI-LUC,recommended,2,MOH-EYE-2026,Mục đích: So sánh thị độ con mắt nhược lười với tay nghề tiến độ tập luyện của mắt. Ưu tiên: Thực hành test hằng tuần nếu có thể. Lặp lại: Lặp đều kỳ.
+J45.9,CLS-TDCN-DO-HO-HAP,recommended,1,MOH-PED-2026,Mục đích: Đo FEV FVC ở trẻ lớn đánh giá mức độ co thắt suyễn hen. Ưu tiên: Cân nhắc tuổi nhi> 6 dễ test tuân theo thổi. Lặp lại: Test 3-6 tháng.
+G40.9,CLS-TDCN-EEG,standard,1,MOH-PED-2026,Mục đích: Quét sóng chậm động kinh khu trú hay lan tỏa ở bé. Ưu tiên: Định hình dạng sóng để thay chế phẩm an thần phù hợp. Lặp lại: 6-12 tháng.
+G80.9,CLS-TDCN-DANH-GIA-PT,recommended,1,MOH-PED-2026,Mục đích: Denver II Test đo đếm chỉ số tinh khôn nhạy cảm của trẻ liệt bại. Ưu tiên: Theo dõi định hướng VLTL sau này. Lặp lại: Thăm định đợt.
+G80.9,CLS-TDCN-EEG,suggested,2,MOH-PED-2026,Mục đích: Khảo sóng co giật mà trẻ bại hay nhiễm do não thương tổn nền. Ưu tiên: Nếu trẻ hay có đợt duối tay gồng thân vô cớ. Lặp lại: Khi có thêm cơn.
+H90.5,CLS-TDCN-OAE,standard,1,MOH-PED-2026,Mục đích: Sàng lọc âm ốc phản vệ trẻ chưa biết nói điếc nhẹ/nặng. Ưu tiên: Thực hiện như một test vàng chuẩn nhất ở trẻ nhỏ sàng. Lặp lại: Sàng lọc hoặc sau 3-6 tháng.
+H90.5,CLS-TDCN-ABR,recommended,2,MOH-PED-2026,Mục đích: Đo ngưỡng nghe nếu OAE có Fail. Ưu tiên: Cần thiết để chỉ đinh cấy máy ốc tai. Lặp lại: 1 nằm.
+F84.0,CLS-TDCN-DANH-GIA-PT,standard,1,MOH-PED-2026,Mục đích: Thang CARS tự kỷ và mức tự kỷ ở trẻ rối loạn giao tiếp xã hội. Ưu tiên: Tiêu chuẩn phân lớp. Lặp lại: 6 tháng dài theo trẻ.
+F70,CLS-TDCN-DANH-GIA-PT,standard,1,MOH-PED-2026,Mục đích: M-CHAT hay IQ đánh giá sức trí chậm trễ của mức độ nhận biết giao diện và trí tuệ mòn chậm phát triển lờ đờ nhẹ nhàng. Ưu tiên: Để chọn chế trị não hợp lý. Lặp lại: Định kỳ.

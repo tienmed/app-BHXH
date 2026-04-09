@@ -17,14 +17,14 @@ interface GoogleSheetsPreviewInput {
 
 @Injectable()
 export class ImportsService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
 
   getGoogleSheetsTemplate() {
     return googleSheetsWorkbookTemplate;
   }
 
   async importSeedData() {
-    const SEED_PATH = "c:\\Users\\Thinkpad X280\\.gemini\\App BHXH\\seeds\\google-sheets-pilot";
+    const SEED_PATH = path.resolve(__dirname, '../../../../../seeds/google-sheets-pilot');
 
     // 1. Create a master ImportDataset for this seed run
     const dataset = await this.prisma.importDataset.create({

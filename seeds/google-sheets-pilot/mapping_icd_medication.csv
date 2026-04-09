@@ -1,107 +1,107 @@
 icd_code,drug_code,mapping_type,priority,source_version,note
-E11.9,MED-DM-METFORMIN,preferred,1,MAP-2026.01,Thuốc nền trong đái tháo đường typ 2
-E11.9,MED-DM-GLICLAZIDE,suggested,2,MAP-2026.01,Cân nhắc khi cần tăng cường kiểm soát
-E78.5,MED-STATIN-ATORVASTATIN,preferred,1,MAP-2026.01,Statin cho rối loạn lipid
-E78.5,MED-STATIN-ROSUVASTATIN,suggested,2,MAP-2026.01,Statin thay thế
-J01.9,MED-ABX-AMOX-CLAV,preferred,1,MAP-ENT-2026,Kháng sinh đầu tay viêm xoang cấp
-J01.9,MED-ABX-CEFUROXIME,suggested,2,MAP-ENT-2026,Thay thế khi dị ứng Penicillin nhẹ
-J01.9,MED-CORT-BUDESONIDE-NS,recommended,3,MAP-ENT-2026,Corticoid xịt mũi giảm phù nề
-J01.9,MED-COMACH-OXYMETAZOLINE,suggested,4,MAP-ENT-2026,Thông mũi ngắn hạn dưới 5 ngày
-J02.9,MED-ABX-AMOX-CLAV,preferred,1,MAP-ENT-2026,Kháng sinh khi nghi nhiễm khuẩn
-J02.9,MED-ABX-AZITHROMYCIN,suggested,2,MAP-ENT-2026,Thay thế khi dị ứng Penicillin
-J02.9,MED-ANTIH-LORATADINE,suggested,3,MAP-ENT-2026,Giảm triệu chứng dị ứng kèm theo
-J03.9,MED-ABX-AMOX-CLAV,preferred,1,MAP-ENT-2026,Kháng sinh đầu tay viêm amidan
-J03.9,MED-ABX-CEFUROXIME,suggested,2,MAP-ENT-2026,Lựa chọn thay thế
-J32.9,MED-ABX-AMOX-CLAV,preferred,1,MAP-ENT-2026,Kháng sinh đợt cấp viêm xoang mãn
-J32.9,MED-ABX-AZITHROMYCIN,suggested,2,MAP-ENT-2026,Macrolide thay thế
-J32.9,MED-CORT-BUDESONIDE-NS,recommended,3,MAP-ENT-2026,Corticoid xịt mũi giảm viêm dài hạn
-J32.9,MED-ANTIH-LORATADINE,suggested,4,MAP-ENT-2026,Kiểm soát dị ứng kèm theo
-H66.9,MED-ABX-AMOX-CLAV,preferred,1,MAP-ENT-2026,Kháng sinh đầu tay viêm tai giữa
-H66.9,MED-ABX-CEFUROXIME,suggested,2,MAP-ENT-2026,Lựa chọn thay thế
-K02.1,MED-ANAL-PARACETAMOL,suggested,1,MAP-RHM-2026,Mục đích: Giảm ê buốt/đau; Tác dụng phụ: Hại gan (quá liều); Tương tác: Cẩn trọng thuốc qua gan khác.
-K02.5,MED-ABX-AMOXICILLIN,preferred,1,MAP-RHM-2026,Mục đích: Dự phòng/Trị viêm tủy; Tác dụng phụ: Tiêu chảy dị ứng; Tương tác: Giảm td thuốc tránh thai.
-K02.5,MED-NSAID-IBUPROFEN,recommended,2,MAP-RHM-2026,Mục đích: Giảm đau kháng viêm; Tác dụng phụ: Loét dạ dày; Tương tác: Tránh dùng chung NSAIDs khác.
-K04.0,MED-ABX-AMOXICILLIN,preferred,1,MAP-RHM-2026,Kháng sinh hỗ trợ điều trị tủy
-K04.0,MED-NSAID-IBUPROFEN,recommended,2,MAP-RHM-2026,Giảm đau kháng viêm
-K04.0,MED-ANAL-PARACETAMOL,suggested,3,MAP-RHM-2026,Giảm đau thay thế khi chống chỉ định NSAID
-K04.1,MED-ABX-AMOXICILLIN,preferred,1,MAP-RHM-2026,Kháng sinh khi có nhiễm trùng
-K04.1,MED-ABX-METRONIDAZOLE,recommended,2,MAP-RHM-2026,Phối hợp điều trị kỵ khí
-K04.1,MED-NSAID-IBUPROFEN,recommended,3,MAP-RHM-2026,Giảm đau kháng viêm
-K05.1,MED-ANTI-CHLORHEXIDINE,recommended,1,MAP-RHM-2026,Súc miệng sát khuẩn hỗ trợ điều trị
-K05.1,MED-ABX-METRONIDAZOLE,suggested,2,MAP-RHM-2026,Kháng sinh khi viêm nướu nặng
-K08.1,MED-ANES-LIDOCAINE,preferred,1,MAP-RHM-2026,Gây tê trước thủ thuật nhổ răng
-K08.1,MED-ABX-AMOXICILLIN,recommended,2,MAP-RHM-2026,Kháng sinh dự phòng sau nhổ
-K08.1,MED-NSAID-IBUPROFEN,recommended,3,MAP-RHM-2026,Giảm đau sau thủ thuật
-K12.1,MED-ANTI-CHLORHEXIDINE,recommended,1,MAP-RHM-2026,Súc miệng sát khuẩn giảm viêm
-K12.1,MED-ANAL-PARACETAMOL,suggested,2,MAP-RHM-2026,Giảm đau nhẹ
-M17.9,MED-NSAID-IBUPROFEN,preferred,1,MAP-MSK-2026,Giảm đau kháng viêm cấp tính
-M17.9,MED-ANAL-PARACETAMOL,suggested,2,MAP-MSK-2026,Giảm đau nhẹ hoặc khi chống chỉ định NSAID
-M17.9,MED-OA-GLUCOSAMINE,recommended,3,MAP-MSK-2026,Duy trì thoái hóa khớp
-M17.9,MED-CORT-METHYLPRED-ACETATE,suggested,4,MAP-MSK-2026,Tiêm khớp khi viêm tràn dịch nặng
-M15.9,MED-NSAID-IBUPROFEN,preferred,1,MAP-MSK-2026,Giảm đau
-M15.9,MED-ANAL-PARACETAMOL,suggested,2,MAP-MSK-2026,Giảm đau thay thế
-M19.9,MED-NSAID-IBUPROFEN,preferred,1,MAP-MSK-2026,Giảm đau
-M19.9,MED-ANAL-PARACETAMOL,suggested,2,MAP-MSK-2026,Giảm đau thay thế
-M05.9,MED-NSAID-IBUPROFEN,preferred,1,MAP-MSK-2026,Giảm đau kháng viêm
-M05.9,MED-CORT-METHYLPRED-ACETATE,suggested,2,MAP-MSK-2026,Tiêm khớp chống viêm tại chỗ
-M10.9,MED-GOUT-COLCHICINE,preferred,1,MAP-MSK-2026,Cắt cơn cấp
-M10.9,MED-GOUT-ALLOPURINOL,recommended,2,MAP-MSK-2026,Hạ acid uric máu duy trì
-M10.9,MED-NSAID-IBUPROFEN,preferred,3,MAP-MSK-2026,Giảm đau viêm khớp gút
-I50.9,MED-DIU-FUROSEMIDE,preferred,1,MAP-CARDIO-2026,Giảm phù
-I50.9,MED-BETA-BISOPROLOL,preferred,2,MAP-CARDIO-2026,Chẹn Beta suy tim
-I50.9,MED-DM-DAPAGLIFLOZIN,preferred,3,MAP-CARDIO-2026,Tứ trụ suy tim
-I50.9,MED-ACEI-PERINDOPRIL,recommended,4,MAP-CARDIO-2026,UCMC/ARB tứ trụ suy tim
-I48.9,MED-ANTICOA-RIVAROXABAN,preferred,1,MAP-CARDIO-2026,Chống đông
-I48.9,MED-BETA-BISOPROLOL,recommended,2,MAP-CARDIO-2026,Kiểm soát nhịp
-I20.9,MED-ANTIPLAT-ASPIRIN,preferred,1,MAP-CARDIO-2026,Chống kết tập tiểu cầu
-I20.9,MED-BETA-BISOPROLOL,preferred,2,MAP-CARDIO-2026,Chẹn Beta
-I20.9,MED-STATIN-ATORVASTATIN,recommended,3,MAP-CARDIO-2026,Statin cường độ cao
-I10,MED-ACEI-PERINDOPRIL,preferred,1,MAP-CARDIO-2026,Ưu tiên UCMC
-I10,MED-ARB-LOSARTAN,preferred,2,MAP-CARDIO-2026,Lựa chọn UCTT thay thế
-I10,MED-CCB-AMLODIPINE,suggested,3,MAP-CARDIO-2026,Thêm chẹn kênh canxi khi cần phối hợp
-I10,MED-BETA-BISOPROLOL,suggested,4,MAP-CARDIO-2026,Thêm chẹn Beta nếu kèm nhịp nhanh
-R07.4,MED-ANTIPLAT-ASPIRIN,suggested,1,MAP-CARDIO-2026,Cân nhắc dự phòng
-R07.4,MED-STATIN-ATORVASTATIN,suggested,2,MAP-CARDIO-2026,Cân nhắc kiểm soát lipid
-K21.9,MED-PPI-ESOMEPRAZOLE,preferred,1,MAP-GAS-2026,PPI chuẩn
-K21.9,MED-PROKI-ITOPRIDE,suggested,2,MAP-GAS-2026,Giảm đầy bụng
-K52.9,MED-ANTISPAS-MEBEVERINE,preferred,1,MAP-GAS-2026,Chống co thắt
-K52.9,MED-ABX-METRONIDAZOLE,suggested,2,MAP-GAS-2026,Nghi nhiễm khuẩn đường ruột
-K64.9,MED-HEMORR-DIOSMIN,preferred,1,MAP-GAS-2026,Trợ tĩnh mạch trĩ
-K64.9,MED-HEMORR-PROCTOLOG,preferred,2,MAP-GAS-2026,Mỡ bôi trĩ
-K64.9,MED-ANAL-PARACETAMOL,suggested,3,MAP-GAS-2026,Giảm đau trĩ
-K80.2,MED-BILI-UDCA,recommended,1,MAP-GAS-2026,Tan sỏi mật cholesterol
-K80.2,MED-ANTISPAS-MEBEVERINE,suggested,2,MAP-GAS-2026,Chống co thắt cơn đau
-K62.8,MED-ANTISPAS-MEBEVERINE,suggested,1,MAP-GAS-2026,Chống co thắt
-K62.8,MED-HEMORR-PROCTOLOG,suggested,2,MAP-GAS-2026,Bôi tại chỗ
-G62.9,MED-NEURO-GABAPENTIN,preferred,1,MAP-NEURO-2026,Giảm đau thần kinh
-G62.9,MED-NEURO-PREGABALIN,preferred,2,MAP-NEURO-2026,Lựa chọn thay thế Gabapentin
-G62.9,MED-NEURO-AMITRIPTYLINE,suggested,3,MAP-NEURO-2026,Phối hợp giảm đau an thần ban đêm
-G62.9,MED-NEURO-VITAMIN-B,recommended,4,MAP-NEURO-2026,Bổ trợ thần kinh
-G63.2,MED-NEURO-PREGABALIN,preferred,1,MAP-NEURO-2026,Hiệu quả cao với biến chứng tiểu đường
-G63.2,MED-NEURO-GABAPENTIN,preferred,2,MAP-NEURO-2026,Thay thế Pregabalin
-G63.2,MED-NEURO-VITAMIN-B,recommended,3,MAP-NEURO-2026,Đặc biệt cần nếu dùng Metformin lâu dài
-G56.0,MED-NEURO-GABAPENTIN,suggested,1,MAP-NEURO-2026,Giảm tê bì
-G56.0,MED-NEURO-VITAMIN-B,recommended,2,MAP-NEURO-2026,Hỗ trợ phục hồi thần kinh
-Z32.1,MED-OBGYN-VITAMIN,recommended,1,MAP-OBGYN-2026,Bổ sung vitamin thai kỳ
-Z34.9,MED-OBGYN-VITAMIN,recommended,1,MAP-OBGYN-2026,Bổ sung vitamin thai kỳ định kỳ
-N76.0,MED-OBGYN-METRO-NEO,preferred,1,MAP-OBGYN-2026,Kháng sinh đặt phụ khoa
-N83.2,MED-OBGYN-CONTRACEPTIVE,suggested,1,MAP-OBGYN-2026,Can thiệp nội tiết bảo vệ
-Z30.1,MED-OBGYN-METRO-NEO,suggested,1,MAP-OBGYN-2026,Ngừa viêm nhiễm sau đặt vòng
-H10.9,MED-EYE-TOBRAMYCIN,preferred,1,MAP-EYE-2026,Kháng sinh phổ rộng trị đau mắt đỏ
-H10.9,MED-EYE-ARTIFICIAL-TEAR,recommended,2,MAP-EYE-2026,Làm sạch làm dịu mắt
-H40.9,MED-EYE-TIMOLOL,standard,1,MAP-EYE-2026,Hạ áp nội nhãn cấp
-H40.9,MED-EYE-ARTIFICIAL-TEAR,suggested,2,MAP-EYE-2026,Tránh khô mắt do thuốc Glaucoma
-T15.9,MED-EYE-ARTIFICIAL-TEAR,preferred,1,MAP-EYE-2026,Rửa trôi và phục hồi
-T15.9,MED-EYE-TOBRAMYCIN,recommended,2,MAP-EYE-2026,Phòng ngừa bội nhiễm viêm giác mạc
-T15.9,MED-EYE-DICLOFENAC,suggested,3,MAP-EYE-2026,Giảm đau sau thủ thuật
-H52.0,MED-EYE-TROPICAMIDE,suggested,1,MAP-EYE-2026,Liệt điều tiết trẻ em trước đo khúc xạ
-H52.1,MED-EYE-TROPICAMIDE,suggested,1,MAP-EYE-2026,Khúc xạ liệt điều tiết
-H50.9,MED-EYE-TROPICAMIDE,suggested,1,MAP-EYE-2026,Tra liệt soi đáy mắt
-H53.0,MED-EYE-ARTIFICIAL-TEAR,suggested,1,MAP-EYE-2026,Nuôi dưỡng biểu mô giác mạc
-J06.9,MED-PED-AMOXICILLIN,suggested,1,MAP-PED-2026,Chỉ khi nghi bội nhiễm vi khuẩn
-J20.9,MED-PED-AMOXICILLIN,suggested,1,MAP-PED-2026,Kháng sinh khi có dấu hiệu bội nhiễm
-J45.9,MED-PED-SALBUTAMOL,standard,1,MAP-PED-2026,Cắt cơn hen cấp
-J45.9,MED-PED-BUDESONIDE,preferred,2,MAP-PED-2026,Dự phòng hen bậc 2 trở lên
-G40.9,MED-PED-H-VALPROATE,standard,1,MAP-PED-H-2026,NHÓM H - Cần duyệt đặc biệt
-F84.0,MED-PED-H-RISPERIDONE,suggested,1,MAP-PED-H-2026,NHÓM H - Kiểm soát hành vi tự kỷ
-F84.0,MED-PED-H-METHYLPHENIDATE,suggested,2,MAP-PED-H-2026,NHÓM H - ADHD kèm tự kỷ
+E11.9,MED-DM-METFORMIN,preferred,1,MAP-2026.01,Mục đích: Kiểm soát đường huyết cơ bản lâu dài. Tác dụng phụ: Gây tiêu chảy và toan lactic nếu chức năng thận yếu. Tương tác: Cẩn trọng cản quang có iot.
+E11.9,MED-DM-GLICLAZIDE,suggested,2,MAP-2026.01,Mục đích: Hạ đường huyết qua tiết Insulin thêm. Tác dụng phụ: Suy nhược hạ đường béo phì. Tương tác: Rượu bia hoặc ức chế nấm miconazole.
+E78.5,MED-STATIN-ATORVASTATIN,preferred,1,MAP-2026.01,Mục đích: Giảm mỡ tĩnh mạch LDL mạnh mẽ giảm vữa màng mạch. Tác dụng phụ: Tiêu cơ vân do men gan bứt dứt. Tương tác: Đặc biệt CYP3A4 ức chế nấm nhóm conazoles.
+E78.5,MED-STATIN-ROSUVASTATIN,suggested,2,MAP-2026.01,Mục đích: Statin hiệu quả kéo mạnh hơn Ator. Tác dụng phụ: Sinh đạm dái nước tiểu do tổn thận màng. Tương tác: Fibrate.
+J01.9,MED-ABX-AMOX-CLAV,preferred,1,MAP-ENT-2026,Mục đích: Tiêu trừ vi khuẩn phổ rộng do H.influenza sinh beta lactam. Tác dụng phụ: Tiêu đại tràng. Tương tác: Tránh thai dạng viêng.
+J01.9,MED-ABX-CEFUROXIME,suggested,2,MAP-ENT-2026,Mục đích: Trị liệu sau đổi thuốc hoặc ho nhẹ dị ứng. Tác dụng phụ: Buồn nôn dị ứng chéo peni. Tương tác: PPI.
+J01.9,MED-CORT-BUDESONIDE-NS,recommended,3,MAP-ENT-2026,Mục đích: Xịt mũi kháng viêm giảm độ nghẽn xoang cấp. Tác dụng phụ: Kích ứng cọ rát chảy máu niêm. Tương tác: Itraconazole.
+J01.9,MED-COMACH-OXYMETAZOLINE,suggested,4,MAP-ENT-2026,Mục đích: Gây co mao mạch trĩ giảm sưng nề. Tác dụng phụ: Rebound sung huyết (nếu quá 5 ng). Tương tác: IMAO.
+J02.9,MED-ABX-AMOX-CLAV,preferred,1,MAP-ENT-2026,Mục đích: Tiêu diệt liên cầu tan huyết BetaA. Tác dụng phụ: Nhạy đường ruột. Tương tác: Probenecid.
+J02.9,MED-ABX-AZITHROMYCIN,suggested,2,MAP-ENT-2026,Mục đích: Dị ứng nặng Peni sang Macrolide. Tác dụng phụ: Loạn nhịp thất do QTc trương. Tương tác: Amiodarone.
+J02.9,MED-ANTIH-LORATADINE,suggested,3,MAP-ENT-2026,Mục đích: Giảm viêm xuất tiết dị ứng. Tác dụng phụ: Khô môi ít buồn nôn ngủ. Tương tác: Keta.
+J03.9,MED-ABX-AMOX-CLAV,preferred,1,MAP-ENT-2026,Mục đích: Sạch khuẩn có mủ chóp amidan. Tác dụng phụ: Trào ngược đau bao. Tương tác: Allopurinol.
+J03.9,MED-ABX-CEFUROXIME,suggested,2,MAP-ENT-2026,Mục đích: Dị ứng nhẹ vi khuẩn trơ. Tác dụng phụ: Viêm ruột giả tiết do CloD. Tương tác: Antacid.
+J32.9,MED-ABX-AMOX-CLAV,preferred,1,MAP-ENT-2026,Mục đích: Khởi phát đợt cấp ở mạn tính. Tác dụng phụ: Ị chảy gan suy. Tương tác: Warfarin mỏng máu.
+J32.9,MED-ABX-AZITHROMYCIN,suggested,2,MAP-ENT-2026,Mục đích: Dị ứng penicillin phác đồ 3 ngày. Tác dụng phụ: Viêm ruột lỏng. Tương tác: Colchicine.
+J32.9,MED-CORT-BUDESONIDE-NS,recommended,3,MAP-ENT-2026,Mục đích: Kháng viêm nền duy trì chống nghẹt. Tác dụng phụ: Nấm hầu nhĩ xịt. Tương tác: Ketoconazole.
+J32.9,MED-ANTIH-LORATADINE,suggested,4,MAP-ENT-2026,Mục đích: Dị ứng kéo dài gây tiết xoang. Tác dụng phụ: Miệng khô. Tương tác: Macrolide yếu.
+H66.9,MED-ABX-AMOX-CLAV,preferred,1,MAP-ENT-2026,Mục đích: Khuẩn gây ứ tai màng nhĩ đục. Tác dụng phụ: Da bông phát ban. Tương tác: Metotrexat.
+H66.9,MED-ABX-CEFUROXIME,suggested,2,MAP-ENT-2026,Mục đích: Thay thế khi có sốt nhưng dị ứng Peni. Tác dụng phụ: Tiêu lỏng. Tương tác: Omeprazole.
+K02.1,MED-ANAL-PARACETAMOL,suggested,1,MAP-RHM-2026,Mục đích: Cắt đau nhức ê sâu lỗ nhỏ. Tác dụng phụ: Hư gan vàng da. Tương tác: Rượu và thuốc chống co giật.
+K02.5,MED-ABX-AMOXICILLIN,preferred,1,MAP-RHM-2026,Mục đích: Nề chống phản viêm tủy khuẩn RHM. Tác dụng phụ: Ỉa phân té. Tương tác: Thuốc tránh thai rụng buồn.
+K02.5,MED-NSAID-IBUPROFEN,recommended,2,MAP-RHM-2026,Mục đích: Giảm đau tại chỗ cho nề nhẹ chóp tủy. Tác dụng phụ: Rối loạn hệ màng ruột xơ loét. Tương tác: Aspirin.
+K04.0,MED-ABX-AMOXICILLIN,preferred,1,MAP-RHM-2026,Mục đích: Dẹp khuẩn sưng tủy trước chữa. Tác dụng phụ: Nổi bọng nước mẫn. Tương tác: Thuốc máu đông.
+K04.0,MED-NSAID-IBUPROFEN,recommended,2,MAP-RHM-2026,Mục đích: Đau tủy bứt rứt mạn cấp. Tác dụng phụ: Đau xót dạ dày tá tá. Tương tác: ACEI hoặc ARB làm hư thận.
+K04.0,MED-ANAL-PARACETAMOL,suggested,3,MAP-RHM-2026,Mục đích: Giảm đau hờ do dị ứng loét bao tử. Tác dụng phụ: Xơ tiêu gan dị ứng da. Tương tác: Cồn.
+K04.1,MED-ABX-AMOXICILLIN,preferred,1,MAP-RHM-2026,Mục đích: Khuẩn tủy hoại viêm áp xe nang. Tác dụng phụ: Ngứa ban hệ. Tương tác: KS tĩnh.
+K04.1,MED-ABX-METRONIDAZOLE,recommended,2,MAP-RHM-2026,Mục đích: Kỵ khí xoang hàm răng lợi nướu mục. Tác dụng phụ: Lợm nôn mùi kim kim loại miệng quặn. Tương tác: Rượu cồn ngây sốc.
+K04.1,MED-NSAID-IBUPROFEN,recommended,3,MAP-RHM-2026,Mục đích: Viêm chóp hoại sưng khu trú đau. Tác dụng phụ: Máu mũi dạ dày xuất huyết. Tương tác: Warfarin máu loang.
+K05.1,MED-ANTI-CHLORHEXIDINE,recommended,1,MAP-RHM-2026,Mục đích: Súc miệng tẩy rêu bựa kẽ nướu nấm. Tác dụng phụ: Nâu răng vị lưỡi kém. Tương tác: Kem có Sodi Sulfat xà phòng.
+K05.1,MED-ABX-METRONIDAZOLE,suggested,2,MAP-RHM-2026,Mục đích: Viêm túi nha chu kỵ khí có mủ u. Tác dụng phụ: Chóng xay say kim khí. Tương tác: Disulfiram kinh chấn.
+K08.1,MED-ANES-LIDOCAINE,preferred,1,MAP-RHM-2026,Mục đích: Chích tê nướu trước khi cạy nạy răng mẻ. Tác dụng phụ: Buốt nhanh run tay dị ứng não. Tương tác: Kháng Histamin chẹn H.
+K08.1,MED-ABX-AMOXICILLIN,recommended,2,MAP-RHM-2026,Mục đích: Ngăn vi khuẩn vô máu tại mạch rỗng sau nhổ huyệt. Tác dụng phụ: Tiêu đại tràng. Tương tác: Ngừa thai uống.
+K08.1,MED-NSAID-IBUPROFEN,recommended,3,MAP-RHM-2026,Mục đích: Đau ê buốt từ xương nha chu cạy mổ. Tác dụng phụ: Loát dạ dầy. Tương tác: Tim đập.
+K12.1,MED-ANTI-CHLORHEXIDINE,recommended,1,MAP-RHM-2026,Mục đích: Ngừa rêu khuẩn mủ bội ap tơ lót. Tác dụng phụ: Rát chói khi súc. Tương tác: Tương kỵ chất Fluoride.
+K12.1,MED-ANAL-PARACETAMOL,suggested,2,MAP-RHM-2026,Mục đích: Giảm đau rát miệng môi má khi lở. Tác dụng phụ: Nhẹ gan độc mạn tính. Tương tác: Men g.
+M17.9,MED-NSAID-IBUPROFEN,preferred,1,MAP-MSK-2026,Mục đích: Đau ổ sụn dập gối viêm mạc bao. Tác dụng phụ: Hư dạ dày hư thận tim phình. Tương tác: ACEI lợi niệu giảm làm độc thận.
+M17.9,MED-ANAL-PARACETAMOL,suggested,2,MAP-MSK-2026,Mục đích: Bệnh mạn suy thận dạ dày ko dùng được kháng viêm NSAID thô bạo. Tác dụng phụ: Giải gan tàn dị ứng chéo. Tương tác: Warfa.
+M17.9,MED-OA-GLUCOSAMINE,recommended,3,MAP-MSK-2026,Mục đích: Tuới sụn dịch tiết cho trơn ma sát sinh hoạt gối khớp. Tác dụng phụ: Sót tiêu hoá ngán cồn trào. Tương tác: Máu chảy ngầm.
+M17.9,MED-CORT-METHYLPRED-ACETATE,suggested,4,MAP-MSK-2026,Mục đích: Đạn tiêm xịt thẳng bao khớp viêm dịch đầy chặt gối cạy. Tác dụng phụ: Nhiễm trùng mủ khớp đục cơ teo. Tương tác: Đái tháo mất mức do hệ máu.
+M15.9,MED-NSAID-IBUPROFEN,preferred,1,MAP-MSK-2026,Mục đích: Nhiều chỏ khớp viêm đa thoái lão giảm rêm tập. Tác dụng phụ: Đau xót loét loát đường ruột thận cạn. Tương tác: Máu đông loãng.
+M15.9,MED-ANAL-PARACETAMOL,suggested,2,MAP-MSK-2026,Mục đích: Chọn ở người 80 90 tuổi thoái đa khớp lụm cụm ko uống NSAID. Tác dụng phụ: Suy suyển tế bào gan mờ. Tương tác: Ko nhiều.
+M19.9,MED-NSAID-IBUPROFEN,preferred,1,MAP-MSK-2026,Mục đích: Ngắn đợt cấp do sai tư thể rãnh sụn khớp. Tác dụng phụ: Hại thận loét mạc tá tràng dạ. Tương tác: Huyết áp ACEI.
+M19.9,MED-ANAL-PARACETAMOL,suggested,2,MAP-MSK-2026,Mục đích: Có trĩ xuất huyết ko dùng đc Ibu. Tác dụng phụ: Viêm gan B nền trầm trọng thêm do dộc Parace. Tương tác: Rượu b.
+M05.9,MED-NSAID-IBUPROFEN,preferred,1,MAP-MSK-2026,Mục đích: Dập cơn sưng ngón bàn khớp dạng thấp chít rít nhức tủy. Tác dụng phụ: Suy thận xuất huyết trong dạ tá. Tương tác: Kháng viêm tiêm.
+M05.9,MED-CORT-METHYLPRED-ACETATE,suggested,2,MAP-MSK-2026,Mục đích: Tiêm tại một ngón lới bàn mủ xưng u to thô đục. Tác dụng phụ: Lõm cơ lười sụn nứt gân gót. Tương tác: Gây đường cao.
+M10.9,MED-GOUT-COLCHICINE,preferred,1,MAP-MSK-2026,Mục đích: Cắt đứt sự di thực bạch cầu vào khớp tinh thể Urat ngón lón và đau tột. Tác dụng phụ: Ỉa phân lỏng tó tát sối xả buồn nôn nôn mửa nôn. Tương tác: Clarithromycin cấm tuyệt đối vì gây tiêu vân chết.
+M10.9,MED-GOUT-ALLOPURINOL,recommended,2,MAP-MSK-2026,Mục đích: Kiểm hãm men tạo axit urate phòng gout tái cấp. Tác dụng phụ: Mảng da phồng bong tróc toàn diện Steven Johnson ác tính. Tương tác: Giảm bạch cầu Azathioprin.
+M10.9,MED-NSAID-IBUPROFEN,preferred,3,MAP-MSK-2026,Mục đích: Phụ trợ Colchicine do gout quá đau kháng viêm dập. Tác dụng phụ: Nguyệt hoại dạ dày hỏng thận đái tưa. Tương tác: Kháng máu.
+I50.9,MED-DIU-FUROSEMIDE,preferred,1,MAP-CARDIO-2026,Mục đích: Túi phổi phù chi tiết rút tháo nước sung huyết suy tim ứ giật. Tác dụng phụ: Mất Kali ngất mất nước tụt tụt hạ. Tương tác: Lithium hoặc độc tai nếu kèm.
+I50.9,MED-BETA-BISOPROLOL,preferred,2,MAP-CARDIO-2026,Mục đích: Bảo vệ tuổi thọ do nhịp chậm bóp mạnh. Tác dụng phụ: Mệt lạnh tay block tim lịm co thắt nang sễn. Tương tác: Diltiazem.
+I50.9,MED-DM-DAPAGLIFLOZIN,preferred,3,MAP-CARDIO-2026,Mục đích: Thãi đường thải Natri trợ tim chống nhập viện do phù suy. Tác dụng phụ: Nhiễm nấm ngứa đường sinh sinh tiểu sinh đạo bựa. Tương tác: Insulin dễ xỉu do tuột đường m.
+I50.9,MED-ACEI-PERINDOPRIL,recommended,4,MAP-CARDIO-2026,Mục đích: Mở van động mạch giảm hậu tải cơ thất bơm nhẹ sướng. Tác dụng phụ: Ho khè ửng mũi mẩn K+ lên dồn dập. Tương tác: Lợi tiểu dồn Kali máu.
+I48.9,MED-ANTICOA-RIVAROXABAN,preferred,1,MAP-CARDIO-2026,Mục đích: Tránh cục huyết nhĩ văng đi lấp mạch não đột quỵ nằm viện. Tác dụng phụ: Chảy rỉ rả não tiêu hóa lợi máu cam. Tương tác: Tránh nấm dệt ngấm (Itraconazole).
+I48.9,MED-BETA-BISOPROLOL,recommended,2,MAP-CARDIO-2026,Mục đích: Kềm cương nút nhĩ bị rung trên 120 không cho tâm thất đua theo. Tác dụng phụ: Chóng rờ tay chân nhức thở hen lên cơn. Tương tác: NSAID.
+I20.9,MED-ANTIPLAT-ASPIRIN,preferred,1,MAP-CARDIO-2026,Mục đích: Ngăn dính tiểu máu vỡ mạch hẹp nghẽn động vành. Tác dụng phụ: Lét bào dạ mỏng xuất tiêu lòi não xuất. Tương tác: Corticoid và IBU.
+I20.9,MED-BETA-BISOPROLOL,preferred,2,MAP-CARDIO-2026,Mục đích: Tim chậm tiết kiệm oxy cơ tim đỡ mệt tức nhói lồng. Tác dụng phụ: Ác mộng sảng ngủ tay tím nấc. Tương tác: Nifedipin giãn tim lẹ.
+I20.9,MED-STATIN-ATORVASTATIN,recommended,3,MAP-CARDIO-2026,Mục đích: Kiên cố màng vữa xơ chống bục nghẽn cấp mỡ hạ. Tác dụng phụ: Viêm cơ đục gan ẻo uể chân nách mỏi. Tương tác: Sinh tố nước bưởi chùm C.
+I10,MED-ACEI-PERINDOPRIL,preferred,1,MAP-CARDIO-2026,Mục đích: Trị liệu ưu việt số 1 do bảo tồn chức năng thận ở tuổi già THA lâu năm. Tác dụng phụ: Ho hen suyễn ho gằn chọc yết hầu dị ứng môi lớn. Tương tác: Dùng NSAID quá đà làm hỏng chức năng eGFR.
+I10,MED-ARB-LOSARTAN,preferred,2,MAP-CARDIO-2026,Mục đích: Tuyến 2 nếu ho ho khan do uống Perin nên sang loại nài. Tác dụng phụ: Hạ nấc tư thế chóng đầu óc mất Kali lên cao. Tương tác: Digoxin giảm thải.
+I10,MED-CCB-AMLODIPINE,suggested,3,MAP-CARDIO-2026,Mục đích: Đi kèm ACEI nếu uống 1 viên ko hạ đc mức 140/90mm thu thủy. Tác dụng phụ: Sưng búp chân đỏ bừng má nhức sọn tay. Tương tác: Simvastatine tăng lên độ.
+I10,MED-BETA-BISOPROLOL,suggested,4,MAP-CARDIO-2026,Mục đích: Nếu THA lới chới kèm theo nhịp hồi hộp đánh trống đập ngực phập phồng > 90lần. Tác dụng phụ: Kém ham mỏi nhược hạ đường. Tương tác: Clopidogrel ko đụng.
+R07.4,MED-ANTIPLAT-ASPIRIN,suggested,1,MAP-CARDIO-2026,Mục đích: Đau ngực chưa biết phải vành cơ nguy thì nhấp trước một viên nhai kỹ để ngăn khối. Tác dụng phụ: Buồn bụng xót chua lủng bao tử trên ng đang loét dày tá. Tương tác: Giảm Uric acid ra ngoài của gout allopur.
+R07.4,MED-STATIN-ATORVASTATIN,suggested,2,MAP-CARDIO-2026,Mục đích: Ngăn ngừa xơ vành hẹp hở cấp đau nghi do tim mạch. Tác dụng phụ: Uể mình nổi cơ bắp ban gan cao men. Tương tác: Gemfibrozil tàn cơ.
+K21.9,MED-PPI-ESOMEPRAZOLE,preferred,1,MAP-GAS-2026,Mục đích: Chặn bơm acid nôn trào rát ngực bỏng cuống họng thanh khí. Tác dụng phụ: Viêm đại màng giả lỏng lẻo C diff phân còi xương giảm B12. Tương tác: Ưc chế Clopidogrel làm tai vạ tim mạch xuất.
+K21.9,MED-PROKI-ITOPRIDE,suggested,2,MAP-GAS-2026,Mục đích: Tăng trương xả dạ ợ không cho dạ dề đầy hơi nước kẹt. Tác dụng phụ: Tiêu re sữa chảy vú nhức trán điên loạn ít gặp. Tương tác: Atropin.
+K52.9,MED-ANTISPAS-MEBEVERINE,preferred,1,MAP-GAS-2026,Mục đích: Rút co thắt ruột lẩm nhẩm nhức uế đi lỏng lẻo rặn đau. Tác dụng phụ: Có lúc ngứa phát bông ban ngực nhô. Tương tác: An toàn với phần lớn KS thuốc tim.
+K52.9,MED-ABX-METRONIDAZOLE,suggested,2,MAP-GAS-2026,Mục đích: Khuẩn lỵ a míp kiết ăn hải sản ruột dơ khuẩn ngộ. Tác dụng phụ: Đồng thau ở lưỡi miệng kinh hoảng chán chè ruột. Tương tác: Bia rượu cực kỵ dị ứng nôn tháo.
+K64.9,MED-HEMORR-DIOSMIN,preferred,1,MAP-GAS-2026,Mục đích: Bó chặt tĩnh mao cục trĩ bớt máu nhểu sa xệ nóng đít. Tác dụng phụ: Tiêu táo nôn mửa da kích ửng nhay ngứa. Tương tác: Không đáng kệ.
+K64.9,MED-HEMORR-PROCTOLOG,preferred,2,MAP-GAS-2026,Mục đích: Thoa nắn lỗ trĩ lấp vết xước co dẹp đệm rát đỡ ra huyết đỏ. Tác dụng phụ: Rát chích lỗ khi thuốc thấm nhức rêm cục máu. Tương tác: Thuốc mỡ bôi hậu môn khác.
+K64.9,MED-ANAL-PARACETAMOL,suggested,3,MAP-GAS-2026,Mục đích: Lót dạ giảm đau viêm nghẹt cục trĩ nội lòi ra sưng ko đưa vào. Tác dụng phụ: Uống dài ngộ độc mật gan suyễn gan men cao rống. Tương tác: Uống kèm Ibu.
+K80.2,MED-BILI-UDCA,recommended,1,MAP-GAS-2026,Mục đích: Làm nhũ hóa sỏi mềm túi thành cholesterol cặn sỏi mật hòa tan. Tác dụng phụ: Phân xẹp nhãi đi ngoài lỏng da nổi mề hạch. Tương tác: Thuốc bột trung hòa acid dày tá nhôm.
+K80.2,MED-ANTISPAS-MEBEVERINE,suggested,2,MAP-GAS-2026,Mục đích: Chặn co quặn ống chậu gan ống mật chủ sỏi vướng gắt. Tác dụng phụ: Dị ứng da mi. Tương tác: Không có.
+K62.8,MED-ANTISPAS-MEBEVERINE,suggested,1,MAP-GAS-2026,Mục đích: Đau mót dồn dập rặn sau trực sàng giảm căng trương nằng nặng. Tác dụng phụ: Kích da. Tương tác: Có thể làm giảm hấp xí.
+K62.8,MED-HEMORR-PROCTOLOG,suggested,2,MAP-GAS-2026,Mục đích: Lở dọc rẽ ống lọt hậu bôi chống nứt rướm chảy hường. Tác dụng phụ: The tê nóng nảy. Tương tác: Bôi sáp.
+G62.9,MED-NEURO-GABAPENTIN,preferred,1,MAP-NEURO-2026,Mục đích: Chặn kênh tiết dẩn truyền thần ngoại chi làm người ta bỏng chói rát lạnh rần kim châm. Tác dụng phụ: Gục gật lơ mơ ngái ngủ văng váng thảng thốt chóng xoay. Tương tác: Gấp bội ngáo buồn ngủ với Ativan Valium bia ng.
+G62.9,MED-NEURO-PREGABALIN,preferred,2,MAP-NEURO-2026,Mục đích: Xài luân phiên cực nhạy với người đái đường hư tận thần sợi tay teo dây mủn xút. Tác dụng phụ: Béo thệu mờ thủy tinh dịch phù cẳng chân phù. Tương tác: Thuốc Phiện hô hấp gục tử v.
+G62.9,MED-NEURO-AMITRIPTYLINE,suggested,3,MAP-NEURO-2026,Mục đích: Lạc hướng lo âu mất thức vì đau tối nhức xương dây chằng thần rên khóc. Tác dụng phụ: Đái ngắt dính ngắt mồm môi sa sầm nịp nhịp lẹ vút. Tương tác: Kỵ trầm MAOU chẹn não gắt.
+G62.9,MED-NEURO-VITAMIN-B,recommended,4,MAP-NEURO-2026,Mục đích: Tuới dưỡng tủy myelin bao bọc tế bào hồi phục mô tê cùi đứt truyền. Tác dụng phụ: Nước đái óng vàng dội. Tương tác: Kỵ chung đậu đao levodopa trị tay run chân run.
+G63.2,MED-NEURO-PREGABALIN,preferred,1,MAP-NEURO-2026,Mục đích: Đặc nhiệm nhất tiêu điểm của viêm chóp dây do lượng đường 10 năm phế hư đái móp. Tác dụng phụ: Nhìn choạng sưng bàn gót chân. Tương tác: Thuốc ếm phổi an thần.
+G63.2,MED-NEURO-GABAPENTIN,preferred,2,MAP-NEURO-2026,Mục đích: Uống dịu ít phản ứng nếu Pregalin bị lừ đừ mập ú khó chịu. Tác dụng phụ: Sa sầm ngủ vạ vật ngày ban gật đi. Tương tác: Antacid kiềm dạ giảm thuốc bay sạch.
+G63.2,MED-NEURO-VITAMIN-B,recommended,3,MAP-NEURO-2026,Mục đích: Phải xài hòng bù đắp Vitamin Metformin đái tháo bòn rút bao năm héo mòn tế hệ thần. Tác dụng phụ: An toàn trừ cao liều vọt quá ngàn mg. Tương tác: Parkison.
+G56.0,MED-NEURO-GABAPENTIN,suggested,1,MAP-NEURO-2026,Mục đích: Chặn te buồn bực cấu xé lòng cườm cổ thụ tay hội chứng chèn giữa TK ngón v. Tác dụng phụ: Chóng quay dật gật u sầu. Tương tác: Rượu cồn ngáy thê ngủ thê tiệm.
+G56.0,MED-NEURO-VITAMIN-B,recommended,2,MAP-NEURO-2026,Mục đích: Hồi lực ống gân TK giữa chống chèn liệt mu chi bàn rũ ngửa tay. Tác dụng phụ: Vô độc vàng giải đi tiểu. Tương tác: Ldopa bị xén bớt nộ dụng tác y.
+Z32.1,MED-OBGYN-VITAMIN,recommended,1,MAP-OBGYN-2026,Mục đích: Bảo thai mọc rãnh TK tuỷ sống trọn kín giảm dị và chống lở mẹ xám máu. Tác dụng phụ: Ói mửa tanh miệng bón đen cục phân thô xót dầy rốn táo. Tương tác: Ăn trà sữa cùng dập giảm Sắt vôi tuột thấp tiêu vãi.
+Z34.9,MED-OBGYN-VITAMIN,recommended,1,MAP-OBGYN-2026,Mục đích: Cung phôi sinh chất dưỡng nhi thai đục chi khung sụn hình dạng. Tác dụng phụ: Có đợt dạ ợ mệt cấn dầy bụng tức vón lợn. Tương tác: Dạ dày omeprazole chặn acid mất hập sắt loãng xương.
+N76.0,MED-OBGYN-METRO-NEO,preferred,1,MAP-OBGYN-2026,Mục đích: Tọng vô diệt xả trùng a míp trùng roi huyết vi lậu đạo nấm vùng sinh bẩn ngứa ồ hôi ứ vàng. Tác dụng phụ: Cộm rạo rát lúc thọc chèn đỏ mẩn nóng rần vách trong. Tương tác: Kháng viêm hoặc uống kèm Metronida ngộ độc kim.
+N83.2,MED-OBGYN-CONTRACEPTIVE,suggested,1,MAP-OBGYN-2026,Mục đích: Ngăn vỡ buồng rụng gây nang xuất to huyết đè kềm nội phân giảm lấn. Tác dụng phụ: Ngứa phì nôn buồn ói nang vú tức lên cân mập nê thũng huyết chân máu cức cục. Tương tác: Kháng lao PXR Kháng mủn làm đẻ con thủng ngừa.
+Z30.1,MED-OBGYN-METRO-NEO,suggested,1,MAP-OBGYN-2026,Mục đích: Phòng hờ vi mủ kéo đuổi chạy lên ống cổ tử buồng lọt vòng kim loại cọ nhú viêm vòi mủ dính. Tác dụng phụ: Ngứa ngáy dít đàng trong. Tương tác: Chú kiêng bia tiệc.
+H10.9,MED-EYE-TOBRAMYCIN,preferred,1,MAP-EYE-2026,Mục đích: Tắm mắt diệt vi lam cầu tụ mủ nhèm toét tấy đỏ lòng trắng phừng sung đổ xốn cọng gỉ đùn. Tác dụng phụ: Rát chích nhoi giọt sưng bì cộm mi lệ túa phồng đỏ vằn hơn. Tương tác: Lọt tĩnh mạch ngộ điếc tay hỏng thận tai.
+H10.9,MED-EYE-ARTIFICIAL-TEAR,recommended,2,MAP-EYE-2026,Mục đích: Chữa gỉn khô bốc trôi xả bẩn trơn tru dịu rát mạc. Tác dụng phụ: Quáng mờ mù ngay sau rỏ rỉ nhẹ. Tương tác: Nhỏ xen kẻ trước 10 phút các bịnh con thuốt khác.
+H40.9,MED-EYE-TIMOLOL,standard,1,MAP-EYE-2026,Mục đích: Đè ức cản xuất thủy pha lỏng giảm đè trương nén áp nội nhãn khẩn mục glocom ngặt. Tác dụng phụ: Lệch tịt tiết mù mạc châm cộm dội; tim đập đứng phế hen xuyển thóp. Tương tác: CCB diltiazem tim đập lịm cựa chậm chẹn beta gấp chục lần.
+H40.9,MED-EYE-ARTIFICIAL-TEAR,suggested,2,MAP-EYE-2026,Mục đích: Bôi ẩm xoa chống sa tịt chất thủy cạn khô quắt do di chứng timol loắt độc mục võng hóc m. Tác dụng phụ: Cộm sương nhòa nhạt. Tương tác: Gác qua nhỏ.
+T15.9,MED-EYE-ARTIFICIAL-TEAR,preferred,1,MAP-EYE-2026,Mục đích: Tẩy tháo hạt tróc lớp xước vẩn rách dị xát. Tác dụng phụ: Nhạt màn mờ ảo. Tương tác: 10p trc thuốt khác.
+T15.9,MED-EYE-TOBRAMYCIN,recommended,2,MAP-EYE-2026,Mục đích: Dè dặt tụ ổ viêm mủ giác thủng hốc sẹo xỏ đục mờ quầng loét mục sau cạy rút phoi kẽm bay sập chổi hóc sắt bu. Tác dụng phụ: Đau nát tróc cựa cộm. Tương tác: Tetra sáp.
+T15.9,MED-EYE-DICLOFENAC,suggested,3,MAP-EYE-2026,Mục đích: Tê dịu mảng rách đỡ xót cộm tức mi ửng mắt xé xói. Tác dụng phụ: Gây mủn sẹo chậm tịt đóng mài làm nát mục thủng mạn nếu rỏ dai quá chừng. Tương tác: Pối cùng nhỏ Corti mục giác vỡ toát tỏng viêm rỉ màng mụt mù loà.
+H52.0,MED-EYE-TROPICAMIDE,suggested,1,MAP-EYE-2026,Mục đích: Đánh giãn liệt nhãn tủy điều vớt để phơi ánh chiếu khúc xạ kính trong veo nhạy cho nhi ấu kính vồng viễn. Tác dụng phụ: Loáng mắt sợ trưa nằng cao nhãn ức mục miệng đắng ran lòng tim giật vút nhảy m. Tương tác: Thuốc an thần tâm liệt giao cảm co chống thắt sẽ cuồn cuộn liều x độc tính.
+H52.1,MED-EYE-TROPICAMIDE,suggested,1,MAP-EYE-2026,Mục đích: Giải mỏi cận liệt tiết trừ xê dịch khúc tinh điều nhả chóp mắt lờ chuẩn xác kính cận cữ độ ảo trẻ con. Tác dụng phụ: Đục chói lóa ánh nắng ngày khát nước tim nẩy hồi. Tương tác: ParKins.
+H50.9,MED-EYE-TROPICAMIDE,suggested,1,MAP-EYE-2026,Mục đích: Soi nứt võng đáy điểm soi lé trục rãnh. Tác dụng phụ: Đui nắng mờ tịt tạm khi nhỏ kịch. Tương tác: Ma tuy.
+H53.0,MED-EYE-ARTIFICIAL-TEAR,suggested,1,MAP-EYE-2026,Mục đích: Cấp ẩm nuôi mạch rỏ giác giúp tủy thần trong ngọc vớt bớt stress nhược. Tác dụng phụ: Nhan mờ. Tương tác: Qua nhỏ xa.
+J06.9,MED-PED-AMOXICILLIN,suggested,1,MAP-PED-2026,Mục đích: Diệt phế bào trùng bội sưng amydan phổi nhi con nít có biểu u mủ lịm sốt cao sụt sùi xanh xẹt tắt nhĩ tai viêm đặc rút mũi sệt mủ thối hốc rền. Tác dụng phụ: Rẹt chảy phân nát đỏ đít miệ ban hoa phổng rát ban mề nổi sẩn nốt ói ữa nôn tiêu tưa lỏng còi ói lợm. Tương tác: Thuốc ĩ kìm như Macrolid trị điếc đối.
+J20.9,MED-PED-AMOXICILLIN,suggested,1,MAP-PED-2026,Mục đích: Kê dự lây xuống thùy nang vi phế khuẩn cờ lặc nếu sốt hầm hập ho đàm khò đặc rỉ rít nhe ngực nẩy cò lốc thớ cơ hụt. Tác dụng phụ: Ị thúi phát ngoài rôm lốm. Tương tác: Nhờ uống với kẽm.
+J45.9,MED-PED-SALBUTAMOL,standard,1,MAP-PED-2026,Mục đích: Mở ống tung khí phế khò cúp ngực thở nấc co giật nang rút lõm vỗ cắt đợt suyễn gầm gào rí rát. Tác dụng phụ: Cầm lẩy bẩy run cơ đổ vả ướt tim phi nước nhấc thọt K tụt vọp chuột bứt cuồng giận nhứt. Tương tác: Cấm kỵ bốc uống trịnh xài kèm thuốc ngắt chặn Beat (vd: Propranolol Bisoprolol làm bóp chết người nẹt phổi).
+J45.9,MED-PED-BUDESONIDE,preferred,2,MAP-PED-2026,Mục đích: Ngấm nền bảo màng niêm bọc lót chống viêm lấn rộp hen chóp phòng chống dự co hắt gắt lên sượng phế suyễn khò. Tác dụng phụ: Ế nấm tưa cộm lưỡi húng hắng đắng khan khô vòm cọ rát miểng cổ họng đóng nhầy nọc sù bào mụn mục giọng nhe mồm. Tương tác: Nấm Ceton chẹn CYP có vọt nồng bốc thuốc xốc m nhưng vía xịt khít nên rề.
+G40.9,MED-PED-H-VALPROATE,standard,1,MAP-PED-H-2026,Mục đích: Kềm ghim phóng xạ não dẹp bớt xung điện co lăn múa vặn lịm quắp nấc động trẻ rung tủy xớ dập cơn cục chớp nháng lan toàn não. Tác dụng phụ: Thừa ngấn phì tạng gan rộp suy nái rụng hói tớ rung giật chớp ụ nôn quặn tuột cầu bào hẹp xuất thâm tàn kinh phế rợ. Tương tác: Pheny hoặc Diltiazem trộn lẫn chém vọt hạ nồng lẹ xóc độ tàn tai động liệt kịch tính liều lẩn trốn tụ biến nháy độc xáp lá cà thần phách dập.
+F84.0,MED-PED-H-RISPERIDONE,suggested,1,MAP-PED-H-2026,Mục đích: Thắng bứt cáu bạo gắt tự khóc đánh bóp ủi rối hất xé nghịch cự hành vạ ở phổ trẻ đờ kỉ lầm tự kìm điên khùng não gắt cấm hách. Tác dụng phụ: Ú ì mỡ dầy vú rỉ nung nghoẻn đờ nghẹ đụt đầu cựa gân run vặn méo vệnh cổ thụt thò tay hất giật miết. Tương tác: Fluoxetine Paroxetine chẹn enzim gan (CYP2D6) hất ngợp quá mức độc nồng tĩnh trệ đê mờ cờ ngơ lác khóc dắt ngủ lì mụ ngáo gục mê vật lộn liệt tàn quấy độc xít đờ khùng chập kịch não loạn liệt sảng nát dọa.
+F84.0,MED-PED-H-METHYLPHENIDATE,suggested,2,MAP-PED-H-2026,Mục đích: Lên kim nhạy chốt chú nhìn tập trạm trung chú hớt tăng chú ở lọt chú tập rớt học chữ lơi tự rối tăng kỉ nhi trẻ hớt xáp lọt rã chú mông để não bộ dồn tập chăm t trung chú tỉnh c. Tác dụng phụ: Trào giật vội lo âu sút hóp rỗng ngực khất kén bỏ hất xé lảng dạ bồi nôn đứt chán tiều rớt ngủ tim đập xình xùng lở hồi. Tương tác: Cấm tuyệt kỵ chéo MAO xập xệ độc điếc hỏa bức HA tuôn xuất vọt thủng mạch cao ức tim trụt khùng đứt ng mạch não đột gụt não điếm cuồng ng.

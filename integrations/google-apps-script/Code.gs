@@ -443,7 +443,10 @@ function createCatalogEntry_(body) {
         unit: unit,
         default_frequency: defaultFrequency,
         is_active: true,
-        source_ref: sourceRef
+        source_ref: sourceRef,
+        clinical_purpose: String(body.clinical_purpose || '').trim(),
+        indication_criteria: String(body.indication_criteria || '').trim(),
+        repeat_interval: String(body.repeat_interval || '').trim()
       }
     );
 
@@ -500,7 +503,10 @@ function createCatalogEntry_(body) {
         strength: strength,
         is_bhyt_covered: isBhytCovered,
         is_active: true,
-        source_ref: sourceRef
+        source_ref: sourceRef,
+        therapeutic_purpose: String(body.therapeutic_purpose || '').trim(),
+        side_effects: String(body.side_effects || '').trim(),
+        drug_interactions: String(body.drug_interactions || '').trim()
       }
     );
 
@@ -589,7 +595,10 @@ function buildRecommendationPreview_(body) {
     detailBuilder: function (catalogItem, mapping) {
       return {
         detail: catalogItem.default_frequency || '',
-        mappingNote: mapping.note || ''
+        mappingNote: mapping.note || '',
+        clinicalPurpose: catalogItem.clinical_purpose || '',
+        indicationCriteria: catalogItem.indication_criteria || '',
+        repeatInterval: catalogItem.repeat_interval || ''
       };
     }
   });
@@ -617,7 +626,10 @@ function buildRecommendationPreview_(body) {
 
       return {
         detail: detailParts.join(' / '),
-        mappingNote: mapping.note || ''
+        mappingNote: mapping.note || '',
+        therapeuticPurpose: catalogItem.therapeutic_purpose || '',
+        sideEffects: catalogItem.side_effects || '',
+        drugInteractions: catalogItem.drug_interactions || ''
       };
     }
   });
@@ -749,13 +761,22 @@ function buildMappedItems_(config) {
       sourceParts.push(protocolItem.protocol_code);
     }
 
-    results.push({
+    var resultItem = {
       name: name,
       rationale: rationale,
       source: sourceParts.length > 0 ? sourceParts.join(' | ') : 'Google Sheet mapping',
       detail: detailPayload.detail || '',
       mappingNote: detailPayload.mappingNote || ''
-    });
+    };
+    
+    if (detailPayload.clinicalPurpose) resultItem.clinicalPurpose = detailPayload.clinicalPurpose;
+    if (detailPayload.indicationCriteria) resultItem.indicationCriteria = detailPayload.indicationCriteria;
+    if (detailPayload.repeatInterval) resultItem.repeatInterval = detailPayload.repeatInterval;
+    if (detailPayload.therapeuticPurpose) resultItem.therapeuticPurpose = detailPayload.therapeuticPurpose;
+    if (detailPayload.sideEffects) resultItem.sideEffects = detailPayload.sideEffects;
+    if (detailPayload.drugInteractions) resultItem.drugInteractions = detailPayload.drugInteractions;
+    
+    results.push(resultItem);
   });
 
   if (results.length > 0) {

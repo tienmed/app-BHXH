@@ -1,55 +1,55 @@
-cls_code,cls_name,cls_group,unit,default_frequency,is_active,source_ref
-CLS-XN-CONG-THUC-MAU,Công thức máu,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-IM-2026
-CLS-XN-DUONG-HUYET,Đường huyết,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-IM-2026
-CLS-XN-HBA1C,Xét nghiệm HbA1c,Xét nghiệm,mẫu,3 tháng,TRUE,MOH-IM-2026
-CLS-XN-CREATININE,Creatinine huyết thanh,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-IM-2026
-CLS-XN-AST-ALT,Xét nghiệm AST ALT (Men gan),Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-IM-2026
-CLS-XN-NUOC-TIEU,Tổng phân tích nước tiểu,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-IM-2026
-CLS-XN-MICROALBUMIN,Xét nghiệm Microalbumin niệu,Xét nghiệm,mẫu,6 tháng,TRUE,MOH-IM-2026
-CLS-TDCN-ECG-12,Điện tâm đồ 12 chuyển đạo,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-IM-2026
-CLS-XN-LIPID,Hồ sơ lipid máu (Cholesterol/Triglyceride),Xét nghiệm,mẫu,6 tháng,TRUE,MOH-IM-2026
-CLS-TDCN-NOI-SOI-TMH,Nội soi tai mũi họng,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-ENT-2026
-CLS-TDCN-DO-THINH-LUC,Đo thị lực đơn âm (Audiometry),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-ENT-2026
-CLS-TDCN-NHI-LUONG-DO,Nhi lượng đồ (Tympanometry),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-ENT-2026
-CLS-CDHA-XQUANG-BLATT,X-quang Blondeau (Tư thế xoang),Chẩn đoán hình ảnh,phim,Theo đợt khám,TRUE,MOH-ENT-2026
-CLS-CDHA-XQUANG-PANORAMA,Chụp X-quang toàn cảnh hàm (Panorama/OPG),Chẩn đoán hình ảnh,phim,Theo đợt khám,TRUE,MOH-RHM-2026
-CLS-CDHA-XQUANG-PERIAPICAL,Chụp X-quang quanh chóp răng (Periapical),Chẩn đoán hình ảnh,phim,Theo đợt khám,TRUE,MOH-RHM-2026
-CLS-TDCN-TEST-TUY,Test thử tủy răng (Vitality test),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-RHM-2026
-CLS-CDHA-XQUANG-KHOP,Chụp X-quang khớp (thẳng nghiêng),Chẩn đoán hình ảnh,phim,Theo đợt khám,TRUE,MOH-MSK-2026
-CLS-CDHA-SIEU-AM-KHOP,Siêu âm khớp,Chẩn đoán hình ảnh,lần,Theo đợt khám,TRUE,MOH-MSK-2026
-CLS-XN-DICH-KHOP,Xét nghiệm dịch khớp,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-MSK-2026
-TT-HUT-DICH-KHOP,Chọc hút dịch khớp,Thủ thuật,lần,Theo đợt khám,TRUE,MOH-MSK-2026
-TT-TIEM-NOI-KHOP,Tiêm nội khớp / quanh khớp,Thủ thuật,lần,Theo đợt khám,TRUE,MOH-MSK-2026
-PHCN-VAT-LY-TL,Phục hồi chức năng - Vật lý trị liệu,Phục hồi chức năng,lần,Theo đợt khám,TRUE,MOH-MSK-2026
-PHCN-GIAO-DUC,Phục hồi chức năng - Hướng dẫn vận động,Phục hồi chức năng,lần,Theo đợt khám,TRUE,MOH-MSK-2026
-CLS-CDHA-SIEU-AM-TIM,Siêu âm Doppler tim màu,Chẩn đoán hình ảnh,lần,Theo đợt khám,TRUE,MOH-CARDIO-2026
-CLS-XN-NT-PROBNP,Xét nghiệm NT-proBNP,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-CARDIO-2026
-CLS-XN-TROPONIN,Troponin T siêu nhạy (hs-cTnT),Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-CARDIO-2026
-CLS-TDCN-HOLTER-ECG,Đo Holter điện tâm đồ (24h),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-CARDIO-2026
-CLS-TDCN-HOLTER-HA,Đo Holter huyết áp (24h),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-CARDIO-2026
-CLS-CDHA-SIEU-AM-BUNG,Siêu âm ổ bụng tổng quát,Chẩn đoán hình ảnh,lần,Theo đợt khám,TRUE,MOH-GAS-2026
-CLS-TDCN-NOI-SOI-DD,Nội soi dạ dày tá tràng,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-GAS-2026
-CLS-TDCN-NOI-SOI-DT,Nội soi đại trực tràng toàn bộ,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-GAS-2026
-CLS-XN-TEST-HP,Test HP qua hơi thở,Xét nghiệm,lần,Theo đợt khám,TRUE,MOH-GAS-2026
-CLS-XN-PHAN,Xét nghiệm máu ẩn trong phân,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-GAS-2026
-CLS-TDCN-DIEN-CO,Đo điện cơ (EMG),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-NEURO-2026
-CLS-XN-VIT-B12,Định lượng Vitamin B12,Xét nghiệm,mẫu,6 tháng,TRUE,MOH-NEURO-2026
-CLS-CDHA-SA-THAN-KINH,Siêu âm dây thần kinh ngoại biên,Chẩn đoán hình ảnh,lần,Theo đợt khám,TRUE,MOH-NEURO-2026
-TT-CHAM-CUU,Châm cứu,Thủ thuật,lần,Theo đợt khám,TRUE,MOH-NEURO-2026
-CLS-CDHA-SA-THAI,Siêu âm thai,Chẩn đoán hình ảnh,lần,Theo chỉ định,TRUE,MOH-OBGYN-2026
-CLS-CDHA-SA-PHU-KHOA,Siêu âm tử cung phần phụ,Chẩn đoán hình ảnh,lần,Theo chỉ định,TRUE,MOH-OBGYN-2026
-CLS-XN-SOI-TUOI,Soi tươi dịch âm đạo,Xét nghiệm,mẫu,Khi có triệu chứng,TRUE,MOH-OBGYN-2026
-CLS-XN-BETA-HCG,Xét nghiệm định lượng Beta-hCG,Xét nghiệm,mẫu,Theo chỉ định,TRUE,MOH-OBGYN-2026
-TT-DAT-VONG,Thủ thuật đặt DCTC (Đặt vòng),Thủ thuật,lần,Khi có nhu cầu,TRUE,MOH-OBGYN-2026
-CLS-TDCN-THI-LUC,Đo thị lực khách quan,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-EYE-2026
-CLS-TDCN-NHAN-AP,Đo nhãn áp,Thăm dò chức năng,lần,Khám theo dõi,TRUE,MOH-EYE-2026
-CLS-TDCN-THI-TRUONG,Đo phần thị trường,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-EYE-2026
-TT-LAY-DI-VAT-MAT,Lấy dị vật kết mạc nông,Thủ thuật,lần,Khi có dị vật,TRUE,MOH-EYE-2026
-CLS-TDCN-BAN-DO-GM,Đo bản đồ giác mạc,Thăm dò chức năng,lần,Theo chỉ định,TRUE,MOH-EYE-2026
-CLS-TDCN-KHAM-LAC,Khám lác đo độ lác,Thăm dò chức năng,lần,Theo chỉ định,TRUE,MOH-EYE-2026
-TT-TAP-NHUOC-THI,Tập nhược thị bằng máy,Thủ thuật,lần,Theo liệu trình,TRUE,MOH-EYE-2026
-CLS-TDCN-OAE,Đo âm ốc tai (OAE),Thăm dò chức năng,lần,Sàng lọc,TRUE,MOH-PED-2026
-CLS-TDCN-ABR,Đo đáp ứng thính giác thân não (ABR),Thăm dò chức năng,lần,Chẩn đoán,TRUE,MOH-PED-2026
-CLS-TDCN-DANH-GIA-PT,Đánh giá phát triển tâm thần vận động,Thăm dò chức năng,lần,Theo chỉ định,TRUE,MOH-PED-2026
-CLS-TDCN-DO-HO-HAP,Đo chức năng hô hấp Nhi,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-PED-2026
-CLS-TDCN-EEG,Đo điện não đồ (EEG),Thăm dò chức năng,lần,Theo chỉ định,TRUE,MOH-PED-2026
+cls_code,cls_name,cls_group,unit,default_frequency,is_active,source_ref,clinical_purpose,indication_criteria,repeat_interval
+CLS-XN-CONG-THUC-MAU,Công thức máu,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-IM-2026,Đánh giá tổng quát tế bào máu: hồng cầu thiếu máu; bạch cầu nhiễm trùng; tiểu cầu đông máu,Bệnh nhân mới khám lần đầu hoặc đang dùng thuốc ảnh hưởng tủy xương,3 tháng
+CLS-XN-DUONG-HUYET,Đường huyết,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-IM-2026,Định lượng glucose máu tại thời điểm lấy mẫu để tầm soát hoặc theo dõi ĐTĐ,Bệnh nhân ĐTĐ mỗi lần tái khám hoặc nghi ngờ ĐTĐ mới,1 tháng
+CLS-XN-HBA1C,Xét nghiệm HbA1c,Xét nghiệm,mẫu,3 tháng,TRUE,MOH-IM-2026,Đánh giá mức kiểm soát đường huyết trung bình trong 3 tháng qua,Bệnh nhân ĐTĐ đã xác nhận hoặc cần đánh giá kiểm soát dài hạn,3 tháng
+CLS-XN-CREATININE,Creatinine huyết thanh,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-IM-2026,Đánh giá chức năng lọc cầu thận (eGFR) và phát hiện suy thận sớm,Bệnh nhân THA/ĐTĐ hoặc đang dùng thuốc độc thận (NSAID/ACEi/ARB),3-6 tháng
+CLS-XN-AST-ALT,Xét nghiệm AST ALT (Men gan),Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-IM-2026,Đánh giá chức năng gan và phát hiện tổn thương gan do thuốc,Bệnh nhân dùng Statin/Metformin/NSAID kéo dài hoặc có bệnh gan nền,3-6 tháng
+CLS-XN-NUOC-TIEU,Tổng phân tích nước tiểu,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-IM-2026,Phát hiện đạm niệu/đường niệu/hồng cầu niệu gợi ý tổn thương thận hoặc nhiễm trùng tiết niệu,Bệnh nhân ĐTĐ hoặc THA cần tầm soát biến chứng thận,3-6 tháng
+CLS-XN-MICROALBUMIN,Xét nghiệm Microalbumin niệu,Xét nghiệm,mẫu,6 tháng,TRUE,MOH-IM-2026,Phát hiện sớm tổn thương thận giai đoạn vi thể trước khi đạm niệu dương tính trên tổng phân tích,Bệnh nhân ĐTĐ typ 2 trên 5 năm hoặc ĐTĐ typ 1 trên 1 năm,6 tháng
+CLS-TDCN-ECG-12,Điện tâm đồ 12 chuyển đạo,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-IM-2026,Ghi nhận hoạt động điện tim phát hiện rối loạn nhịp/thiếu máu cơ tim/dày thất,Bệnh nhân THA/đau ngực/khó thở/tiền sử tim mạch,6 tháng trừ khi có triệu chứng mới
+CLS-XN-LIPID,Hồ sơ lipid máu (Cholesterol/Triglyceride),Xét nghiệm,mẫu,6 tháng,TRUE,MOH-IM-2026,Đánh giá nguy cơ xơ vữa động mạch qua Cholesterol toàn phần/LDL/HDL/Triglyceride,Bệnh nhân rối loạn lipid hoặc có nguy cơ tim mạch cao (THA/ĐTĐ/hút thuốc),3-6 tháng
+CLS-TDCN-NOI-SOI-TMH,Nội soi tai mũi họng,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-ENT-2026,Quan sát trực tiếp niêm mạc mũi/họng/thanh quản bằng ống nội soi để đánh giá mức độ viêm/polyp/u,Tất cả bệnh nhân TMH ngoại trú có triệu chứng ngạt mũi/chảy mủ/đau họng kéo dài,1 tháng
+CLS-TDCN-DO-THINH-LUC,Đo thị lực đơn âm (Audiometry),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-ENT-2026,Đo ngưỡng nghe ở các tần số khác nhau để xác định mức độ và loại giảm thính lực,Bệnh nhân viêm tai giữa/ù tai/nghe kém hoặc tiếp xúc tiếng ồn nghề nghiệp,3 tháng
+CLS-TDCN-NHI-LUONG-DO,Nhi lượng đồ (Tympanometry),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-ENT-2026,Đo áp lực và độ đàn hồi màng nhĩ để đánh giá chức năng tai giữa và phát hiện tràn dịch,Bệnh nhân viêm tai giữa hoặc nghi ngờ tắc vòi nhĩ,1-3 tháng
+CLS-CDHA-XQUANG-BLATT,X-quang Blondeau (Tư thế xoang),Chẩn đoán hình ảnh,phim,Theo đợt khám,TRUE,MOH-ENT-2026,Chụp hình ảnh các xoang cạnh mũi phát hiện mờ xoang/polyp/dịch trong xoang,Viêm xoang cấp/mạn khi chưa có điều kiện CT hoặc cần tầm soát nhanh,6 tháng trừ đợt cấp mới
+CLS-CDHA-XQUANG-PANORAMA,Chụp X-quang toàn cảnh hàm (Panorama/OPG),Chẩn đoán hình ảnh,phim,Theo đợt khám,TRUE,MOH-RHM-2026,Đánh giá tổng thể bộ răng/xương hàm/xoang hàm/khớp thái dương hàm trên một phim,Cần đánh giá nhiều răng/phục hình/phẫu thuật hàm mặt/tiêu xương ổ răng lan tỏa,12 tháng
+CLS-CDHA-XQUANG-PERIAPICAL,Chụp X-quang quanh chóp răng (Periapical),Chẩn đoán hình ảnh,phim,Theo đợt khám,TRUE,MOH-RHM-2026,Đánh giá chi tiết 1-3 răng: sâu răng/tổn thương quanh chóp/tiêu xương ổ răng khu trú,Sâu răng nghi ngờ lan tủy hoặc đau răng cần xác định tổn thương chóp răng,Sau điều trị tủy (3-6 tháng) hoặc khi đau nhức tái diễn
+CLS-TDCN-TEST-TUY,Test thử tủy răng (Vitality test),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-RHM-2026,Xác định tủy răng còn sống hay hoại tử bằng kích thích nhiệt/điện,Sâu răng sâu nghi ngờ tổn thương tủy hoặc răng có triệu chứng đau tự phát,Khi có triệu chứng kịch phát mới
+CLS-CDHA-XQUANG-KHOP,Chụp X-quang khớp (thẳng nghiêng),Chẩn đoán hình ảnh,phim,Theo đợt khám,TRUE,MOH-MSK-2026,Đánh giá hẹp khe khớp/gai xương/hủy xương/biến dạng khớp,Đau khớp kéo dài hoặc khám lâm sàng nghi thoái hóa/viêm khớp,12 tháng trừ khi diễn tiến nặng hơn
+CLS-CDHA-SIEU-AM-KHOP,Siêu âm khớp,Chẩn đoán hình ảnh,lần,Theo đợt khám,TRUE,MOH-MSK-2026,Đánh giá phần mềm quanh khớp: tràn dịch/dày màng hoạt dịch/gân viêm,Khớp sưng nề hoặc cần đánh giá trước tiêm khớp/hút dịch,1-3 tháng
+CLS-XN-DICH-KHOP,Xét nghiệm dịch khớp,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-MSK-2026,Phân tích dịch khớp tìm tinh thể urat (Gout)/bạch cầu (nhiễm trùng)/protein,Khớp tràn dịch cần phân biệt Gout/viêm khớp nhiễm khuẩn/viêm khớp dạng thấp,Khi có đợt cấp mới nghi nhiễm trùng
+TT-HUT-DICH-KHOP,Chọc hút dịch khớp,Thủ thuật,lần,Theo đợt khám,TRUE,MOH-MSK-2026,Giảm áp lực trong khớp do tràn dịch nhiều gây đau và hạn chế vận động,Siêu âm xác nhận tràn dịch khớp lượng nhiều gây căng đau,Khi tái tràn dịch (thường ≥1 tháng)
+TT-TIEM-NOI-KHOP,Tiêm nội khớp / quanh khớp,Thủ thuật,lần,Theo đợt khám,TRUE,MOH-MSK-2026,Đưa corticoid/acid hyaluronic trực tiếp vào khớp để chống viêm tại chỗ mạnh,Viêm khớp khu trú đáp ứng kém thuốc uống và đã xác nhận viêm bằng siêu âm,≥3 tháng cùng một khớp (tránh hỏng sụn)
+PHCN-VAT-LY-TL,Phục hồi chức năng - Vật lý trị liệu,Phục hồi chức năng,lần,Theo đợt khám,TRUE,MOH-MSK-2026,Duy trì và cải thiện tầm vận động khớp bằng nhiệt/điện/xe đạp/kéo giãn,Sau đợt viêm cấp hoặc bệnh mạn tính cần duy trì chức năng,Theo liệu trình (2-3 lần/tuần x 4-6 tuần)
+PHCN-GIAO-DUC,Phục hồi chức năng - Hướng dẫn vận động,Phục hồi chức năng,lần,Theo đợt khám,TRUE,MOH-MSK-2026,Giáo dục bệnh nhân về bài tập tại nhà/kiểm soát cân nặng/bảo vệ khớp,Mọi bệnh nhân cơ xương khớp mạn tính,Mỗi đợt khám
+CLS-CDHA-SIEU-AM-TIM,Siêu âm Doppler tim màu,Chẩn đoán hình ảnh,lần,Theo đợt khám,TRUE,MOH-CARDIO-2026,Đánh giá cấu trúc buồng tim/van tim/chức năng co bóp (EF%)/dày thất/tràn dịch màng tim,Suy tim/bệnh van tim/THA lâu năm/khó thở không rõ nguyên nhân,6-12 tháng
+CLS-XN-NT-PROBNP,Xét nghiệm NT-proBNP,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-CARDIO-2026,Marker sinh học đánh giá mức độ suy tim và theo dõi đáp ứng điều trị,Bệnh nhân suy tim đã chẩn đoán hoặc khó thở cần phân biệt nguyên nhân tim/phổi,3-6 tháng
+CLS-XN-TROPONIN,Troponin T siêu nhạy (hs-cTnT),Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-CARDIO-2026,Marker tổn thương cơ tim giúp loại trừ hoặc xác nhận nhồi máu cơ tim cấp,Đau ngực cấp nghi ngờ hội chứng vành cấp — KHÔNG chỉ định thường quy,Chỉ khi có triệu chứng cấp mới
+CLS-TDCN-HOLTER-ECG,Đo Holter điện tâm đồ (24h),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-CARDIO-2026,Ghi điện tim liên tục 24h phát hiện rối loạn nhịp thoáng qua mà ECG thường không bắt được,Hồi hộp/ngất/rung nhĩ nghi ngờ hoặc đánh giá kiểm soát nhịp sau điều trị,3-6 tháng
+CLS-TDCN-HOLTER-HA,Đo Holter huyết áp (24h),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-CARDIO-2026,Đo huyết áp tự động 24h phản ánh HA thực tế loại trừ hiệu ứng áo choàng trắng,THA dao động/nghi THA áo choàng trắng/đánh giá hiệu quả thuốc hạ áp,6 tháng
+CLS-CDHA-SIEU-AM-BUNG,Siêu âm ổ bụng tổng quát,Chẩn đoán hình ảnh,lần,Theo đợt khám,TRUE,MOH-GAS-2026,Khảo sát gan/mật/tụy/lách/thận/bàng quang phát hiện sỏi/u/áp-xe/dịch ổ bụng,Đau bụng/rối loạn tiêu hóa/nghi sỏi mật hoặc bệnh lý gan,6-12 tháng
+CLS-TDCN-NOI-SOI-DD,Nội soi dạ dày tá tràng,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-GAS-2026,Quan sát trực tiếp niêm mạc thực quản/dạ dày/tá tràng phát hiện viêm/loét/u/polyp và sinh thiết,Trào ngược không đáp ứng PPI 4-8 tuần hoặc có dấu hiệu báo động (nuốt khó/sụt cân/thiếu máu),12 tháng trừ dấu hiệu báo động mới
+CLS-TDCN-NOI-SOI-DT,Nội soi đại trực tràng toàn bộ,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-GAS-2026,Khảo sát niêm mạc đại trực tràng phát hiện polyp/u/viêm/chảy máu và cắt polyp,Đi cầu ra máu/thay đổi thói quen đại tiện/tầm soát ung thư ≥50 tuổi,Tầm soát: 5 năm; theo dõi polyp: 1-3 năm
+CLS-XN-TEST-HP,Test HP qua hơi thở,Xét nghiệm,lần,Theo đợt khám,TRUE,MOH-GAS-2026,Phát hiện nhiễm Helicobacter pylori không xâm lấn qua CO2 đánh dấu đồng vị,Viêm loét dạ dày hoặc sau điều trị diệt HP cần xác nhận sạch (sau 4 tuần ngưng PPI),Sau diệt trừ HP (≥4 tuần sau ngưng kháng sinh và PPI)
+CLS-XN-PHAN,Xét nghiệm máu ẩn trong phân,Xét nghiệm,mẫu,Theo đợt khám,TRUE,MOH-GAS-2026,Tầm soát chảy máu đường tiêu hóa dưới một cách không xâm lấn,Bệnh nhân ≥50 tuổi tầm soát ung thư đại trực tràng hoặc thiếu máu chưa rõ nguyên nhân,12 tháng (tầm soát hàng năm)
+CLS-TDCN-DIEN-CO,Đo điện cơ (EMG),Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-NEURO-2026,Đánh giá tốc độ dẫn truyền thần kinh và hoạt động cơ phát hiện bệnh thần kinh ngoại biên,Tê bì tay chân/yếu cơ/nghi hội chứng ống cổ tay hoặc biến chứng ĐTĐ,3-6 tháng trừ diễn tiến cấp
+CLS-XN-VIT-B12,Định lượng Vitamin B12,Xét nghiệm,mẫu,6 tháng,TRUE,MOH-NEURO-2026,Phát hiện thiếu hụt B12 gây bệnh thần kinh ngoại biên hoặc thiếu máu hồng cầu to,Bệnh nhân tê bì chân tay/dùng Metformin lâu dài/chế độ ăn thiếu thịt đỏ,6-12 tháng
+CLS-CDHA-SA-THAN-KINH,Siêu âm dây thần kinh ngoại biên,Chẩn đoán hình ảnh,lần,Theo đợt khám,TRUE,MOH-NEURO-2026,Khảo sát hình thái dây thần kinh (phù nề/chèn ép/u) bổ trợ cho EMG,Hội chứng ống cổ tay/chèn ép thần kinh trụ/u dây thần kinh,6 tháng
+TT-CHAM-CUU,Châm cứu,Thủ thuật,lần,Theo đợt khám,TRUE,MOH-NEURO-2026,Giảm đau/giảm co cứng cơ bằng phương pháp y học cổ truyền kích thích huyệt đạo,Đau thần kinh mạn tính/đau vai gáy/hội chứng ống cổ tay đáp ứng kém thuốc,Liệu trình 10-15 lần (3 lần/tuần)
+CLS-CDHA-SA-THAI,Siêu âm thai,Chẩn đoán hình ảnh,lần,Theo chỉ định,TRUE,MOH-OBGYN-2026,Đánh giá sự phát triển thai nhi/vị trí thai/nước ối/nhau thai,Thai phụ theo dõi thai kỳ theo lịch: 12 tuần (đo độ mờ da gáy)/22 tuần (hình thái)/32 tuần (phát triển),Theo lịch khám thai (mỗi 4-8 tuần tùy tam cá nguyệt)
+CLS-CDHA-SA-PHU-KHOA,Siêu âm tử cung phần phụ,Chẩn đoán hình ảnh,lần,Theo chỉ định,TRUE,MOH-OBGYN-2026,Khảo sát tử cung/buồng trứng/vòi trứng phát hiện u xơ/nang/polyp,Rong kinh/đau bụng dưới/nang buồng trứng cần theo dõi/trước đặt vòng,3-6 tháng
+CLS-XN-SOI-TUOI,Soi tươi dịch âm đạo,Xét nghiệm,mẫu,Khi có triệu chứng,TRUE,MOH-OBGYN-2026,Xác định tác nhân gây viêm âm đạo: nấm Candida/Trichomonas/vi khuẩn Gardnerella,Huyết trắng bất thường (màu/mùi/ngứa) hoặc trước thủ thuật đặt vòng,Khi có triệu chứng mới hoặc trước thủ thuật
+CLS-XN-BETA-HCG,Xét nghiệm định lượng Beta-hCG,Xét nghiệm,mẫu,Theo chỉ định,TRUE,MOH-OBGYN-2026,Khẳng định và theo dõi thai sớm/thai ngoài tử cung/thai trứng qua nồng độ Beta-hCG,Trễ kinh nghi có thai khi siêu âm chưa thấy rõ túi ối hoặc nghi thai ngoài tử cung,Theo dõi gấp đôi: 48h (thai sớm); không cần lặp lại nếu siêu âm đã xác nhận
+TT-DAT-VONG,Thủ thuật đặt DCTC (Đặt vòng),Thủ thuật,lần,Khi có nhu cầu,TRUE,MOH-OBGYN-2026,Đưa dụng cụ tránh thai vào buồng tử cung để ngừa thai dài hạn,Phụ nữ có nhu cầu tránh thai dài hạn và đã loại trừ viêm nhiễm cấp tính,5 năm (thay vòng)
+CLS-TDCN-THI-LUC,Đo thị lực khách quan,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-EYE-2026,Đánh giá khả năng nhìn xa/gần bằng bảng thị lực chuẩn,Tất cả bệnh nhân nhãn khoa ở mỗi lần khám,Mỗi đợt khám
+CLS-TDCN-NHAN-AP,Đo nhãn áp,Thăm dò chức năng,lần,Khám theo dõi,TRUE,MOH-EYE-2026,Đo áp lực nội nhãn phát hiện Glôcôm (>21mmHg cần cảnh giác),Bệnh nhân Glôcôm theo dõi hoặc ≥40 tuổi tầm soát hoặc có tiền sử gia đình,1-3 tháng (Glôcôm); 12 tháng (tầm soát)
+CLS-TDCN-THI-TRUONG,Đo phần thị trường,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-EYE-2026,Đánh giá phạm vi nhìn ngoại vi phát hiện thu hẹp thị trường do Glôcôm/bệnh thần kinh thị giác,Bệnh nhân Glôcôm đã xác nhận hoặc nghi tổn thương thần kinh thị giác,3-6 tháng
+TT-LAY-DI-VAT-MAT,Lấy dị vật kết mạc nông,Thủ thuật,lần,Khi có dị vật,TRUE,MOH-EYE-2026,Gắp bỏ dị vật bám trên kết mạc hoặc giác mạc nông bằng dụng cụ chuyên dụng,Dị vật bay vào mắt gây cộm/chảy nước mắt/sung huyết,Không áp dụng (thủ thuật cấp cứu)
+CLS-TDCN-BAN-DO-GM,Đo bản đồ giác mạc,Thăm dò chức năng,lần,Theo chỉ định,TRUE,MOH-EYE-2026,Lập bản đồ độ cong giác mạc phát hiện loạn thị bất thường/giác mạc chóp,Loạn thị cao (>2D)/nghi giác mạc chóp/trước phẫu thuật khúc xạ,6-12 tháng
+CLS-TDCN-KHAM-LAC,Khám lác đo độ lác,Thăm dò chức năng,lần,Theo chỉ định,TRUE,MOH-EYE-2026,Đánh giá mức độ lệch trục nhãn cầu (lác trong/ngoài/trên/dưới) và khả năng phối hợp hai mắt,Trẻ em hoặc người lớn có biểu hiện lác mắt hoặc nhìn đôi,3-6 tháng
+TT-TAP-NHUOC-THI,Tập nhược thị bằng máy,Thủ thuật,lần,Theo liệu trình,TRUE,MOH-EYE-2026,Kích thích thị giác mắt nhược thị bằng máy chuyên dụng giúp phục hồi thị lực,Trẻ em <12 tuổi có nhược thị do lác/lệch khúc xạ (hiệu quả giảm mạnh sau 12 tuổi),Liệu trình 10-20 buổi (2-3 lần/tuần)
+CLS-TDCN-OAE,Đo âm ốc tai (OAE),Thăm dò chức năng,lần,Sàng lọc,TRUE,MOH-PED-2026,Đánh giá chức năng tế bào lông ngoài ốc tai bằng sóng âm phản hồi — sàng lọc nhanh,Trẻ sơ sinh sàng lọc thính giác hoặc trẻ nhỏ nghi ngờ giảm thính lực,Sàng lọc: 1 lần; theo dõi: 3-6 tháng
+CLS-TDCN-ABR,Đo đáp ứng thính giác thân não (ABR),Thăm dò chức năng,lần,Chẩn đoán,TRUE,MOH-PED-2026,Đo đáp ứng điện não đối với âm thanh xác định ngưỡng nghe chính xác ở trẻ không hợp tác,Trẻ OAE bất thường hoặc cần xác định ngưỡng nghe để chỉ định máy trợ thính,6-12 tháng
+CLS-TDCN-DANH-GIA-PT,Đánh giá phát triển tâm thần vận động,Thăm dò chức năng,lần,Theo chỉ định,TRUE,MOH-PED-2026,Đánh giá các lĩnh vực phát triển (vận động/ngôn ngữ/nhận thức/xã hội) theo cột mốc tuổi,Trẻ nghi chậm phát triển/tự kỷ/bại não cần theo dõi tiến triển hoặc điều chỉnh can thiệp,3-6 tháng
+CLS-TDCN-DO-HO-HAP,Đo chức năng hô hấp Nhi,Thăm dò chức năng,lần,Theo đợt khám,TRUE,MOH-PED-2026,Đánh giá mức độ tắc nghẽn đường thở (FEV1/FVC) xác định bậc hen và đáp ứng thuốc giãn phế quản,Trẻ ≥6 tuổi hen phế quản hoặc ho khò kéo dài nghi hen,3-6 tháng
+CLS-TDCN-EEG,Đo điện não đồ (EEG),Thăm dò chức năng,lần,Theo chỉ định,TRUE,MOH-PED-2026,Ghi nhận hoạt động điện não phát hiện sóng động kinh và phân loại loại cơn,Trẻ có cơn co giật/nghi ngờ động kinh hoặc theo dõi đáp ứng thuốc chống co giật,6-12 tháng
