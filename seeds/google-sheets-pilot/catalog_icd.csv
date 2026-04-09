@@ -10,6 +10,7 @@ J03.9,Viêm amidan cấp không đặc hiệu,Bệnh hệ hô hấp,TRUE,2026-01
 J32.9,Viêm xoang mạn không đặc hiệu,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-ENT-2026
 H66.9,Viêm tai giữa không đặc hiệu,Bệnh tai và xương chũng,TRUE,2026-01-01,2099-12-31,MOH-ENT-2026
 K02.1,Sâu răng ngà,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-RHM-2026
+K02.5,Sâu răng có tủy tổn thương,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-RHM-2026
 K04.0,Viêm tủy răng,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-RHM-2026
 K04.1,Hoại tử tủy răng,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-RHM-2026
 K05.1,Viêm nướu mạn,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-RHM-2026

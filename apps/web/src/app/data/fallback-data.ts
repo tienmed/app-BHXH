@@ -5,7 +5,9 @@ export const defaultDiagnosisOptions: DiagnosisOption[] = [
     { code: "E11.9", label: "Đái tháo đường típ 2 không biến chứng" },
     { code: "E78.5", label: "Rối loạn lipid máu" },
     { code: "L02", label: "Áp xe da, nhọt, hậu bối" },
-    { code: "L70", label: "Mụn trứng cá" }
+    { code: "L70", label: "Mụn trứng cá" },
+    { code: "K02.1", label: "Sâu ngà răng" },
+    { code: "K02.5", label: "Sâu răng có tủy tổn thương" }
 ];
 
 export const localInvestigations: Record<string, SuggestedItem[]> = {
@@ -21,7 +23,13 @@ export const localInvestigations: Record<string, SuggestedItem[]> = {
         { name: "Công thức máu", rationale: "Cân nhắc khi có dấu hiệu nhiễm trùng mức độ vừa hoặc nặng." },
         { name: "Đường huyết", rationale: "Cân nhắc khi nghi đái tháo đường hoặc vết thương lâu lành." }
     ],
-    L70: [{ name: "Không cần cận lâm sàng thường quy", rationale: "Ưu tiên đánh giá lâm sàng, chỉ mở rộng khi nghi nguyên nhân nội tiết hoặc trước điều trị toàn thân." }]
+    L70: [{ name: "Không cần cận lâm sàng thường quy", rationale: "Ưu tiên đánh giá lâm sàng, chỉ mở rộng khi nghi nguyên nhân nội tiết hoặc trước điều trị toàn thân." }],
+    "K02.1": [
+        { name: "Chụp X-quang răng", rationale: "Mục đích: Xác định độ sâu của lỗ sâu. Khi nào chỉ định: Cần phân biệt với tổn thương tủy hoặc khám lần đầu. Lặp lại: Không cần lặp lại trừ khi nghi ngờ sâu tái phát." }
+    ],
+    "K02.5": [
+        { name: "Chụp X-quang răng", rationale: "Mục đích: Đánh giá mức độ tổn thương tủy và quanh chóp. Khi nào chỉ định: Khám lần đầu hoặc khi đau nhức nhiều. Lặp lại: Lặp lại sau điều trị tủy hoặc khi có triệu chứng đau trở lại." }
+    ]
 };
 
 export const localMedications: Record<string, SuggestedItem[]> = {
@@ -39,6 +47,14 @@ export const localMedications: Record<string, SuggestedItem[]> = {
     L70: [
         { name: "Benzoyl peroxide", rationale: "Ưu tiên cho mụn mức độ nhẹ đến trung bình." },
         { name: "Retinoid bôi", rationale: "Cân nhắc khi cần kiểm soát nhân mụn và viêm." }
+    ],
+    "K02.1": [
+        { name: "Fluoride bôi tại chỗ", rationale: "Mục đích: Tăng cường khoáng hóa, bảo vệ men/ngà răng. Tác dụng phụ: Rất hiếm gặp ở liều tại chỗ. Tương tác: Ít tương tác." },
+        { name: "Paracetamol", rationale: "Mục đích: Giảm ê buốt. Tác dụng phụ: Hại gan nếu quá liều. Tương tác: Thận trọng khi dùng cùng các thuốc qua gan." }
+    ],
+    "K02.5": [
+        { name: "Amoxicillin", rationale: "Mục đích: Dự phòng/điều trị viêm nhiễm tủy răng. Tác dụng phụ: Rối loạn tiêu hóa, dị ứng. Tương tác: Giảm tác dụng thuốc tránh thai đường uống." },
+        { name: "Ibuprofen", rationale: "Mục đích: Giảm đau do viêm. Tác dụng phụ: Viêm loét dạ dày. Tương tác: Tránh dùng chung nhóm NSAIDs khác, nguy cơ xuất huyết tiêu hóa." }
     ]
 };
 
@@ -62,6 +78,13 @@ export const localAlerts: Record<string, AlertItem[]> = {
             severity: "low",
             title: "Hạn chế xét nghiệm không cần thiết",
             description: "Mụn trứng cá thông thường thường không cần cận lâm sàng rộng rãi."
+        }
+    ],
+    "K02.5": [
+        {
+            severity: "medium",
+            title: "Kiểm tra tương tác thuốc NSAIDs",
+            description: "Bệnh nhân có tiền sử dạ dày nên thận trọng hoặc đổi sang giảm đau khác nếu chỉ định Ibuprofen."
         }
     ]
 };

@@ -13,8 +13,9 @@ J32.9,CLS-CDHA-XQUANG-BLATT,recommended,2,MAP-ENT-2026,X-quang Blondeau đánh g
 H66.9,CLS-TDCN-NOI-SOI-TMH,recommended,1,MAP-ENT-2026,Nội soi tai đánh giá màng nhĩ
 H66.9,CLS-TDCN-DO-THINH-LUC,recommended,2,MAP-ENT-2026,Đánh giá mức độ giảm thính lực
 H66.9,CLS-TDCN-NHI-LUONG-DO,recommended,3,MAP-ENT-2026,Đánh giá chức năng tai giữa
-K02.1,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,X-quang đánh giá mức độ sâu răng
-K02.1,CLS-TDCN-TEST-TUY,suggested,2,MAP-RHM-2026,Test thử tủy khi nghi tổn thương tủy
+K02.1,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,Mục đích: Xác định độ sâu lỗ sâu. Lặp lại: Không cần lặp lại trừ khi nghi sâu tái phát.
+K02.1,CLS-TDCN-TEST-TUY,suggested,2,MAP-RHM-2026,Mục đích: Đánh giá sức sống tủy. Lặp lại: Khi tiếp tục có triệu chứng kịch phát.
+K02.5,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,Mục đích: Đánh giá tổn thương tủy và quanh chóp. Lặp lại: Sau điều trị tủy hoặc khi đau nhức tái diễn.
 K04.0,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,X-quang đánh giá vùng quanh chóp
 K04.0,CLS-TDCN-TEST-TUY,recommended,2,MAP-RHM-2026,Test thử tủy xác định viêm tủy
 K04.1,CLS-CDHA-XQUANG-PERIAPICAL,recommended,1,MAP-RHM-2026,X-quang đánh giá tổn thương quanh chóp
