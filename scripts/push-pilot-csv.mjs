@@ -137,9 +137,9 @@ async function sync() {
             clsRatioMax: parseInt(cost.cls_ratio_max) || 50,
             drugRatioMax: parseInt(cost.drug_ratio_max) || 40,
             clsCodes: icdMappingsCls.map(m => m.cls_code),
-            clsSelections: icdMappingsCls.map(m => ({ code: m.cls_code, selection: m.mapping_type, note: m.note })),
+            clsSelections: icdMappingsCls.map(m => ({ code: m.cls_code, mappingType: m.mapping_type, note: m.note })),
             drugCodes: icdMappingsMed.map(m => m.drug_code),
-            drugSelections: icdMappingsMed.map(m => ({ code: m.drug_code, selection: m.mapping_type, note: m.note })),
+            drugSelections: icdMappingsMed.map(m => ({ code: m.drug_code, mappingType: m.mapping_type, note: m.note })),
             severity: primaryRule.severity || 'low',
             warningMessage: primaryRule.warning_message || '',
             recommendedAction: primaryRule.recommended_action || ''
