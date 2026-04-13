@@ -34,27 +34,33 @@ export function buildLocalPreview(selectedCodes: string[], catalog: DiagnosisOpt
     };
 }
 
-export function normalizeRecommendationPayload(payload: any): RecommendationState {
-    const diagnoses = (payload?.diagnoses ?? []).map((item: any) => ({
+export function normalizeRecommendationPayload(payload: unknown): RecommendationState {
+    const raw = payload as Record<string, unknown> | null;
+    const rawRecommendations = raw?.recommendations as Record<string, unknown> | undefined;
+    const rawGuard = raw?.reimbursementGuard as Record<string, unknown> | undefined;
+    const rawClaimRisk = raw?.claimRisk as Record<string, unknown> | undefined;
+    const rawCostComp = rawGuard?.costComposition as Record<string, unknown> | undefined;
+
+    const diagnoses = (Array.isArray(raw?.diagnoses) ? raw!.diagnoses : []).map((item: Record<string, unknown>) => ({
         code: String(item.code ?? item.icd ?? ""),
         label: String(item.label ?? item.name ?? item.icd ?? "")
     }));
 
-    const investigations = (payload?.recommendations?.investigations ?? []).map((item: any) => ({
+    const investigations = (Array.isArray(rawRecommendations?.investigations) ? rawRecommendations!.investigations : []).map((item: Record<string, unknown>) => ({
         name: String(item.name ?? ""),
         rationale: String(item.rationale ?? ""),
         detail: String(item.detail ?? ""),
         mappingNote: String(item.mappingNote ?? "")
     }));
 
-    const medications = (payload?.recommendations?.medicationGroups ?? []).map((item: any) => ({
+    const medications = (Array.isArray(rawRecommendations?.medicationGroups) ? rawRecommendations!.medicationGroups : []).map((item: Record<string, unknown>) => ({
         name: String(item.name ?? ""),
         rationale: String(item.rationale ?? ""),
         detail: String(item.detail ?? ""),
         mappingNote: String(item.mappingNote ?? "")
     }));
 
-    const alerts = (payload?.reimbursementGuard?.alerts ?? []).map((item: any) => ({
+    const alerts = (Array.isArray(rawGuard?.alerts) ? rawGuard!.alerts : []).map((item: Record<string, unknown>) => ({
         severity: (item.severity ?? "medium") as "high" | "medium" | "low",
         title: String(item.title ?? item.rule_name ?? "Cảnh báo"),
         description: String(item.description ?? item.message ?? item.warning_message ?? "")
@@ -63,17 +69,17 @@ export function normalizeRecommendationPayload(payload: any): RecommendationStat
     return {
         diagnoses,
         investigations,
-        investigationsNote: String(payload?.recommendations?.investigationsNote ?? ""),
+        investigationsNote: String(rawRecommendations?.investigationsNote ?? ""),
         medications,
-        medicationsNote: String(payload?.recommendations?.medicationGroupsNote ?? ""),
-        warningMessage: String(payload?.claimRisk?.warningMessage ?? ""),
-        recommendedAction: String(payload?.claimRisk?.recommendedAction ?? ""),
-        reimbursementNote: String(payload?.claimRisk?.reimbursementNote ?? ""),
-        costComposition: payload?.reimbursementGuard?.costComposition
+        medicationsNote: String(rawRecommendations?.medicationGroupsNote ?? ""),
+        warningMessage: String(rawClaimRisk?.warningMessage ?? ""),
+        recommendedAction: String(rawClaimRisk?.recommendedAction ?? ""),
+        reimbursementNote: String(rawClaimRisk?.reimbursementNote ?? ""),
+        costComposition: rawCostComp
             ? {
-                icd: Number(payload.reimbursementGuard.costComposition.icd ?? 0),
-                cls: Number(payload.reimbursementGuard.costComposition.cls ?? 0),
-                medications: Number(payload.reimbursementGuard.costComposition.medications ?? 0)
+                icd: Number(rawCostComp.icd ?? 0),
+                cls: Number(rawCostComp.cls ?? 0),
+                medications: Number(rawCostComp.medications ?? 0)
             }
             : undefined,
         alerts

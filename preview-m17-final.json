@@ -1,0 +1,2290 @@
+﻿{
+    "source":  "google-apps-script",
+    "encounter":  {
+                      "code":  "OP-IM-0001",
+                      "careSetting":  "outpatient",
+                      "specialty":  "internal-medicine"
+                  },
+    "diagnoses":  [
+
+                  ],
+    "recommendations":  {
+                            "investigations":  [
+                                                   {
+                                                       "name":  "Công thức máu",
+                                                       "rationale":  "Danh gia tong quat truoc dieu chinh dieu tri",
+                                                       "source":  "IM-OP-HTN-DM-2026",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đường huyết",
+                                                       "rationale":  "Tam soat va theo doi kiem soat Đường huyết",
+                                                       "source":  "IM-OP-HTN-DM-2026",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "HbA1c",
+                                                       "rationale":  "Theo doi muc tieu kiem soat lau dai",
+                                                       "source":  "IM-OP-HTN-DM-2026",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Creatinine huyet thanh",
+                                                       "rationale":  "Theo doi chuc nang than va dieu chinh thuoc",
+                                                       "source":  "IM-OP-HTN-DM-2026",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "AST ALT",
+                                                       "rationale":  "Danh gia nen chuyen hoa va an toan dieu tri",
+                                                       "source":  "IM-OP-HTN-DM-2026",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Tổng phân tích nước tiểu",
+                                                       "rationale":  "Tam soat ton thuong than va bien chung",
+                                                       "source":  "IM-OP-HTN-DM-2026",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Microalbumin nieu",
+                                                       "rationale":  "Danh gia ton thuong than som",
+                                                       "source":  "IM-OP-HTN-DM-2026",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Dien tam do 12 chuyen dao",
+                                                       "rationale":  "Tam soat bien doi tim mach nen",
+                                                       "source":  "IM-OP-HTN-DM-2026",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Ho so lipid mau",
+                                                       "rationale":  "Dinh huong can thiep statin va theo doi",
+                                                       "source":  "IM-OP-HTN-DM-2026",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Công thức máu",
+                                                       "rationale":  "cân nhắc khi sốt, toàn trạng xấu hoặc cần đánh giá bạch cầu khi nghi bội nhiễm",
+                                                       "source":  "PTCL-J00",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "CRP",
+                                                       "rationale":  "cân nhắc khi cần hỗ trợ đánh giá mức độ viêm, không dùng thường quy cho cảm lạnh thông thường",
+                                                       "source":  "PTCL-J00",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Test cúm",
+                                                       "rationale":  "cân nhắc khi có yếu tố dịch tễ, khởi phát cấp, sốt, đau mỏi người hoặc cần quyết định hướng xử trí",
+                                                       "source":  "PTCL-J00",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "X quang ngực thẳng",
+                                                       "rationale":  "chỉ cân nhắc khi có ho tăng dần, khó thở, ran phổi, đau ngực hoặc nghi viêm phổi",
+                                                       "source":  "PTCL-J00",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Ho so lipid mau",
+                                                       "rationale":  "xét nghiệm cốt lõi để xác định kiểu rối loạn lipid và theo dõi điều trị",
+                                                       "source":  "PTCL-E78",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "AST ALT",
+                                                       "rationale":  "cần làm nền trước hoặc trong quá trình dùng statin khi phù hợp",
+                                                       "source":  "PTCL-E78",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đường huyết",
+                                                       "rationale":  "cân nhắc khi có nguy cơ đái tháo đường hoặc hội chứng chuyển hóa",
+                                                       "source":  "PTCL-E78",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "HbA1c",
+                                                       "rationale":  "cân nhắc khi có nguy cơ đái tháo đường hoặc hội chứng chuyển hóa",
+                                                       "source":  "PTCL-E78",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "TSH",
+                                                       "rationale":  "chỉ cân nhắc khi nghi nguyên nhân thứ phát như suy giáp",
+                                                       "source":  "PTCL-E78",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Creatinine huyet thanh",
+                                                       "rationale":  "cân nhắc để đánh giá chức năng thận nền ở nhóm nguy cơ hoặc điều trị phối hợp",
+                                                       "source":  "PTCL-E78",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Beta-hCG",
+                                                       "rationale":  "cân nhắc thuốc chống chỉ định trong thai kỳ",
+                                                       "source":  "PTCL-L70",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Hormone nội tiết",
+                                                       "rationale":  "nghi cường androgen, rối loạn kinh nguyệt, PCOS",
+                                                       "source":  "PTCL-L70",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Dien tam do 12 chuyen dao",
+                                                       "rationale":  "6–12 tháng hoặc sớm hơn nếu triệu chứng thay đổi",
+                                                       "source":  "PTCL-I25",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm Tim",
+                                                       "rationale":  "12 tháng; 6 tháng nếu có thay đổi triệu chứng hoặc nghi suy tim",
+                                                       "source":  "PTCL-I25",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Ho so lipid mau",
+                                                       "rationale":  "3–6 tháng khi mới chỉnh thuốc; sau ổn định: 6–12 tháng",
+                                                       "source":  "PTCL-I25",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đường huyết",
+                                                       "rationale":  "6 tháng; 3 tháng nếu đang điều chỉnh kiểm soát đường huyết",
+                                                       "source":  "PTCL-I25",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "HbA1c",
+                                                       "rationale":  "6 tháng; 3 tháng nếu đang điều chỉnh kiểm soát đường huyết",
+                                                       "source":  "PTCL-I25",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Điện giải (Na, K)",
+                                                       "rationale":  "6–12 tháng; sớm hơn nếu dùng lợi tiểu/ACEi/ARB hoặc có suy thận",
+                                                       "source":  "PTCL-I25",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Creatinine huyet thanh",
+                                                       "rationale":  "6–12 tháng; 1–3 tháng sau thay đổi thuốc nếu cần",
+                                                       "source":  "PTCL-I25",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "AST ALT",
+                                                       "rationale":  "6–12 tháng",
+                                                       "source":  "PTCL-I25",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Công thức máu",
+                                                       "rationale":  "6–12 tháng",
+                                                       "source":  "PTCL-I25",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Troponin",
+                                                       "rationale":  "Khi có chỉ định",
+                                                       "source":  "PTCL-I25",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "X quang ngực thẳng",
+                                                       "rationale":  "Khi có chỉ định",
+                                                       "source":  "PTCL-I25",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "AST ALT",
+                                                       "rationale":  "6–12 tháng nếu ổn định; sớm hơn nếu đang thay đổi điều trị hoặc men gan bất thường",
+                                                       "source":  "PTCL-K760",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "GGT",
+                                                       "rationale":  "6–12 tháng khi cần",
+                                                       "source":  "PTCL-K760",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Công thức máu",
+                                                       "rationale":  "6–12 tháng",
+                                                       "source":  "PTCL-K760",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Creatinine huyet thanh",
+                                                       "rationale":  "6–12 tháng",
+                                                       "source":  "PTCL-K760",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đường huyết",
+                                                       "rationale":  "6 tháng; 3 tháng nếu đang điều chỉnh kiểm soát đường huyết",
+                                                       "source":  "PTCL-K760",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "HbA1c",
+                                                       "rationale":  "6 tháng; 3 tháng nếu đang điều chỉnh kiểm soát đường huyết",
+                                                       "source":  "PTCL-K760",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Ho so lipid mau",
+                                                       "rationale":  "6–12 tháng; 3–6 tháng nếu mới chỉnh thuốc",
+                                                       "source":  "PTCL-K760",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm bụng tổng quát",
+                                                       "rationale":  "12 tháng; không nên lặp quá dày nếu bệnh ổn định",
+                                                       "source":  "PTCL-K760",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "HBsAg / anti-HCV",
+                                                       "rationale":  "Khi chẩn đoán ban đầu hoặc khi chưa có dữ liệu",
+                                                       "source":  "PTCL-K760",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "AFP",
+                                                       "rationale":  "Khi có chỉ định chuyên khoa",
+                                                       "source":  "PTCL-K760",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Creatinine huyet thanh",
+                                                       "rationale":  "30 ngày",
+                                                       "source":  "PTCL-E11",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "AST ALT",
+                                                       "rationale":  "90 ngày",
+                                                       "source":  "PTCL-E11",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Microalbumin nieu",
+                                                       "rationale":  "30 ngày",
+                                                       "source":  "PTCL-E11",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Công thức máu",
+                                                       "rationale":  "30 ngày",
+                                                       "source":  "PTCL-J449",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Công thức máu",
+                                                       "rationale":  "30 ngày",
+                                                       "source":  "PTCL-M17",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Xét nghiệm HbA1c",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-E119",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Tổng phân tích nước tiểu",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-E119",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang toàn cảnh hàm (Panorama/OPG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K041",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Điện tâm đồ 12 chuyển đạo",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I509",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đường huyết",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-E119",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Hồ sơ lipid máu (Cholesterol/Triglyceride)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-E785",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Điện tâm đồ 12 chuyển đạo",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I10",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo Holter huyết áp (24h)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I10",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Nội soi tai mũi họng",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-J019",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "X-quang Blondeau (Tư thế xoang)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-J019",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang toàn cảnh hàm (Panorama/OPG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K051",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang toàn cảnh hàm (Panorama/OPG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K041",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang quanh chóp răng (Periapical)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K121",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang toàn cảnh hàm (Panorama/OPG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K081",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Xét nghiệm dịch khớp",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M109",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang khớp (thẳng nghiêng)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M059",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Creatinine huyết thanh",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M109",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Điện tâm đồ 12 chuyển đạo",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I489",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Xét nghiệm NT-proBNP",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I509",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Nội soi đại trực tràng toàn bộ",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K529",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Xét nghiệm máu ẩn trong phân",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K529",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm ổ bụng tổng quát",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K529",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm dây thần kinh ngoại biên",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G560",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo điện cơ (EMG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G629",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Định lượng Vitamin B12",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G629",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Thủ thuật đặt DCTC (Đặt vòng)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-Z301",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm tử cung phần phụ",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-N832",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo thị lực khách quan",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H522",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo điện não đồ (EEG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G409",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo đáp ứng thính giác thân não (ABR)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H905",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Công thức máu",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I10",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Điện tâm đồ 12 chuyển đạo",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-R074",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Creatinine huyết thanh",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I10",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm Doppler tim màu",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-R074",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Điện tâm đồ 12 chuyển đạo",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I10",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Troponin T siêu nhạy (hs-cTnT)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-R074",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm Doppler tim màu",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I10",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo Holter huyết áp (24h)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I10",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đường huyết",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-E119",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Xét nghiệm HbA1c",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-E119",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Tổng phân tích nước tiểu",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-E119",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Xét nghiệm Microalbumin niệu",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-E119",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Nội soi tai mũi họng",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-J029",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Nội soi tai mũi họng",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-J039",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Nội soi tai mũi họng",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-J329",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "X-quang Blondeau (Tư thế xoang)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-J329",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Nội soi tai mũi họng",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H669",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Nội soi tai mũi họng",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-J019",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "X-quang Blondeau (Tư thế xoang)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-J019",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo thị lực đơn âm (Audiometry)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H669",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Nhi lượng đồ (Tympanometry)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H669",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang quanh chóp răng (Periapical)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K025",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang quanh chóp răng (Periapical)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K021",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang quanh chóp răng (Periapical)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K040",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang toàn cảnh hàm (Panorama/OPG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K051",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Test thử tủy răng (Vitality test)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K021",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Test thử tủy răng (Vitality test)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K040",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang quanh chóp răng (Periapical)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K041",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang toàn cảnh hàm (Panorama/OPG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K041",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang khớp (thẳng nghiêng)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M159",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang toàn cảnh hàm (Panorama/OPG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K081",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang khớp (thẳng nghiêng)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M199",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang quanh chóp răng (Periapical)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K121",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang khớp (thẳng nghiêng)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M179",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm khớp",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M179",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Creatinine huyết thanh",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M179",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Xét nghiệm AST ALT (Men gan)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M179",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chọc hút dịch khớp",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M179",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Tiêm nội khớp / quanh khớp",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M179",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Phục hồi chức năng - Vật lý trị liệu",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M179",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Phục hồi chức năng - Hướng dẫn vận động",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M179",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Troponin T siêu nhạy (hs-cTnT)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I209",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Điện tâm đồ 12 chuyển đạo",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I209",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm Doppler tim màu",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I209",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Chụp X-quang khớp (thẳng nghiêng)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M059",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm khớp",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M059",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Công thức máu",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M059",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo Holter điện tâm đồ (24h)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I489",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm Doppler tim màu",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I489",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Điện tâm đồ 12 chuyển đạo",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I489",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Hồ sơ lipid máu (Cholesterol/Triglyceride)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I489",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Xét nghiệm dịch khớp",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M109",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Creatinine huyết thanh",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M109",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm Doppler tim màu",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I509",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Xét nghiệm NT-proBNP",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I509",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Điện tâm đồ 12 chuyển đạo",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I509",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm khớp",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-M109",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Creatinine huyết thanh",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-I509",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm ổ bụng tổng quát",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K802",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Nội soi đại trực tràng toàn bộ",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K628",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Nội soi đại trực tràng toàn bộ",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K649",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Nội soi đại trực tràng toàn bộ",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K529",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Xét nghiệm máu ẩn trong phân",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K529",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm ổ bụng tổng quát",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K529",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Nội soi dạ dày tá tràng",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K219",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Test HP qua hơi thở",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-K219",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo điện cơ (EMG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G629",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Định lượng Vitamin B12",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G629",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm thai",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-Z321",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo điện cơ (EMG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G560",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Xét nghiệm định lượng Beta-hCG",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-Z321",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm dây thần kinh ngoại biên",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G560",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Châm cứu",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G560",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm thai",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-Z349",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo điện cơ (EMG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G632",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Định lượng Vitamin B12",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G632",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo thị lực khách quan",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H109",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm tử cung phần phụ",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-N832",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Thủ thuật đặt DCTC (Đặt vòng)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-Z301",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Siêu âm tử cung phần phụ",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-Z301",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Soi tươi dịch âm đạo",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-N760",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo nhãn áp",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H409",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Soi tươi dịch âm đạo",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-Z301",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo phần thị trường",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H409",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo thị lực khách quan",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H522",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo bản đồ giác mạc",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H522",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Lấy dị vật kết mạc nông",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-T159",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo thị lực khách quan",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-T159",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Khám lác đo độ lác",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H509",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Tập nhược thị bằng máy",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H530",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo thị lực khách quan",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H530",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo chức năng hô hấp Nhi",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-J459",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đánh giá phát triển tâm thần vận động",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G809",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo điện não đồ (EEG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G809",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo âm ốc tai (OAE)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H905",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo đáp ứng thính giác thân não (ABR)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-H905",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đánh giá phát triển tâm thần vận động",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-F70",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đánh giá phát triển tâm thần vận động",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-F840",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   },
+                                                   {
+                                                       "name":  "Đo điện não đồ (EEG)",
+                                                       "rationale":  "",
+                                                       "source":  "PTCL-G409",
+                                                       "detail":  "",
+                                                       "mappingNote":  ""
+                                                   }
+                                               ],
+                            "investigationsNote":  "",
+                            "medicationGroups":  [
+                                                     {
+                                                         "name":  "Perindopril",
+                                                         "rationale":  "Uu tien bao ve than va kiem soat huyet ap",
+                                                         "source":  "IM-OP-HTN-DM-2026",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Losartan",
+                                                         "rationale":  "Uu tien bao ve than va kiem soat huyet ap",
+                                                         "source":  "IM-OP-HTN-DM-2026",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Metformin",
+                                                         "rationale":  "Lua chon nen trong dai thao duong typ 2",
+                                                         "source":  "IM-OP-HTN-DM-2026",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Atorvastatin",
+                                                         "rationale":  "Giam nguy co tim mach lau dai",
+                                                         "source":  "IM-OP-HTN-DM-2026",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Rửa mũi nước muối",
+                                                         "rationale":  "dùng hỗ trợ thường quy",
+                                                         "source":  "PTCL-J00",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Paracetamol",
+                                                         "rationale":  "uống khi sốt, đau đầu, đau họng",
+                                                         "source":  "PTCL-J00",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Thuốc co mạch / giảm nghẹt mũi",
+                                                         "rationale":  "dùng ngắn ngày nếu nghẹt mũi nhiều, tránh kéo dài",
+                                                         "source":  "PTCL-J00",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Thuốc giảm ho / làm dịu họng",
+                                                         "rationale":  "dùng khi ho khan, rát họng hoặc khó chịu vùng họng",
+                                                         "source":  "PTCL-J00",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Kháng histamine",
+                                                         "rationale":  "cân nhắc khi sổ mũi, hắt hơi nhiều hoặc nghi nền dị ứng",
+                                                         "source":  "PTCL-J00",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Kháng sinh",
+                                                         "rationale":  "không dùng thường quy; chỉ cân nhắc khi có bằng chứng bội nhiễm",
+                                                         "source":  "PTCL-J00",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Statin",
+                                                         "rationale":  "ưu tiên nền điều trị nếu không có chống chỉ định",
+                                                         "source":  "PTCL-E78",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Điều chỉnh lối sống",
+                                                         "rationale":  "áp dụng cho tất cả trường hợp",
+                                                         "source":  "PTCL-E78",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Fibrate",
+                                                         "rationale":  "cân nhắc khi triglyceride tăng cao hoặc kiểu rối loạn lipid phù hợp",
+                                                         "source":  "PTCL-E78",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Omega-3",
+                                                         "rationale":  "cân nhắc bổ sung ở nhóm tăng triglyceride",
+                                                         "source":  "PTCL-E78",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Ezetimibe",
+                                                         "rationale":  "cân nhắc phối hợp nếu chưa đạt mục tiêu LDL-C",
+                                                         "source":  "PTCL-E78",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Retinoid",
+                                                         "rationale":  "Bôi",
+                                                         "source":  "PTCL-L70",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Benzoyl peroxide",
+                                                         "rationale":  "Nếu nghi mụn nội tiết hoặc điều trị thất bại, cân nhắc khai thác thêm yếu tố nội tiết và phối hợp chuyên khoa.",
+                                                         "source":  "PTCL-L70",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Kháng sinh",
+                                                         "rationale":  "Bôi",
+                                                         "source":  "PTCL-L70",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Kháng kết tập tiểu cầu (Aspirin / Clopidogrel)",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I25",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Statin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I25",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Beta-blocker",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I25",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "ACEi / ARB",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I25",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Nitrate",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I25",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Chẹn kênh canxi",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I25",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Statin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K760",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Thuốc điều trị đái tháo đường / kháng insulin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K760",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Thuốc giảm cân / hỗ trợ chuyển hóa",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K760",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Vitamin E / thuốc chuyên biệt khác",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K760",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Thuốc hạ áp / kiểm soát bệnh đồng mắc",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K760",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Biguanide (Metformin)",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-E11",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Thuốc giãn phế quản (SABA) - Dạng xịt",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J449",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Ibuprofen",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M059",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Bisoprolol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I509",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Rosuvastatin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-E785",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Perindopril",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I10",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Losartan",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I10",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amlodipine",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I10",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Bisoprolol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I10",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Chlorhexidine 0.12%",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K051",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amoxicillin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K041",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Chlorhexidine 0.12%",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K121",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Allopurinol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M109",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Furosemide",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I509",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Perindopril",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I509",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Rosuvastatin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-E785",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Aspirin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-R074",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Atorvastatin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-R074",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Perindopril",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I10",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Losartan",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I10",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amlodipine",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I10",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Bisoprolol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I10",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Metformin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-E119",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Gliclazide MR",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-E119",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amoxicillin/Clavulanate",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J039",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Cefuroxime",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J039",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amoxicillin/Clavulanate",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J029",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Azithromycin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J029",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Loratadine",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J029",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amoxicillin/Clavulanate",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J329",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Azithromycin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J329",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Budesonide xịt mũi",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J329",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Loratadine",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J329",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amoxicillin/Clavulanate",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J019",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amoxicillin/Clavulanate",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-H669",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Cefuroxime",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J019",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Cefuroxime",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-H669",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Budesonide xịt mũi",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J019",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Oxymetazoline nhỏ mũi",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J019",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amoxicillin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K025",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Ibuprofen",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K025",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Chlorhexidine 0.12%",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K051",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Paracetamol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K021",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Metronidazole",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K051",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amoxicillin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K040",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Ibuprofen",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K040",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Paracetamol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K040",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amoxicillin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K041",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Metronidazole",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K041",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Ibuprofen",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K041",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Ibuprofen",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M159",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Paracetamol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M159",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Lidocaine + Epinephrine",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K081",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amoxicillin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K081",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Ibuprofen",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K081",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Ibuprofen",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M199",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Paracetamol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M199",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Chlorhexidine 0.12%",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K121",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Paracetamol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K121",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Ibuprofen",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M179",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Paracetamol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M179",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Glucosamine sulfate",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M179",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Methylprednisolone acetate",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M179",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Aspirin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I209",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Bisoprolol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I209",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Atorvastatin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I209",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Ibuprofen",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M059",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Methylprednisolone acetate",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M059",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Rivaroxaban",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I489",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Bisoprolol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I489",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Furosemide",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I509",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Colchicine",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M109",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Allopurinol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M109",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Ibuprofen",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-M109",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Bisoprolol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I509",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Dapagliflozin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I509",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Perindopril",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-I509",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Mebeverine",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K628",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Thuốc bôi trĩ (Proctolog)",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K628",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Diosmin/Hesperidin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K649",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Thuốc bôi trĩ (Proctolog)",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K649",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Paracetamol",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K649",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Mebeverine",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K529",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Metronidazole",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K529",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Esomeprazole",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K219",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Itopride",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-K219",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Gabapentin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-G629",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Pregabalin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-G629",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amitriptyline",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-G629",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Vitamin thai kỳ (Sắt, Acid Folic, Canxi)",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-Z321",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Gabapentin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-G560",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Vitamin B complex",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-G629",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Vitamin B complex",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-G560",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Vitamin thai kỳ (Sắt, Acid Folic, Canxi)",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-Z349",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Pregabalin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-G632",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Gabapentin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-G632",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Vitamin B complex",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-G632",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Tobramycin nhỏ mắt",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-H109",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Sodium Hyaluronate 0.1%",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-H109",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Levonorgestrel/Ethinylestradiol (Thuốc TT hàng ngày)",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-N832",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Viên đặt Metronidazole Neomycin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-N760",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Viên đặt Metronidazole Neomycin",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-Z301",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Timolol 0.5%",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-H409",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Sodium Hyaluronate 0.1%",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-H409",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Tropicamide nhỏ mắt",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-H520",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Sodium Hyaluronate 0.1%",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-T159",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Tobramycin nhỏ mắt",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-T159",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Tropicamide nhỏ mắt",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-H521",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Diclofenac nhỏ mắt",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-T159",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Tropicamide nhỏ mắt",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-H509",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Sodium Hyaluronate 0.1%",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-H530",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amoxicillin hỗn dịch",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J069",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Amoxicillin hỗn dịch",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J209",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Salbutamol khí dung",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J459",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Budesonide khí dung",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-J459",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Valproate (NHÓM H)",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-G409",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Risperidone liều thấp (NHÓM H)",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-F840",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     },
+                                                     {
+                                                         "name":  "Methylphenidate (NHÓM H)",
+                                                         "rationale":  "",
+                                                         "source":  "PTCL-F840",
+                                                         "detail":  "",
+                                                         "mappingNote":  ""
+                                                     }
+                                                 ],
+                            "medicationGroupsNote":  ""
+                        },
+    "reimbursementGuard":  {
+                               "costComposition":  {
+                                                       "icd":  35,
+                                                       "cls":  50,
+                                                       "medications":  40
+                                                   },
+                               "alerts":  [
+
+                                          ]
+                           }
+}
