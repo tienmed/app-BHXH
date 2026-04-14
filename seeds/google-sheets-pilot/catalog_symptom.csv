@@ -1,0 +1,68 @@
+symptom_code,symptom_name,synonym_vi,body_system,is_active,source_ref
+SYM-GEN-01,Sốt,"sốt cao, nóng, thân nhiệt tăng",Toàn thân,TRUE,Harrison-21e/Ch17
+SYM-GEN-02,Mệt mỏi,"kiệt sức, uể oải, suy nhược",Toàn thân,TRUE,Harrison-21e/Ch17
+SYM-GEN-03,Sụt cân,"giảm cân, gầy sút",Toàn thân,TRUE,Harrison-21e/Ch17
+SYM-GEN-04,Phù,"sưng, phù nề, phù chân",Toàn thân,TRUE,Harrison-21e/Ch37
+SYM-HEAD-01,Đau đầu,"nhức đầu, đau nửa đầu, đau đỉnh đầu",Thần kinh,TRUE,Harrison-21e/Ch21
+SYM-HEAD-02,Chóng mặt,"xây xẩm, hoa mắt, choáng váng",Thần kinh,TRUE,Harrison-21e/Ch22
+SYM-HEAD-03,Ngất,"xỉu, mất ý thức thoáng qua",Thần kinh,TRUE,Harrison-21e/Ch22
+SYM-HEAD-04,Co giật,"động kinh, giật cơ, co cứng",Thần kinh,TRUE,Harrison-21e/Ch418
+SYM-HEAD-05,Tê bì tay chân,"tê tay, tê chân, dị cảm, kim châm",Thần kinh,TRUE,Harrison-21e/Ch31
+SYM-HEAD-06,Yếu liệt chi,"liệt tay, liệt chân, giảm cơ lực",Thần kinh,TRUE,Harrison-21e/Ch31
+SYM-HEAD-07,Run tay,"rung tay, tay run",Thần kinh,TRUE,Harrison-21e/Ch428
+SYM-HEAD-08,Giảm trí nhớ,"hay quên, lẫn, sa sút trí tuệ",Thần kinh,TRUE,Harrison-21e/Ch29
+SYM-HEAD-09,Mất ngủ,"khó ngủ, ngủ không sâu, thức giấc sớm",Thần kinh,TRUE,DSM-5/ICSD-3
+SYM-HEAD-10,Lo lắng,"hồi hộp, bồn chồn, lo âu, sợ hãi",Tâm thần,TRUE,DSM-5/APA-2022
+SYM-CARD-01,Đau ngực,"tức ngực, nặng ngực, đau thắt ngực",Tim mạch,TRUE,ESC-2023/Harrison-21e
+SYM-CARD-02,Hồi hộp đánh trống ngực,"tim đập nhanh, rối loạn nhịp, đánh trống ngực",Tim mạch,TRUE,ESC-2020/Harrison-21e
+SYM-CARD-03,Khó thở khi gắng sức,"thở dốc, hụt hơi khi leo cầu thang",Tim mạch,TRUE,ESC-2021/GINA-2024
+SYM-CARD-04,Khó thở khi nằm,"khó thở đêm, phải ngồi để thở",Tim mạch,TRUE,ESC-2021/Harrison-21e
+SYM-CARD-05,Tăng huyết áp,"huyết áp cao, HA cao",Tim mạch,TRUE,ESC/ESH-2018
+SYM-RESP-01,Ho,"ho khan, ho có đờm, ho kéo dài",Hô hấp,TRUE,GINA-2024/GOLD-2024
+SYM-RESP-02,Ho ra đờm,"đờm đặc, đờm xanh, đờm vàng",Hô hấp,TRUE,GOLD-2024/Harrison-21e
+SYM-RESP-03,Khò khè,"thở rít, thở khò khè",Hô hấp,TRUE,GINA-2024
+SYM-RESP-04,Đau họng,"rát họng, nuốt đau, họng đỏ",Hô hấp,TRUE,AHA/IDSA-2012
+SYM-RESP-05,Nghẹt mũi,"tắc mũi, sổ mũi, chảy nước mũi",Hô hấp,TRUE,EPOS-2020
+SYM-RESP-06,Chảy mũi sau,"chảy dịch mũi sau, đờm trong họng",Hô hấp,TRUE,EPOS-2020
+SYM-GI-01,Đau bụng thượng vị,"đau bụng trên, đau dạ dày, nóng rát thượng vị",Tiêu hóa,TRUE,ACG-2022/Rome-IV
+SYM-GI-02,Ợ nóng,"ợ chua, trào ngược, nóng rát sau xương ức",Tiêu hóa,TRUE,ACG-2022/Lyon-2018
+SYM-GI-03,Buồn nôn,"nôn, ói, muốn nôn",Tiêu hóa,TRUE,Harrison-21e/Ch41
+SYM-GI-04,Đau bụng dưới,"đau bụng vùng hạ vị, đau bụng quanh rốn",Tiêu hóa,TRUE,Rome-IV/Harrison-21e
+SYM-GI-05,Tiêu chảy,"đi ngoài lỏng, đi ngoài nhiều lần",Tiêu hóa,TRUE,ACG-2021/Harrison-21e
+SYM-GI-06,Táo bón,"khó đi tiểu tiện, phân cứng",Tiêu hóa,TRUE,Rome-IV
+SYM-GI-07,Đi ngoài ra máu,"phân có máu, đại tiện ra máu, phân đen",Tiêu hóa,TRUE,ACG-2021
+SYM-GI-08,Đau hạ sườn phải,"đau bụng phải, đau vùng gan",Tiêu hóa,TRUE,EASL-2016
+SYM-GI-09,Chướng bụng,"đầy hơi, bụng căng, trướng bụng",Tiêu hóa,TRUE,Rome-IV
+SYM-MSK-01,Đau khớp,"sưng khớp, viêm khớp, cứng khớp",Cơ xương khớp,TRUE,ACR-2010/EULAR-2019
+SYM-MSK-02,Đau lưng,"đau thắt lưng, đau cột sống, lưng mỏi",Cơ xương khớp,TRUE,ACP-2017/Harrison-21e
+SYM-MSK-03,Đau gối,"sưng gối, khó đi, kẹt khớp gối",Cơ xương khớp,TRUE,OARSI-2019
+SYM-MSK-04,Cứng khớp buổi sáng,"khớp cứng khi ngủ dậy, cứng khớp > 30 phút",Cơ xương khớp,TRUE,ACR/EULAR-2010
+SYM-MSK-05,Sưng đỏ nóng khớp,"viêm cấp tính, khớp đỏ, khớp nóng",Cơ xương khớp,TRUE,EULAR-2018-Gout
+SYM-MSK-06,Đau lan xuống chân,"đau thần kinh tọa, tê chân, đau từ lưng xuống",Cơ xương khớp,TRUE,ACP-2017
+SYM-URO-01,Tiểu buốt,"tiểu rắt, tiểu đau, nóng rát khi tiểu",Tiết niệu,TRUE,AUA/EAU-2022
+SYM-URO-02,Tiểu nhiều lần,"đi tiểu đêm, tiểu gấp",Tiết niệu,TRUE,AUA-2022
+SYM-URO-03,Tiểu khó,"tiểu yếu, tiểu ngắt quãng, bí tiểu",Tiết niệu,TRUE,AUA-2022/EAU-2022
+SYM-URO-04,Đau hông lưng,"đau thận, đau mạn sườn",Tiết niệu,TRUE,EAU-2022
+SYM-EYE-01,Mờ mắt,"nhìn mờ, giảm thị lực, nhìn không rõ",Mắt,TRUE,AAO-PPP-2021
+SYM-EYE-02,Đau mắt đỏ,"mắt đỏ, cộm mắt, ngứa mắt, chảy nước mắt",Mắt,TRUE,AAO-PPP-2020
+SYM-EYE-03,Nhìn đôi,"song thị, nhìn hai hình",Mắt,TRUE,AAO-2021
+SYM-EYE-04,Đau nhức mắt,"nhức hốc mắt, đau mắt, căng mắt",Mắt,TRUE,AAO-PPP-2020
+SYM-DERM-01,Ngứa da,"ngứa, gãi, ban đỏ, mẩn ngứa",Da liễu,TRUE,BAD-2021/Harrison-21e
+SYM-DERM-02,Phát ban,"nổi mề đay, nổi mẩn, sẩn đỏ",Da liễu,TRUE,EAACI-2022
+SYM-DERM-03,Mụn nước,"bóng nước, phỏng rộp, mụn rộp",Da liễu,TRUE,Harrison-21e
+SYM-DERM-04,Bong tróc da,"da khô, tróc vảy, da bong",Da liễu,TRUE,BAD-2021
+SYM-ENT-01,Ù tai,"tiếng ù, tiếng ve kêu trong tai",Tai mũi họng,TRUE,AAO-HNS-2019
+SYM-ENT-02,Nghe kém,"giảm thính lực, điếc, nghễnh ngãng",Tai mũi họng,TRUE,JCIH-2019/AAO-HNS
+SYM-ENT-03,Chảy mủ tai,"chảy dịch tai, tai chảy nước",Tai mũi họng,TRUE,AAO-HNS-2019
+SYM-ENT-04,Đau răng,"nhức răng, ê buốt răng",Răng hàm mặt,TRUE,ADA-2020
+SYM-ENT-05,Chảy máu nướu,"sưng nướu, viêm nướu, lợi chảy máu",Răng hàm mặt,TRUE,AAP/EFP-2018
+SYM-ENT-06,Loét miệng,"lở miệng, nhiệt miệng, áp-tơ",Răng hàm mặt,TRUE,AAOM-2021
+SYM-OBGYN-01,Ra khí hư bất thường,"huyết trắng, khí hư hôi, dịch âm đạo",Sản phụ khoa,TRUE,ACOG-2023
+SYM-OBGYN-02,Trễ kinh,"mất kinh, chậm kinh, không có kinh",Sản phụ khoa,TRUE,ACOG-2023
+SYM-OBGYN-03,Đau bụng kinh,"thống kinh, đau bụng dưới khi hành kinh",Sản phụ khoa,TRUE,ACOG-2023
+SYM-ENDO-01,Khát nước nhiều,"uống nhiều, khô miệng",Nội tiết,TRUE,ADA-2024
+SYM-ENDO-02,Tiểu nhiều,"đa niệu, tiểu lượng lớn",Nội tiết,TRUE,ADA-2024
+SYM-ENDO-03,Tăng cân,"béo phì, thừa cân, tăng cân nhanh",Nội tiết,TRUE,WHO-Obesity-2023
+SYM-PED-01,Chậm nói,"không nói, chậm phát triển ngôn ngữ",Nhi khoa,TRUE,AAP-2023
+SYM-PED-02,Không giao tiếp mắt,"thiếu tương tác xã hội, tự kỷ",Nhi khoa,TRUE,DSM-5/AAP-2020
+SYM-PED-03,Chậm phát triển vận động,"chậm đi, chậm ngồi, yếu cơ",Nhi khoa,TRUE,AAP-2023

@@ -1,236 +1,157 @@
 import { NextRequest, NextResponse } from "next/server";
+import {
+  loadIcdCatalog,
+  loadIcdClsMappings,
+  loadIcdMedicationMappings,
+  loadClsCatalog,
+  loadMedicationCatalog,
+  loadClaimRiskRules,
+} from "../../../utils/csv-loader";
 
-const remoteUrl = process.env.GOOGLE_APPS_SCRIPT_URL || process.env.NEXT_PUBLIC_RECOMMENDATION_API_URL;
+/**
+ * CSV-Based Recommendation API (Pilot Phase)
+ * All data loaded from local CSV seed files — no Google Sheets dependency.
+ */
 
-type WorkbookTabRow = Record<string, unknown>;
-
-// In-memory cache for workbook preview (TTL: 5 minutes)
-const CACHE_TTL_MS = 5 * 60 * 1000;
-let workbookCache: { data: unknown; timestamp: number } | null = null;
-
-function parseJsonSafe(value: unknown) {
-  if (!value) {
-    return {};
-  }
-
+function parseJsonSafe(value: string) {
+  if (!value) return {};
   try {
-    return JSON.parse(String(value)) as Record<string, unknown>;
+    return JSON.parse(value) as Record<string, unknown>;
   } catch {
     return {};
   }
 }
 
-async function loadWorkbookPreview() {
-  // Return cached data if valid
-  if (workbookCache && Date.now() - workbookCache.timestamp < CACHE_TTL_MS) {
-    return workbookCache.data;
-  }
+function buildRecommendations(diagnosisCodes: string[]) {
+  const clsMappings = loadIcdClsMappings();
+  const medMappings = loadIcdMedicationMappings();
+  const clsCatalog = loadClsCatalog();
+  const medCatalog = loadMedicationCatalog();
+  const icdCatalog = loadIcdCatalog();
+  const riskRules = loadClaimRiskRules();
 
-  const url = new URL(remoteUrl!);
-  url.searchParams.set("action", "workbook-preview");
-  url.searchParams.set(
-    "tabs",
-    "catalog_cls,catalog_medication,mapping_icd_cls,mapping_icd_medication,rule_claim_risk"
-  );
-
-  const response = await fetch(url.toString(), {
-    method: "GET",
-    cache: "no-store"
+  // Build diagnoses
+  const diagnoses = diagnosisCodes.map((code) => {
+    const found = icdCatalog.find((e) => e.code === code);
+    return { code, label: found?.name ?? code };
   });
 
-  if (!response.ok) {
-    throw new Error(`Workbook preview returned HTTP ${response.status}`);
-  }
-
-  const data = await response.json();
-  workbookCache = { data, timestamp: Date.now() };
-  return data;
-}
-
-
-function getTabRows(payload: any, tabName: string): WorkbookTabRow[] {
-  const tab = Array.isArray(payload?.tabs) ? payload.tabs.find((item: { name?: string }) => item?.name === tabName) : null;
-  return Array.isArray(tab?.rows) ? tab.rows : [];
-}
-
-function enrichRecommendations(data: any, workbookPreview: any, diagnosisCodes: string[]) {
-  const clsCatalogRows = getTabRows(workbookPreview, "catalog_cls");
-  const medicationCatalogRows = getTabRows(workbookPreview, "catalog_medication");
-  const icdClsMappingRows = getTabRows(workbookPreview, "mapping_icd_cls");
-  const icdMedicationMappingRows = getTabRows(workbookPreview, "mapping_icd_medication");
-  const ruleRows = getTabRows(workbookPreview, "rule_claim_risk");
-
-  const selectedRule =
-    ruleRows.find((row) => diagnosisCodes.includes(String(row.applies_to_icd ?? ""))) ?? null;
-  const professionalProfile = parseJsonSafe(selectedRule?.condition_expression);
-
-  const clsCatalogByCode = new Map(
-    clsCatalogRows.map((row) => [String(row.cls_code ?? ""), row])
-  );
-  const medicationCatalogByCode = new Map(
-    medicationCatalogRows.map((row) => [String(row.drug_code ?? ""), row])
-  );
-
-  const investigationMetaByName = new Map<string, { detail: string; mappingNote: string }>();
-  icdClsMappingRows
-    .filter((row) => diagnosisCodes.includes(String(row.icd_code ?? "")))
-    .sort((left, right) => Number(left.priority ?? 0) - Number(right.priority ?? 0))
-    .forEach((row) => {
-      const code = String(row.cls_code ?? "");
-      const catalog = clsCatalogByCode.get(code) ?? {};
-      const name = String((catalog as WorkbookTabRow).cls_name ?? code);
-
-      investigationMetaByName.set(name, {
-        detail: String((catalog as WorkbookTabRow).default_frequency ?? ""),
-        mappingNote: String(row.note ?? "")
+  // Investigations from mapping_icd_cls
+  const investigationMap = new Map<string, { name: string; rationale: string; detail: string; mappingNote: string }>();
+  clsMappings
+    .filter((m) => diagnosisCodes.includes(m.icdCode))
+    .sort((a, b) => a.priority - b.priority)
+    .forEach((m) => {
+      if (investigationMap.has(m.clsCode)) return; // dedupe
+      const catalog = clsCatalog.get(m.clsCode);
+      investigationMap.set(m.clsCode, {
+        name: catalog?.name ?? m.clsCode,
+        rationale: m.note,
+        detail: catalog?.defaultFrequency ?? "",
+        mappingNote: m.note,
       });
     });
 
-  const medicationMetaByName = new Map<string, { detail: string; mappingNote: string }>();
-  icdMedicationMappingRows
-    .filter((row) => diagnosisCodes.includes(String(row.icd_code ?? "")))
-    .sort((left, right) => Number(left.priority ?? 0) - Number(right.priority ?? 0))
-    .forEach((row) => {
-      const code = String(row.drug_code ?? "");
-      const catalog = medicationCatalogByCode.get(code) ?? {};
-      const name = String((catalog as WorkbookTabRow).drug_name ?? code);
-      const detailParts = [String((catalog as WorkbookTabRow).route ?? ""), String((catalog as WorkbookTabRow).strength ?? "")].filter(Boolean);
-
-      medicationMetaByName.set(name, {
+  // Medications from mapping_icd_medication
+  const medicationMap = new Map<string, { name: string; rationale: string; detail: string; mappingNote: string }>();
+  medMappings
+    .filter((m) => diagnosisCodes.includes(m.icdCode))
+    .sort((a, b) => a.priority - b.priority)
+    .forEach((m) => {
+      if (medicationMap.has(m.drugCode)) return; // dedupe
+      const catalog = medCatalog.get(m.drugCode);
+      const detailParts = [catalog?.route ?? "", catalog?.strength ?? ""].filter(Boolean);
+      medicationMap.set(m.drugCode, {
+        name: catalog?.name ?? m.drugCode,
+        rationale: m.note,
         detail: detailParts.join(" / "),
-        mappingNote: String(row.note ?? "")
+        mappingNote: m.note,
       });
     });
+
+  // Claim risk rules
+  const matchedRule = riskRules.find((rule) => {
+    const ruleIcds = rule.appliesToIcd.split("|").map((s) => s.trim());
+    return diagnosisCodes.some((code) => ruleIcds.includes(code));
+  });
+
+  const professionalProfile = parseJsonSafe(matchedRule?.conditionExpression ?? "");
 
   return {
-    ...data,
-    claimRisk: {
-      alerts: [],
-      warningMessage: String(selectedRule?.warning_message ?? ""),
-      recommendedAction: String(selectedRule?.recommended_action ?? ""),
-      reimbursementNote: String(professionalProfile.reimbursementNote ?? "")
-    },
+    diagnoses,
     recommendations: {
-      ...(data?.recommendations ?? {}),
       investigationsNote: String(professionalProfile.labPurposeNote ?? ""),
-      investigations: Array.isArray(data?.recommendations?.investigations)
-        ? data.recommendations.investigations.map((item: Record<string, unknown>) => {
-            const meta = investigationMetaByName.get(String(item.name ?? ""));
-            return {
-              ...item,
-              detail: meta?.detail ?? "",
-              mappingNote: meta?.mappingNote ?? ""
-            };
-          })
-        : [],
+      investigations: Array.from(investigationMap.values()),
       medicationGroupsNote: String(professionalProfile.medicationRoleNote ?? ""),
-      medicationGroups: Array.isArray(data?.recommendations?.medicationGroups)
-        ? data.recommendations.medicationGroups.map((item: Record<string, unknown>) => {
-            const meta = medicationMetaByName.get(String(item.name ?? ""));
-            return {
-              ...item,
-              detail: meta?.detail ?? "",
-              mappingNote: meta?.mappingNote ?? ""
-            };
-          })
-        : []
-    }
+      medicationGroups: Array.from(medicationMap.values()),
+    },
+    claimRisk: {
+      alerts: [] as { severity: string; title: string; description: string }[],
+      warningMessage: matchedRule?.warningMessage ?? "",
+      recommendedAction: matchedRule?.recommendedAction ?? "",
+      reimbursementNote: String(professionalProfile.reimbursementNote ?? ""),
+    },
   };
 }
 
 export async function POST(request: NextRequest) {
-  const payload = await request.json();
-
-  if (!remoteUrl) {
-    return NextResponse.json(
-      {
-        error: "missing_remote_url",
-        message: "GOOGLE_APPS_SCRIPT_URL is not configured."
-      },
-      { status: 503 }
-    );
-  }
-
   try {
-    const response = await fetch(remoteUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8"
-      },
-      body: JSON.stringify(payload),
-      cache: "no-store"
-    });
-
-    if (!response.ok) {
-      return NextResponse.json(
-        {
-          error: "remote_request_failed",
-          status: response.status,
-          message: `Apps Script returned HTTP ${response.status}`
-        },
-        { status: 502 }
-      );
-    }
-
-    const data = await response.json();
-    const diagnosisCodes = Array.isArray(payload?.diagnoses)
+    const payload = await request.json();
+    const diagnosisCodes: string[] = Array.isArray(payload?.diagnoses)
       ? payload.diagnoses.map((item: { icd?: string }) => String(item?.icd ?? "")).filter(Boolean)
       : [];
 
-    try {
-      const workbookPreview = await loadWorkbookPreview();
-      const enriched = enrichRecommendations(data, workbookPreview, diagnosisCodes);
+    if (diagnosisCodes.length === 0) {
+      return NextResponse.json({
+        diagnoses: [],
+        recommendations: { investigations: [], medicationGroups: [] },
+        claimRisk: { alerts: [], warningMessage: "", recommendedAction: "" },
+      });
+    }
 
-      // Tích hợp Dynamic Rule Engine
+    const result = buildRecommendations(diagnosisCodes);
+
+    // Dynamic Rule Engine integration
+    try {
       const { runDecisionEngine } = await import("@app-bhxh/decision-engine");
 
       const dynamicEngineResult = await runDecisionEngine({
         diagnoses: diagnosisCodes.map((icd: string) => ({ icd })),
         protocols: [
           {
-            code: "MOCK_PROTOCOL",
+            code: "CSV_PROTOCOL",
             items: [
-              ...(enriched.recommendations.investigations || []).map((i: any) => ({ type: "CLS", code: i.name, name: i.name })),
-              ...(enriched.recommendations.medicationGroups || []).map((m: any) => ({ type: "MEDICATION", code: m.name, name: m.name }))
-            ]
-          }
+              ...result.recommendations.investigations.map((i) => ({ type: "CLS", code: i.name, name: i.name })),
+              ...result.recommendations.medicationGroups.map((m) => ({ type: "MEDICATION", code: m.name, name: m.name })),
+            ],
+          },
         ],
         rules: {
           claimRisk: [],
-          dynamicRules: [
-            {
-              conditions: {
-                all: [
-                  { fact: "patient", path: "$.diagnoses", operator: "contains", value: "J00" },
-                  { fact: "patient", path: "$.investigations", operator: "contains", value: "Siêu âm tim" }
-                ]
-              },
-              event: {
-                type: "block",
-                params: { message: "Kiểm định tự động (Rule Engine): Không thể kê Siêu âm tim cho hội chứng viêm họng J00." }
-              }
-            }
-          ]
-        }
+          dynamicRules: [],
+        },
       });
 
-      enriched.claimRisk.alerts = [
-        ...enriched.claimRisk.alerts,
-        ...dynamicEngineResult.alerts
+      result.claimRisk.alerts = [
+        ...result.claimRisk.alerts,
+        ...dynamicEngineResult.alerts,
       ];
-
-      return NextResponse.json(enriched);
-    } catch(err) {
-      console.error("Route error:", err);
-      return NextResponse.json(data);
+    } catch (err) {
+      console.error("[csv-recommendation] Rule engine error:", err);
     }
+
+    console.log(
+      `[csv-recommendation] ICD=${diagnosisCodes.join(",")} → ${result.recommendations.investigations.length} CLS, ${result.recommendations.medicationGroups.length} Meds`
+    );
+
+    return NextResponse.json(result);
   } catch (error) {
     return NextResponse.json(
       {
-        error: "remote_request_exception",
-        message: error instanceof Error ? error.message : "Unknown remote error"
+        error: "recommendation_failed",
+        message: error instanceof Error ? error.message : "Unknown error",
       },
-      { status: 502 }
+      { status: 500 }
     );
   }
 }

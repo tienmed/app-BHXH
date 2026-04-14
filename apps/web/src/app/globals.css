@@ -857,6 +857,335 @@ body {
   }
 }
 
+/* ═══════ MODE TOGGLE ═══════ */
+.modeToggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 4px;
+  background: var(--bg);
+  border-radius: 16px;
+  border: 1px solid var(--line);
+}
+
+.modeBtn {
+  flex: 1;
+  padding: 12px 20px;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--muted);
+  font-family: inherit;
+}
+
+.modeBtn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.modeBtn-active {
+  background: white;
+  color: var(--accent-hover);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.modeBtnIcon {
+  font-size: 1.1rem;
+}
+
+/* ═══════ SYMPTOM SEARCH ═══════ */
+.symptomNarrowing {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.symptomResults {
+  max-height: 340px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.symptomOption {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 12px !important;
+}
+
+.symptomIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  border-radius: 10px;
+}
+
+.symptomMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.symptomMeta strong {
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.symptomSystem {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ═══════ SELECTED SYMPTOMS ═══════ */
+.selectedSymptomRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.symptomChip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-size: 0.88rem;
+}
+
+.symptomChip:hover {
+  background: #fef2f2;
+  border-color: var(--high);
+}
+
+.symptomChip strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.chipRemove {
+  font-size: 0.7rem;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.symptomChip:hover .chipRemove {
+  opacity: 1;
+  color: var(--high);
+}
+
+/* ═══════ NARROWED ICD PANEL ═══════ */
+.narrowedIcdPanel {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.narrowedIcdHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.narrowedIcdHeader h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.narrowedCount {
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.narrowingSpinner {
+  font-size: 1.2rem;
+  animation: spin 1s linear infinite;
+  color: var(--accent);
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.narrowedIcdList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 420px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.narrowedIcdItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  font-family: inherit;
+  width: 100%;
+}
+
+.narrowedIcdItem:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.narrowedIcdItem-full {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.03);
+}
+
+.narrowedIcdRank {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--muted);
+  min-width: 28px;
+  text-align: center;
+}
+
+.narrowedIcdInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.narrowedIcdName {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.narrowedIcdName strong {
+  font-size: 0.95rem;
+  color: var(--accent-hover);
+  flex-shrink: 0;
+}
+
+.narrowedIcdName span {
+  font-size: 0.88rem;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.narrowedIcdBar {
+  height: 6px;
+  background: #f1f5f9;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.narrowedIcdBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #34d399);
+  border-radius: 3px;
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.narrowedIcdMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.narrowedIcdMatch {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.narrowedIcdScore {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ═══════ SELECTED ICD FROM SYMPTOM MODE ═══════ */
+.selectedIcdFromSymptom {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: rgba(59, 130, 246, 0.04);
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.selectedIcdFromSymptom h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--info);
+  margin-bottom: 12px;
+}
+
+/* ═══════ RESPONSIVE: SYMPTOM SEARCH ═══════ */
+@media (max-width: 768px) {
+  .modeToggle {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .modeBtn {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .narrowedIcdItem {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .narrowedIcdName {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .symptomChip {
+    font-size: 0.82rem;
+    padding: 6px 12px;
+  }
+
+  .narrowedIcdList {
+    max-height: 320px;
+  }
+}
+
 /* DARK MODE */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -1030,5 +1359,77 @@ body {
 
   .searchOption-focused {
     background: rgba(16, 185, 129, 0.15);
+  }
+
+  /* Dark mode: Symptom Search */
+  .modeToggle {
+    background: #1e293b;
+    border-color: var(--line);
+  }
+
+  .modeBtn {
+    color: var(--muted);
+  }
+
+  .modeBtn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+  }
+
+  .modeBtn-active {
+    background: #334155;
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .symptomIcon {
+    background: rgba(16, 185, 129, 0.15);
+  }
+
+  .symptomChip {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.25);
+  }
+
+  .symptomChip:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.4);
+  }
+
+  .symptomChip strong {
+    color: var(--text);
+  }
+
+  .narrowedIcdPanel {
+    background: rgba(30, 41, 59, 0.5);
+    border-color: var(--line);
+  }
+
+  .narrowedIcdItem {
+    background: #1e293b;
+    border-color: var(--line);
+  }
+
+  .narrowedIcdItem:hover {
+    background: #334155;
+    border-color: var(--accent);
+  }
+
+  .narrowedIcdItem-full {
+    background: rgba(16, 185, 129, 0.06);
+    border-color: rgba(16, 185, 129, 0.2);
+  }
+
+  .narrowedIcdBar {
+    background: #334155;
+  }
+
+  .narrowedIcdBarFill {
+    background: linear-gradient(90deg, var(--accent), #34d399);
+  }
+
+  .selectedIcdFromSymptom {
+    background: rgba(59, 130, 246, 0.08);
+    border-color: rgba(59, 130, 246, 0.2);
   }
 }

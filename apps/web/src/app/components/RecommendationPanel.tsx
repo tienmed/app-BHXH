@@ -45,11 +45,11 @@ export const RecommendationPanel = memo(function RecommendationPanel({
                         <div className="skeleton skeleton-card skeleton-short" />
                     </div>
                 ) : items.length > 0 ? (
-                    items.map((item) => {
+                    items.map((item, index) => {
                         const itemKey = `${prefix}-${item.name}`;
                         return (
                             <RecommendationCard
-                                key={item.name}
+                                key={`${item.name}-${index}`}
                                 item={item}
                                 prefix={prefix}
                                 groupNote={groupNote}

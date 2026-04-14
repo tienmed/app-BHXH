@@ -80,6 +80,7 @@ async function sync() {
     const protocols = readCSV('protocol_header.csv');
     const rules = readCSV('rule_claim_risk.csv');
     const costs = readCSV('rule_cost_composition.csv');
+    const protocolItems = readCSV('protocol_item.csv');
 
     // 1. CLS
     const clss = clssRaw.map(item => ({
@@ -119,8 +120,29 @@ async function sync() {
         const specialtyKey = icd.source_ref.includes('-') ? icd.source_ref.split('-')[1] : '';
         const protocol = protocols.find(p => p.protocol_code.startsWith(specialtyKey) || p.specialty_code.includes(specialtyKey)) || protocols[0] || {};
         const cost = costs.find(c => c.scope_code === protocol.protocol_code) || {};
-        const icdMappingsCls = mappingCls.filter(m => m.icd_code === icd.icd_code);
-        const icdMappingsMed = mappingMed.filter(m => m.icd_code === icd.icd_code);
+        let icdMappingsCls = mappingCls.filter(m => m.icd_code === icd.icd_code);
+        let icdMappingsMed = mappingMed.filter(m => m.icd_code === icd.icd_code);
+
+        if (icdMappingsCls.length === 0 && icdMappingsMed.length === 0 && protocolItems) {
+            const matchingItems = protocolItems.filter(p => 
+                p.protocol_code === protocol.protocol_code && 
+                p.applies_to_condition && 
+                (p.applies_to_condition.includes(icd.icd_code) || p.applies_to_condition.includes(icd.icd_code.split('.')[0]))
+            );
+            icdMappingsCls = matchingItems.filter(p => p.item_type === 'cls').map(p => ({
+                icd_code: icd.icd_code,
+                cls_code: p.item_code,
+                mapping_type: p.category,
+                note: p.rationale
+            }));
+            icdMappingsMed = matchingItems.filter(p => p.item_type === 'medication').map(p => ({
+                icd_code: icd.icd_code,
+                drug_code: p.item_code,
+                mapping_type: p.category,
+                note: p.rationale
+            }));
+        }
+
         const icdRules = rules.filter(r => r.applies_to_icd === icd.icd_code);
         const primaryRule = icdRules[0] || {};
 
