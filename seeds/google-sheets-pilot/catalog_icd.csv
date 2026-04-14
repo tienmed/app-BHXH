@@ -54,3 +54,32 @@ G80.9,Bại não không đặc hiệu,Bệnh hệ thần kinh,TRUE,2026-01-01,20
 H90.5,Giảm thính lực cảm giác thần kinh không đặc hiệu,Bệnh tai và xuơng chũm,TRUE,2026-01-01,2099-12-31,MOH-PED-2026
 F84.0,Tự kỷ trẻ em,Rối loạn tâm thần và hành vi,TRUE,2026-01-01,2099-12-31,MOH-PED-2026
 F70,Chậm phát triển trí tuệ mức độ nhẹ,Rối loạn tâm thần và hành vi,TRUE,2026-01-01,2099-12-31,MOH-PED-2026
+E66.9,Béo phì không đặc hiệu,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E79.0,Tăng acid uric máu (không có dấu hiệu viêm khớp/gút),Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E88.81,Hội chứng chuyển hóa,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+I69.4,Di chứng của bệnh mạch máu não,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G20,Bệnh Parkinson,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G43.9,Migraine không chỉ định,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G44.2,Đau đầu do căng thẳng,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+H81.9,Rối loạn tiền đình không chỉ định,Bệnh tai và xuơng chũm,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G30.9,Bệnh Alzheimer không chỉ định (Sa sút trí tuệ),Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G45.9,Cơn thiếu máu não cục bộ thoảng qua không chỉ định (TIA),Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+J44.9,Bệnh phổi tắc nghẽn mạn tính không chỉ định (COPD),Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-RESP-2026
+A97.0,Sốt Dengue,Bệnh nhiễm trùng và ký sinh trùng,TRUE,2026-01-01,2099-12-31,MOH-INF-2026
+B18.1,Viêm gan virus B mạn tính không có tác nhân Delta,Bệnh nhiễm trùng và ký sinh trùng,TRUE,2026-01-01,2099-12-31,MOH-INF-2026
+B34.9,Nhiễm virus không chỉ định,Bệnh nhiễm trùng và ký sinh trùng,TRUE,2026-01-01,2099-12-31,MOH-INF-2026
+N39.0,Nhiễm trùng đường tiết niệu vị trí không xác định,Bệnh hệ tiết niệu - sinh dục,TRUE,2026-01-01,2099-12-31,MOH-URO-2026
+N20.9,Sỏi tiết niệu không chỉ định,Bệnh hệ tiết niệu - sinh dục,TRUE,2026-01-01,2099-12-31,MOH-URO-2026
+N40,Tăng sản tuyến tiền liệt (Phì đại tuyến tiền liệt lành tính),Bệnh hệ tiết niệu - sinh dục,TRUE,2026-01-01,2099-12-31,MOH-URO-2026
+M54.5,Đau thắt lưng dưới,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+M47.8,Thoái hóa cột sống khác,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+M54.3,Đau thần kinh tọa,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+M81.9,Loãng xương không có gãy xương bệnh lý,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+L20.9,Viêm da cơ địa không xác định,Bệnh của da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+L50.9,Mề đay không xác định,Bệnh của da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+B35.9,Bệnh nấm da (Dermatophytosis) không xác định,Bệnh nhiễm trùng và ký sinh trùng,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+B02.9,Bệnh Zona không có biến chứng (Herpes zoster),Bệnh nhiễm trùng và ký sinh trùng,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+K29.5,Viêm dạ dày mạn tính không chỉ định,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GI-2026
+G47.0,Rối loạn bắt đầu và duy trì giấc ngủ [Mất ngủ],Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-PSYCH-2026
+F41.9,Rối loạn lo âu không chỉ định,Rối loạn tâm thần và hành vi,TRUE,2026-01-01,2099-12-31,MOH-PSYCH-2026
+

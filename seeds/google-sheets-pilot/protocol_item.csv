@@ -102,3 +102,51 @@ PED-OP-2026,medication,MED-PED-AMOXICILLIN,Amoxicillin hỗn dịch,suggested,Ng
 PED-OP-2026,medication,MED-PED-H-VALPROATE,Valproate (NHÓM H),standard,Động kinh - Cần duyệt đặc biệt,Chống co giật,9,TRUE
 PED-OP-2026,medication,MED-PED-H-METHYLPHENIDATE,Methylphenidate (NHÓM H),suggested,ADHD - Cần duyệt HĐ Thuốc,Kích thích TK trung ương,10,FALSE
 PED-OP-2026,medication,MED-PED-H-RISPERIDONE,Risperidone liều thấp (NHÓM H),suggested,Tự kỷ - Cần duyệt đặc biệt,Kiểm soát hành vi,11,FALSE
+IM-OP-METABOLIC-2026,cls,CLS-XN-AXIT-URIC,Xét nghiệm Axit Uric huyết thanh,standard,Tăng acid uric máu,Theo dõi chức năng chuyển hóa,1,TRUE
+IM-OP-METABOLIC-2026,cls,CLS-XN-LIPID,Hồ sơ lipid máu,standard,Béo phì hoặc Hội chứng chuyển hóa,Sàng lọc rối loạn lipid máu,2,TRUE
+IM-OP-METABOLIC-2026,cls,CLS-XN-DUONG-HUYET,Đường huyết,standard,Hội chứng chuyển hóa,Theo dõi kháng insulin,3,TRUE
+IM-OP-METABOLIC-2026,cls,CLS-XN-AST-ALT,Xét nghiệm AST ALT (Men gan),suggested,Béo phì,Sàng lọc gan nhiễm mỡ do chuyển hóa,4,FALSE
+IM-OP-METABOLIC-2026,medication,MED-GOUT-ALLOPURINOL,Allopurinol,preferred,Tăng acid uric máu kéo dài,Hạ acid uric duy trì,5,FALSE
+IM-OP-METABOLIC-2026,medication,MED-OBES-ORLISTAT,Orlistat,suggested,Béo phì BMI cao không đáp ứng chế độ ăn,Chỉ định giảm cân đặc hiệu,6,FALSE
+NEURO-OP-2026,cls,CLS-CDHA-MRI-SO-NAO,Chụp cộng hưởng từ (MRI) sọ não,suggested,Migraine kháng trị/Động kinh/TIA,Đánh giá tổn thương nội sọ (Làm ngoài BHYT),8,FALSE
+NEURO-OP-2026,cls,CLS-CDHA-CT-SO-NAO,Chụp cắt lớp vi tính (CT) sọ não,suggested,Chấn thương sọ não/Xuất huyết,Phát hiện tổn thương cấp (Làm ngoài BHYT),9,FALSE
+NEURO-OP-2026,cls,CLS-CDHA-SA-MACH-CANH,Siêu âm Doppler động mạch cảnh,standard,Di chứng đột quỵ / TIA (I69.4 G45.9),Tầm soát mảng xơ vữa,10,TRUE
+NEURO-OP-2026,medication,MED-NEURO-LEVODOPA,Levodopa/Benserazide,preferred,Parkinson (G20),Bổ sung Dopamine,11,FALSE
+NEURO-OP-2026,medication,MED-NEURO-FLUNARIZINE,Flunarizine,preferred,Migraine/Rối loạn tiền đình (G43.9 H81.9),Giảm chóng mặt và dự phòng đau đầu,12,FALSE
+NEURO-OP-2026,medication,MED-NEURO-BETAHISTINE,Betahistine,standard,Rối loạn tiền đình (H81.9),Cải thiện vi tuần hoàn tiền đình,13,FALSE
+NEURO-OP-2026,medication,MED-NEURO-CITICOLINE,Citicoline,suggested,Di chứng nhồi máu nội sọ (I69.4),Phục hồi tế bào thần kinh,14,FALSE
+NEURO-OP-2026,medication,MED-NEURO-DONEPEZIL,Donepezil,preferred,Sa sút trí tuệ Alzheimer (G30.9),Cải thiện nhận thức,15,FALSE
+NEURO-OP-2026,medication,MED-ANTIPLAT-ASPIRIN,Aspirin,standard,Di chứng nhồi máu não / TIA,Dự phòng huyết khối thứ phát,16,FALSE
+RESP-OP-2026,cls,CLS-TDCN-HO-HAP-KY,Đo chức năng hô hấp (Hô hấp ký người lớn),standard,COPD (J44.9),Chẩn đoán xác định và phân bậc,1,TRUE
+RESP-OP-2026,medication,MED-RESP-TIOTROPIUM,Tiotropium bromide (LAMA),preferred,COPD (J44.9),Nền tảng kiểm soát đợt cấp,2,FALSE
+RESP-OP-2026,medication,MED-RESP-SYMBICORT,Budesonide/Formoterol (ICS/LABA),suggested,COPD có nhiều đợt cấp,Phối hợp giãn phế quản và kháng viêm,3,FALSE
+INF-OP-2026,cls,CLS-XN-DENGUE-NS1,Test nhanh Dengue NS1,standard,Sốt Dengue (A97.0),Cần chẩn đoán xác định trong 3 ngày đầu,1,FALSE
+INF-OP-2026,cls,CLS-XN-CONG-THUC-MAU,Công thức máu,standard,Sốt siêu vi/Dengue,Theo dõi lượng tiểu cầu và Hct,2,TRUE
+INF-OP-2026,medication,MED-INF-ORESOL,Oresol (Dung dịch bù nước),preferred,Sốt Dengue (A97.0) và Sốt siêu vi,Dự phòng sốc do mất dịch,3,TRUE
+INF-OP-2026,cls,CLS-XN-HBSAG,Xét nghiệm HBsAg,standard,Viêm gan B (B18.1),Xác định kháng nguyên bề mặt,4,TRUE
+INF-OP-2026,cls,CLS-XN-HBV-DNA,Đo tải lượng virus HBV-DNA,standard,Viêm gan B mạn tính cần cấp thuốc,Tiêu chuẩn quyết định cấp thuốc BHYT,5,TRUE
+INF-OP-2026,cls,CLS-XN-AST-ALT,Xét nghiệm AST ALT (Men gan),standard,Viêm gan B (B18.1),Theo dõi hoại tử tế bào gan,6,TRUE
+INF-OP-2026,medication,MED-INF-TENOFOVIR,Tenofovir disoproxil fumarate,preferred,Viêm gan B (B18.1),Điều trị kháng virus BHYT,7,FALSE
+URO-OP-2026,cls,CLS-XN-NUOC-TIEU,Tổng phân tích nước tiểu,standard,Viêm tiết niệu/Sỏi tiết niệu,Tầm soát bạch cầu / hồng cầu niệu,1,TRUE
+URO-OP-2026,cls,CLS-CDHA-SA-TIET-NIEU,Siêu âm hệ tiết niệu,standard,Sỏi tiết niệu / Phì đại tiền liệt tuyến,Hình ảnh học cơ bản hệ niệu,2,TRUE
+URO-OP-2026,cls,CLS-XN-CAY-NUOC-TIEU,Nuôi cấy nước tiểu,suggested,Viêm tái phát,Định danh vi khuẩn,3,FALSE
+URO-OP-2026,medication,MED-URO-CIPROFLOXACIN,Ciprofloxacin,preferred,Viêm tiết niệu có biểu hiện toàn thân,Kháng sinh phổ Gram âm,4,FALSE
+URO-OP-2026,medication,MED-URO-FOSFOMYCIN,Fosfomycin trometamol,preferred,Viêm bàng quang nữ chưa biến chứng,Kháng sinh liều duy nhất,5,FALSE
+URO-OP-2026,medication,MED-URO-ROWATINEX,Rowatinex,suggested,Sỏi tiết niệu < 5mm,Hỗ trợ đau và đào thải sỏi,6,FALSE
+URO-OP-2026,medication,MED-URO-TAMSULOSIN,Tamsulosin,standard,Phì đại tiền liệt tuyến có triệu chứng (N40),Giảm tắc nghẽn đường tiểu đáy,7,TRUE
+MSK-OP-2026,cls,CLS-CDHA-XQUANG-CS,Chụp X-quang cột sống,standard,Đau mỏi vai gáy / Đau thắt lưng,Đánh giá hình thái cơ bản,13,TRUE
+MSK-OP-2026,cls,CLS-TDCN-DEXA,Đo mật độ xương (DEXA),standard,Phụ nữ mãn kinh / Loãng xương,Tiêu chuẩn vàng chẩn đoán loãng xương,14,TRUE
+MSK-OP-2026,cls,CLS-CDHA-MRI-CS,Chụp cộng hưởng từ (MRI) cột sống,suggested,Nghi ngờ thoát vị đĩa đệm chèn ép rễ,Phân định phương pháp phẫu thuật (Làm ngoài BHYT),15,FALSE
+MSK-OP-2026,medication,MED-MSK-EPERISONE,Eperisone,preferred,Đau cơ thắt lưng / vai gáy cấp,Giãn cơ và giảm đau,16,FALSE
+MSK-OP-2026,medication,MED-MSK-ALENDRONATE,Alendronate,preferred,Loãng xương (M81.9),Giảm nguy cơ gãy xương,17,FALSE
+MSK-OP-2026,medication,MED-MSK-CALCIUM-D3,Calcium + Vitamin D3,standard,Loãng xương,Nền tảng bù khoáng chất,18,TRUE
+MSK-OP-2026,medication,MED-NEURO-PREGABALIN,Pregabalin,preferred,Đau thần kinh tọa (M54.3),Giảm đau thần kinh,19,FALSE
+DERM-OP-2026,cls,CLS-XN-NAM-SOI-TUOI,Soi tươi tìm nấm,standard,Nấm da (B35.9),Chẩn đoán xác định nhanh bào tử nấm,1,TRUE
+DERM-OP-2026,cls,CLS-XN-IGE-DAC-HIEU,Định lượng IgE đặc hiệu,suggested,Mề đay tái phát (L50.9) kháng trị,Xác định dị nguyên,2,FALSE
+DERM-OP-2026,medication,MED-DERM-CORTICOID,Betamethasone bôi,preferred,Viêm da / Eczema (L20.9),Kháng viêm tại chỗ,3,FALSE
+DERM-OP-2026,medication,MED-DERM-ANTIHIST,Levocetirizine,standard,Mề đay / Ngứa,Giảm triệu chứng dị ứng,4,TRUE
+DERM-OP-2026,medication,MED-DERM-ITRACONAZOLE,Itraconazole,preferred,Nấm da dai dẳng / diện rộng,Tiêu diệt nấm sợi và men,5,FALSE
+DERM-OP-2026,medication,MED-DERM-ACYCLOVIR,Acyclovir,preferred,Zona thần kinh (B02.9) < 72h,Ngăn nhân lên của Herpes,6,FALSE
+GI-OP-2026,medication,MED-GI-REBAMIPIDE,Rebamipide,suggested,Viêm dạ dày,Tái tạo niêm mạc,2,FALSE
+PSYCH-OP-2026,medication,MED-PSYCH-ROTUNDA,Rotundin,preferred,Mất ngủ (G47.0),An thần thảo dược nhẹ,1,FALSE
+PSYCH-OP-2026,medication,MED-PSYCH-DIAZEPAM,Diazepam,suggested,Lo âu (F41.9) mức độ trung bình-nặng,Giải lo âu mạnh,2,FALSE
