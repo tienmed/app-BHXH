@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 import { useDiagnosisWorkspace } from "./hooks/useDiagnosisWorkspace";
 import { useSymptomNarrowing } from "./hooks/useSymptomNarrowing";
 import { DiagnosisSearch } from "./components/DiagnosisSearch";
@@ -29,11 +30,41 @@ export default function DoctorWorkspace() {
 
   return (
     <main className="doctorWorkspace">
+      <header className="appHeader fade-1">
+        <div className="logoContainer">
+          <Image src="/logo.png" alt="Logo PNT" width={70} height={70} priority />
+        </div>
+        <div className="headerTitles">
+          <h1 className="headerTitleMain">PHÒNG KHÁM ĐA KHOA</h1>
+          <h2 className="headerTitleSub">TRƯỜNG ĐẠI HỌC Y KHOA PHẠM NGỌC THẠCH</h2>
+        </div>
+      </header>
+
       <section className="doctorShell">
         <header className="doctorHero fade-1">
           <span className="eyebrow">Hỗ trợ ra quyết định lâm sàng</span>
-          <h1>Chẩn đoán ICD-10 &amp; Gợi ý xử trí BHYT phù hợp</h1>
-          <p>Giao diện hiện đại giúp bác sĩ tập trung vào các quyết định quan trọng ngay trong đợt khám.</p>
+          <h1>Chẩn đoán bộ Triệu chứng, ICD-10 & Gợi ý xử trí</h1>
+          <div className="heroSubText">
+            <div className="heroFeaturesRow">
+              <div className="heroFeatureCard">
+                <div className="hfIcon">📚</div>
+                <div className="hfText">
+                  <strong>Tuân thủ EBM</strong>
+                  <span>Bám sát cập nhật Y học bằng chứng mới nhất.</span>
+                </div>
+              </div>
+              <div className="heroFeatureCard">
+                <div className="hfIcon">🤝</div>
+                <div className="hfText">
+                  <strong>Tích hợp IPE</strong>
+                  <span>Liên kết Đa chuyên khoa trong điều trị.</span>
+                </div>
+              </div>
+            </div>
+            <p className="heroDesc">
+              Giao diện tiện dụng giúp bác sĩ giải phóng áp lực thủ tục và tập trung tối đa vào chuyên môn.
+            </p>
+          </div>
         </header>
 
         <section className="doctorPanel fade-2">
@@ -185,6 +216,11 @@ export default function DoctorWorkspace() {
         toasts={workspace.toasts}
         onDismiss={workspace.dismissToast}
       />
+
+      <footer className="appFooter fade-4">
+        <p>Phòng Kế hoạch Tổng hợp & Nghiệp vụ Y</p>
+        <p>Bản quyền © 2026 — Phiên bản <strong>v0.2.0</strong></p>
+      </footer>
     </main>
   );
 }
