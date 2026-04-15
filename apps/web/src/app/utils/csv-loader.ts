@@ -103,6 +103,7 @@ export interface ClsMapping {
   mappingType: string;
   priority: number;
   note: string;
+  evidenceLevel: string;
 }
 
 export function loadIcdClsMappings(): ClsMapping[] {
@@ -112,6 +113,7 @@ export function loadIcdClsMappings(): ClsMapping[] {
     mappingType: r.mapping_type ?? "",
     priority: Number(r.priority ?? 0),
     note: r.note ?? "",
+    evidenceLevel: r.evidence_level ?? "IIa",
   }));
 }
 
@@ -121,6 +123,7 @@ export interface MedicationMapping {
   mappingType: string;
   priority: number;
   note: string;
+  evidenceLevel: string;
 }
 
 export function loadIcdMedicationMappings(): MedicationMapping[] {
@@ -130,6 +133,7 @@ export function loadIcdMedicationMappings(): MedicationMapping[] {
     mappingType: r.mapping_type ?? "",
     priority: Number(r.priority ?? 0),
     note: r.note ?? "",
+    evidenceLevel: r.evidence_level ?? "IIa",
   }));
 }
 
@@ -138,6 +142,9 @@ export interface ClsCatalogEntry {
   name: string;
   group: string;
   defaultFrequency: string;
+  minRepeatIntervalDays: number;
+  requiresRedFlag: boolean;
+  restrictedSpecialty: string;
 }
 
 export function loadClsCatalog(): Map<string, ClsCatalogEntry> {
@@ -150,6 +157,9 @@ export function loadClsCatalog(): Map<string, ClsCatalogEntry> {
         name: r.cls_name ?? code,
         group: r.group_name ?? "",
         defaultFrequency: r.default_frequency ?? "",
+        minRepeatIntervalDays: Number(r.min_repeat_interval_days ?? 0),
+        requiresRedFlag: r.requires_red_flag?.toUpperCase() === "TRUE",
+        restrictedSpecialty: r.restricted_specialty ?? "",
       });
     }
   }
@@ -161,6 +171,10 @@ export interface MedicationCatalogEntry {
   name: string;
   route: string;
   strength: string;
+  maxDurationDays: number;
+  maxQuantityPerRx: number;
+  requiresMonitoringCls: string;
+  contraindicatedIcd: string;
 }
 
 export function loadMedicationCatalog(): Map<string, MedicationCatalogEntry> {
@@ -173,6 +187,10 @@ export function loadMedicationCatalog(): Map<string, MedicationCatalogEntry> {
         name: r.drug_name ?? code,
         route: r.route ?? "",
         strength: r.strength ?? "",
+        maxDurationDays: Number(r.max_duration_days ?? 30),
+        maxQuantityPerRx: Number(r.max_quantity_per_rx ?? 90),
+        requiresMonitoringCls: r.requires_monitoring_cls ?? "",
+        contraindicatedIcd: r.contraindicated_icd ?? "",
       });
     }
   }
@@ -187,6 +205,8 @@ export interface ClaimRiskRule {
   warningMessage: string;
   recommendedAction: string;
   conditionExpression: string;
+  conditionType: string;
+  conditionParameter: string;
   isActive: boolean;
 }
 
@@ -201,6 +221,8 @@ export function loadClaimRiskRules(): ClaimRiskRule[] {
       warningMessage: r.warning_message ?? "",
       recommendedAction: r.recommended_action ?? "",
       conditionExpression: r.condition_expression ?? "",
+      conditionType: r.condition_type ?? "",
+      conditionParameter: r.condition_parameter ?? "",
       isActive: true,
     }));
 }

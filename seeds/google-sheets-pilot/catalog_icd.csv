@@ -82,4 +82,24 @@ B02.9,Bệnh Zona không có biến chứng (Herpes zoster),Bệnh nhiễm trùn
 K29.5,Viêm dạ dày mạn tính không chỉ định,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GI-2026
 G47.0,Rối loạn bắt đầu và duy trì giấc ngủ [Mất ngủ],Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-PSYCH-2026
 F41.9,Rối loạn lo âu không chỉ định,Rối loạn tâm thần và hành vi,TRUE,2026-01-01,2099-12-31,MOH-PSYCH-2026
-
+D25.9,U cơ trơn tử cung (U xơ tử cung) không xác định,Khối u (Tân sinh),TRUE,2026-01-01,2099-12-31,MOH-OBGYN-2026
+N92.0,Kinh nguyệt quá nhiều và thường xuyên (Rong kinh),Bệnh hệ tiết niệu - sinh dục,TRUE,2026-01-01,2099-12-31,MOH-OBGYN-2026
+N70.9,Viêm vòi trứng và buồng trứng (Viêm phần phụ),Bệnh hệ tiết niệu - sinh dục,TRUE,2026-01-01,2099-12-31,MOH-OBGYN-2026
+I25.1,Bệnh tim thiếu máu cục bộ mạn tính,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+I83.9,Giãn tĩnh mạch chi dưới (Không loét viêm),Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+I11.9,Bệnh tim do tăng huyết áp (Không suy tim),Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+I65.2,Tắc nghẽn và hẹp động mạch cảnh,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+E05.9,Nhiễm độc giáp không đặc hiệu (Cường giáp),Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E03.9,Suy giáp không đặc hiệu,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E04.9,Bướu cổ không độc không đặc hiệu,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E21.3,Cường tuyến cận giáp,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E20.9,Suy tuyến cận giáp,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+N60.9,Loạn sản vú lành tính không đặc hiệu,Bệnh hệ sinh dục tiết niệu,TRUE,2026-01-01,2099-12-31,MOH-BREAST-2026
+N61,Các rối loạn viêm của vú,Bệnh hệ sinh dục tiết niệu,TRUE,2026-01-01,2099-12-31,MOH-BREAST-2026
+N63,Khối u không xác định ở vú,Bệnh hệ sinh dục tiết niệu,TRUE,2026-01-01,2099-12-31,MOH-BREAST-2026
+D24,U mềm lành tính của vú (U xơ vú),Khối u,TRUE,2026-01-01,2099-12-31,MOH-BREAST-2026
+L20.9,Viêm da cơ địa,Bệnh da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+L23.9,Viêm da tiếp xúc dị ứng,Bệnh da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+L40.0,Vảy nến thể mảng,Bệnh da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+L50.9,Mày đay,Bệnh da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+B35.9,Bệnh nấm da,Bệnh nhiễm trùng,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
