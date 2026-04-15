@@ -134,7 +134,11 @@ export async function POST(request: NextRequest) {
 
       result.claimRisk.alerts = [
         ...result.claimRisk.alerts,
-        ...dynamicEngineResult.alerts,
+        ...dynamicEngineResult.alerts.map((a: any) => ({
+          severity: a.severity || "medium",
+          title: a.title || a.ruleName || "Cảnh báo hệ thống",
+          description: a.message || a.warningMessage || a.description || "",
+        })),
       ];
     } catch (err) {
       console.error("[csv-recommendation] Rule engine error:", err);
