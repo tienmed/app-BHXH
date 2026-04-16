@@ -1,11 +1,11 @@
-"use client";
-
 import { memo } from "react";
 import type { SuggestedItem, ItemStatus, FeedbackPayload } from "../types";
 import { shouldShowMappingNote, shouldShowSupplementalText, shouldShowDistinctRationale } from "../utils/recommendation-helpers";
+import { PeerFeedbackList } from "./PeerFeedbackList";
 
 type Props = {
     item: SuggestedItem;
+    icdCode: string;
     prefix: string;
     groupNote?: string;
     itemStatus: ItemStatus;
@@ -21,7 +21,8 @@ export const RecommendationCard = memo(function RecommendationCard({
     itemStatus,
     onSetStatus,
     onOpenFeedback,
-    feedbackTargetType
+    feedbackTargetType,
+    icdCode
 }: Props) {
     const itemKey = `${prefix}-${item.name}`;
 
@@ -66,6 +67,7 @@ export const RecommendationCard = memo(function RecommendationCard({
             ) ? (
                 <p>{item.rationale}</p>
             ) : null}
+            <PeerFeedbackList icdCode={icdCode} targetName={item.name} />
         </article>
     );
 });

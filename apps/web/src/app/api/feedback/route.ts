@@ -16,31 +16,29 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-        const response = await fetch(remoteUrl, {
+        const response = await fetch("http://localhost:3001/interactions/feedback", {
             method: "POST",
             headers: {
-                "Content-Type": "text/plain;charset=utf-8"
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                action: "submit-doctor-feedback",
-                ...payload
-            }),
+            body: JSON.stringify(payload),
             cache: "no-store"
         });
 
         if (!response.ok) {
+            const errorText = await response.text();
             return NextResponse.json(
                 {
-                    error: "remote_request_failed",
+                    error: "local_request_failed",
                     status: response.status,
-                    message: `Apps Script returned HTTP ${response.status}`
+                    message: `Backend returned ${response.status}: ${errorText}`
                 },
                 { status: 502 }
             );
         }
 
         const data = await response.json();
-        return NextResponse.json(data);
+        return NextResponse.json({ ok: true, data });
     } catch (error) {
         return NextResponse.json(
             {

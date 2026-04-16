@@ -15,6 +15,7 @@ type Props = {
     onOpenFeedback: (targetType: FeedbackPayload["targetType"], targetName: string) => void;
     feedbackTargetType: FeedbackPayload["targetType"];
     emptyText: string;
+    icdCode: string;
 };
 
 export const RecommendationPanel = memo(function RecommendationPanel({
@@ -27,7 +28,8 @@ export const RecommendationPanel = memo(function RecommendationPanel({
     onSetStatus,
     onOpenFeedback,
     feedbackTargetType,
-    emptyText
+    emptyText,
+    icdCode
 }: Props) {
     return (
         <section className="doctorPanel fade-3">
@@ -51,6 +53,7 @@ export const RecommendationPanel = memo(function RecommendationPanel({
                             <RecommendationCard
                                 key={`${item.name}-${index}`}
                                 item={item}
+                                icdCode={icdCode}
                                 prefix={prefix}
                                 groupNote={groupNote}
                                 itemStatus={itemStatuses[itemKey] ?? "pending"}

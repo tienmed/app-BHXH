@@ -225,3 +225,26 @@ model Override {
   freeTextReason      String?
   createdAt           DateTime          @default(now())
 }
+
+model DoctorFeedback {
+  id           String   @id @default(uuid())
+  icdCode      String
+  icdName      String
+  feedbackType String
+  targetType   String   // cls, medication, alert, general
+  targetName   String
+  note         String
+  doctorId     String?
+  createdAt    DateTime @default(now())
+}
+
+model DoctorDismissal {
+  id           String   @id @default(uuid())
+  icdCode      String
+  itemType     String   // CLS, MEDICATION
+  itemCode     String
+  itemName     String
+  reason       String? 
+  doctorId     String?
+  createdAt    DateTime @default(now())
+}

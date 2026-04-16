@@ -1320,3 +1320,125 @@ body {
   line-height: 1.6;
   max-width: 100%;
 }
+/* Risk & Justification Styles */
+.riskScoreSection {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+}
+
+.riskScoreHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.riskProgressBar {
+    height: 12px;
+    background: var(--bg);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.riskProgressInner {
+    height: 100%;
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease;
+}
+
+.riskHint {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.justificationBox {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: var(--info-soft);
+    border-left: 6px solid var(--info);
+    border-radius: 20px;
+}
+
+.justificationBox strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.justificationText {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text);
+    position: relative;
+    padding-right: 40px;
+}
+
+.copyBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: white;
+    border: 1px solid var(--line);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.copyBtn:hover {
+    border-color: var(--accent);
+    transform: scale(1.1);
+}
+
+
+/* Peer Notes Styles */
+.peerNotesSection {
+    margin-top: 12px;
+    padding: 12px;
+    background: #fdf2f2;
+    border-radius: 12px;
+    border: 1px dashed var(--accent-hover);
+}
+
+.peerNotesTitle {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-hover);
+    margin-bottom: 8px;
+}
+
+.peerNotesList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.peerNoteItem {
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+.peerNoteItem p {
+    margin: 0;
+    font-style: italic;
+}
+
+.peerNoteMeta {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 2px;
+}
+

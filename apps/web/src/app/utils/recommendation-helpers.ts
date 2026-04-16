@@ -82,7 +82,9 @@ export function normalizeRecommendationPayload(payload: unknown): Recommendation
                 medications: Number(rawCostComp.medications ?? 0)
             }
             : undefined,
-        alerts
+        alerts,
+        riskScore: typeof rawGuard?.riskScore === "number" ? rawGuard.riskScore : undefined,
+        suggestedJustification: typeof rawGuard?.suggestedJustification === "string" ? rawGuard.suggestedJustification : undefined
     };
 }
 

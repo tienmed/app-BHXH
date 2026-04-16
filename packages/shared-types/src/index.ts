@@ -53,6 +53,8 @@ export interface RecommendationState {
     medications: number;
   };
   alerts: AlertItem[];
+  riskScore?: number;
+  suggestedJustification?: string;
 }
 
 export interface CostSegment {

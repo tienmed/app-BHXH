@@ -100,7 +100,21 @@ export function useDiagnosisWorkspace() {
 
     const setItemStatus = useCallback((name: string, nextStatus: ItemStatus) => {
         setItemStatuses((current) => ({ ...current, [name]: nextStatus }));
-    }, []);
+
+        // Track dismissal if selected
+        if (nextStatus === "dismissed") {
+            const primaryDiag = state.diagnoses[0];
+            void fetch("/api/recommendations/dismiss", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    icdCode: primaryDiag?.code,
+                    itemName: name.replace("cls-", "").replace("drug-", ""),
+                    itemType: name.startsWith("cls-") ? "CLS" : "MEDICATION"
+                })
+            }).catch(console.error);
+        }
+    }, [state.diagnoses]);
 
     const openFeedback = useCallback((targetType: FeedbackPayload["targetType"], targetName: string) => {
         const primaryDiag = state.diagnoses[0];
@@ -180,7 +194,7 @@ export function useDiagnosisWorkspace() {
         void loadDiagnosisCatalog();
     }, []);
 
-    // Load recommendations when selection changes
+    // Load recommendations when selection or item statuses change
     useEffect(() => {
         async function loadRecommendations() {
             if (!catalogReady) return;
@@ -194,6 +208,16 @@ export function useDiagnosisWorkspace() {
             setLoading(true);
             setStatus("Đang cập nhật gợi ý...");
 
+            // Extract accepted item names
+            const acceptedNames = Object.entries(itemStatuses)
+                .filter(([_, status]) => status === "accepted")
+                .map(([key, _]) => {
+                    // Remove the prefix (cls- or drug-)
+                    if (key.startsWith("cls-")) return key.replace("cls-", "");
+                    if (key.startsWith("drug-")) return key.replace("drug-", "");
+                    return key;
+                });
+
             try {
                 const response = await fetch("/api/recommendations/preview", {
                     method: "POST",
@@ -204,7 +228,8 @@ export function useDiagnosisWorkspace() {
                         diagnoses: selectedCodes.map((code) => {
                             const found = diagnosisCatalog.find((item) => item.code === code);
                             return { icd: code, label: found?.label ?? code };
-                        })
+                        }),
+                        draftOrders: acceptedNames // Send accepted items to update score
                     })
                 });
 
@@ -215,7 +240,7 @@ export function useDiagnosisWorkspace() {
 
                 const payload = await response.json();
                 setState(normalizeRecommendationPayload(payload));
-                setStatus("Đã cập nhật gợi ý theo ICD đang chọn.");
+                setStatus(acceptedNames.length > 0 ? "Đã cập nhật chỉ số rủi ro theo lựa chọn." : "Đã cập nhật gợi ý theo ICD đang chọn.");
             } catch (error) {
                 setState(buildLocalPreview(selectedCodes, diagnosisCatalog));
                 addToast("Đang dùng gợi ý dự phòng (offline).", "info");
@@ -226,7 +251,7 @@ export function useDiagnosisWorkspace() {
         }
 
         void loadRecommendations();
-    }, [catalogReady, diagnosisCatalog, selectedCodes, addToast]);
+    }, [catalogReady, diagnosisCatalog, selectedCodes, itemStatuses, addToast]);
 
     return {
         // State

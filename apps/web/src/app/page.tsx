@@ -177,10 +177,11 @@ export default function DoctorWorkspace() {
                 onSetStatus={workspace.setItemStatus}
                 onOpenFeedback={workspace.openFeedback}
                 feedbackTargetType="cls"
-                emptyText="Chỉ chọn mã ICD để xem các đề xuất cận lâm sàng."
+                emptyText="Vui lòng chọn ICD để xem gợi ý cận lâm sàng."
+                icdCode={workspace.selectedCodes[0]}
               />
               <RecommendationPanel
-                title="Phác đồ Thuốc gợi ý"
+                title="Nhóm thuốc khuyến nghị"
                 items={workspace.state.medications}
                 groupNote={workspace.state.medicationsNote}
                 prefix="drug"
@@ -189,7 +190,8 @@ export default function DoctorWorkspace() {
                 onSetStatus={workspace.setItemStatus}
                 onOpenFeedback={workspace.openFeedback}
                 feedbackTargetType="medication"
-                emptyText="Chỉ chọn mã ICD để xem các đề xuất kê đơn."
+                emptyText="Vui lòng chọn ICD để xem khuyến nghị dùng thuốc."
+                icdCode={workspace.selectedCodes[0]}
               />
             </section>
 
@@ -198,6 +200,8 @@ export default function DoctorWorkspace() {
               warningMessage={workspace.state.warningMessage}
               recommendedAction={workspace.state.recommendedAction}
               reimbursementNote={workspace.state.reimbursementNote}
+              riskScore={workspace.state.riskScore}
+              suggestedJustification={workspace.state.suggestedJustification}
             />
           </>
         )}
@@ -218,7 +222,7 @@ export default function DoctorWorkspace() {
       />
 
       <footer className="appFooter fade-4">
-        <p>Phòng Kế hoạch Tổng hợp & Nghiệp vụ Y</p>
+        <p>Phòng Kế hoạch Nghiệp vụ</p>
         <p>Bản quyền © 2026 — Phiên bản <strong>v0.2.0</strong></p>
       </footer>
     </main>
