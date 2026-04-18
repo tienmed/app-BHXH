@@ -2,12 +2,42 @@ import fs from 'fs';
 import path from 'path';
 import { parse } from 'csv-parse/sync';
 import { runDecisionEngine } from '@app-bhxh/decision-engine';
-import type { 
-    RecommendationRequest, 
-    RecommendationResponse, 
-    RecommendationItem, 
-    EngineInput 
-} from '@app-bhxh/shared-types';
+
+export interface RecommendationRequest {
+    diagnoses: Array<{ icd: string; label: string; type: "primary" | "secondary" }>;
+    draftOrders?: string[];
+}
+
+export interface RecommendationResponse {
+    source: string;
+    timestamp: string;
+    diagnoses: any[];
+    recommendations: {
+        investigations: any[];
+        medicationGroups: any[];
+    };
+    reimbursementGuard: {
+        riskScore: number;
+        suggestedJustification: string;
+        alerts: any[];
+    };
+}
+
+export interface RecommendationItem {
+    type: "CLS" | "MEDICATION";
+    code: string;
+    name: string;
+    note: string;
+}
+
+export interface EngineInput {
+    diagnoses: any[];
+    protocols: Array<{ code: string; items: RecommendationItem[] }>;
+    draftOrders?: string[];
+    rules: {
+        claimRisk: any[];
+    };
+}
 
 class ClinicalEngineService {
     private cache: any = null;
