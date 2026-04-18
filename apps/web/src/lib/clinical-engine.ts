@@ -140,19 +140,40 @@ class ClinicalEngineService {
         // 2. Build Claim Risk Rules
         const relevantRules = this.cache.rules
             .filter((r: any) => {
-                if (r.condition_type === "MISSING_REQUIRED_EVIDENCE") {
-                    if (!r.applies_to_icd) return false;
-                    return icdCodes.some(code => code.startsWith(r.applies_to_icd));
-                }
                 if (!r.applies_to_icd) return true;
-                return icdCodes.some(code => code.startsWith(r.applies_to_icd));
+                const targetIcds = r.applies_to_icd.split("|").map((s: string) => s.trim());
+                
+                if (r.condition_type === "MISSING_REQUIRED_EVIDENCE") {
+                    return icdCodes.some(code => targetIcds.some((t: string) => code.startsWith(t)));
+                }
+                return icdCodes.some(code => targetIcds.some((t: string) => code.startsWith(t)));
             })
-            .map((r: any) => ({
-                severity: r.severity?.toLowerCase() || "medium",
-                title: r.rule_name,
-                message: r.warning_message,
-                itemCode: r.target_item_code
-            }));
+            .map((r: any) => {
+                let requiredEvidenceCode = undefined;
+                if (r.condition_type === "MISSING_REQUIRED_EVIDENCE") {
+                    if (r.rule_code === "RISK-RESP-01") requiredEvidenceCode = "CLS-TDCN-HO-HAP-KY";
+                    else if (r.rule_code === "RISK-MSK-05") requiredEvidenceCode = "CLS-CDHA-DXA";
+                    else if (r.rule_code === "RISK-URO-02") requiredEvidenceCode = "CLS-CDHA-SA-HE-NIEC";
+                    else if (r.rule_code === "RISK-INF-02") requiredEvidenceCode = "CLS-XN-HBV-DNA|CLS-XN-AST-ALT";
+                    else if (r.rule_code === "RISK-EYE-02") requiredEvidenceCode = "CLS-TDCN-NHAN-AP";
+                    else if (r.rule_code === "RISK-ENDOC-04") requiredEvidenceCode = "CLS-XN-AST-ALT";
+                    else if (r.rule_code === "RISK-ENDOC-06") requiredEvidenceCode = "CLS-XN-TSH";
+                    else if (r.rule_code === "RISK-OBGYN-06") requiredEvidenceCode = "CLS-XN-BETA-HCG";
+                    else if (r.rule_code === "RISK-BREAST-03") requiredEvidenceCode = "CLS-CDHA-SA-TUYEN-VU";
+                }
+
+                let itemCode = r.applies_to_cls || r.applies_to_drug || undefined;
+                
+                // If it's a global rule with no specific item, it applies to the whole protocol/ICD
+                return {
+                    severity: r.severity?.toLowerCase() || "medium",
+                    title: r.rule_name,
+                    message: r.warning_message,
+                    itemCode: itemCode,
+                    conditionType: r.condition_type,
+                    requiredEvidenceCode: requiredEvidenceCode || r.condition_parameter
+                };
+            });
 
         // 3. Run Engine
         const engineInput: EngineInput = {
@@ -213,6 +234,16 @@ class ClinicalEngineService {
                     note: m.active_ingredient || ""
                 }));
         }
+    }
+
+    public async getMeta() {
+        this.loadData();
+        const firstHeader = this.cache.headers?.[0];
+        const version = firstHeader?.source_version || "2026.01";
+        return {
+            version,
+            source: "local-csv"
+        };
     }
 }
 

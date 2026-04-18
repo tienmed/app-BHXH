@@ -15,6 +15,7 @@ export interface ClaimAlert {
   actionHint?: string;
   itemCode?: string; // Code of the item this alert applies to
   conditionType?: string; // From CSV: REPEAT_INTERVAL_VIOLATION, MISSING_REQUIRED_EVIDENCE, etc.
+  requiredEvidenceCode?: string; // Codes required to avoid this alert
 }
 
 export interface EngineInput {
@@ -99,7 +100,13 @@ export async function runDecisionEngine(input: EngineInput): Promise<EngineOutpu
     const isAnyCodeSelected = codes.some(code => input.draftOrders?.includes(code));
     
     if (alert.conditionType === "MISSING_REQUIRED_EVIDENCE") {
-      // Trigger if NONE of the codes are selected
+      if (alert.requiredEvidenceCode) {
+        const reqCodes = alert.requiredEvidenceCode.split("|").map(s => s.trim());
+        const hasEvidence = reqCodes.some(code => input.draftOrders?.includes(code));
+        const isTriggerItemSelected = alert.itemCode ? alert.itemCode.split("|").some(c => input.draftOrders?.includes(c.trim())) : true;
+        return isTriggerItemSelected && !hasEvidence;
+      }
+      // Fallback if no explicit required evidence: trigger if NONE of the itemCodes are selected
       return codes.length > 0 && !isAnyCodeSelected;
     }
     
