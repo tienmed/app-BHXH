@@ -1,0 +1,11 @@
+rule_code,scope_type,scope_code,icd_ratio_min,icd_ratio_max,cls_ratio_min,cls_ratio_max,drug_ratio_min,drug_ratio_max,warning_message,is_active
+COST001,protocol,IM-OP-HTN-DM-2026,20,35,30,50,20,40,Can theo doi ty trong CLS va thuoc de tranh lech qua muc minh hoa cua pilot,TRUE
+COST-ENT-001,protocol,ENT-OP-2026,25,40,25,45,20,40,TMH ngoai tru: ty trong CLS (noi soi + X-quang) va thuoc can can doi,TRUE
+COST-RHM-001,protocol,RHM-OP-2026,20,35,20,40,25,50,RHM ngoai tru: ty trong thuoc (gay te + khang sinh + giam dau) thuong cao hon CLS,TRUE
+COST-MSK-001,protocol,MSK-OP-2026,20,35,30,50,20,40,Khớp mạn tính: chi phí CLS (siêu âm xquang) và XN khá cao,TRUE
+COST-CARDIO-001,protocol,CARDIO-OP-2026,15,30,35,60,25,50,Tim mạch: chi phí Thuốc và CLS (Siêu âm tim/Holter) khá đắt,TRUE
+COST-GAS-001,protocol,GAS-OP-2026,10,30,40,60,20,40,Hạn mức thủ thuật nội soi chiếm tỷ trọng lớn,TRUE
+COST-NEURO-001,protocol,NEURO-OP-2026,10,25,20,40,35,55,Nội thần kinh: Tỷ trọng Thuốc điều trị đặc hiệu khá cao,TRUE
+COST-OBGYN-001,protocol,OBGYN-OP-2026,10,20,40,70,10,30,Sản phụ khoa: Tỷ trọng siêu âm và thủ thuật sẽ rất cao thuốc sẽ thấp,TRUE
+COST-EYE-001,protocol,EYE-OP-2026,10,25,40,70,5,25,Nhãn khoa Ngoại trú: Tỷ trọng CLS và Thủ thuật (Đo khúc xạ/Nhãn áp/Lấy dị vật) chiếm đa số,TRUE
+COST-PED-001,protocol,PED-OP-2026,10,25,30,55,25,50,Nhi khoa: Thuốc nhóm H có giá cao và thăm dò chức năng chiếm tỷ trọng lớn,TRUE

@@ -1,0 +1,19 @@
+protocol_code,protocol_name,specialty_code,care_setting,source_type,source_version,effective_from,effective_to,status,owner_name
+IM-OP-HTN-DM-2026,Nội khoa ngoại trú (Tăng huyết áp - Đái tháo đường),INTERNAL_MEDICINE,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+ENT-OP-2026,Tai Mũi Họng ngoại trú,ENT,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+RHM-OP-2026,Răng Hàm Mặt ngoại trú,DENTAL,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+MSK-OP-2026,Cơ xương khớp ngoại trú,RHEUMATOLOGY,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+CARDIO-OP-2026,Tim mạch ngoại trú chuyên sâu,CARDIOLOGY,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+GAS-OP-2026,Tiêu hóa ngoại trú,GASTROENTEROLOGY,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+NEURO-OP-2026,Nội thần kinh ngoại trú,NEUROLOGY,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+OBGYN-OP-2026,Sản Phụ khoa ngoại trú,OBGYN,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+EYE-OP-2026,Nhãn khoa ngoại trú,OPHTHALMOLOGY,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+PED-OP-2026,Nhi khoa ngoại trú,PEDIATRICS,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+IM-OP-METABOLIC-2026,Nội khoa ngoại trú - Bệnh lý chuyển hóa,ENDOCRINOLOGY,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+RESP-OP-2026,Hô hấp ngoại trú người lớn,PULMONOLOGY,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+INF-OP-2026,Truyền nhiễm ngoại trú,INFECTIOUS,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+URO-OP-2026,Thận Tiết niệu Nam khoa ngoại trú,UROLOGY,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+DERM-OP-2026,Da liễu ngoại trú,DERMATOLOGY,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+GI-OP-2026,Tiêu hóa ngoại trú,GASTROENTEROLOGY,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+PSYCH-OP-2026,Tâm lý - Tâm thần kinh ngoại trú,PSYCHIATRY,outpatient,MOH,2026.01,2026-01-01,2099-12-31,active,Clinical Council
+

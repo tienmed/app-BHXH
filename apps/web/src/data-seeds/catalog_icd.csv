@@ -1,0 +1,105 @@
+icd_code,icd_name,chapter,is_active,effective_from,effective_to,source_ref
+I10,Tăng huyết áp nguyên phát,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+E11.9,Đái tháo đường typ 2 không biến chứng,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+E78.5,Rối loạn lipid máu,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+N18.1,Bệnh thận mạn giai đoạn 1,Hệ tiết niệu,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+R07.4,Đau ngực không đặc hiệu,Triệu chứng dấu hiệu bất thường,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+J01.9,Viêm xoang cấp không đặc hiệu,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-ENT-2026
+J02.9,Viêm họng cấp không đặc hiệu,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-ENT-2026
+J03.9,Viêm amidan cấp không đặc hiệu,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-ENT-2026
+J32.9,Viêm xoang mạn không đặc hiệu,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-ENT-2026
+H66.9,Viêm tai giữa không đặc hiệu,Bệnh tai và xương chũng,TRUE,2026-01-01,2099-12-31,MOH-ENT-2026
+K02.1,Sâu răng ngà,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-RHM-2026
+K02.5,Sâu răng có tủy tổn thương,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-RHM-2026
+K04.0,Viêm tủy răng,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-RHM-2026
+K04.1,Hoại tử tủy răng,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-RHM-2026
+K05.1,Viêm nướu mạn,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-RHM-2026
+K08.1,Mất răng do nhổ hoặc tai nạn,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-RHM-2026
+K12.1,Viêm miệng dạng tưa lưỡi ap-tơ,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-RHM-2026
+M15.9,Thoái hóa đa khớp không chỉ định,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+M17.9,Thoái hóa khớp gối không chỉ định,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+M19.9,Thoái hóa khớp không chỉ định,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+M05.9,Viêm khớp dạng thấp có yếu tố dạng thấp,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+M10.9,Bệnh gút không chỉ định,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+I20.9,Cơn đau thắt ngực không chỉ định,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+I50.9,Suy tim không chỉ định,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+I48.9,Rung nhĩ và cuồng nhĩ không chỉ định,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+K21.9,Bệnh trào ngược dạ dày-thực quản không viêm,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GAS-2026
+K52.9,Viêm dạ dày ruột và viêm đại tràng không nhiễm trùng,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GAS-2026
+K64.9,Bệnh trĩ không chỉ định,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GAS-2026
+K80.2,Sỏi túi mật không có viêm túi mật,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GAS-2026
+K62.8,Các bệnh xác định khác của hậu môn trực tràng,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GAS-2026
+G62.9,Bệnh viêm đa dây thần kinh không chỉ định,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G63.2,Bệnh đa dây thần kinh đái tháo đường,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G56.0,Hội chứng ống cổ tay,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+Z32.1,"Có thai, đã được xác nhận",Kỳ thai sinh đẻ và sau sinh,TRUE,2026-01-01,2099-12-31,MOH-OBGYN-2026
+Z34.9,Giám sát người có thai bình thường,Kỳ thai sinh đẻ và sau sinh,TRUE,2026-01-01,2099-12-31,MOH-OBGYN-2026
+N76.0,Viêm âm đạo cấp tính,Bệnh hệ tiết niệu - sinh dục,TRUE,2026-01-01,2099-12-31,MOH-OBGYN-2026
+N83.2,Nang buồng trứng khác và không xác định,Bệnh hệ tiết niệu - sinh dục,TRUE,2026-01-01,2099-12-31,MOH-OBGYN-2026
+Z30.1,Đưa dụng cụ tránh thai vào tử cung (Đặt vòng),Kế hoạch hóa gia đình,TRUE,2026-01-01,2099-12-31,MOH-OBGYN-2026
+H10.9,Viêm kết mạc không đặc hiệu,Bệnh về mắt và phần phụ,TRUE,2026-01-01,2099-12-31,MOH-EYE-2026
+H40.9,Glôcôm không đặc hiệu,Bệnh về mắt và phần phụ,TRUE,2026-01-01,2099-12-31,MOH-EYE-2026
+T15.9,Dị vật trên phần ngoài của mắt không xác định,Tổn thương và ngộ độc,TRUE,2026-01-01,2099-12-31,MOH-EYE-2026
+H25.9,Đục thủy tinh thể lão hóa không xác định,Bệnh về mắt và phần phụ,TRUE,2026-01-01,2099-12-31,MOH-EYE-2026
+H52.0,Viễn thị,Bệnh về mắt và phần phụ,TRUE,2026-01-01,2099-12-31,MOH-EYE-2026
+H52.1,Cận thị,Bệnh về mắt và phần phụ,TRUE,2026-01-01,2099-12-31,MOH-EYE-2026
+H52.2,Loạn thị,Bệnh về mắt và phần phụ,TRUE,2026-01-01,2099-12-31,MOH-EYE-2026
+H50.9,Lác không xác định,Bệnh về mắt và phần phụ,TRUE,2026-01-01,2099-12-31,MOH-EYE-2026
+H53.0,Nhược thị do mất thị giác,Bệnh về mắt và phần phụ,TRUE,2026-01-01,2099-12-31,MOH-EYE-2026
+J06.9,Nhiễm trùng hô hấp trên cấp không đặc hiệu,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-PED-2026
+J20.9,Viêm phế quản cấp không đặc hiệu,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-PED-2026
+J45.9,Hen phế quản không đặc hiệu,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-PED-2026
+G40.9,Động kinh không đặc hiệu,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-PED-2026
+G80.9,Bại não không đặc hiệu,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-PED-2026
+H90.5,Giảm thính lực cảm giác thần kinh không đặc hiệu,Bệnh tai và xuơng chũm,TRUE,2026-01-01,2099-12-31,MOH-PED-2026
+F84.0,Tự kỷ trẻ em,Rối loạn tâm thần và hành vi,TRUE,2026-01-01,2099-12-31,MOH-PED-2026
+F70,Chậm phát triển trí tuệ mức độ nhẹ,Rối loạn tâm thần và hành vi,TRUE,2026-01-01,2099-12-31,MOH-PED-2026
+E66.9,Béo phì không đặc hiệu,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E79.0,Tăng acid uric máu (không có dấu hiệu viêm khớp/gút),Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E88.81,Hội chứng chuyển hóa,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+I69.4,Di chứng của bệnh mạch máu não,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G20,Bệnh Parkinson,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G43.9,Migraine không chỉ định,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G44.2,Đau đầu do căng thẳng,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+H81.9,Rối loạn tiền đình không chỉ định,Bệnh tai và xuơng chũm,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G30.9,Bệnh Alzheimer không chỉ định (Sa sút trí tuệ),Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G45.9,Cơn thiếu máu não cục bộ thoảng qua không chỉ định (TIA),Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+J44.9,Bệnh phổi tắc nghẽn mạn tính không chỉ định (COPD),Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-RESP-2026
+A97.0,Sốt Dengue,Bệnh nhiễm trùng và ký sinh trùng,TRUE,2026-01-01,2099-12-31,MOH-INF-2026
+B18.1,Viêm gan virus B mạn tính không có tác nhân Delta,Bệnh nhiễm trùng và ký sinh trùng,TRUE,2026-01-01,2099-12-31,MOH-INF-2026
+B34.9,Nhiễm virus không chỉ định,Bệnh nhiễm trùng và ký sinh trùng,TRUE,2026-01-01,2099-12-31,MOH-INF-2026
+N39.0,Nhiễm trùng đường tiết niệu vị trí không xác định,Bệnh hệ tiết niệu - sinh dục,TRUE,2026-01-01,2099-12-31,MOH-URO-2026
+N20.9,Sỏi tiết niệu không chỉ định,Bệnh hệ tiết niệu - sinh dục,TRUE,2026-01-01,2099-12-31,MOH-URO-2026
+N40,Tăng sản tuyến tiền liệt (Phì đại tuyến tiền liệt lành tính),Bệnh hệ tiết niệu - sinh dục,TRUE,2026-01-01,2099-12-31,MOH-URO-2026
+M54.5,Đau thắt lưng dưới,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+M47.8,Thoái hóa cột sống khác,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+M54.3,Đau thần kinh tọa,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+M81.9,Loãng xương không có gãy xương bệnh lý,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+L20.9,Viêm da cơ địa không xác định,Bệnh của da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+L50.9,Mề đay không xác định,Bệnh của da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+B35.9,Bệnh nấm da (Dermatophytosis) không xác định,Bệnh nhiễm trùng và ký sinh trùng,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+B02.9,Bệnh Zona không có biến chứng (Herpes zoster),Bệnh nhiễm trùng và ký sinh trùng,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+K29.5,Viêm dạ dày mạn tính không chỉ định,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GI-2026
+G47.0,Rối loạn bắt đầu và duy trì giấc ngủ [Mất ngủ],Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-PSYCH-2026
+F41.9,Rối loạn lo âu không chỉ định,Rối loạn tâm thần và hành vi,TRUE,2026-01-01,2099-12-31,MOH-PSYCH-2026
+D25.9,U cơ trơn tử cung (U xơ tử cung) không xác định,Khối u (Tân sinh),TRUE,2026-01-01,2099-12-31,MOH-OBGYN-2026
+N92.0,Kinh nguyệt quá nhiều và thường xuyên (Rong kinh),Bệnh hệ tiết niệu - sinh dục,TRUE,2026-01-01,2099-12-31,MOH-OBGYN-2026
+N70.9,Viêm vòi trứng và buồng trứng (Viêm phần phụ),Bệnh hệ tiết niệu - sinh dục,TRUE,2026-01-01,2099-12-31,MOH-OBGYN-2026
+I25.1,Bệnh tim thiếu máu cục bộ mạn tính,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+I83.9,Giãn tĩnh mạch chi dưới (Không loét viêm),Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+I11.9,Bệnh tim do tăng huyết áp (Không suy tim),Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+I65.2,Tắc nghẽn và hẹp động mạch cảnh,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+E05.9,Nhiễm độc giáp không đặc hiệu (Cường giáp),Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E03.9,Suy giáp không đặc hiệu,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E04.9,Bướu cổ không độc không đặc hiệu,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E21.3,Cường tuyến cận giáp,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E20.9,Suy tuyến cận giáp,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+N60.9,Loạn sản vú lành tính không đặc hiệu,Bệnh hệ sinh dục tiết niệu,TRUE,2026-01-01,2099-12-31,MOH-BREAST-2026
+N61,Các rối loạn viêm của vú,Bệnh hệ sinh dục tiết niệu,TRUE,2026-01-01,2099-12-31,MOH-BREAST-2026
+N63,Khối u không xác định ở vú,Bệnh hệ sinh dục tiết niệu,TRUE,2026-01-01,2099-12-31,MOH-BREAST-2026
+D24,U mềm lành tính của vú (U xơ vú),Khối u,TRUE,2026-01-01,2099-12-31,MOH-BREAST-2026
+L20.9,Viêm da cơ địa,Bệnh da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+L23.9,Viêm da tiếp xúc dị ứng,Bệnh da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+L40.0,Vảy nến thể mảng,Bệnh da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+L50.9,Mày đay,Bệnh da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+B35.9,Bệnh nấm da,Bệnh nhiễm trùng,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026

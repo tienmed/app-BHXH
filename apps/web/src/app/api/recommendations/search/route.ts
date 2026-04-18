@@ -1,41 +1,40 @@
 import { NextRequest, NextResponse } from "next/server";
+import { clinicalEngine } from "@/lib/clinical-engine";
 
-/**
- * Proxy: Forwarding search requests to centralized NestJS API (localhost:3001)
- */
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const q = searchParams.get("q") || "";
-    const type = searchParams.get("type") || "CLS";
+    const type = (searchParams.get("type") || "CLS") as "CLS" | "MEDICATION";
+    const apiBaseUrl = process.env.NEST_API_URL;
 
-    const apiUrl = `http://localhost:3001/recommendations/search?q=${encodeURIComponent(q)}&type=${type}`;
-    
-    const response = await fetch(apiUrl, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      cache: "no-store",
-    });
+    // Mode 1: Proxy to NestJS
+    if (apiBaseUrl) {
+      const apiUrl = `${apiBaseUrl}/recommendations/search?q=${encodeURIComponent(q)}&type=${type}`;
+      const response = await fetch(apiUrl, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        cache: "no-store",
+      });
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      return NextResponse.json(
-        { error: "api_proxy_failed", message: errorData.message || `API error: ${response.status}` },
-        { status: response.status }
-      );
+      if (response.ok) {
+        const data = await response.json();
+        return NextResponse.json(data);
+      }
     }
 
-    const data = await response.json();
+    // Mode 2: Standalone CSV
+    const data = await clinicalEngine.searchCatalog(q, type);
     return NextResponse.json(data);
+
   } catch (error) {
+    console.error("Search API Error:", error);
     return NextResponse.json(
       {
-        error: "proxy_connection_failed",
-        message: error instanceof Error ? error.message : "Internal Proxy Error",
+        error: "search_failed",
+        message: error instanceof Error ? error.message : "Internal Error",
       },
-      { status: 502 }
+      { status: 500 }
     );
   }
 }

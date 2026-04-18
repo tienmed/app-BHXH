@@ -1,38 +1,39 @@
 import { NextRequest, NextResponse } from "next/server";
+import { clinicalEngine } from "@/lib/clinical-engine";
 
-/**
- * Stage 3 Proxy: Forwarding requests to centralized NestJS API (localhost:3001)
- * This ensures unified use of the decision engine and persistent clinical rules.
- */
 export async function POST(request: NextRequest) {
   try {
     const payload = await request.json();
+    const apiBaseUrl = process.env.NEST_API_URL;
 
-    const response = await fetch("http://localhost:3001/recommendations/preview", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
+    // Mode 1: Proxy to NestJS (if configured)
+    if (apiBaseUrl) {
+      const response = await fetch(`${apiBaseUrl}/recommendations/preview`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      return NextResponse.json(
-        { error: "api_proxy_failed", message: errorData.message || `API error: ${response.status}` },
-        { status: response.status }
-      );
+      if (response.ok) {
+        const data = await response.json();
+        return NextResponse.json(data);
+      }
     }
 
-    const data = await response.json();
+    // Mode 2: Standalone CSV (Default or Fallback)
+    const data = await clinicalEngine.getPreview(payload);
     return NextResponse.json(data);
+
   } catch (error) {
+    console.error("Preview API Error:", error);
     return NextResponse.json(
       {
-        error: "proxy_connection_failed",
-        message: error instanceof Error ? error.message : "Internal Proxy Error",
+        error: "recommendation_failed",
+        message: error instanceof Error ? error.message : "Internal Error",
       },
-      { status: 502 }
+      { status: 500 }
     );
   }
 }
