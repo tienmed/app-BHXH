@@ -12,49 +12,49 @@ export const defaultDiagnosisOptions: DiagnosisOption[] = [
 
 export const localInvestigations: Record<string, SuggestedItem[]> = {
     I10: [
-        { name: "Công thức máu", rationale: "Đánh giá nền trước điều trị và theo dõi ngoại trú." },
-        { name: "Creatinine huyết thanh", rationale: "Theo dõi chức năng thận khi điều trị tăng huyết áp." }
+        { code: "CLS-CBC", name: "Công thức máu", rationale: "Đánh giá nền trước điều trị và theo dõi ngoại trú." },
+        { code: "CLS-CREA", name: "Creatinine huyết thanh", rationale: "Theo dõi chức năng thận khi điều trị tăng huyết áp." }
     ],
     "E11.9": [
-        { name: "Đường huyết", rationale: "Theo dõi mức kiểm soát đường huyết tại thời điểm khám." },
-        { name: "HbA1c", rationale: "Đánh giá kiểm soát đường huyết dài hạn." }
+        { code: "CLS-GLU", name: "Đường huyết", rationale: "Theo dõi mức kiểm soát đường huyết tại thời điểm khám." },
+        { code: "CLS-HBA1C", name: "HbA1c", rationale: "Đánh giá kiểm soát đường huyết dài hạn." }
     ],
     L02: [
-        { name: "Công thức máu", rationale: "Cân nhắc khi có dấu hiệu nhiễm trùng mức độ vừa hoặc nặng." },
-        { name: "Đường huyết", rationale: "Cân nhắc khi nghi đái tháo đường hoặc vết thương lâu lành." }
+        { code: "CLS-CBC", name: "Công thức máu", rationale: "Cân nhắc khi có dấu hiệu nhiễm trùng mức độ vừa hoặc nặng." },
+        { code: "CLS-GLU", name: "Đường huyết", rationale: "Cân nhắc khi nghi đái tháo đường hoặc vết thương lâu lành." }
     ],
-    L70: [{ name: "Không cần cận lâm sàng thường quy", rationale: "Ưu tiên đánh giá lâm sàng, chỉ mở rộng khi nghi nguyên nhân nội tiết hoặc trước điều trị toàn thân." }],
+    L70: [{ code: "CLS-NONE", name: "Không cần cận lâm sàng thường quy", rationale: "Ưu tiên đánh giá lâm sàng, chỉ mở rộng khi nghi nguyên nhân nội tiết hoặc trước điều trị toàn thân." }],
     "K02.1": [
-        { name: "Chụp X-quang răng", rationale: "Mục đích: Xác định độ sâu của lỗ sâu. Khi nào chỉ định: Cần phân biệt với tổn thương tủy hoặc khám lần đầu. Lặp lại: Không cần lặp lại trừ khi nghi ngờ sâu tái phát." }
+        { code: "CLS-XRAY-DENT", name: "Chụp X-quang răng", rationale: "Mục đích: Xác định độ sâu của lỗ sâu. Khi nào chỉ định: Cần phân biệt với tổn thương tủy hoặc khám lần đầu. Lặp lại: Không cần lặp lại trừ khi nghi ngờ sâu tái phát." }
     ],
     "K02.5": [
-        { name: "Chụp X-quang răng", rationale: "Mục đích: Đánh giá mức độ tổn thương tủy và quanh chóp. Khi nào chỉ định: Khám lần đầu hoặc khi đau nhức nhiều. Lặp lại: Lặp lại sau điều trị tủy hoặc khi có triệu chứng đau trở lại." }
+        { code: "CLS-XRAY-DENT", name: "Chụp X-quang răng", rationale: "Mục đích: Đánh giá mức độ tổn thương tủy và quanh chóp. Khi nào chỉ định: Khám lần đầu hoặc khi đau nhức nhiều. Lặp lại: Lặp lại sau điều trị tủy hoặc khi có triệu chứng đau trở lại." }
     ]
 };
 
 export const localMedications: Record<string, SuggestedItem[]> = {
     I10: [
-        { name: "Nhóm ƯCMC/ƯCTT", rationale: "Thường là lựa chọn nền nếu phù hợp lâm sàng." },
-        { name: "Chẹn kênh canxi", rationale: "Có thể cân nhắc phối hợp khi chưa đạt mục tiêu huyết áp." }
+        { code: "MED-RAAS", name: "Nhóm ƯCMC/ƯCTT", rationale: "Thường là lựa chọn nền nếu phù hợp lâm sàng." },
+        { code: "MED-CCB", name: "Chẹn kênh canxi", rationale: "Có thể cân nhắc phối hợp khi chưa đạt mục tiêu huyết áp." }
     ],
     "E11.9": [
-        { name: "Metformin", rationale: "Là lựa chọn nền thường dùng nếu không có chống chỉ định." }
+        { code: "MED-METFORMIN", name: "Metformin", rationale: "Là lựa chọn nền thường dùng nếu không có chống chỉ định." }
     ],
     L02: [
-        { name: "Kháng sinh phù hợp lâm sàng", rationale: "Chỉ cân nhắc khi có dấu hiệu lan rộng hoặc toàn thân." },
-        { name: "Giảm đau / chăm sóc tại chỗ", rationale: "Ưu tiên theo mức độ tổn thương và xử trí ổ mủ." }
+        { code: "MED-ANTIBIOTIC", name: "Kháng sinh phù hợp lâm sàng", rationale: "Chỉ cân nhắc khi có dấu hiệu lan rộng hoặc toàn thân." },
+        { code: "MED-PAINKILLER", name: "Giảm đau / chăm sóc tại chỗ", rationale: "Ưu tiên theo mức độ tổn thương và xử trí ổ mủ." }
     ],
     L70: [
-        { name: "Benzoyl peroxide", rationale: "Ưu tiên cho mụn mức độ nhẹ đến trung bình." },
-        { name: "Retinoid bôi", rationale: "Cân nhắc khi cần kiểm soát nhân mụn và viêm." }
+        { code: "MED-BPO", name: "Benzoyl peroxide", rationale: "Ưu tiên cho mụn mức độ nhẹ đến trung bình." },
+        { code: "MED-RETINOID", name: "Retinoid bôi", rationale: "Cân nhắc khi cần kiểm soát nhân mụn và viêm." }
     ],
     "K02.1": [
-        { name: "Fluoride bôi tại chỗ", rationale: "Mục đích: Tăng cường khoáng hóa, bảo vệ men/ngà răng. Tác dụng phụ: Rất hiếm gặp ở liều tại chỗ. Tương tác: Ít tương tác." },
-        { name: "Paracetamol", rationale: "Mục đích: Giảm ê buốt. Tác dụng phụ: Hại gan nếu quá liều. Tương tác: Thận trọng khi dùng cùng các thuốc qua gan." }
+        { code: "MED-FLUORIDE", name: "Fluoride bôi tại chỗ", rationale: "Mục đích: Tăng cường khoáng hóa, bảo vệ men/ngà răng. Tác dụng phụ: Rất hiếm gặp ở liều tại chỗ. Tương tác: Ít tương tác." },
+        { code: "MED-PARA", name: "Paracetamol", rationale: "Mục đích: Giảm ê buốt. Tác dụng phụ: Hại gan nếu quá liều. Tương tác: Thận trọng khi dùng cùng các thuốc qua gan." }
     ],
     "K02.5": [
-        { name: "Amoxicillin", rationale: "Mục đích: Dự phòng/điều trị viêm nhiễm tủy răng. Tác dụng phụ: Rối loạn tiêu hóa, dị ứng. Tương tác: Giảm tác dụng thuốc tránh thai đường uống." },
-        { name: "Ibuprofen", rationale: "Mục đích: Giảm đau do viêm. Tác dụng phụ: Viêm loét dạ dày. Tương tác: Tránh dùng chung nhóm NSAIDs khác, nguy cơ xuất huyết tiêu hóa." }
+        { code: "MED-AMOX", name: "Amoxicillin", rationale: "Mục đích: Dự phòng/điều trị viêm nhiễm tủy răng. Tác dụng phụ: Rối loạn tiêu hóa, dị ứng. Tương tác: Giảm tác dụng thuốc tránh thai đường uống." },
+        { code: "MED-IBU", name: "Ibuprofen", rationale: "Mục đích: Giảm đau do viêm. Tác dụng phụ: Viêm loét dạ dày. Tương tác: Tránh dùng chung nhóm NSAIDs khác, nguy cơ xuất huyết tiêu hóa." }
     ]
 };
 
