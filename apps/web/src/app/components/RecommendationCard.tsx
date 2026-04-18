@@ -24,7 +24,7 @@ export const RecommendationCard = memo(function RecommendationCard({
     feedbackTargetType,
     icdCode
 }: Props) {
-    const itemKey = `${prefix}-${item.name}`;
+    const itemKey = `${prefix}-${item.code}`;
 
     return (
         <article className={`doctorListItem doctorListItem-${itemStatus}`}>

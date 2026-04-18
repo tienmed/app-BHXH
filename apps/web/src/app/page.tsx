@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { useDiagnosisWorkspace } from "./hooks/useDiagnosisWorkspace";
 import { useSymptomNarrowing } from "./hooks/useSymptomNarrowing";
@@ -19,6 +19,20 @@ export default function DoctorWorkspace() {
   const workspace = useDiagnosisWorkspace();
   const symptom = useSymptomNarrowing();
   const [searchMode, setSearchMode] = useState<SearchMode>("symptom");
+  const [protocolMeta, setProtocolMeta] = useState<{ version: string; source: string } | null>(null);
+
+  useEffect(() => {
+    async function fetchMeta() {
+      try {
+        const res = await fetch("/api/meta");
+        const data = await res.json();
+        setProtocolMeta(data);
+      } catch (e) {
+        console.error("Failed to fetch protocol metadata", e);
+      }
+    }
+    void fetchMeta();
+  }, []);
 
   // Bridge: when doctor selects an ICD from the narrowed list
   const handleSelectNarrowedIcd = useCallback(
@@ -179,6 +193,7 @@ export default function DoctorWorkspace() {
                 feedbackTargetType="cls"
                 emptyText="Vui lòng chọn ICD để xem gợi ý cận lâm sàng."
                 icdCode={workspace.selectedCodes[0]}
+                onSearch={workspace.searchCatalog}
               />
               <RecommendationPanel
                 title="Nhóm thuốc khuyến nghị"
@@ -192,6 +207,7 @@ export default function DoctorWorkspace() {
                 feedbackTargetType="medication"
                 emptyText="Vui lòng chọn ICD để xem khuyến nghị dùng thuốc."
                 icdCode={workspace.selectedCodes[0]}
+                onSearch={workspace.searchCatalog}
               />
             </section>
 
@@ -223,7 +239,7 @@ export default function DoctorWorkspace() {
 
       <footer className="appFooter fade-4">
         <p>Phòng Kế hoạch Nghiệp vụ</p>
-        <p>Bản quyền © 2026 — Phiên bản <strong>v0.2.0</strong></p>
+        <p>Bản quyền © 2026 — Phiên bản <strong>phác đồ {protocolMeta?.version || "v0.0.0"}</strong> ({protocolMeta?.source === "local-csv" ? "Dữ liệu CSV" : "Dữ liệu Hệ thống"})</p>
       </footer>
     </main>
   );

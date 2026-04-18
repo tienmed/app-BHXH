@@ -46,19 +46,29 @@ export function normalizeRecommendationPayload(payload: unknown): Recommendation
         label: String(item.label ?? item.name ?? item.icd ?? "")
     }));
 
-    const investigations = (Array.isArray(rawRecommendations?.investigations) ? rawRecommendations!.investigations : []).map((item: Record<string, unknown>) => ({
-        name: String(item.name ?? ""),
-        rationale: String(item.rationale ?? ""),
-        detail: String(item.detail ?? ""),
-        mappingNote: String(item.mappingNote ?? "")
-    }));
+    const investigations = (Array.isArray(rawRecommendations?.investigations) ? rawRecommendations!.investigations : []).map((item: Record<string, unknown>) => {
+        const name = String(item.name ?? "");
+        const code = String(item.code ?? item.name ?? "");
+        return {
+            code,
+            name,
+            rationale: String(item.rationale ?? ""),
+            detail: String(item.detail ?? ""),
+            mappingNote: String(item.mappingNote ?? "")
+        };
+    });
 
-    const medications = (Array.isArray(rawRecommendations?.medicationGroups) ? rawRecommendations!.medicationGroups : []).map((item: Record<string, unknown>) => ({
-        name: String(item.name ?? ""),
-        rationale: String(item.rationale ?? ""),
-        detail: String(item.detail ?? ""),
-        mappingNote: String(item.mappingNote ?? "")
-    }));
+    const medications = (Array.isArray(rawRecommendations?.medicationGroups) ? rawRecommendations!.medicationGroups : []).map((item: Record<string, unknown>) => {
+        const name = String(item.name ?? "");
+        const code = String(item.code ?? item.name ?? "");
+        return {
+            code,
+            name,
+            rationale: String(item.rationale ?? ""),
+            detail: String(item.detail ?? ""),
+            mappingNote: String(item.mappingNote ?? "")
+        };
+    });
 
     const alerts = (Array.isArray(rawGuard?.alerts) ? rawGuard!.alerts : []).map((item: Record<string, unknown>) => ({
         severity: (item.severity ?? "medium") as "high" | "medium" | "low",

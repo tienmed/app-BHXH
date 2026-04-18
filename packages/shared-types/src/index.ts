@@ -24,6 +24,7 @@ export interface DiagnosisItem {
 // ── Recommendations (Doctor Web) ──
 
 export interface SuggestedItem {
+  code: string;
   name: string;
   rationale: string;
   detail?: string;

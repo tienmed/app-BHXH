@@ -30,22 +30,34 @@ export class RecommendationsService implements OnModuleInit {
         medications: this.readCsv("catalog_medication.csv"),
         mappingsCls: this.readCsv("mapping_icd_cls.csv"),
         mappingsMed: this.readCsv("mapping_icd_medication.csv"),
-        rules: this.readCsv("rule_claim_risk.csv")
+        rules: this.readCsv("rule_claim_risk.csv"),
+        protocolHeaders: this.readCsv("protocol_header.csv")
       };
-      this.logger.log(`Loaded ${this.cache.icds.length} ICDs, ${this.cache.clss.length} CLS, ${this.cache.medications.length} Meds.`);
+      this.logger.log(`Loaded ${this.cache.icds.length} ICDs, ${this.cache.clss.length} CLS, ${this.cache.medications.length} Meds, ${this.cache.protocolHeaders.length} Protocol Headers.`);
     } catch (error) {
       this.logger.error(`Failed to load CSV data: ${(error as Error).message}`);
     }
   }
 
-  private readCsv(filename: string) {
+  private readCsv(filename: string): any[] {
     const filePath = path.join(this.seedDir, filename);
     if (!fs.existsSync(filePath)) {
-      this.logger.error(`File not found: ${filePath}`);
+      this.logger.warn(`File not found: ${filename}`);
       return [];
     }
-    const content = fs.readFileSync(filePath, "utf-8");
-    return parse(content, { columns: true, skip_empty_lines: true });
+
+    try {
+      const fileContent = fs.readFileSync(filePath, "utf-8");
+      return parse(fileContent, {
+        columns: true,
+        skip_empty_lines: true,
+        trim: true,
+        relax_column_count: true
+      });
+    } catch (error) {
+      this.logger.error(`Failed to load CSV data from ${filename}: ${(error as Error).message}`);
+      return [];
+    }
   }
 
   async getPreview(input: RecommendationPreviewInput) {
@@ -81,35 +93,81 @@ export class RecommendationsService implements OnModuleInit {
       });
     });
 
+    // Handle additional draftOrders that are not in the recommended list
+    if (input.draftOrders) {
+      input.draftOrders.forEach(code => {
+        const isAlreadyAdded = protocolItems.some(item => item.code === code);
+        if (!isAlreadyAdded) {
+          // Search in CLS catalog
+          const clsItem = this.cache.clss.find((c: any) => c.cls_code === code);
+          if (clsItem) {
+            protocolItems.push({
+              type: "CLS",
+              code: clsItem.cls_code,
+              name: clsItem.cls_name,
+              note: "Chỉ định bổ sung ngoài phác đồ."
+            });
+            return;
+          }
+          // Search in Med catalog
+          const medItem = this.cache.medications.find((m: any) => m.drug_code === code);
+          if (medItem) {
+            protocolItems.push({
+              type: "MEDICATION",
+              code: medItem.drug_code,
+              name: medItem.drug_name,
+              note: "Thuốc bổ sung ngoài phác đồ."
+            });
+          }
+        }
+      });
+    }
+
     // 2. Build Claim Risk Rules
     const relevantRules = this.cache.rules
-      .filter((r: any) => !r.applies_to_icd || icdCodes.includes(r.applies_to_icd))
+      .filter((r: any) => {
+        // If it's a "Missing Evidence" rule, it MUST have an ICD context to be relevant
+        if (r.condition_type === "MISSING_REQUIRED_EVIDENCE") {
+          if (!r.applies_to_icd) return false;
+          return icdCodes.some(code => code.startsWith(r.applies_to_icd));
+        }
+
+        // For other rules (Positive warnings, Interactions, etc.)
+        // If no ICD is specified, it's a global rule for the specified items
+        if (!r.applies_to_icd) return true;
+        
+        // If ICD is specified, it must match
+        return icdCodes.some(code => code.startsWith(r.applies_to_icd));
+      })
       .map((r: any) => ({
-        severity: r.severity.toLowerCase(),
+        severity: r.severity?.toLowerCase() || "medium",
         title: r.rule_name,
         message: r.warning_message,
-        actionHint: r.recommended_action
+        actionHint: r.recommended_action,
+        itemCode: r.applies_to_cls || r.applies_to_drug,
+        conditionType: r.condition_type
       }));
 
     // 3. Run Engine
     const engineInput: EngineInput = {
       diagnoses,
       protocols: [{ code: "AUTO_GENERATED", items: protocolItems }],
-      draftOrders: input.draftOrders, // Pass the doctor's selections
+      draftOrders: input.draftOrders,
       rules: {
         claimRisk: relevantRules
       }
     };
 
+    this.logger.log(`Running Engine for ${icdCodes.join(",")} with ${input.draftOrders?.length || 0} selections.`);
     const output = await runDecisionEngine(engineInput);
 
-    return {
+    const result = {
       source: "local-csv",
       timestamp: new Date().toISOString(),
       diagnoses,
       recommendations: {
-        investigations: output.investigations,
-        medicationGroups: output.medicationGroups
+        investigations: output.investigations.map(item => ({ ...item, code: item.code || item.name })),
+        medicationGroups: output.medicationGroups.map(item => ({ ...item, code: item.code || item.name }))
       },
       reimbursementGuard: {
         riskScore: output.riskScore,
@@ -117,5 +175,52 @@ export class RecommendationsService implements OnModuleInit {
         alerts: output.alerts
       }
     };
+
+    return result;
+  }
+
+  getMeta() {
+    if (!this.cache) this.refreshCache();
+    const latestHeader = this.cache.protocolHeaders[0];
+    return {
+      version: latestHeader?.source_version || "0.0.0",
+      effectiveDate: latestHeader?.effective_from || null,
+      source: "local-csv"
+    };
+  }
+
+  async searchCatalog(query: string, type: "CLS" | "MEDICATION") {
+    if (!query || query.length < 2) return [];
+    if (!this.cache) this.refreshCache();
+    
+    const q = query.toLowerCase();
+    
+    if (type === "CLS") {
+      return this.cache.clss
+        .filter((c: any) => 
+          (c.cls_name?.toLowerCase().includes(q)) || 
+          (c.cls_code?.toLowerCase().includes(q))
+        )
+        .slice(0, 10)
+        .map((c: any) => ({
+          type: "CLS",
+          code: c.cls_code,
+          name: c.cls_name,
+          note: c.clinical_purpose || ""
+        }));
+    } else {
+      return this.cache.medications
+        .filter((m: any) => 
+          (m.drug_name?.toLowerCase().includes(q)) || 
+          (m.drug_code?.toLowerCase().includes(q))
+        )
+        .slice(0, 10)
+        .map((m: any) => ({
+          type: "MEDICATION",
+          code: m.drug_code,
+          name: m.drug_name,
+          note: m.therapeutic_purpose || ""
+        }));
+    }
   }
 }

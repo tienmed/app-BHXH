@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Get, Post, Inject, Query } from "@nestjs/common";
 import { RecommendationsService } from "./recommendations.service";
 
 interface RecommendationPreviewInput {
@@ -9,7 +9,7 @@ interface RecommendationPreviewInput {
 
 @Controller("recommendations")
 export class RecommendationsController {
-  constructor(private readonly recommendationsService: RecommendationsService) {}
+  constructor(@Inject(RecommendationsService) private readonly recommendationsService: RecommendationsService) { }
 
   @Post("preview")
   async preview(@Body() input: RecommendationPreviewInput = {}) {
@@ -17,7 +17,17 @@ export class RecommendationsController {
     return {
       receivedInput: input,
       ...result,
-      note: "Results generated from PostgreSQL-backed Decision Engine (Stage 3)."
+      note: "Results generated from CSV-backed Decision Engine."
     };
+  }
+
+  @Get("meta")
+  async getMeta() {
+    return this.recommendationsService.getMeta();
+  }
+
+  @Get("search")
+  async search(@Query("q") q: string, @Query("type") type: "CLS" | "MEDICATION") {
+    return this.recommendationsService.searchCatalog(q, type);
   }
 }

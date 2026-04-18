@@ -13,6 +13,8 @@ export interface ClaimAlert {
   title: string;
   message: string;
   actionHint?: string;
+  itemCode?: string; // Code of the item this alert applies to
+  conditionType?: string; // From CSV: REPEAT_INTERVAL_VIOLATION, MISSING_REQUIRED_EVIDENCE, etc.
 }
 
 export interface EngineInput {
@@ -82,20 +84,40 @@ export async function runDecisionEngine(input: EngineInput): Promise<EngineOutpu
           severity: event.type === "block" ? "high" : "medium",
           title: "Quy tắc BHXH",
           message: event.params?.message ? String(event.params.message) : "Phát hiện vi phạm quy tắc chỉ định.",
+          itemCode: event.params?.itemCode as string | undefined
         });
       }
     });
   }
 
   // 3. Tính toán Risk Score (0-100) dựa trên Cảnh báo
-  // Nếu có draftOrders, ta chỉ tính rủi ro cho những gì đã chọn.
-  // Nếu không, ta tính rủi ro tiềm năng của tất cả gợi ý.
   let riskScore = 0;
-  alerts.forEach(alert => {
-    if (alert.severity === "high") riskScore += 40;
-    else if (alert.severity === "medium") riskScore += 20;
-    else riskScore += 10;
+
+  const triggeredAlerts = alerts.filter(alert => {
+    // Handle pipe-separated codes: "CODE1|CODE2"
+    const codes = alert.itemCode ? alert.itemCode.split("|").map(s => s.trim()) : [];
+    const isAnyCodeSelected = codes.some(code => input.draftOrders?.includes(code));
+    
+    if (alert.conditionType === "MISSING_REQUIRED_EVIDENCE") {
+      // Trigger if NONE of the codes are selected
+      return codes.length > 0 && !isAnyCodeSelected;
+    }
+    
+    // Default: Trigger if any code is selected (or no itemCode = global)
+    return alert.itemCode ? isAnyCodeSelected : true;
   });
+
+  // Calculate risk score from all triggered alerts
+  triggeredAlerts.forEach(alert => {
+    const isMissing = alert.conditionType === "MISSING_REQUIRED_EVIDENCE";
+    
+    // Missing evidence is a risk, but we weight it slightly differently 
+    // or keep it same if it's high severity.
+    if (alert.severity === "high") riskScore += 30;
+    else if (alert.severity === "medium") riskScore += 15;
+    else riskScore += 5;
+  });
+
   riskScore = Math.min(riskScore, 100);
 
   // 4. Tổng hợp Suggested Justification
@@ -104,18 +126,44 @@ export async function runDecisionEngine(input: EngineInput): Promise<EngineOutpu
     ? input.draftOrders.map(code => investigationMap.get(code) || medicationMap.get(code)).filter(Boolean)
     : [...Array.from(investigationMap.values()), ...Array.from(medicationMap.values())];
 
+  const formatNoteHierarchical = (note: string) => {
+    if (!note) return "";
+    
+    // Split points for CLS and MED
+    const keywords = [
+      "Mục đích:", "Muc dich:", 
+      "Ưu tiên:", "Uu tien:",
+      "Lặp lại:", "Lap lai:",
+      "Tác dụng phụ:", "Tac dung phu:",
+      "Tương tác:", "Tuong tac:"
+    ];
+    
+    let result = note;
+    keywords.forEach(kw => {
+      // Use regex to find keyword and add a newline + indentation
+      // We look for keyword either at start of string or after a period/semicolon/space
+      const regex = new RegExp(`(?<=[.;!\\s]|^)(${kw})`, 'g');
+      result = result.replace(regex, '\n    + $1');
+    });
+    
+    return result.trim();
+  };
+
   itemsToJustify.forEach((item: any) => {
-    if (item?.note) justifications.push(`${item.name}: ${item.note}`);
+    if (item?.note) {
+      const formattedNote = formatNoteHierarchical(item.note);
+      justifications.push(`- ${item.name}:\n    ${formattedNote}`);
+    }
   });
 
   const suggestedJustification = justifications.length > 0
-    ? "Căn cứ y học: " + justifications.join("; ")
+    ? "Căn cứ y học:\n" + justifications.join("\n\n")
     : "Chỉ định theo phác đồ nội khoa ngoại trú.";
 
   return {
     investigations: Array.from(investigationMap.values()),
     medicationGroups: Array.from(medicationMap.values()),
-    alerts,
+    alerts: triggeredAlerts,
     riskScore,
     suggestedJustification
   };

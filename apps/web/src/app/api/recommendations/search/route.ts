@@ -1,19 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 
 /**
- * Stage 3 Proxy: Forwarding requests to centralized NestJS API (localhost:3001)
- * This ensures unified use of the decision engine and persistent clinical rules.
+ * Proxy: Forwarding search requests to centralized NestJS API (localhost:3001)
  */
-export async function POST(request: NextRequest) {
+export async function GET(request: NextRequest) {
   try {
-    const payload = await request.json();
+    const { searchParams } = new URL(request.url);
+    const q = searchParams.get("q") || "";
+    const type = searchParams.get("type") || "CLS";
 
-    const response = await fetch("http://localhost:3001/recommendations/preview", {
-      method: "POST",
+    const apiUrl = `http://localhost:3001/recommendations/search?q=${encodeURIComponent(q)}&type=${type}`;
+    
+    const response = await fetch(apiUrl, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload),
+      cache: "no-store",
     });
 
     if (!response.ok) {

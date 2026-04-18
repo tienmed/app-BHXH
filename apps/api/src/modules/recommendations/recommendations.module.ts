@@ -5,6 +5,12 @@ import { RecommendationsService } from "./recommendations.service";
 
 @Module({
   controllers: [RecommendationsController],
-  providers: [RecommendationsService, PrismaService]
+  providers: [
+    {
+      provide: RecommendationsService,
+      useClass: RecommendationsService
+    },
+    PrismaService
+  ]
 })
 export class RecommendationsModule {}

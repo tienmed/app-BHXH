@@ -221,7 +221,7 @@ export function useDiagnosisWorkspace() {
             try {
                 const response = await fetch("/api/recommendations/preview", {
                     method: "POST",
-                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         action: "recommendations-preview",
                         encounterCode: "OP-IM-0001",
@@ -253,6 +253,18 @@ export function useDiagnosisWorkspace() {
         void loadRecommendations();
     }, [catalogReady, diagnosisCatalog, selectedCodes, itemStatuses, addToast]);
 
+    const searchCatalog = useCallback(async (query: string, type: "CLS" | "MEDICATION") => {
+        if (!query || query.length < 2) return [];
+        try {
+            const response = await fetch(`/api/recommendations/search?q=${encodeURIComponent(query)}&type=${type}`);
+            if (!response.ok) return [];
+            return await response.json();
+        } catch (error) {
+            console.error("Failed to search catalog", error);
+            return [];
+        }
+    }, []);
+
     return {
         // State
         diagnosisCatalog,
@@ -279,6 +291,7 @@ export function useDiagnosisWorkspace() {
         closeFeedback,
         updateFeedbackPayload,
         submitFeedback,
-        dismissToast
+        dismissToast,
+        searchCatalog
     };
 }

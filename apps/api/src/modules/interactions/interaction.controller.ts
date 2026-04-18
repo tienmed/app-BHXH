@@ -1,9 +1,9 @@
-import { Controller, Get, Post, Body, Query } from "@nestjs/common";
+import { Controller, Get, Post, Body, Query, Inject } from "@nestjs/common";
 import { InteractionService } from "./interaction.service";
 
 @Controller("interactions")
 export class InteractionController {
-    constructor(private readonly interactionService: InteractionService) { }
+    constructor(@Inject(InteractionService) private readonly interactionService: InteractionService) { }
 
     @Post("feedback")
     async submitFeedback(@Body() payload: any) {
