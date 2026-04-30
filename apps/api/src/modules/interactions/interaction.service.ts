@@ -1,4 +1,6 @@
 import { Injectable } from "@nestjs/common";
+import { promises as fs } from "fs";
+import path from "path";
 import { PrismaService } from "../../common/prisma.service";
 
 const VN_TIMEZONE = "Asia/Ho_Chi_Minh";
@@ -25,6 +27,59 @@ type UsageReport = {
   topGroups: Array<{ icdGroup: string; totalCalls: number }>;
   byAction: Array<{ action: string; totalCalls: number }>;
 };
+
+type FeedbackCsvRow = {
+  createdAt: string;
+  icdCode: string;
+  icdName: string;
+  feedbackType: string;
+  targetType: string;
+  targetName: string;
+  note: string;
+  doctorId: string;
+};
+
+const FEEDBACK_CSV_COLUMNS: Array<keyof FeedbackCsvRow> = [
+  "createdAt",
+  "icdCode",
+  "icdName",
+  "feedbackType",
+  "targetType",
+  "targetName",
+  "note",
+  "doctorId"
+];
+const FEEDBACK_CSV_PATH = path.join(process.cwd(), "data", "doctor_feedback.csv");
+
+function csvEscape(input: string) {
+  return `"${String(input ?? "").replaceAll("\"", "\"\"")}"`;
+}
+
+function parseCsvLine(line: string) {
+  const cells: string[] = [];
+  let current = "";
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i += 1) {
+    const ch = line[i];
+    if (ch === "\"") {
+      if (inQuotes && line[i + 1] === "\"") {
+        current += "\"";
+        i += 1;
+      } else {
+        inQuotes = !inQuotes;
+      }
+      continue;
+    }
+    if (ch === "," && !inQuotes) {
+      cells.push(current);
+      current = "";
+      continue;
+    }
+    current += ch;
+  }
+  cells.push(current);
+  return cells;
+}
 
 function toDateKey(input: Date) {
   const formatter = new Intl.DateTimeFormat("en-CA", {
@@ -98,19 +153,19 @@ export class InteractionService {
 
   async saveFeedback(payload: any) {
     try {
-      if (!this.prisma.doctorFeedback) return { ok: false };
+      const row: FeedbackCsvRow = {
+        createdAt: new Date().toISOString(),
+        icdCode: String(payload.icdCode || ""),
+        icdName: String(payload.icdName || ""),
+        feedbackType: String(payload.feedbackType || "general"),
+        targetType: String(payload.targetType || "general"),
+        targetName: String(payload.targetName || ""),
+        note: String(payload.note || ""),
+        doctorId: String(payload.doctorId || "anonymous")
+      };
 
-      return await this.prisma.doctorFeedback.create({
-        data: {
-          icdCode: payload.icdCode,
-          icdName: payload.icdName,
-          feedbackType: payload.feedbackType,
-          targetType: payload.targetType,
-          targetName: payload.targetName,
-          note: payload.note,
-          doctorId: payload.doctorId || "anonymous"
-        }
-      });
+      await this.appendFeedbackCsv(row);
+      return { ok: true, ...row };
     } catch {
       return { ok: false };
     }
@@ -227,26 +282,54 @@ export class InteractionService {
   }
   async getRecentFeedback(icdCode: string, targetName: string) {
     try {
-      if (!this.prisma.doctorFeedback) return [];
-
-      return await this.prisma.doctorFeedback.findMany({
-        where: {
-          icdCode,
-          targetName,
-          targetType: { not: "general" }
-        },
-        orderBy: { createdAt: "desc" },
-        take: 5,
-        select: {
-          note: true,
-          doctorId: true,
-          createdAt: true,
-          feedbackType: true
-        }
-      });
+      const rows = await this.readFeedbackCsv();
+      return rows
+        .filter((row) =>
+          row.icdCode === icdCode &&
+          row.targetName === targetName &&
+          row.targetType !== "general"
+        )
+        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+        .slice(0, 5)
+        .map((row) => ({
+          note: row.note,
+          doctorId: row.doctorId,
+          createdAt: row.createdAt,
+          feedbackType: row.feedbackType
+        }));
     } catch {
       return [];
     }
+  }
+
+  private async ensureFeedbackCsvFile() {
+    await fs.mkdir(path.dirname(FEEDBACK_CSV_PATH), { recursive: true });
+    try {
+      await fs.access(FEEDBACK_CSV_PATH);
+    } catch {
+      const header = `${FEEDBACK_CSV_COLUMNS.join(",")}\n`;
+      await fs.writeFile(FEEDBACK_CSV_PATH, header, "utf-8");
+    }
+  }
+
+  private async appendFeedbackCsv(row: FeedbackCsvRow) {
+    await this.ensureFeedbackCsvFile();
+    const line = `${FEEDBACK_CSV_COLUMNS.map((key) => csvEscape(row[key])).join(",")}\n`;
+    await fs.appendFile(FEEDBACK_CSV_PATH, line, "utf-8");
+  }
+
+  private async readFeedbackCsv() {
+    await this.ensureFeedbackCsvFile();
+    const raw = await fs.readFile(FEEDBACK_CSV_PATH, "utf-8");
+    const lines = raw.split(/\r?\n/).filter((line) => line.trim());
+    if (lines.length <= 1) return [];
+    return lines.slice(1).map((line) => {
+      const values = parseCsvLine(line);
+      const row = Object.fromEntries(
+        FEEDBACK_CSV_COLUMNS.map((col, idx) => [col, values[idx] ?? ""])
+      ) as FeedbackCsvRow;
+      return row;
+    });
   }
 
   async saveDismissal(payload: any) {

@@ -1,22 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const remoteUrl = process.env.GOOGLE_APPS_SCRIPT_URL || process.env.NEXT_PUBLIC_RECOMMENDATION_API_URL;
+const feedbackApiUrl =
+    process.env.INTERNAL_INTERACTION_API_URL ||
+    process.env.NEXT_PUBLIC_INTERACTION_API_URL ||
+    "http://localhost:3001/interactions/feedback";
 
 export async function POST(request: NextRequest) {
     const payload = await request.json();
 
-    if (!remoteUrl) {
-        return NextResponse.json(
-            {
-                error: "missing_remote_url",
-                message: "GOOGLE_APPS_SCRIPT_URL is not configured."
-            },
-            { status: 503 }
-        );
-    }
-
     try {
-        const response = await fetch("http://localhost:3001/interactions/feedback", {
+        const response = await fetch(feedbackApiUrl, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
