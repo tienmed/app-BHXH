@@ -103,3 +103,83 @@ L23.9,Viêm da tiếp xúc dị ứng,Bệnh da và mô dưới da,TRUE,2026-01-
 L40.0,Vảy nến thể mảng,Bệnh da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
 L50.9,Mày đay,Bệnh da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
 B35.9,Bệnh nấm da,Bệnh nhiễm trùng,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+I12.9,Bệnh thận do tăng huyết áp không suy thận,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+I25.9,Bệnh tim thiếu máu cục bộ mạn không xác định,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+N18.9,Bệnh thận mạn không xác định giai đoạn,Hệ tiết niệu,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+N18.3,Bệnh thận mạn giai đoạn 3,Hệ tiết niệu,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+K29.7,Viêm dạ dày không xác định,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GI-2026
+K30,Khó tiêu chức năng,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GI-2026
+M47.9,Thoái hóa cột sống không xác định,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+M25.5,Đau khớp,Bệnh hệ cơ xương khớp và mô liên kết,TRUE,2026-01-01,2099-12-31,MOH-MSK-2026
+F32.9,Giai đoạn trầm cảm không xác định,Rối loạn tâm thần và hành vi,TRUE,2026-01-01,2099-12-31,MOH-PSYCH-2026
+R73.0,Bất thường nghiệm pháp dung nạp glucose,Triệu chứng dấu hiệu bất thường,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+J00,Viêm mũi họng cấp [cảm lạnh thông thường],Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-ENT-2026
+J30.9,Viêm mũi dị ứng không xác định,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-ENT-2026
+J04.0,Viêm thanh quản cấp,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-ENT-2026
+J11.1,"Cúm có biểu hiện hô hấp, không xác định virus cúm",Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-INF-2026
+A09,Tiêu chảy và viêm dạ dày ruột nghi nhiễm khuẩn,Bệnh nhiễm trùng và ký sinh trùng,TRUE,2026-01-01,2099-12-31,MOH-INF-2026
+R50.9,Sốt không xác định nguyên nhân,Triệu chứng dấu hiệu bất thường,TRUE,2026-01-01,2099-12-31,MOH-INF-2026
+R19.7,Tiêu chảy không xác định,Triệu chứng dấu hiệu bất thường,TRUE,2026-01-01,2099-12-31,MOH-GI-2026
+L30.9,Viêm da không xác định,Bệnh của da và mô dưới da,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+B35.4,Nấm thân mình,Bệnh nhiễm trùng và ký sinh trùng,TRUE,2026-01-01,2099-12-31,MOH-DERM-2026
+H60.9,Viêm tai ngoài không xác định,Bệnh tai và xương chũm,TRUE,2026-01-01,2099-12-31,MOH-ENT-2026
+I13.0,Bệnh tim và thận do tăng huyết áp có suy tim sung huyết,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+I13.9,Bệnh tim và thận do tăng huyết áp không xác định,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+I70.9,Xơ vữa động mạch toàn thân không xác định,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+I73.9,Bệnh mạch máu ngoại biên không xác định,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+I95.1,Hạ huyết áp tư thế,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+E11.2,Đái tháo đường typ 2 có biến chứng thận,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E11.4,Đái tháo đường typ 2 có biến chứng thần kinh,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E11.5,Đái tháo đường typ 2 có biến chứng tuần hoàn ngoại biên,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E78.2,Rối loạn lipid máu hỗn hợp,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-ENDOC-2026
+E87.1,Hạ natri máu,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+N17.9,Suy thận cấp không xác định,Hệ tiết niệu,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+N19,Suy thận không xác định,Hệ tiết niệu,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+K25.9,Loét dạ dày không xuất huyết hoặc thủng,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GI-2026
+K26.9,Loét tá tràng không xuất huyết hoặc thủng,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GI-2026
+K27.9,Loét dạ dày-tá tràng không xác định không xuất huyết hoặc thủng,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GI-2026
+K58.9,Hội chứng ruột kích thích không tiêu chảy,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GI-2026
+K59.0,Táo bón,Bệnh hệ tiêu hóa,TRUE,2026-01-01,2099-12-31,MOH-GI-2026
+J18.9,Viêm phổi không xác định,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-RESP-2026
+J42,Viêm phế quản mạn không xác định,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-RESP-2026
+J47.9,Giãn phế quản không biến chứng,Bệnh hệ hô hấp,TRUE,2026-01-01,2099-12-31,MOH-RESP-2026
+D64.9,Thiếu máu không xác định,Bệnh máu và cơ quan tạo máu,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+D50.9,Thiếu máu thiếu sắt không xác định,Bệnh máu và cơ quan tạo máu,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+G47.3,Ngưng thở khi ngủ,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+G62.1,Bệnh đa dây thần kinh do rượu,Bệnh hệ thần kinh,TRUE,2026-01-01,2099-12-31,MOH-NEURO-2026
+R42,Chóng mặt và mất thăng bằng,Triệu chứng dấu hiệu bất thường,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+R53,Mệt mỏi và suy nhược,Triệu chứng dấu hiệu bất thường,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+R06.0,Khó thở,Triệu chứng dấu hiệu bất thường,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+R60.0,Phù khu trú,Triệu chứng dấu hiệu bất thường,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+R00.2,Đánh trống ngực,Triệu chứng dấu hiệu bất thường,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
+I49.9,Rối loạn nhịp tim không xác định,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+B35.1,Nấm móng,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+B37.3,Nhiễm nấm Candida âm hộ âm đạo,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+D17.9,U mỡ lành tính không xác định vị trí,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+E04.1,Nhân tuyến giáp không nhiễm độc,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+E16.2,"Hạ đường huyết, không xác định",Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+E53.8,Thiếu vitamin B khác,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+E61.1,Thiếu sắt,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+F45.3,Rối loạn dạng cơ thể hệ thần kinh tự chủ,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+H04.1,Khô mắt,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+H52.4,Lão thị,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+H81.1,Chóng mặt tư thế kịch phát lành tính,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+I87.2,Suy tĩnh mạch mạn ngoại biên,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+J31.0,Viêm mũi mạn,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+L21.9,Viêm da tiết bã,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+L29.9,Ngứa da,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+M54.2,Đau cổ,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+M62.8,Rối loạn cơ khác,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+N23,Cơn đau quặn thận,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+N32.8,Rối loạn bàng quang khác,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R05,Ho,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R11,Buồn nôn và nôn,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R14,Đầy hơi chướng bụng,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R21,Phát ban da,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R25.2,Chuột rút và co thắt,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R52,Đau chưa phân loại,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R63.5,Tăng cân bất thường,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R82.9,Bất thường nước tiểu chưa xác định,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+Z00.0,Khám sức khỏe tổng quát,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+Z01.4,Khám phụ khoa định kỳ,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+Z13.1,Sàng lọc đái tháo đường,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026

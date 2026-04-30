@@ -2,15 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-type CoverageRow = { icdGroup: string; totalIcd: number };
+type CoverageRow = { icdGroup: string; totalIcd: number; percent: number };
 
 type CoverageResponse = {
   totalIcd: number;
   byGroup: CoverageRow[];
   timezone: string;
 };
-
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001";
 
 export function IcdCoveragePanel() {
   const [data, setData] = useState<CoverageResponse | null>(null);
@@ -20,7 +18,7 @@ export function IcdCoveragePanel() {
     async function loadCoverage() {
       setLoading(true);
       try {
-        const res = await fetch(`${API_BASE}/interactions/coverage`);
+        const res = await fetch(`/api/icd/metrics`);
         const json = (await res.json()) as CoverageResponse;
         setData(json);
       } catch {
@@ -50,6 +48,7 @@ export function IcdCoveragePanel() {
               <div key={row.icdGroup} style={{ border: "1px solid #eee", borderRadius: 8, padding: 10 }}>
                 <strong style={{ textTransform: "uppercase" }}>{row.icdGroup}</strong>
                 <div>{row.totalIcd} ICD</div>
+                <div style={{ color: "#666", fontSize: 13 }}>{row.percent}% tổng số ICD</div>
               </div>
             ))}
           </div>

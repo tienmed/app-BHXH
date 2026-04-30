@@ -219,6 +219,46 @@ class ClinicalEngineService {
             source: "local-csv"
         };
     }
+
+    public async getIcdCoverage() {
+        this.loadData();
+
+        const groupMap: Array<{ label: string; match: RegExp }> = [
+            { label: "Nội", match: /(nội|tuần hoàn|hô hấp|tiêu hóa|nội tiết|thần kinh|thận|tiết niệu|truyền nhiễm)/i },
+            { label: "Ngoại", match: /(ngoại|chấn thương|cơ xương khớp|phẫu thuật)/i },
+            { label: "Sản", match: /(sản|phụ khoa|thai|obgyn)/i },
+            { label: "Nhi", match: /(nhi|trẻ em|pedi)/i },
+            { label: "TMH", match: /(tai mũi họng|tmh)/i },
+            { label: "Mắt", match: /(mắt|nhãn khoa|eye)/i },
+            { label: "Da liễu", match: /(da liễu|da)/i },
+        ];
+
+        const activeIcds = this.cache.icds.filter((x: any) => String(x.is_active || "").toUpperCase() !== "FALSE");
+        const totalIcd = activeIcds.length;
+        const counters = new Map<string, number>();
+
+        for (const icd of activeIcds) {
+            const chapter = String(icd.chapter || "");
+            const found = groupMap.find((g) => g.match.test(chapter));
+            const key = found?.label || "Khác";
+            counters.set(key, (counters.get(key) || 0) + 1);
+        }
+
+        const byGroup = Array.from(counters.entries())
+            .map(([icdGroup, total]) => ({
+                icdGroup,
+                totalIcd: total,
+                percent: totalIcd > 0 ? Number(((total / totalIcd) * 100).toFixed(1)) : 0,
+            }))
+            .sort((a, b) => b.totalIcd - a.totalIcd);
+
+        return {
+            totalIcd,
+            byGroup,
+            timezone: "Asia/Ho_Chi_Minh",
+            source: "local-csv",
+        };
+    }
 }
 
 export const clinicalEngine = new ClinicalEngineService();
