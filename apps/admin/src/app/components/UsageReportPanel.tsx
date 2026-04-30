@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type SchedulerStatus = {
   enabled: boolean;
@@ -47,6 +47,8 @@ export function UsageReportPanel() {
     void run();
   }, [period]);
 
+  const visibleSnapshots = useMemo(() => snapshots.slice(0, 3), [snapshots]);
+
   const triggerReport = async () => {
     await fetch(`${API_BASE}/interactions/report?period=${period}`);
     const res = await fetch(`${API_BASE}/interactions/report/snapshots?period=${period}`);
@@ -54,50 +56,45 @@ export function UsageReportPanel() {
   };
 
   return (
-    <section style={{ marginTop: 20, padding: 16, border: "1px solid #ddd", borderRadius: 8, background: "#fff" }}>
+    <section className="surface usagePanelCompact">
       <h3>Báo cáo sử dụng định kỳ</h3>
-      <p>Theo dõi báo cáo tuần/tháng đã được cron tự động tạo.</p>
       {scheduler ? (
-        <p style={{ marginBottom: 8 }}>
+        <p className="usageMeta">
           Scheduler: <strong>{scheduler.enabled ? "Bật" : "Tắt"}</strong> · TZ: {scheduler.timezone} · Chạy gần nhất: {scheduler.lastRunAt ? new Date(scheduler.lastRunAt).toLocaleString("vi-VN") : "chưa có"}
         </p>
       ) : null}
-      <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
-        <button type="button" onClick={() => setPeriod("weekly")}>
-          Tuần
-        </button>
-        <button type="button" onClick={() => setPeriod("monthly")}>
-          Tháng
-        </button>
-        <button type="button" onClick={() => void triggerReport()}>
-          Làm mới ngay
-        </button>
+      <div className="feedbackToolbar" style={{ marginBottom: 8 }}>
+        <button className={period === "weekly" ? "isActive" : ""} type="button" onClick={() => setPeriod("weekly")}>Tuần</button>
+        <button className={period === "monthly" ? "isActive" : ""} type="button" onClick={() => setPeriod("monthly")}>Tháng</button>
+        <button type="button" onClick={() => void triggerReport()}>Làm mới ngay</button>
       </div>
       {loading ? <p>Đang tải...</p> : null}
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
-        <thead>
-          <tr>
-            <th style={{ textAlign: "left" }}>Kỳ</th>
-            <th style={{ textAlign: "left" }}>Khoảng ngày</th>
-            <th style={{ textAlign: "left" }}>Tạo lúc</th>
-            <th style={{ textAlign: "left" }}>PDF</th>
-          </tr>
-        </thead>
-        <tbody>
-          {snapshots.map((row) => (
-            <tr key={row.key}>
-              <td>{row.period}</td>
-              <td>{row.rangeFrom} → {row.rangeTo}</td>
-              <td>{new Date(row.createdAt).toLocaleString("vi-VN")}</td>
-              <td>
-                <a href={`${API_BASE}/interactions/report/snapshots/pdf?key=${encodeURIComponent(row.key)}`} target="_blank" rel="noreferrer">
-                  Tải PDF
-                </a>
-              </td>
+      <div className="tableScroll">
+        <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          <thead>
+            <tr>
+              <th style={{ textAlign: "left" }}>Kỳ</th>
+              <th style={{ textAlign: "left" }}>Khoảng ngày</th>
+              <th style={{ textAlign: "left" }}>Tạo lúc</th>
+              <th style={{ textAlign: "left" }}>PDF</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {visibleSnapshots.map((row) => (
+              <tr key={row.key}>
+                <td>{row.period}</td>
+                <td>{row.rangeFrom} → {row.rangeTo}</td>
+                <td>{new Date(row.createdAt).toLocaleString("vi-VN")}</td>
+                <td>
+                  <a href={`${API_BASE}/interactions/report/snapshots/pdf?key=${encodeURIComponent(row.key)}`} target="_blank" rel="noreferrer">
+                    Tải PDF
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
   );
 }
