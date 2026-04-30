@@ -8,6 +8,7 @@ import { IcdConfigList } from "./components/IcdConfigList";
 import { IcdIntakeForm } from "./components/IcdIntakeForm";
 import { TechnicalPanel } from "./components/TechnicalPanel";
 import { FooterPanels } from "./components/FooterPanels";
+import { UsageReportPanel } from "./components/UsageReportPanel";
 
 export default function AdminHome() {
     const workspace = useAdminWorkspace();
@@ -104,6 +105,8 @@ export default function AdminHome() {
                     onSaveRecord={() => void workspace.saveRecord()}
                     onResetDraft={workspace.resetDraft}
                 />
+
+                <UsageReportPanel />
 
                 <FooterPanels
                     quickCreate={workspace.quickCreate}

@@ -12,6 +12,7 @@ import { CostChart } from "./components/CostChart";
 import { FeedbackModal } from "./components/FeedbackModal";
 import { ToastContainer } from "./components/ToastNotification";
 import { EmptyState } from "./components/EmptyState";
+import { IcdCoveragePanel } from "./components/IcdCoveragePanel";
 
 type SearchMode = "symptom" | "icd";
 
@@ -81,6 +82,8 @@ export default function DoctorWorkspace() {
           </div>
         </header>
 
+
+        <IcdCoveragePanel />
         <section className="doctorPanel fade-2">
           {/* Mode Toggle */}
           <div className="modeToggle">

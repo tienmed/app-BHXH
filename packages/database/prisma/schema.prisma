@@ -248,3 +248,32 @@ model DoctorDismissal {
   doctorId     String?
   createdAt    DateTime @default(now())
 }
+
+model IcdUsageEvent {
+  id         String   @id @default(uuid())
+  icdCode    String
+  icdGroup   String
+  action     String
+  doctorId   String?
+  source     String?
+  occurredAt DateTime @default(now())
+  dateKey    String
+
+  @@index([dateKey])
+  @@index([icdCode, dateKey])
+  @@index([icdGroup, dateKey])
+}
+
+model UsageReportSnapshot {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  period    String
+  rangeFrom String
+  rangeTo   String
+  timezone  String
+  reportJson Json
+  pdfBase64 String
+  createdAt DateTime @default(now())
+
+  @@index([period, createdAt])
+}
