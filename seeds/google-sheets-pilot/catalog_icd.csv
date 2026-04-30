@@ -153,3 +153,153 @@ R06.0,Khó thở,Triệu chứng dấu hiệu bất thường,TRUE,2026-01-01,20
 R60.0,Phù khu trú,Triệu chứng dấu hiệu bất thường,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
 R00.2,Đánh trống ngực,Triệu chứng dấu hiệu bất thường,TRUE,2026-01-01,2099-12-31,MOH-IM-2026
 I49.9,Rối loạn nhịp tim không xác định,Bệnh hệ tuần hoàn,TRUE,2026-01-01,2099-12-31,MOH-CARDIO-2026
+B35.1,Nấm móng,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+B37.3,Nhiễm nấm Candida âm hộ âm đạo,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+D17.9,U mỡ lành tính không xác định vị trí,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+E04.1,Nhân tuyến giáp không nhiễm độc,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+E16.2,"Hạ đường huyết, không xác định",Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+E53.8,Thiếu vitamin B khác,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+E61.1,Thiếu sắt,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+F45.3,Rối loạn dạng cơ thể hệ thần kinh tự chủ,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+H04.1,Khô mắt,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+H52.4,Lão thị,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+H81.1,Chóng mặt tư thế kịch phát lành tính,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+I87.2,Suy tĩnh mạch mạn ngoại biên,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+J31.0,Viêm mũi mạn,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+L21.9,Viêm da tiết bã,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+L29.9,Ngứa da,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+M54.2,Đau cổ,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+M62.8,Rối loạn cơ khác,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+N23,Cơn đau quặn thận,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+N32.8,Rối loạn bàng quang khác,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R05,Ho,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R11,Buồn nôn và nôn,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R14,Đầy hơi chướng bụng,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R21,Phát ban da,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R25.2,Chuột rút và co thắt,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R52,Đau chưa phân loại,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R63.5,Tăng cân bất thường,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+R82.9,Bất thường nước tiểu chưa xác định,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+Z00.0,Khám sức khỏe tổng quát,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+Z01.4,Khám phụ khoa định kỳ,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+Z13.1,Sàng lọc đái tháo đường,Bệnh thường gặp ngoại trú,TRUE,2026-04-30,2099-12-31,MOH-BHXH-OUTPATIENT-2026
+N76.1,Viêm âm đạo bán cấp và mạn,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N72,Viêm cổ tử cung,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N91.2,Vô kinh không xác định,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N92.1,Kinh nguyệt nhiều không đều,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N93.8,Ra huyết âm đạo bất thường khác,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N94.4,Đau bụng kinh nguyên phát,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N94.6,Đau bụng kinh không xác định,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N95.1,Triệu chứng mãn kinh,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N95.2,Viêm teo âm đạo sau mãn kinh,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N39.3,Tiểu không kiểm soát do gắng sức,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N81.1,Sa bàng quang,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N81.4,Sa tử cung hoàn toàn,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N80.9,Lạc nội mạc tử cung,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N84.1,Polyp cổ tử cung,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N84.0,Polyp thân tử cung,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N60.1,Bệnh xơ nang tuyến vú lan tỏa,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N64.4,Đau vú,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+O21.9,Nôn nghén thai kỳ,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+O20.0,Dọa sảy thai,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+O23.1,Nhiễm trùng đường tiểu thai kỳ,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+O24.4,Đái tháo đường thai kỳ,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+O26.8,Các tình trạng liên quan thai kỳ khác,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+O36.8,Theo dõi thai kỳ nguy cơ khác,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+Z12.4,Sàng lọc ung thư cổ tử cung,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+Z30.0,Tư vấn kế hoạch hóa gia đình,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+Z30.4,Theo dõi sử dụng thuốc tránh thai,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N97.9,Vô sinh nữ,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N90.4,Loạn dưỡng âm hộ,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N89.8,Rối loạn âm đạo khác,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+N85.0,Tăng sản nội mạc tử cung,Sản phụ khoa,TRUE,2026-04-30,2099-12-31,MOH-OBGYN-2026B
+H00.0,Lẹo mi ngoài,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H00.1,Chắp mi,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H01.0,Viêm bờ mi,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H01.1,Viêm da mi không nhiễm trùng,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H02.0,Quặm mi,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H02.1,Lật mi,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H02.3,Co rút mi,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H02.4,Sụp mi,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H02.8,Rối loạn mi khác,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H04.2,Chảy nước mắt,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H04.3,Viêm lệ đạo cấp/không xác định,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H04.5,Hẹp và tắc lệ đạo,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H10.0,Viêm kết mạc mủ,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H10.1,Viêm kết mạc dị ứng cấp,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H10.2,Viêm kết mạc cấp khác,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H11.0,Mộng thịt,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H11.3,Xuất huyết kết mạc,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H15.0,Viêm củng mạc,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H16.0,Loét giác mạc,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H16.1,Viêm giác mạc khác,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H18.4,Phù giác mạc,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026
+H20.0,Viêm mống mắt thể mi cấp,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026-OVERFLOW
+H25.0,Đục nhân thể thủy tinh tuổi già,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026-OVERFLOW
+H25.1,Đục vỏ thể thủy tinh tuổi già,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026-OVERFLOW
+H26.0,Đục thể thủy tinh trẻ em/thiếu niên,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026-OVERFLOW
+H26.9,Đục thể thủy tinh không xác định,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026-OVERFLOW
+H40.0,Nghi ngờ glôcôm,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026-OVERFLOW
+H40.1,Glôcôm góc mở nguyên phát,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026-OVERFLOW
+H43.3,Đục dịch kính,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026-OVERFLOW
+H53.1,Rối loạn thị giác chủ quan,Mắt,TRUE,2026-04-30,2099-12-31,MOH-EYE-2026-OVERFLOW
+J06.0,Viêm thanh quản cấp,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+J21.9,Viêm tiểu phế quản cấp,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+J45.0,Hen phế quản chủ yếu dị ứng,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+K52.1,Viêm dạ dày ruột do thức ăn,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+K52.2,Viêm dạ dày ruột dị ứng,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+K52.8,Viêm dạ dày ruột không nhiễm trùng khác,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+K59.1,Tiêu chảy chức năng,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+A08.0,Viêm ruột do Rotavirus,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+A08.4,Nhiễm virus ruột khác,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+A09.0,Tiêu chảy nhiễm trùng khác,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+B08.4,Tay chân miệng,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+B01.9,Thủy đậu không biến chứng,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+B09,Ban virus không xác định,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+R56.0,Co giật do sốt,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+R11.0,Buồn nôn,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+L22,Viêm da tã lót,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+L30.4,Hăm kẽ,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+H66.0,Viêm tai giữa mủ cấp,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+H65.9,Viêm tai giữa thanh dịch,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+H10.4,Viêm kết mạc mạn,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+E86,Mất nước,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+E63.9,Thiếu dinh dưỡng không xác định,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026
+R62.8,Chậm phát triển khác,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026-OVERFLOW
+Z00.1,Khám sức khỏe định kỳ trẻ em,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026-OVERFLOW
+P07.3,Thai non tháng,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026-OVERFLOW
+P59.9,Vàng da sơ sinh không xác định,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026-OVERFLOW
+P78.3,Tiêu chảy sơ sinh không nhiễm trùng,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026-OVERFLOW
+P92.5,Khó bú sơ sinh,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026-OVERFLOW
+P92.8,Rối loạn ăn bú sơ sinh khác,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026-OVERFLOW
+Q21.1,Thông liên nhĩ,Nhi,TRUE,2026-04-30,2099-12-31,MOH-PED-2026-OVERFLOW
+C16.9,Ung thư dạ dày,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C18.7,Ung thư đại tràng sigma,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C18.9,Ung thư đại tràng không xác định,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C19,Ung thư chỗ nối trực tràng-sigma,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C20,Ung thư trực tràng,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C22.0,Ung thư biểu mô tế bào gan,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C25.9,Ung thư tụy,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C34.9,Ung thư phổi,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C50.9,Ung thư vú,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C53.9,Ung thư cổ tử cung,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C54.1,Ung thư nội mạc tử cung,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C56,Ung thư buồng trứng,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C61,Ung thư tiền liệt tuyến,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C64,Ung thư thận,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C67.9,Ung thư bàng quang,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C71.9,U não ác tính,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C73,Ung thư tuyến giáp,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+C80.9,Ung thư không rõ nguyên phát,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+D00.0,Carcinoma in situ môi miệng họng,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+D05.1,Carcinoma in situ tuyến vú,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+D06.9,Carcinoma in situ cổ tử cung,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+D09.0,Carcinoma in situ bàng quang,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+D10.0,U lành tính môi,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+D12.6,U lành tính đại tràng,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+D17.0,U mỡ lành tính da đầu mặt cổ,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+D25.1,U xơ tử cung trong thành,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+D32.0,U màng não lành tính,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+D33.3,U lành tính dây thần kinh sọ,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+D34,U lành tính tuyến giáp,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+D35.2,U lành tính tuyến yên,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
