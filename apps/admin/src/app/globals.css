@@ -1283,3 +1283,45 @@ body {
     flex: 1 1 calc(50% - 8px);
   }
 }
+
+/* Final desktop polish */
+@media (min-width: 1200px) {
+  .adminShell {
+    height: 100vh;
+    overflow: hidden;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .adminRail,
+  .adminContent {
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .adminRail::-webkit-scrollbar,
+  .adminContent::-webkit-scrollbar {
+    display: none;
+  }
+
+  .adminContent {
+    gap: 14px;
+  }
+
+  .hero {
+    padding: 18px 22px;
+  }
+
+  .surface {
+    padding: 18px;
+  }
+}
+
+.usagePanelCompact h3 {
+  margin-bottom: 6px;
+}
+
+.usageMeta {
+  margin-bottom: 8px;
+  color: var(--muted);
+}
