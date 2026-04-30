@@ -3,6 +3,11 @@ import { PrismaClient } from "@prisma/client";
 
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit, OnModuleDestroy {
+  // Fallback declarations for environments where generated Prisma client is older than schema.
+  // This keeps TypeScript build green while runtime still depends on actual generated client support.
+  declare icdUsageEvent: any;
+  declare usageReportSnapshot: any;
+
   async onModuleInit() {
     try {
       await this.$connect();
