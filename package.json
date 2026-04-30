@@ -17,12 +17,15 @@
     "build:web": "npm run build --workspace @app-bhxh/web",
     "build:admin": "npm run build --workspace @app-bhxh/admin",
     "build:api": "npm run build --workspace @app-bhxh/api",
-    "build": "npm run build:web && npm run build:admin && npm run build:api"
+    "build": "npm run build:web && npm run build:admin && npm run build:api",
+    "test:decision-engine": "node --import tsx --test packages/**/test/**/*.test.ts",
+    "check:rule-consistency": "node --import tsx scripts/check-rule-consistency.ts"
   },
   "devDependencies": {
     "chokidar": "^3.6.0",
     "concurrently": "^9.2.1",
-    "prisma": "^6.4.1"
+    "prisma": "^6.4.1",
+    "tsx": "^4.21.0"
   },
   "dependencies": {
     "@prisma/client": "^6.4.1"

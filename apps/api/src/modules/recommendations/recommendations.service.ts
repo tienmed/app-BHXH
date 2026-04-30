@@ -3,6 +3,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { parse } from "csv-parse/sync";
 import { runDecisionEngine, EngineInput, RecommendationItem } from "@app-bhxh/decision-engine";
+import { buildClaimRiskRulesWithStats } from "@app-bhxh/domain";
 
 interface RecommendationPreviewInput {
   encounterCode?: string;
@@ -124,29 +125,17 @@ export class RecommendationsService implements OnModuleInit {
     }
 
     // 2. Build Claim Risk Rules
-    const relevantRules = this.cache.rules
-      .filter((r: any) => {
-        // If it's a "Missing Evidence" rule, it MUST have an ICD context to be relevant
-        if (r.condition_type === "MISSING_REQUIRED_EVIDENCE") {
-          if (!r.applies_to_icd) return false;
-          return icdCodes.some(code => code.startsWith(r.applies_to_icd));
-        }
-
-        // For other rules (Positive warnings, Interactions, etc.)
-        // If no ICD is specified, it's a global rule for the specified items
-        if (!r.applies_to_icd) return true;
-        
-        // If ICD is specified, it must match
-        return icdCodes.some(code => code.startsWith(r.applies_to_icd));
-      })
-      .map((r: any) => ({
-        severity: r.severity?.toLowerCase() || "medium",
-        title: r.rule_name,
-        message: r.warning_message,
-        actionHint: r.recommended_action,
-        itemCode: r.applies_to_cls || r.applies_to_drug,
-        conditionType: r.condition_type
-      }));
+    const { rules: relevantRules, stats: ruleStats } = buildClaimRiskRulesWithStats(this.cache.rules, icdCodes, {
+      missingEvidenceRequiresIcd: true
+    });
+    this.logger.log(
+      `Rule stats: input=${ruleStats.inputRows}, output=${ruleStats.outputRules}, excludedMissingEvidenceWithoutIcd=${ruleStats.excludedMissingEvidenceWithoutIcd}, normalizedSeverity=${ruleStats.normalizedSeverityCount}, emptyTitle=${ruleStats.emptyTitleCount}, emptyMessage=${ruleStats.emptyMessageCount}`
+    );
+    if (ruleStats.normalizedSeverityCount > 0 || ruleStats.emptyTitleCount > 0 || ruleStats.emptyMessageCount > 0) {
+      this.logger.warn(
+        `Rule quality warning: normalizedSeverity=${ruleStats.normalizedSeverityCount}, emptyTitle=${ruleStats.emptyTitleCount}, emptyMessage=${ruleStats.emptyMessageCount}`
+      );
+    }
 
     // 3. Run Engine
     const engineInput: EngineInput = {

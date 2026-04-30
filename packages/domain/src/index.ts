@@ -12,3 +12,11 @@ export const boundaryPrinciples = [
   "every-override-must-be-auditable",
   "knowledge-must-be-versioned"
 ] as const;
+
+export {
+  splitPipeCodes,
+  matchesIcdPrefix,
+  sanitizeRuleParameter,
+  buildClaimRiskRulesFromCsvRows,
+  buildClaimRiskRulesWithStats
+} from "./rule-utils";
