@@ -1,67 +1,270 @@
 import { Injectable } from "@nestjs/common";
 import { PrismaService } from "../../common/prisma.service";
 
+const VN_TIMEZONE = "Asia/Ho_Chi_Minh";
+const DATE_KEY_REGEX = /^\d{4}-\d{2}-\d{2}$/;
+
+const ICD_GROUP_RULES: Array<{ name: string; prefixes: string[] }> = [
+  { name: "noi", prefixes: ["A", "B", "E", "I", "J", "K", "N", "R"] },
+  { name: "ngoai", prefixes: ["S", "T", "M"] },
+  { name: "san", prefixes: ["O"] },
+  { name: "phu", prefixes: ["N7", "N8", "N9"] },
+  { name: "nhi", prefixes: ["P", "Q"] },
+  { name: "mat", prefixes: ["H0", "H1", "H2", "H3", "H4", "H5"] },
+  { name: "tai-mui-hong", prefixes: ["H6", "H7", "H8", "H9", "J3"] },
+  { name: "da-lieu", prefixes: ["L"] }
+];
+
+type UsageReport = {
+  timezone: string;
+  from: string;
+  to: string;
+  totalCalls: number;
+  trendByDay: Array<{ date: string; totalCalls: number; dateDisplay: string }>;
+  topIcd: Array<{ icdCode: string; totalCalls: number }>;
+  topGroups: Array<{ icdGroup: string; totalCalls: number }>;
+  byAction: Array<{ action: string; totalCalls: number }>;
+};
+
+function toDateKey(input: Date) {
+  const formatter = new Intl.DateTimeFormat("en-CA", {
+    timeZone: VN_TIMEZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  });
+  return formatter.format(input);
+}
+
+export function toDateDisplay(dateKey: string) {
+  const [year, month, day] = dateKey.split("-");
+  return `${day}-${month}-${year}`;
+}
+
+export function inferIcdGroup(icdCode: string | null | undefined) {
+  const normalized = (icdCode || "").toUpperCase().replace(/\./g, "");
+  for (const rule of ICD_GROUP_RULES) {
+    if (rule.prefixes.some((prefix) => normalized.startsWith(prefix))) {
+      return rule.name;
+    }
+  }
+  return "khac";
+}
+
+export function ensureDateKey(input: string, fallback: string) {
+  return DATE_KEY_REGEX.test(input) ? input : fallback;
+}
+
+export function buildPdfContent(report: UsageReport) {
+  const lines = [
+    "BAO CAO SU DUNG APP BHXH",
+    `Ky bao cao: ${report.from} -> ${report.to}`,
+    `Mui gio: ${report.timezone}`,
+    `Tong luot goi: ${report.totalCalls}`,
+    "Top nhom ICD",
+    ...report.topGroups.slice(0, 10).map((x, i) => `${i + 1}. ${x.icdGroup}: ${x.totalCalls}`),
+    "Top ICD",
+    ...report.topIcd.slice(0, 10).map((x, i) => `${i + 1}. ${x.icdCode}: ${x.totalCalls}`)
+  ];
+
+  const escaped = lines.map((line) => line.split("\\").join("\\\\").split("(").join("\\(").split(")").join("\\)")).join("\n");
+  const stream = `BT /F1 10 Tf 40 800 Td (${escaped}) Tj ET`;
+  const objs = [
+    "1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj\n",
+    "2 0 obj << /Type /Pages /Count 1 /Kids [3 0 R] >> endobj\n",
+    "3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >> endobj\n",
+    "4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj\n",
+    `5 0 obj << /Length ${stream.length} >> stream\n${stream}\nendstream endobj\n`
+  ];
+
+  const header = "%PDF-1.4\n";
+  let offset = header.length;
+  const xrefOffsets = ["0000000000 65535 f "];
+  for (const obj of objs) {
+    xrefOffsets.push(String(offset).padStart(10, "0") + " 00000 n ");
+    offset += obj.length;
+  }
+
+  const body = objs.join("");
+  const xrefStart = header.length + body.length;
+  const xref = `xref\n0 ${objs.length + 1}\n${xrefOffsets.join("\n")}\n`;
+  const trailer = `trailer << /Size ${objs.length + 1} /Root 1 0 R >>\nstartxref\n${xrefStart}\n%%EOF`;
+  return Buffer.from(header + body + xref + trailer, "utf-8");
+}
+
 @Injectable()
 export class InteractionService {
-    constructor(private prisma: PrismaService) { }
+  constructor(private prisma: PrismaService) { }
 
-    async saveFeedback(payload: any) {
-        try {
-            if (!this.prisma.doctorFeedback) return { ok: false };
-            return await this.prisma.doctorFeedback.create({
-                data: {
-                    icdCode: payload.icdCode,
-                    icdName: payload.icdName,
-                    feedbackType: payload.feedbackType,
-                    targetType: payload.targetType,
-                    targetName: payload.targetName,
-                    note: payload.note,
-                    doctorId: payload.doctorId || "anonymous"
-                }
-            });
-        } catch (error) {
-            return { ok: false };
+  async saveFeedback(payload: any) {
+    try {
+      if (!this.prisma.doctorFeedback) return { ok: false };
+
+      return await this.prisma.doctorFeedback.create({
+        data: {
+          icdCode: payload.icdCode,
+          icdName: payload.icdName,
+          feedbackType: payload.feedbackType,
+          targetType: payload.targetType,
+          targetName: payload.targetName,
+          note: payload.note,
+          doctorId: payload.doctorId || "anonymous"
         }
+      });
+    } catch {
+      return { ok: false };
+    }
+  }
+
+  async trackUsage(payload: any) {
+    try {
+      if (!this.prisma.icdUsageEvent) return { ok: false };
+
+      const occurredAt = payload.occurredAt ? new Date(payload.occurredAt) : new Date();
+      const dateKey = toDateKey(occurredAt);
+      const icdCode = payload.icdCode || "unknown";
+
+      return await this.prisma.icdUsageEvent.create({
+        data: {
+          icdCode,
+          icdGroup: payload.icdGroup || inferIcdGroup(icdCode),
+          action: payload.action || "search",
+          doctorId: payload.doctorId || "anonymous",
+          source: payload.source || "web",
+          occurredAt,
+          dateKey
+        }
+      });
+    } catch {
+      return { ok: false };
+    }
+  }
+
+  async getCoverageByGroup() {
+    const rows = await this.prisma.catalogIcd.findMany({ select: { code: true } });
+    const byGroup = new Map<string, number>();
+
+    for (const row of rows) {
+      const group = inferIcdGroup(row.code);
+      byGroup.set(group, (byGroup.get(group) || 0) + 1);
     }
 
-    async getRecentFeedback(icdCode: string, targetName: string) {
-        try {
-            if (!this.prisma.doctorFeedback) return [];
-            return await this.prisma.doctorFeedback.findMany({
-                where: {
-                    icdCode,
-                    targetName,
-                    targetType: { not: "general" }
-                },
-                orderBy: { createdAt: "desc" },
-                take: 5,
-                select: {
-                    note: true,
-                    doctorId: true,
-                    createdAt: true,
-                    feedbackType: true
-                }
-            });
-        } catch (error) {
-            return [];
-        }
+    return {
+      totalIcd: rows.length,
+      byGroup: Array.from(byGroup.entries())
+        .map(([icdGroup, totalIcd]) => ({ icdGroup, totalIcd }))
+        .sort((a, b) => b.totalIcd - a.totalIcd),
+      timezone: VN_TIMEZONE
+    };
+  }
+
+  async getUsageReport(fromInput: string, toInput: string): Promise<UsageReport> {
+    const today = toDateKey(new Date());
+    const from = ensureDateKey(fromInput, today);
+    const to = ensureDateKey(toInput, today);
+
+    const records = await this.prisma.icdUsageEvent.groupBy({
+      by: ["dateKey", "icdCode", "icdGroup", "action"],
+      where: { dateKey: { gte: from, lte: to } },
+      _count: { _all: true }
+    });
+
+    const byDay = new Map<string, number>();
+    const byIcd = new Map<string, number>();
+    const byGroup = new Map<string, number>();
+    const byAction = new Map<string, number>();
+
+    for (const row of records) {
+      const count = row._count._all;
+      byDay.set(row.dateKey, (byDay.get(row.dateKey) || 0) + count);
+      byIcd.set(row.icdCode, (byIcd.get(row.icdCode) || 0) + count);
+      byGroup.set(row.icdGroup, (byGroup.get(row.icdGroup) || 0) + count);
+      byAction.set(row.action, (byAction.get(row.action) || 0) + count);
     }
 
-    async saveDismissal(payload: any) {
-        try {
-            if (!this.prisma.doctorDismissal) return { ok: false };
-            return await this.prisma.doctorDismissal.create({
-                data: {
-                    icdCode: payload.icdCode,
-                    itemType: payload.itemType,
-                    itemCode: payload.itemCode || payload.itemName,
-                    itemName: payload.itemName,
-                    reason: payload.reason,
-                    doctorId: payload.doctorId || "anonymous"
-                }
-            });
-        } catch (error) {
-            return { ok: false };
+    const sortMap = (m: Map<string, number>) =>
+      Array.from(m.entries()).sort((a, b) => b[1] - a[1]);
+
+    return {
+      timezone: VN_TIMEZONE,
+      from,
+      to,
+      totalCalls: Array.from(byDay.values()).reduce((sum, x) => sum + x, 0),
+      trendByDay: Array.from(byDay.entries())
+        .sort((a, b) => a[0].localeCompare(b[0]))
+        .map(([date, totalCalls]) => ({ date, totalCalls, dateDisplay: toDateDisplay(date) })),
+      topIcd: sortMap(byIcd).slice(0, 20).map(([icdCode, totalCalls]) => ({ icdCode, totalCalls })),
+      topGroups: sortMap(byGroup).map(([icdGroup, totalCalls]) => ({ icdGroup, totalCalls })),
+      byAction: sortMap(byAction).map(([action, totalCalls]) => ({ action, totalCalls }))
+    };
+  }
+
+  async getUsageReportPdf(from: string, to: string) {
+    const report = await this.getUsageReport(from, to);
+    return buildPdfContent(report);
+  }
+
+
+  async getReportSnapshots(period?: "weekly" | "monthly") {
+    return this.prisma.usageReportSnapshot.findMany({
+      where: period ? { period } : undefined,
+      orderBy: { createdAt: "desc" },
+      take: 50,
+      select: {
+        key: true,
+        period: true,
+        rangeFrom: true,
+        rangeTo: true,
+        timezone: true,
+        createdAt: true
+      }
+    });
+  }
+
+  async getReportSnapshotByKey(key: string) {
+    if (!key) return null;
+    return this.prisma.usageReportSnapshot.findUnique({ where: { key } });
+  }
+  async getRecentFeedback(icdCode: string, targetName: string) {
+    try {
+      if (!this.prisma.doctorFeedback) return [];
+
+      return await this.prisma.doctorFeedback.findMany({
+        where: {
+          icdCode,
+          targetName,
+          targetType: { not: "general" }
+        },
+        orderBy: { createdAt: "desc" },
+        take: 5,
+        select: {
+          note: true,
+          doctorId: true,
+          createdAt: true,
+          feedbackType: true
         }
+      });
+    } catch {
+      return [];
     }
+  }
+
+  async saveDismissal(payload: any) {
+    try {
+      if (!this.prisma.doctorDismissal) return { ok: false };
+
+      return await this.prisma.doctorDismissal.create({
+        data: {
+          icdCode: payload.icdCode,
+          itemType: payload.itemType,
+          itemCode: payload.itemCode || payload.itemName,
+          itemName: payload.itemName,
+          reason: payload.reason,
+          doctorId: payload.doctorId || "anonymous"
+        }
+      });
+    } catch {
+      return { ok: false };
+    }
+  }
 }
