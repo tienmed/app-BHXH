@@ -93,17 +93,22 @@ export async function runDecisionEngine(input: EngineInput): Promise<EngineOutpu
 
   // 3. Tính toán Risk Score (0-100) dựa trên Cảnh báo
   let riskScore = 0;
+  const selectedOrderSet = new Set(
+    (input.draftOrders && input.draftOrders.length > 0)
+      ? input.draftOrders
+      : [...Array.from(investigationMap.keys()), ...Array.from(medicationMap.keys())]
+  );
 
   const triggeredAlerts = alerts.filter(alert => {
     // Handle pipe-separated codes: "CODE1|CODE2"
     const codes = alert.itemCode ? alert.itemCode.split("|").map(s => s.trim()) : [];
-    const isAnyCodeSelected = codes.some(code => input.draftOrders?.includes(code));
+    const isAnyCodeSelected = codes.some(code => selectedOrderSet.has(code));
     
     if (alert.conditionType === "MISSING_REQUIRED_EVIDENCE") {
       if (alert.requiredEvidenceCode) {
         const reqCodes = alert.requiredEvidenceCode.split("|").map(s => s.trim());
-        const hasEvidence = reqCodes.some(code => input.draftOrders?.includes(code));
-        const isTriggerItemSelected = alert.itemCode ? alert.itemCode.split("|").some(c => input.draftOrders?.includes(c.trim())) : true;
+        const hasEvidence = reqCodes.some(code => selectedOrderSet.has(code));
+        const isTriggerItemSelected = alert.itemCode ? alert.itemCode.split("|").some(c => selectedOrderSet.has(c.trim())) : true;
         return isTriggerItemSelected && !hasEvidence;
       }
       // Fallback if no explicit required evidence: trigger if NONE of the itemCodes are selected
@@ -116,10 +121,6 @@ export async function runDecisionEngine(input: EngineInput): Promise<EngineOutpu
 
   // Calculate risk score from all triggered alerts
   triggeredAlerts.forEach(alert => {
-    const isMissing = alert.conditionType === "MISSING_REQUIRED_EVIDENCE";
-    
-    // Missing evidence is a risk, but we weight it slightly differently 
-    // or keep it same if it's high severity.
     if (alert.severity === "high") riskScore += 30;
     else if (alert.severity === "medium") riskScore += 15;
     else riskScore += 5;

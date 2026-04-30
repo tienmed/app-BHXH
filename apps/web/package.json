@@ -8,6 +8,7 @@
     "start": "next start --port 3000"
   },
   "dependencies": {
+    "@app-bhxh/domain": "^0.1.0",
     "@app-bhxh/decision-engine": "^0.1.0",
     "@app-bhxh/shared-types": "^0.1.0",
     "csv-parse": "^5.6.0",

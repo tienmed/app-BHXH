@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { parse } from 'csv-parse/sync';
 import { runDecisionEngine } from '@app-bhxh/decision-engine';
+import { buildClaimRiskRulesWithStats } from '@app-bhxh/domain';
 
 export interface RecommendationRequest {
     diagnoses: Array<{ icd: string; label: string; type: "primary" | "secondary" }>;
@@ -138,42 +139,15 @@ class ClinicalEngineService {
         }
 
         // 2. Build Claim Risk Rules
-        const relevantRules = this.cache.rules
-            .filter((r: any) => {
-                if (!r.applies_to_icd) return true;
-                const targetIcds = r.applies_to_icd.split("|").map((s: string) => s.trim());
-                
-                if (r.condition_type === "MISSING_REQUIRED_EVIDENCE") {
-                    return icdCodes.some(code => targetIcds.some((t: string) => code.startsWith(t)));
-                }
-                return icdCodes.some(code => targetIcds.some((t: string) => code.startsWith(t)));
-            })
-            .map((r: any) => {
-                let requiredEvidenceCode = undefined;
-                if (r.condition_type === "MISSING_REQUIRED_EVIDENCE") {
-                    if (r.rule_code === "RISK-RESP-01") requiredEvidenceCode = "CLS-TDCN-HO-HAP-KY";
-                    else if (r.rule_code === "RISK-MSK-05") requiredEvidenceCode = "CLS-CDHA-DXA";
-                    else if (r.rule_code === "RISK-URO-02") requiredEvidenceCode = "CLS-CDHA-SA-HE-NIEC";
-                    else if (r.rule_code === "RISK-INF-02") requiredEvidenceCode = "CLS-XN-HBV-DNA|CLS-XN-AST-ALT";
-                    else if (r.rule_code === "RISK-EYE-02") requiredEvidenceCode = "CLS-TDCN-NHAN-AP";
-                    else if (r.rule_code === "RISK-ENDOC-04") requiredEvidenceCode = "CLS-XN-AST-ALT";
-                    else if (r.rule_code === "RISK-ENDOC-06") requiredEvidenceCode = "CLS-XN-TSH";
-                    else if (r.rule_code === "RISK-OBGYN-06") requiredEvidenceCode = "CLS-XN-BETA-HCG";
-                    else if (r.rule_code === "RISK-BREAST-03") requiredEvidenceCode = "CLS-CDHA-SA-TUYEN-VU";
-                }
-
-                let itemCode = r.applies_to_cls || r.applies_to_drug || undefined;
-                
-                // If it's a global rule with no specific item, it applies to the whole protocol/ICD
-                return {
-                    severity: r.severity?.toLowerCase() || "medium",
-                    title: r.rule_name,
-                    message: r.warning_message,
-                    itemCode: itemCode,
-                    conditionType: r.condition_type,
-                    requiredEvidenceCode: requiredEvidenceCode || r.condition_parameter
-                };
-            });
+        const { rules: relevantRules, stats: ruleStats } = buildClaimRiskRulesWithStats(this.cache.rules, icdCodes);
+        console.info(
+            `[clinical-engine] rule stats input=${ruleStats.inputRows} output=${ruleStats.outputRules} excludedMissingEvidenceWithoutIcd=${ruleStats.excludedMissingEvidenceWithoutIcd} normalizedSeverity=${ruleStats.normalizedSeverityCount} emptyTitle=${ruleStats.emptyTitleCount} emptyMessage=${ruleStats.emptyMessageCount}`
+        );
+        if (ruleStats.normalizedSeverityCount > 0 || ruleStats.emptyTitleCount > 0 || ruleStats.emptyMessageCount > 0) {
+            console.warn(
+                `[clinical-engine] rule quality warning normalizedSeverity=${ruleStats.normalizedSeverityCount} emptyTitle=${ruleStats.emptyTitleCount} emptyMessage=${ruleStats.emptyMessageCount}`
+            );
+        }
 
         // 3. Run Engine
         const engineInput: EngineInput = {
