@@ -107,6 +107,11 @@ export class InteractionController {
     return this.interactionService.getRecentFeedback(icdCode, targetName);
   }
 
+  @Get("feedback/summary")
+  async getFeedbackSummary() {
+    return this.interactionService.getFeedbackSummary();
+  }
+
   @Post("dismissal")
   async trackDismissal(@Body() payload: any) {
     return this.interactionService.saveDismissal(payload);

@@ -69,7 +69,14 @@ export interface CostSegment {
 export interface FeedbackPayload {
   icdCode: string;
   icdName: string;
-  feedbackType: "not_appropriate" | "missing" | "need_adjustment" | "general";
+  feedbackType:
+    | "not_appropriate"
+    | "missing"
+    | "need_adjustment"
+    | "risk_bhyt"
+    | "missing_evidence"
+    | "cost_concern"
+    | "general";
   targetType: "cls" | "medication" | "alert" | "general";
   targetName: string;
   note: string;

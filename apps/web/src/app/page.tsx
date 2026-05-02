@@ -24,6 +24,16 @@ export default function DoctorWorkspace() {
   const [sessionStarted, setSessionStarted] = useState(false);
   const [lastActivityAt, setLastActivityAt] = useState<number>(Date.now());
   const [remainingMinutes, setRemainingMinutes] = useState(60);
+  const [showExpiryWarning, setShowExpiryWarning] = useState(false);
+  const [assistModeStats, setAssistModeStats] = useState<Record<string, number>>({
+    full: 0,
+    concise: 0,
+    "risk-only": 0
+  });
+  const [feedbackSummary, setFeedbackSummary] = useState<{ totalFeedback: number; types: Array<{ feedbackType: string; totalFeedback: number; percent: number }> }>({
+    totalFeedback: 0,
+    types: []
+  });
   const SESSION_TIMEOUT_MS = 60 * 60 * 1000;
 
   useEffect(() => {
@@ -40,6 +50,38 @@ export default function DoctorWorkspace() {
   }, []);
 
   useEffect(() => {
+    async function loadFeedbackSummary() {
+      try {
+        const res = await fetch("/api/feedback/summary", { cache: "no-store" });
+        const data = await res.json();
+        setFeedbackSummary({
+          totalFeedback: Number(data?.totalFeedback || 0),
+          types: Array.isArray(data?.types) ? data.types : []
+        });
+      } catch {
+        setFeedbackSummary({ totalFeedback: 0, types: [] });
+      }
+    }
+    void loadFeedbackSummary();
+  }, []);
+
+  useEffect(() => {
+    try {
+      const raw = window.localStorage.getItem("bhxh-assistmode-stats");
+      if (!raw) return;
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") return;
+      setAssistModeStats({
+        full: Number(parsed.full || 0),
+        concise: Number(parsed.concise || 0),
+        "risk-only": Number(parsed["risk-only"] || 0)
+      });
+    } catch {
+      // ignore invalid stats cache
+    }
+  }, []);
+
+  useEffect(() => {
     if (!sessionStarted) return;
 
     const markActivity = () => setLastActivityAt(Date.now());
@@ -50,8 +92,10 @@ export default function DoctorWorkspace() {
       const now = Date.now();
       const remaining = Math.max(0, Math.ceil((SESSION_TIMEOUT_MS - (now - lastActivityAt)) / 60000));
       setRemainingMinutes(remaining);
+      setShowExpiryWarning(remaining <= 5 && remaining > 0);
       if (now - lastActivityAt >= SESSION_TIMEOUT_MS) {
         setSessionStarted(false);
+        setShowExpiryWarning(false);
         workspace.clearAllDiagnoses();
       }
     }, 30_000);
@@ -127,13 +171,33 @@ export default function DoctorWorkspace() {
                 className="modeBtn modeBtn-active"
                 type="button"
                 onClick={() => {
+                  const mode = workspace.sessionProfile.assistMode;
+                  const nextStats = {
+                    ...assistModeStats,
+                    [mode]: (assistModeStats[mode] ?? 0) + 1
+                  };
+                  setAssistModeStats(nextStats);
+                  window.localStorage.setItem("bhxh-assistmode-stats", JSON.stringify(nextStats));
                   setLastActivityAt(Date.now());
                   setRemainingMinutes(60);
+                  setShowExpiryWarning(false);
                   setSessionStarted(true);
                 }}
               >
                 Bắt đầu phiên làm việc
               </button>
+            </div>
+            <div className="doctorStatus" style={{ marginTop: 10 }}>
+              Thống kê số phiên theo mức hỗ trợ — Đầy đủ: <strong>{assistModeStats.full}</strong> • Ngắn gọn: <strong>{assistModeStats.concise}</strong> • Risk-only: <strong>{assistModeStats["risk-only"]}</strong>
+            </div>
+            <div className="doctorStatus" style={{ marginTop: 6 }}>
+              Phản hồi có cấu trúc đã ghi nhận: <strong>{workspace.feedbackMetrics.structured}</strong> (General: <strong>{workspace.feedbackMetrics.general}</strong>)
+            </div>
+            <div className="doctorStatus" style={{ marginTop: 6 }}>
+              Tổng feedback hệ thống: <strong>{feedbackSummary.totalFeedback}</strong>
+              {feedbackSummary.types.length > 0 ? (
+                <> — Nhóm nhiều nhất: <strong>{feedbackSummary.types[0].feedbackType}</strong> ({feedbackSummary.types[0].percent}%)</>
+              ) : null}
             </div>
           </section>
         </section>
@@ -159,12 +223,30 @@ export default function DoctorWorkspace() {
             style={{ marginLeft: 12 }}
             onClick={() => {
               setSessionStarted(false);
+              setShowExpiryWarning(false);
               workspace.clearAllDiagnoses();
             }}
           >
             Kết thúc phiên
           </button>
         </div>
+        {showExpiryWarning ? (
+          <div className="doctorPanel" style={{ marginBottom: 12, borderColor: "#f59e0b" }}>
+            <strong>Phiên sắp hết hạn.</strong> Còn khoảng {remainingMinutes} phút trước khi tự thoát.
+            <button
+              type="button"
+              className="clearAllBtn"
+              style={{ marginLeft: 12 }}
+              onClick={() => {
+                setLastActivityAt(Date.now());
+                setRemainingMinutes(60);
+                setShowExpiryWarning(false);
+              }}
+            >
+              Gia hạn phiên
+            </button>
+          </div>
+        ) : null}
         <header className="doctorHero fade-1">
           <span className="eyebrow">Hỗ trợ ra quyết định lâm sàng</span>
           <h1>Chẩn đoán bộ Triệu chứng, ICD-10 & Gợi ý xử trí</h1>
@@ -338,36 +420,44 @@ export default function DoctorWorkspace() {
           <EmptyState />
         ) : (
           <>
-            <section className="doctorGrid">
-              <RecommendationPanel
-                title="Cận lâm sàng gợi ý"
-                items={workspace.state.investigations}
-                groupNote={workspace.state.investigationsNote}
-                prefix="cls"
-                loading={workspace.loading}
-                itemStatuses={workspace.itemStatuses}
-                onSetStatus={workspace.setItemStatus}
-                onOpenFeedback={workspace.openFeedback}
-                feedbackTargetType="cls"
-                emptyText="Vui lòng chọn ICD để xem gợi ý cận lâm sàng."
-                icdCode={workspace.selectedCodes[0]}
-                onSearch={workspace.searchCatalog}
-              />
-              <RecommendationPanel
-                title="Nhóm thuốc khuyến nghị"
-                items={workspace.state.medications}
-                groupNote={workspace.state.medicationsNote}
-                prefix="drug"
-                loading={workspace.loading}
-                itemStatuses={workspace.itemStatuses}
-                onSetStatus={workspace.setItemStatus}
-                onOpenFeedback={workspace.openFeedback}
-                feedbackTargetType="medication"
-                emptyText="Vui lòng chọn ICD để xem khuyến nghị dùng thuốc."
-                icdCode={workspace.selectedCodes[0]}
-                onSearch={workspace.searchCatalog}
-              />
-            </section>
+            {workspace.sessionProfile.assistMode === "risk-only" ? (
+              <section className="doctorPanel">
+                <p className="doctorStatus">
+                  Đang ở chế độ <strong>Ưu tiên cảnh báo nguy cơ cao</strong>: hệ thống tập trung hiển thị cảnh báo BHYT/rủi ro.
+                </p>
+              </section>
+            ) : (
+              <section className="doctorGrid">
+                <RecommendationPanel
+                  title="Cận lâm sàng gợi ý"
+                  items={workspace.state.investigations}
+                  groupNote={workspace.state.investigationsNote}
+                  prefix="cls"
+                  loading={workspace.loading}
+                  itemStatuses={workspace.itemStatuses}
+                  onSetStatus={workspace.setItemStatus}
+                  onOpenFeedback={workspace.openFeedback}
+                  feedbackTargetType="cls"
+                  emptyText="Vui lòng chọn ICD để xem gợi ý cận lâm sàng."
+                  icdCode={workspace.selectedCodes[0]}
+                  onSearch={workspace.searchCatalog}
+                />
+                <RecommendationPanel
+                  title="Nhóm thuốc khuyến nghị"
+                  items={workspace.state.medications}
+                  groupNote={workspace.state.medicationsNote}
+                  prefix="drug"
+                  loading={workspace.loading}
+                  itemStatuses={workspace.itemStatuses}
+                  onSetStatus={workspace.setItemStatus}
+                  onOpenFeedback={workspace.openFeedback}
+                  feedbackTargetType="medication"
+                  emptyText="Vui lòng chọn ICD để xem khuyến nghị dùng thuốc."
+                  icdCode={workspace.selectedCodes[0]}
+                  onSearch={workspace.searchCatalog}
+                />
+              </section>
+            )}
 
             <AlertPanel
               alerts={workspace.state.alerts}

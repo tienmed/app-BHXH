@@ -302,6 +302,33 @@ export class InteractionService {
     }
   }
 
+  async getFeedbackSummary() {
+    try {
+      const rows = await this.readFeedbackCsv();
+      const byType = new Map<string, number>();
+      for (const row of rows) {
+        const key = row.feedbackType || "general";
+        byType.set(key, (byType.get(key) || 0) + 1);
+      }
+
+      const total = rows.length;
+      const types = Array.from(byType.entries())
+        .sort((a, b) => b[1] - a[1])
+        .map(([feedbackType, totalFeedback]) => ({
+          feedbackType,
+          totalFeedback,
+          percent: total > 0 ? Number(((totalFeedback / total) * 100).toFixed(1)) : 0
+        }));
+
+      return {
+        totalFeedback: total,
+        types
+      };
+    } catch {
+      return { totalFeedback: 0, types: [] };
+    }
+  }
+
   private async ensureFeedbackCsvFile() {
     await fs.mkdir(path.dirname(FEEDBACK_CSV_PATH), { recursive: true });
     try {

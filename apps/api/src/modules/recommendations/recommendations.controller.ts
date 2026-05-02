@@ -5,6 +5,11 @@ interface RecommendationPreviewInput {
   encounterCode?: string;
   diagnoses?: Array<{ icd: string; label?: string }>;
   draftOrders?: string[];
+  sessionProfile?: {
+    specialty?: string;
+    experience?: string;
+    assistMode?: "full" | "concise" | "risk-only";
+  };
 }
 
 @Controller("recommendations")
