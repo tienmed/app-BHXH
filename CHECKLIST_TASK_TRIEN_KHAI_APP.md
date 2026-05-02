@@ -2,6 +2,18 @@
 
 > Mục tiêu: theo dõi tiến độ từ phiên bản pilot sang trợ lý quyết định lâm sàng thực chiến.
 
+## Bảng tiến độ tổng quan (cập nhật 2026-05-02)
+- Product & Governance: **2/4**
+- Session ẩn danh & cá nhân hóa theo nhóm bác sĩ: **7/7**
+- Tối ưu assist mode: **4/6**
+- Năng lực ca đa ICD: **0/5**
+- Chuẩn hóa feedback để hệ thống học: **4/4**
+- Dữ liệu & độ phủ ICD: **2/5**
+- Tích hợp hệ thống: **0/4**
+- KPI mục tiêu phát hành: **0/4**
+
+Tổng cộng: **19/39 hạng mục hoàn thành (48.7%)**.
+
 ## 0) Product & Governance
 - [x] Viết lại định nghĩa sản phẩm theo hướng lấy bác sĩ làm trung tâm.
 - [x] Thiết lập file theo dõi phiên bản (`VER.md`).

@@ -1,5 +1,20 @@
 # Version Notes (VER)
 
+## 2026.12 — Checklist Progress Dashboard Update
+- Cập nhật `CHECKLIST_TASK_TRIEN_KHAI_APP.md` với bảng tiến độ tổng quan theo từng nhóm hạng mục.
+- Bổ sung tỷ lệ hoàn thành tổng thể để theo dõi nhịp triển khai.
+- Thêm kế hoạch 2 tuần tiếp theo (tuần 1/tuần 2) để chuyển checklist sang chế độ điều hành thực thi.
+
+## 2026.11 — Feedback Summary CSV Export
+- Bổ sung endpoint CSV cho feedback summary để phục vụ họp rà soát định kỳ.
+- Thêm nút tải CSV tổng hợp feedback trên màn hình khởi tạo phiên.
+- Đánh dấu hoàn thành hạng mục vòng phản hồi cập nhật mapping/rule theo đợt trong checklist.
+
+## 2026.10 — Feedback-to-Action Suggestions
+- Mở rộng feedback summary bằng danh sách hành động ưu tiên theo nhóm phản hồi phổ biến.
+- Hiển thị “hành động ưu tiên” trên màn hình khởi tạo phiên để hỗ trợ điều phối cập nhật mapping/rule theo đợt.
+- Đây là bước đệm vận hành cho vòng phản hồi cải tiến định kỳ.
+
 ## 2026.09 — Feedback Summary API for Rollout Monitoring
 - Bổ sung endpoint tổng hợp feedback theo nhóm lý do từ dữ liệu CSV để theo dõi chất lượng phản hồi toàn hệ thống.
 - Thêm route proxy ở web và hiển thị nhanh tổng feedback + nhóm lý do phổ biến ở màn hình khởi tạo phiên.

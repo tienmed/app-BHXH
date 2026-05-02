@@ -320,13 +320,38 @@ export class InteractionService {
           percent: total > 0 ? Number(((totalFeedback / total) * 100).toFixed(1)) : 0
         }));
 
+      const actionMap: Record<string, string> = {
+        risk_bhyt: "Ưu tiên rà soát rule BHYT và điều kiện xuất toán liên quan.",
+        missing_evidence: "Ưu tiên bổ sung bằng chứng/giải trình cho các gợi ý bị thiếu context.",
+        cost_concern: "Ưu tiên rà soát định mức chi phí và thứ tự ưu tiên gợi ý.",
+        missing: "Ưu tiên mở rộng mapping ICD -> CLS/thuốc cho nhóm còn thiếu.",
+        need_adjustment: "Ưu tiên tinh chỉnh thứ tự hoặc nội dung gợi ý hiện tại."
+      };
+      const recommendedActions = types
+        .filter((item) => item.feedbackType !== "general" && item.totalFeedback >= 3)
+        .slice(0, 3)
+        .map((item) => ({
+          feedbackType: item.feedbackType,
+          recommendation: actionMap[item.feedbackType] || "Ưu tiên đánh giá thủ công theo nhóm phản hồi này."
+        }));
+
       return {
         totalFeedback: total,
-        types
+        types,
+        recommendedActions
       };
     } catch {
-      return { totalFeedback: 0, types: [] };
+      return { totalFeedback: 0, types: [], recommendedActions: [] };
     }
+  }
+
+  async getFeedbackSummaryCsv() {
+    const summary = await this.getFeedbackSummary();
+    const lines = ["feedback_type,total_feedback,percent"];
+    for (const item of summary.types || []) {
+      lines.push(`${item.feedbackType},${item.totalFeedback},${item.percent}`);
+    }
+    return lines.join("\n");
   }
 
   private async ensureFeedbackCsvFile() {

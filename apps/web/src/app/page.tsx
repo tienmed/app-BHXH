@@ -30,9 +30,10 @@ export default function DoctorWorkspace() {
     concise: 0,
     "risk-only": 0
   });
-  const [feedbackSummary, setFeedbackSummary] = useState<{ totalFeedback: number; types: Array<{ feedbackType: string; totalFeedback: number; percent: number }> }>({
+  const [feedbackSummary, setFeedbackSummary] = useState<{ totalFeedback: number; types: Array<{ feedbackType: string; totalFeedback: number; percent: number }>; recommendedActions: Array<{ feedbackType: string; recommendation: string }> }>({
     totalFeedback: 0,
-    types: []
+    types: [],
+    recommendedActions: []
   });
   const SESSION_TIMEOUT_MS = 60 * 60 * 1000;
 
@@ -56,10 +57,11 @@ export default function DoctorWorkspace() {
         const data = await res.json();
         setFeedbackSummary({
           totalFeedback: Number(data?.totalFeedback || 0),
-          types: Array.isArray(data?.types) ? data.types : []
+          types: Array.isArray(data?.types) ? data.types : [],
+          recommendedActions: Array.isArray(data?.recommendedActions) ? data.recommendedActions : []
         });
       } catch {
-        setFeedbackSummary({ totalFeedback: 0, types: [] });
+        setFeedbackSummary({ totalFeedback: 0, types: [], recommendedActions: [] });
       }
     }
     void loadFeedbackSummary();
@@ -198,6 +200,21 @@ export default function DoctorWorkspace() {
               {feedbackSummary.types.length > 0 ? (
                 <> — Nhóm nhiều nhất: <strong>{feedbackSummary.types[0].feedbackType}</strong> ({feedbackSummary.types[0].percent}%)</>
               ) : null}
+            </div>
+            {feedbackSummary.recommendedActions.length > 0 ? (
+              <div className="doctorStatus" style={{ marginTop: 6 }}>
+                Hành động ưu tiên theo feedback:
+                <ul style={{ marginTop: 6, paddingLeft: 18 }}>
+                  {feedbackSummary.recommendedActions.map((item) => (
+                    <li key={item.feedbackType}><strong>{item.feedbackType}</strong>: {item.recommendation}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+            <div style={{ marginTop: 8 }}>
+              <a href="/api/feedback/summary/csv" className="modeBtn" style={{ display: "inline-block", textDecoration: "none" }}>
+                Tải CSV tổng hợp feedback
+              </a>
             </div>
           </section>
         </section>
