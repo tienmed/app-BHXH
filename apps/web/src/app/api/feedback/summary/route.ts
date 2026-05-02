@@ -9,11 +9,11 @@ export async function GET() {
   try {
     const response = await fetch(summaryApiUrl, { cache: "no-store" });
     if (!response.ok) {
-      return NextResponse.json({ totalFeedback: 0, types: [] }, { status: 200 });
+      return NextResponse.json({ totalFeedback: 0, types: [], recommendedActions: [] }, { status: 200 });
     }
     const data = await response.json();
     return NextResponse.json(data);
   } catch {
-    return NextResponse.json({ totalFeedback: 0, types: [] }, { status: 200 });
+    return NextResponse.json({ totalFeedback: 0, types: [], recommendedActions: [] }, { status: 200 });
   }
 }

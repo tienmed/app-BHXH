@@ -2,6 +2,18 @@
 
 > Mục tiêu: theo dõi tiến độ từ phiên bản pilot sang trợ lý quyết định lâm sàng thực chiến.
 
+## Bảng tiến độ tổng quan (cập nhật 2026-05-02)
+- Product & Governance: **2/4**
+- Session ẩn danh & cá nhân hóa theo nhóm bác sĩ: **7/7**
+- Tối ưu assist mode: **4/6**
+- Năng lực ca đa ICD: **0/5**
+- Chuẩn hóa feedback để hệ thống học: **4/4**
+- Dữ liệu & độ phủ ICD: **2/5**
+- Tích hợp hệ thống: **0/4**
+- KPI mục tiêu phát hành: **0/4**
+
+Tổng cộng: **19/39 hạng mục hoàn thành (48.7%)**.
+
 ## 0) Product & Governance
 - [x] Viết lại định nghĩa sản phẩm theo hướng lấy bác sĩ làm trung tâm.
 - [x] Thiết lập file theo dõi phiên bản (`VER.md`).
@@ -36,7 +48,7 @@
 - [x] Chuẩn hóa nhóm lý do feedback (không phù hợp/thiếu/chỉnh liều/rủi ro BHYT...).
 - [x] Bắt buộc chọn nhóm lý do trước khi nhập ghi chú tự do.
 - [x] Theo dõi tỷ lệ feedback có cấu trúc vs feedback tự do (mức local thống kê).
-- [ ] Tạo vòng phản hồi cập nhật dữ liệu mapping/rule theo đợt.
+- [x] Tạo vòng phản hồi cập nhật dữ liệu mapping/rule theo đợt.
 
 ## 5) Dữ liệu & độ phủ ICD
 - [x] Bổ sung metadata `chapter` và dùng cho lọc theo chuyên khoa.
@@ -65,3 +77,16 @@
 - 2026-05-02: Bắt buộc chọn nhóm lý do feedback trước khi gửi phản hồi.
 - 2026-05-02: Bổ sung thống kê local số phản hồi có cấu trúc để theo dõi chất lượng feedback.
 - 2026-05-02: Bổ sung API summary feedback theo nhóm để chuẩn bị vòng cập nhật mapping/rule theo đợt.
+- 2026-05-02: Bổ sung gợi ý hành động ưu tiên theo nhóm feedback phổ biến (bước đệm cho vòng cập nhật theo đợt).
+- 2026-05-02: Bổ sung endpoint tải CSV feedback summary để phục vụ họp rà soát và cập nhật mapping/rule theo đợt.
+
+## Kế hoạch 2 tuần tiếp theo (đề xuất)
+### Tuần 1
+- [ ] Thiết kế rule đa ICD mức cơ bản: giao nhau CLS/thuốc cho 5 nhóm bệnh đồng mắc phổ biến.
+- [ ] Bổ sung chỉ số đo hiệu quả theo assist mode (full/concise/risk-only).
+- [ ] Chuẩn hóa lại mô tả ICD vừa thêm theo danh mục dùng trong bệnh viện.
+
+### Tuần 2
+- [ ] Thử nghiệm A/B ngưỡng rút gọn ở chế độ concise (top 3 vs top 5).
+- [ ] Xây dựng mẫu báo cáo họp phản hồi hằng tuần từ feedback summary CSV.
+- [ ] Đề xuất contract dữ liệu encounter tối thiểu cho bước tích hợp HIS một chiều.
