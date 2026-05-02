@@ -10,6 +10,7 @@ export type LoadingState = null | "refresh" | "template" | "inspect" | "preview"
 export interface DiagnosisOption {
   code: string;
   label: string;
+  chapter?: string;
 }
 
 /** Alias kept for backward-compat — `Diagnosis` and `DiagnosisOption` share the same shape. */
@@ -68,7 +69,14 @@ export interface CostSegment {
 export interface FeedbackPayload {
   icdCode: string;
   icdName: string;
-  feedbackType: "not_appropriate" | "missing" | "need_adjustment" | "general";
+  feedbackType:
+    | "not_appropriate"
+    | "missing"
+    | "need_adjustment"
+    | "risk_bhyt"
+    | "missing_evidence"
+    | "cost_concern"
+    | "general";
   targetType: "cls" | "medication" | "alert" | "general";
   targetName: string;
   note: string;

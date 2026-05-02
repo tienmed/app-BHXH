@@ -1,61 +1,77 @@
-# Ứng dụng Hỗ trợ Quyết định Lâm sàng BHXH (App BHXH)
+# App BHXH – Trợ lý quyết định lâm sàng cho phòng khám ngoại trú
 
-Dự án này là hệ thống phần mềm toàn diện dành cho bác sĩ nhằm hỗ trợ:
-- Gợi ý chỉ định cận lâm sàng, xét nghiệm và đơn thuốc dựa trên các phác đồ điều trị tiên tiến nhất (EBM).
-- Đánh giá sự kết hợp giữa mã bệnh ICD, cận lâm sàng (CLS) và thuốc dựa trên cơ cấu tỷ lệ chi phí bảo hiểm.
-- Cảnh báo nguy cơ xuất toán bảo hiểm y tế ngay từ bước ra quyết định (trước khi hoàn tất chỉ định).
-- Cung cấp các công cụ giải thích y khoa (khuyến nghị lặp lại định kỳ, chống chỉ định, tương tác thuốc).
+## Tuyên ngôn sản phẩm
+App BHXH được định nghĩa là một **trợ lý hỗ trợ bác sĩ ra quyết định**, không thay thế bác sĩ.
 
-Dự án hiện bao gồm một Frontend Next.js tương tác, một Admin Dashboard, và một hệ thống Backend Data Sync hoạt động cùng Google Sheets (làm kho dữ liệu tạm thời/Pilot).
+Mục tiêu cốt lõi:
+- Giúp bác sĩ ra quyết định nhanh hơn, rõ ràng hơn, an toàn hơn.
+- Giảm sai sót do quá tải thông tin trong ca khám ngoại trú.
+- Giảm rủi ro xuất toán BHYT ngay trong lúc chỉ định.
+- Duy trì cân bằng giữa hiệu quả lâm sàng, chi phí hợp lý, và tính giải trình.
 
-## Điểm Nổi Bật Về Tính Năng
+## Vấn đề mà app giải quyết
+Trong thực tế khám ngoại trú, bác sĩ thường đối mặt với:
+- Nhiều chẩn đoán cùng lúc (đa bệnh phối hợp).
+- Áp lực thời gian và nguy cơ bỏ sót chỉ định quan trọng.
+- Cảnh báo xuất toán đến muộn (sau khi đã hoàn tất chỉ định).
+- Thiếu công cụ phản hồi có cấu trúc để cải thiện chất lượng gợi ý theo thời gian.
 
-1. **Hỗ trợ quyết định lâm sàng (CDSS):** 
-   - Giải nghĩa rõ ràng **Mục đích lâm sàng**, **Tiêu chí chỉ định** và **Chu kỳ lặp lại an toàn** của CLS.
-   - Giải thích chi tiết **Mục đích điều trị**, **Tác dụng phụ** và **Tương tác thuốc/Thận trọng** của các nhóm thuốc.
-2. **Tuân thủ BHYT & Chống Xuất Toán:** 
-   - Tính toán và cảnh báo quá tỷ lệ theo giới hạn quy tắc (ví dụ: Thuốc > 50%, CLS > 30%...).
-3. **Đồng bộ hóa Dữ Liệu Thời Gian Thực:**
-   - Script hoạt động ngầm tự động theo dõi thay đổi trong folder `seeds/google-sheets-pilot` và đồng bộ qua Google Apps Script để render ngay lập tức API gợi ý cho Frontend.
+App BHXH tập trung giải quyết các điểm này ngay tại thời điểm ra quyết định.
 
-## Cấu trúc Dự án (Monorepo)
+## Người dùng mục tiêu
+- Bác sĩ nội khoa ngoại trú (ưu tiên giai đoạn đầu).
+- Bác sĩ chuyên khoa có nhu cầu chuẩn hóa thực hành.
+- Quản lý chuyên môn cần theo dõi mức độ tuân thủ và chất lượng chỉ định.
 
-```text
-.
-|-- apps/
-|   |-- web/       # Web App cho Bác sĩ (Next.js)
-|   |-- admin/     # Portal quản trị danh mục/quy tắc (Next.js)
-|   `-- api/       # Backend API (Nest.js/Express)
-|-- packages/      # Các thư viện dùng chung (types, eslint, tsconfig)
-|-- integrations/
-|   `-- google-apps-script/ # Code kết nối tới Google Sheets Database
-|-- seeds/google-sheets-pilot/ # File CSV làm Source of Truth dữ liệu
-|-- scripts/       # Script đồng bộ hóa (dev-all.mjs, watch-csv.mjs, v.v...)
-`-- docs/          # Tài liệu đặc tả kiến trúc, luồng hệ thống
-```
+## Giá trị chính cho bác sĩ
+- Gợi ý CLS và thuốc theo mã bệnh trong bối cảnh khám thực tế.
+- Cảnh báo nguy cơ xuất toán trước khi chốt chỉ định.
+- Giải thích lý do gợi ý và cảnh báo để bác sĩ dễ quyết định.
+- Hỗ trợ phản hồi nhanh để hệ thống học và cải thiện theo thực tế sử dụng.
 
-## Khởi động Dành cho Lập trình viên
+## Định hướng phát triển sản phẩm (phi kỹ thuật)
+### 1) Cá nhân hóa không định danh cá nhân
+Tôn trọng tâm lý người dùng: không bắt buộc định danh cá nhân bác sĩ.
 
-Hệ thống đã được thiết lập để chạy tất cả các dịch vụ thông qua một lệnh duy nhất bằng `concurrently`.
+Thay vào đó, sử dụng **hồ sơ phiên làm việc ẩn danh**:
+- Chuyên khoa
+- Mức độ kinh nghiệm
+- Mục tiêu phiên khám
+- Mức độ hỗ trợ mong muốn
 
-1. Cài đặt toàn bộ dependencies:
-```bash
-npm install
-```
+Cách làm này vẫn cho phép cá nhân hóa gợi ý theo nhóm người dùng, đồng thời giảm rào cản sử dụng.
 
-2. Chạy môi trường Development (Khởi chạy Web, Admin, API và Data Sync Watcher):
-```bash
-npm run dev
-```
+### 2) Tối ưu gợi ý theo hồ sơ phiên
+Hệ thống ưu tiên gợi ý phù hợp với nhóm bác sĩ trong phiên làm việc thay vì dàn trải toàn bộ dữ liệu.
 
-Lệnh `npm run dev` sẽ gọi `scripts/dev-all.mjs` chạy song song:
-- `app-bhxh-web` (Cổng bác sĩ)
-- `app-bhxh-admin` (Cổng quản lý)
-- `app-bhxh-api` (Backend)
-- `sync:watch` (Theo dõi file CSV và đồng bộ lên Sheets)
+Lợi ích:
+- Ít nhiễu hơn
+- Nhanh hơn
+- Sát nhu cầu thực hành hơn
 
-## Nguồn dữ liệu & Google Apps Script
+### 3) Tăng hiệu quả cho ca đa ICD
+App sẽ phát triển theo hướng xử lý mạnh hơn cho ca bệnh phối hợp:
+- Gợi ý phần giao giữa các bệnh đồng mắc
+- Nhận diện xung đột chỉ định
+- Ưu tiên theo mức rủi ro, mức cần thiết và khả năng giải trình BHYT
 
-Trong giai đoạn Pilot, dữ liệu Danh mục và Phác đồ được cấu hình tại các file `CSV` ở thư mục `seeds/google-sheets-pilot/*.csv`. Các file này là Nguồn Chân Lý (Source of truth). 
+### 4) Học liên tục từ phản hồi bác sĩ
+Phản hồi không chỉ là góp ý tự do mà được chuẩn hóa thành nhóm lý do ngắn gọn.
 
-Mọi thay đổi trên CSV ở Local sẽ tự động được script báo lên Google Sheets thông qua Deployment API của Google Apps Script (tại `integrations/google-apps-script/Code.gs`). Để apply logic backend Gas mới, cần phải cấu hình file `Code.gs` thẳng lên IDE của Google Apps Script. Chi tiết xem tại `docs/13-google-apps-script-deployment.md`.
+Mục tiêu:
+- Nâng chất lượng gợi ý theo thời gian
+- Giảm cảnh báo không cần thiết
+- Tăng độ tin cậy của hệ thống
+
+## Tiêu chí thành công
+- Bác sĩ hoàn tất quyết định nhanh hơn nhưng vẫn chắc tay hơn.
+- Tỷ lệ chấp nhận gợi ý hợp lý tăng dần theo thời gian.
+- Tỷ lệ cảnh báo hữu ích tăng, cảnh báo nhiễu giảm.
+- Hiệu quả rõ hơn trong các ca bệnh phối hợp (>1 ICD).
+
+## Cam kết phát triển
+App BHXH phát triển theo nguyên tắc:
+- **Lấy bác sĩ làm trung tâm**
+- **Giải thích được**
+- **An toàn trong thực hành và thanh toán BHYT**
+- **Cải tiến liên tục dựa trên dữ liệu sử dụng thực tế**

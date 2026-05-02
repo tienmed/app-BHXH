@@ -107,6 +107,19 @@ export class InteractionController {
     return this.interactionService.getRecentFeedback(icdCode, targetName);
   }
 
+  @Get("feedback/summary")
+  async getFeedbackSummary() {
+    return this.interactionService.getFeedbackSummary();
+  }
+
+  @Get("feedback/summary/csv")
+  async getFeedbackSummaryCsv(@Res() res: any) {
+    const csv = await this.interactionService.getFeedbackSummaryCsv();
+    res.setHeader("Content-Type", "text/csv; charset=utf-8");
+    res.setHeader("Content-Disposition", `attachment; filename=feedback-summary.csv`);
+    res.send(csv);
+  }
+
   @Post("dismissal")
   async trackDismissal(@Body() payload: any) {
     return this.interactionService.saveDismissal(payload);
