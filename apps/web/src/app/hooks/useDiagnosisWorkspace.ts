@@ -17,6 +17,11 @@ function useDebounce<T>(value: T, delay: number): T {
 }
 
 export function useDiagnosisWorkspace() {
+    const [sessionProfile, setSessionProfile] = useState({
+        specialty: "general",
+        experience: "unspecified",
+        assistMode: "full"
+    });
     const [diagnosisCatalog, setDiagnosisCatalog] = useState<DiagnosisOption[]>(defaultDiagnosisOptions);
     const [selectedCodes, setSelectedCodes] = useState<string[]>([]);
     const [searchTerm, setSearchTerm] = useState("");
@@ -64,10 +69,25 @@ export function useDiagnosisWorkspace() {
         const keyword = debouncedSearchTerm.trim().toLowerCase();
         if (!keyword) return [];
 
+        const chapterBySpecialty: Record<string, string[]> = {
+            cardiology: ["tuần hoàn"],
+            endocrine: ["nội tiết", "dinh dưỡng", "chuyển hóa"],
+            neurology: ["thần kinh"],
+            ent: ["tai và xương chũm"],
+            dermatology: ["da và mô dưới da"]
+        };
+
+        const matchedChapters = chapterBySpecialty[sessionProfile.specialty] ?? [];
+
         return diagnosisCatalog
+            .filter((item) => {
+                if (matchedChapters.length === 0) return true;
+                const chapter = (item.chapter ?? "").toLowerCase();
+                return matchedChapters.some((key) => chapter.includes(key));
+            })
             .filter((item) => item.code.toLowerCase().includes(keyword) || item.label.toLowerCase().includes(keyword))
             .slice(0, 12);
-    }, [diagnosisCatalog, debouncedSearchTerm]);
+    }, [diagnosisCatalog, debouncedSearchTerm, sessionProfile.specialty]);
 
     const toggleDiagnosis = useCallback((code: string) => {
         setSelectedCodes((current) => {
@@ -178,7 +198,8 @@ export function useDiagnosisWorkspace() {
 
                 const nextCatalog = payload.options.map((item: DiagnosisOption) => ({
                     code: String(item.code),
-                    label: String(item.label)
+                    label: String(item.label),
+                    chapter: typeof item.chapter === "string" ? item.chapter : ""
                 }));
 
                 setDiagnosisCatalog(nextCatalog);
@@ -229,6 +250,7 @@ export function useDiagnosisWorkspace() {
                             const found = diagnosisCatalog.find((item) => item.code === code);
                             return { icd: code, label: found?.label ?? code };
                         }),
+                        sessionProfile,
                         draftOrders: acceptedNames // Send accepted items to update score
                     })
                 });
@@ -251,7 +273,7 @@ export function useDiagnosisWorkspace() {
         }
 
         void loadRecommendations();
-    }, [catalogReady, diagnosisCatalog, selectedCodes, itemStatuses, addToast]);
+    }, [catalogReady, diagnosisCatalog, selectedCodes, itemStatuses, addToast, sessionProfile]);
 
     const searchCatalog = useCallback(async (query: string, type: "CLS" | "MEDICATION") => {
         if (!query || query.length < 2) return [];
@@ -293,5 +315,8 @@ export function useDiagnosisWorkspace() {
         submitFeedback,
         dismissToast,
         searchCatalog
+        ,
+        sessionProfile,
+        setSessionProfile
     };
 }

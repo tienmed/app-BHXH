@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
             const meta = await clinicalEngine.getMeta();
             return NextResponse.json(meta);
         } catch (localError) {
-            return NextResponse.json({ version: "2026.01", source: "local-csv" });
+            return NextResponse.json({ version: "2026.02", source: "local-csv" });
         }
     }
 }
