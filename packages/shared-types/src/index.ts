@@ -10,6 +10,7 @@ export type LoadingState = null | "refresh" | "template" | "inspect" | "preview"
 export interface DiagnosisOption {
   code: string;
   label: string;
+  chapter?: string;
 }
 
 /** Alias kept for backward-compat — `Diagnosis` and `DiagnosisOption` share the same shape. */

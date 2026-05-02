@@ -21,6 +21,10 @@ export default function DoctorWorkspace() {
   const symptom = useSymptomNarrowing();
   const [searchMode, setSearchMode] = useState<SearchMode>("symptom");
   const [protocolMeta, setProtocolMeta] = useState<{ version: string; source: string } | null>(null);
+  const [sessionStarted, setSessionStarted] = useState(false);
+  const [lastActivityAt, setLastActivityAt] = useState<number>(Date.now());
+  const [remainingMinutes, setRemainingMinutes] = useState(60);
+  const SESSION_TIMEOUT_MS = 60 * 60 * 1000;
 
   useEffect(() => {
     async function fetchMeta() {
@@ -35,6 +39,29 @@ export default function DoctorWorkspace() {
     void fetchMeta();
   }, []);
 
+  useEffect(() => {
+    if (!sessionStarted) return;
+
+    const markActivity = () => setLastActivityAt(Date.now());
+    const events: Array<keyof WindowEventMap> = ["click", "keydown", "mousemove", "scroll", "touchstart"];
+    events.forEach((event) => window.addEventListener(event, markActivity, { passive: true }));
+
+    const timer = window.setInterval(() => {
+      const now = Date.now();
+      const remaining = Math.max(0, Math.ceil((SESSION_TIMEOUT_MS - (now - lastActivityAt)) / 60000));
+      setRemainingMinutes(remaining);
+      if (now - lastActivityAt >= SESSION_TIMEOUT_MS) {
+        setSessionStarted(false);
+        workspace.clearAllDiagnoses();
+      }
+    }, 30_000);
+
+    return () => {
+      events.forEach((event) => window.removeEventListener(event, markActivity));
+      window.clearInterval(timer);
+    };
+  }, [sessionStarted, lastActivityAt, workspace]);
+
   // Bridge: when doctor selects an ICD from the narrowed list
   const handleSelectNarrowedIcd = useCallback(
     (code: string) => {
@@ -45,6 +72,73 @@ export default function DoctorWorkspace() {
 
   return (
     <main className="doctorWorkspace">
+      {!sessionStarted ? (
+        <section className="doctorShell" style={{ maxWidth: 980, margin: "40px auto" }}>
+          <header className="doctorHero fade-1">
+            <span className="eyebrow">Khởi tạo phiên làm việc</span>
+            <h1>Thiết lập hồ sơ phiên trước khi vào hệ thống gợi ý</h1>
+            <p className="heroDesc">
+              Phiên làm việc sẽ tự thoát nếu không có thao tác trong khoảng 1 giờ để bảo đảm an toàn dữ liệu.
+            </p>
+          </header>
+          <section className="doctorPanel fade-2">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 8 }}>
+              <label>
+                Chuyên khoa
+                <select
+                  value={workspace.sessionProfile.specialty}
+                  onChange={(e) => workspace.setSessionProfile((prev) => ({ ...prev, specialty: e.target.value }))}
+                >
+                  <option value="general">Tổng quát</option>
+                  <option value="cardiology">Tim mạch</option>
+                  <option value="endocrine">Nội tiết</option>
+                  <option value="neurology">Thần kinh</option>
+                  <option value="ent">Tai Mũi Họng</option>
+                  <option value="dermatology">Da liễu</option>
+                </select>
+              </label>
+              <label>
+                Kinh nghiệm
+                <select
+                  value={workspace.sessionProfile.experience}
+                  onChange={(e) => workspace.setSessionProfile((prev) => ({ ...prev, experience: e.target.value }))}
+                >
+                  <option value="unspecified">Chưa chọn</option>
+                  <option value="junior">&lt; 2 năm</option>
+                  <option value="mid">2-5 năm</option>
+                  <option value="senior">5-10 năm</option>
+                  <option value="expert">&gt; 10 năm</option>
+                </select>
+              </label>
+              <label>
+                Mức hỗ trợ
+                <select
+                  value={workspace.sessionProfile.assistMode}
+                  onChange={(e) => workspace.setSessionProfile((prev) => ({ ...prev, assistMode: e.target.value }))}
+                >
+                  <option value="full">Gợi ý đầy đủ</option>
+                  <option value="concise">Gợi ý ngắn gọn</option>
+                  <option value="risk-only">Ưu tiên cảnh báo nguy cơ cao</option>
+                </select>
+              </label>
+            </div>
+            <div style={{ marginTop: 14 }}>
+              <button
+                className="modeBtn modeBtn-active"
+                type="button"
+                onClick={() => {
+                  setLastActivityAt(Date.now());
+                  setRemainingMinutes(60);
+                  setSessionStarted(true);
+                }}
+              >
+                Bắt đầu phiên làm việc
+              </button>
+            </div>
+          </section>
+        </section>
+      ) : (
+      <>
       <header className="appHeader fade-1">
         <div className="logoContainer">
           <Image src="/logo.png" alt="Logo PNT" width={70} height={70} priority />
@@ -56,6 +150,21 @@ export default function DoctorWorkspace() {
       </header>
 
       <section className="doctorShell">
+        <div className="doctorPanel" style={{ marginBottom: 12 }}>
+          <strong>Phiên ẩn danh đang hoạt động.</strong>{" "}
+          <span>Hết hạn sau khoảng {remainingMinutes} phút nếu không thao tác.</span>
+          <button
+            type="button"
+            className="clearAllBtn"
+            style={{ marginLeft: 12 }}
+            onClick={() => {
+              setSessionStarted(false);
+              workspace.clearAllDiagnoses();
+            }}
+          >
+            Kết thúc phiên
+          </button>
+        </div>
         <header className="doctorHero fade-1">
           <span className="eyebrow">Hỗ trợ ra quyết định lâm sàng</span>
           <h1>Chẩn đoán bộ Triệu chứng, ICD-10 & Gợi ý xử trí</h1>
@@ -84,6 +193,52 @@ export default function DoctorWorkspace() {
 
 
         <IcdCoveragePanel />
+        <section className="doctorPanel fade-2" style={{ marginTop: 12 }}>
+          <div className="doctorPanelHeader">
+            <h2>Hồ sơ phiên làm việc (ẩn danh)</h2>
+            <span>Tối ưu gợi ý theo nhóm bác sĩ</span>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 8 }}>
+            <label>
+              Chuyên khoa
+              <select
+                value={workspace.sessionProfile.specialty}
+                onChange={(e) => workspace.setSessionProfile((prev) => ({ ...prev, specialty: e.target.value }))}
+              >
+                <option value="general">Tổng quát</option>
+                <option value="cardiology">Tim mạch</option>
+                <option value="endocrine">Nội tiết</option>
+                <option value="neurology">Thần kinh</option>
+                <option value="ent">Tai Mũi Họng</option>
+                <option value="dermatology">Da liễu</option>
+              </select>
+            </label>
+            <label>
+              Kinh nghiệm
+              <select
+                value={workspace.sessionProfile.experience}
+                onChange={(e) => workspace.setSessionProfile((prev) => ({ ...prev, experience: e.target.value }))}
+              >
+                <option value="unspecified">Chưa chọn</option>
+                <option value="junior">&lt; 2 năm</option>
+                <option value="mid">2-5 năm</option>
+                <option value="senior">5-10 năm</option>
+                <option value="expert">&gt; 10 năm</option>
+              </select>
+            </label>
+            <label>
+              Mức hỗ trợ
+              <select
+                value={workspace.sessionProfile.assistMode}
+                onChange={(e) => workspace.setSessionProfile((prev) => ({ ...prev, assistMode: e.target.value }))}
+              >
+                <option value="full">Gợi ý đầy đủ</option>
+                <option value="concise">Gợi ý ngắn gọn</option>
+                <option value="risk-only">Ưu tiên cảnh báo nguy cơ cao</option>
+              </select>
+            </label>
+          </div>
+        </section>
         <section className="doctorPanel fade-2">
           {/* Mode Toggle */}
           <div className="modeToggle">
@@ -244,6 +399,8 @@ export default function DoctorWorkspace() {
         <p>Phòng Kế hoạch Nghiệp vụ</p>
         <p>Bản quyền © 2026 — Phiên bản <strong>phác đồ {protocolMeta?.version || "v0.0.0"}</strong> ({protocolMeta?.source === "local-csv" ? "Dữ liệu CSV" : "Dữ liệu Hệ thống"})</p>
       </footer>
+      </>
+      )}
     </main>
   );
 }

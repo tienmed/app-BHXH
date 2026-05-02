@@ -303,3 +303,161 @@ D32.0,U màng não lành tính,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2
 D33.3,U lành tính dây thần kinh sọ,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
 D34,U lành tính tuyến giáp,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
 D35.2,U lành tính tuyến yên,U tân sinh,TRUE,2026-04-30,2099-12-31,MOH-ONCO-2026
+I11.0,Bệnh tim do tăng huyết áp có suy tim sung huyết,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I12.0,Bệnh thận do tăng huyết áp có suy thận,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I13.2,Bệnh tim và thận do tăng huyết áp có suy tim và suy thận,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I20.0,Đau thắt ngực không ổn định,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I20.1,Đau thắt ngực có co thắt mạch vành,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I20.8,Các thể đau thắt ngực khác,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I25.2,Nhồi máu cơ tim cũ,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I25.5,Bệnh cơ tim thiếu máu cục bộ,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I47.1,Nhịp nhanh trên thất,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I47.2,Nhịp nhanh thất,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I48.0,Rung nhĩ kịch phát,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I48.1,Rung nhĩ dai dẳng,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I48.2,Rung nhĩ mạn tính,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I49.0,Rung thất và cuồng thất,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I49.1,Ngoại tâm thu nhĩ,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I49.3,Ngoại tâm thu thất,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I50.0,Suy tim sung huyết,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I50.1,Suy thất trái,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+I63.9,Nhồi máu não không xác định,Bệnh hệ tuần hoàn,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E10.9,Đái tháo đường typ 1 không biến chứng,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E11.0,Đái tháo đường typ 2 có hôn mê,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E11.1,Đái tháo đường typ 2 có nhiễm toan ceton,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E11.3,Đái tháo đường typ 2 có biến chứng mắt,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E11.6,Đái tháo đường typ 2 có biến chứng khác xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E11.8,Đái tháo đường typ 2 có biến chứng không xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E14.9,Đái tháo đường không xác định không biến chứng,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E78.0,Tăng cholesterol máu đơn thuần,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E78.1,Tăng triglycerid máu đơn thuần,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E78.4,Rối loạn lipoprotein máu khác,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E66.0,Béo phì do thừa năng lượng,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E66.1,Béo phì do thuốc,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E02,Suy giáp dưới lâm sàng do thiếu iod,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E05.0,Nhiễm độc giáp có bướu giáp lan tỏa,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E79.1,Hội chứng Lesch-Nyhan,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E88.0,Rối loạn chuyển hóa protein huyết tương,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E88.1,Loạn dưỡng mỡ,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E88.8,Rối loạn chuyển hóa khác xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+E88.9,Rối loạn chuyển hóa không xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-IM-2026
+G00.9,"Viêm màng não do vi khuẩn, không xác định",Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G03.9,"Viêm màng não, không xác định",Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G04.9,"Viêm não, tủy sống và não tủy, không xác định",Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G06.2,Áp xe ngoài màng cứng và dưới màng cứng nội sọ,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G08,Viêm tĩnh mạch nội sọ và trong ống sống,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G09,Di chứng bệnh viêm hệ thần kinh trung ương,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G12.2,Bệnh neuron vận động,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G20.1,Bệnh Parkinson thứ phát,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G23.1,Liệt trên nhân tiến triển,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G24.3,Co cứng cổ,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G25.0,Run vô căn,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G31.8,Các bệnh thoái hóa hệ thần kinh khác xác định,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G35,Bệnh xơ cứng rải rác,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G40.3,Động kinh co cứng-co giật toàn thể tự phát,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G40.4,Các hội chứng động kinh toàn thể và cục bộ khác,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G41.9,"Trạng thái động kinh, không xác định",Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G43.1,Đau nửa đầu có aura,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G43.0,Đau nửa đầu không có aura,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G44.0,Hội chứng đau đầu cụm,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G45.1,Hội chứng động mạch cảnh,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G45.4,Mất trí nhớ toàn bộ thoáng qua,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G46.3,Hội chứng thân não trong bệnh mạch máu não,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G47.1,Rối loạn buồn ngủ quá mức,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G47.4,Chứng ngủ rũ và mất trương lực cơ,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G50.0,Đau dây thần kinh sinh ba,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G54.0,Rối loạn đám rối cánh tay,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G57.1,Đau thần kinh đùi ngoài,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G61.0,Hội chứng Guillain-Barré,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G71.0,Loạn dưỡng cơ,Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+G93.4,"Bệnh não, không xác định",Bệnh hệ thần kinh,TRUE,2026-05-02,2099-12-31,MOH-NEURO-2026
+E00.0,Hội chứng thiếu iod bẩm sinh thể thần kinh,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E01.0,Bướu giáp lan tỏa do thiếu iod,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E01.1,Bướu giáp đa nhân do thiếu iod,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E03.8,Suy giáp khác xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E04.0,Bướu giáp không nhiễm độc lan tỏa,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E06.3,Viêm tuyến giáp tự miễn,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E06.9,Viêm tuyến giáp không xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E10.8,Đái tháo đường typ 1 có biến chứng khác,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E11.7,Đái tháo đường typ 2 có đa biến chứng,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E16.1,Tăng tiết insulin khác,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E27.1,Suy vỏ thượng thận nguyên phát,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E28.2,Hội chứng buồng trứng đa nang,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E34.9,Rối loạn nội tiết không xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E44.1,Suy dinh dưỡng protein-năng lượng mức độ nhẹ,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E46,Suy dinh dưỡng protein-năng lượng không xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E50.9,Thiếu vitamin A không xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E51.9,Thiếu thiamin không xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E52,Thiếu niacin,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E55.9,Thiếu vitamin D không xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E56.9,Thiếu vitamin không xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E58,Thiếu calci do chế độ ăn,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E60,Thiếu kẽm do chế độ ăn,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E64.9,Di chứng suy dinh dưỡng không xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E67.3,Thừa vitamin D,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E73.9,Không dung nạp lactose không xác định,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E74.3,Rối loạn chuyển hóa fructose,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E78.3,Tăng chylomicron máu,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E83.5,Rối loạn chuyển hóa calci,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E89.0,Suy giáp sau thủ thuật,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+E90,Rối loạn dinh dưỡng và chuyển hóa trong bệnh nơi khác phân loại,Bệnh nội tiết dinh dưỡng và chuyển hóa,TRUE,2026-05-02,2099-12-31,MOH-ENDO-2026
+H60.0,Viêm tai ngoài áp xe,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H60.3,Viêm tai ngoài nhiễm khuẩn khác,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H60.5,Viêm tai ngoài cấp không nhiễm khuẩn,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H60.8,Viêm tai ngoài khác,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H61.0,Viêm sụn vành tai,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H61.2,Nút ráy tai,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H61.8,Các rối loạn khác của tai ngoài,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H61.9,Rối loạn tai ngoài không xác định,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H62.4,Viêm tai ngoài trong bệnh nơi khác phân loại,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H65.0,Viêm tai giữa thanh dịch cấp,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H65.1,Viêm tai giữa thanh dịch mạn,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H65.4,Viêm tai giữa không mủ khác,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H66.1,Viêm tai giữa mủ mạn tính ống nhĩ,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H66.2,Viêm tai giữa mủ mạn có nguồn gốc niêm mạc,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H66.3,Viêm tai giữa mủ mạn khác,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H67.9,"Viêm tai giữa trong bệnh nơi khác phân loại, không xác định",Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H68.0,Viêm vòi nhĩ,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H69.8,Rối loạn khác của vòi nhĩ,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H69.9,Rối loạn vòi nhĩ không xác định,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H70.0,Viêm xương chũm cấp,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H70.1,Viêm xương chũm mạn,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H71,Cholesteatoma tai giữa,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H72.9,Thủng màng nhĩ không xác định,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H73.9,Rối loạn khác của màng nhĩ không xác định,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H74.1,Dính tai giữa,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H80.9,Xơ cứng tai không xác định,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H81.0,Bệnh Ménière,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H83.0,Viêm mê nhĩ,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H90.3,Điếc tiếp nhận thần kinh hai bên,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+H93.1,Ù tai,Bệnh tai và xương chũm,TRUE,2026-05-02,2099-12-31,MOH-ENT-2026
+L00,Hội chứng da phỏng do tụ cầu,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L01.0,Chốc lở,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L02.0,"Áp xe da, nhọt và nhọt cụm vùng mặt",Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L02.2,"Áp xe da, nhọt và nhọt cụm vùng thân mình",Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L02.4,"Áp xe da, nhọt và nhọt cụm chi",Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L03.0,Viêm mô tế bào ngón tay/ngón chân,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L03.1,Viêm mô tế bào chi khác,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L03.9,Viêm mô tế bào không xác định,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L04.9,"Viêm hạch bạch huyết cấp, không xác định",Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L05.9,Nang lông cùng cụt không áp xe,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L08.0,Nhiễm trùng da mủ,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L08.9,"Nhiễm trùng da và mô dưới da tại chỗ, không xác định",Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L10.9,"Pemphigus, không xác định",Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L12.0,Pemphigoid bọng nước,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L13.0,Viêm da dạng herpes,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L24.9,"Viêm da tiếp xúc kích ứng, không xác định",Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L25.9,Viêm da tiếp xúc không xác định nguyên nhân,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L27.0,Phát ban da do thuốc và dược phẩm,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L28.0,Lichen simplex chronicus,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L30.3,Viêm da nhiễm khuẩn,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L50.0,Mày đay dị ứng,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L63.9,"Rụng tóc từng vùng, không xác định",Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L64.9,"Rụng tóc kiểu nam/nữ, không xác định",Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L65.9,"Rụng tóc không sẹo, không xác định",Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L70.0,Trứng cá thông thường,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L71.9,"Trứng cá đỏ, không xác định",Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L72.0,Nang biểu bì,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L73.2,Viêm tuyến mồ hôi mủ,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L81.1,Nám da,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026
+L84,Chai chân và vết chai,Bệnh da và mô dưới da,TRUE,2026-05-02,2099-12-31,MOH-DERM-2026

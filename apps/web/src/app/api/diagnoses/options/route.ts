@@ -13,6 +13,7 @@ export async function GET() {
       .map((entry) => ({
         code: entry.code,
         label: entry.name,
+        chapter: entry.chapter,
       }))
       .sort((a, b) => a.code.localeCompare(b.code));
 
