@@ -38,6 +38,9 @@ export const FeedbackModal = memo(function FeedbackModal({
                         <option value="not_appropriate">Không phù hợp</option>
                         <option value="missing">Thiếu gợi ý</option>
                         <option value="need_adjustment">Cần điều chỉnh</option>
+                        <option value="risk_bhyt">Rủi ro BHYT</option>
+                        <option value="missing_evidence">Thiếu bằng chứng/giải trình</option>
+                        <option value="cost_concern">Lo ngại chi phí</option>
                         <option value="general">Ý kiến chung</option>
                     </select>
                 </label>

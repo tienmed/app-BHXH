@@ -9,6 +9,11 @@ interface RecommendationPreviewInput {
   encounterCode?: string;
   diagnoses?: Array<{ icd: string; label?: string }>;
   draftOrders?: string[];
+  sessionProfile?: {
+    specialty?: string;
+    experience?: string;
+    assistMode?: "full" | "concise" | "risk-only";
+  };
 }
 
 @Injectable()
@@ -150,18 +155,25 @@ export class RecommendationsService implements OnModuleInit {
     this.logger.log(`Running Engine for ${icdCodes.join(",")} with ${input.draftOrders?.length || 0} selections.`);
     const output = await runDecisionEngine(engineInput);
 
+    const assistMode = input.sessionProfile?.assistMode ?? "full";
+    const trimByAssistMode = <T>(items: T[]): T[] => {
+      if (assistMode === "concise") return items.slice(0, 3);
+      return items;
+    };
+
     const result = {
       source: "local-csv",
       timestamp: new Date().toISOString(),
       diagnoses,
+      sessionProfile: input.sessionProfile ?? null,
       recommendations: {
-        investigations: output.investigations.map(item => ({ ...item, code: item.code || item.name })),
-        medicationGroups: output.medicationGroups.map(item => ({ ...item, code: item.code || item.name }))
+        investigations: trimByAssistMode(output.investigations.map(item => ({ ...item, code: item.code || item.name }))),
+        medicationGroups: trimByAssistMode(output.medicationGroups.map(item => ({ ...item, code: item.code || item.name })))
       },
       reimbursementGuard: {
         riskScore: output.riskScore,
         suggestedJustification: output.suggestedJustification,
-        alerts: output.alerts
+        alerts: assistMode === "risk-only" ? output.alerts : trimByAssistMode(output.alerts)
       }
     };
 

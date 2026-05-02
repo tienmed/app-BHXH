@@ -17,6 +17,11 @@ function useDebounce<T>(value: T, delay: number): T {
 }
 
 export function useDiagnosisWorkspace() {
+    const [sessionProfile, setSessionProfile] = useState({
+        specialty: "general",
+        experience: "unspecified",
+        assistMode: "full"
+    });
     const [diagnosisCatalog, setDiagnosisCatalog] = useState<DiagnosisOption[]>(defaultDiagnosisOptions);
     const [selectedCodes, setSelectedCodes] = useState<string[]>([]);
     const [searchTerm, setSearchTerm] = useState("");
@@ -35,6 +40,7 @@ export function useDiagnosisWorkspace() {
         note: ""
     });
     const [feedbackStatus, setFeedbackStatus] = useState("");
+    const [feedbackMetrics, setFeedbackMetrics] = useState({ structured: 0, general: 0 });
 
     // Toast state
     const [toasts, setToasts] = useState<Array<{ id: number; message: string; type: "success" | "error" | "info" }>>([]);
@@ -64,10 +70,25 @@ export function useDiagnosisWorkspace() {
         const keyword = debouncedSearchTerm.trim().toLowerCase();
         if (!keyword) return [];
 
+        const chapterBySpecialty: Record<string, string[]> = {
+            cardiology: ["tuần hoàn"],
+            endocrine: ["nội tiết", "dinh dưỡng", "chuyển hóa"],
+            neurology: ["thần kinh"],
+            ent: ["tai và xương chũm"],
+            dermatology: ["da và mô dưới da"]
+        };
+
+        const matchedChapters = chapterBySpecialty[sessionProfile.specialty] ?? [];
+
         return diagnosisCatalog
+            .filter((item) => {
+                if (matchedChapters.length === 0) return true;
+                const chapter = (item.chapter ?? "").toLowerCase();
+                return matchedChapters.some((key) => chapter.includes(key));
+            })
             .filter((item) => item.code.toLowerCase().includes(keyword) || item.label.toLowerCase().includes(keyword))
             .slice(0, 12);
-    }, [diagnosisCatalog, debouncedSearchTerm]);
+    }, [diagnosisCatalog, debouncedSearchTerm, sessionProfile.specialty]);
 
     const toggleDiagnosis = useCallback((code: string) => {
         setSelectedCodes((current) => {
@@ -139,6 +160,11 @@ export function useDiagnosisWorkspace() {
     }, []);
 
     const submitFeedback = useCallback(async () => {
+        if (feedbackPayload.feedbackType === "general") {
+            setFeedbackStatus("Vui lòng chọn nhóm lý do phản hồi trước khi gửi.");
+            return;
+        }
+
         if (!feedbackPayload.note.trim()) {
             setFeedbackStatus("Vui lòng nhập nội dung phản hồi.");
             return;
@@ -158,12 +184,55 @@ export function useDiagnosisWorkspace() {
                 throw new Error(data?.message ?? `HTTP ${response.status}`);
             }
 
+            const nextMetrics = {
+                structured: feedbackMetrics.structured + 1,
+                general: feedbackMetrics.general
+            };
+            setFeedbackMetrics(nextMetrics);
+            window.localStorage.setItem("bhxh-feedback-metrics", JSON.stringify(nextMetrics));
+
             addToast("Đã gửi phản hồi thành công!", "success");
             setTimeout(() => setFeedbackOpen(false), 1000);
         } catch (error) {
             setFeedbackStatus(`Lỗi: ${(error as Error).message}`);
         }
-    }, [feedbackPayload, addToast]);
+    }, [feedbackPayload, addToast, feedbackMetrics]);
+
+    // Load diagnosis catalog on mount
+    useEffect(() => {
+        try {
+            const raw = window.localStorage.getItem("bhxh-session-profile");
+            if (!raw) return;
+            const parsed = JSON.parse(raw);
+            if (!parsed || typeof parsed !== "object") return;
+            setSessionProfile((current) => ({
+                specialty: typeof parsed.specialty === "string" ? parsed.specialty : current.specialty,
+                experience: typeof parsed.experience === "string" ? parsed.experience : current.experience,
+                assistMode: typeof parsed.assistMode === "string" ? parsed.assistMode : current.assistMode
+            }));
+        } catch {
+            // ignore malformed local profile
+        }
+    }, []);
+
+    useEffect(() => {
+        try {
+            const raw = window.localStorage.getItem("bhxh-feedback-metrics");
+            if (!raw) return;
+            const parsed = JSON.parse(raw);
+            if (!parsed || typeof parsed !== "object") return;
+            setFeedbackMetrics({
+                structured: Number(parsed.structured || 0),
+                general: Number(parsed.general || 0)
+            });
+        } catch {
+            // ignore bad metrics cache
+        }
+    }, []);
+
+    useEffect(() => {
+        window.localStorage.setItem("bhxh-session-profile", JSON.stringify(sessionProfile));
+    }, [sessionProfile]);
 
     // Load diagnosis catalog on mount
     useEffect(() => {
@@ -178,7 +247,8 @@ export function useDiagnosisWorkspace() {
 
                 const nextCatalog = payload.options.map((item: DiagnosisOption) => ({
                     code: String(item.code),
-                    label: String(item.label)
+                    label: String(item.label),
+                    chapter: typeof item.chapter === "string" ? item.chapter : ""
                 }));
 
                 setDiagnosisCatalog(nextCatalog);
@@ -229,6 +299,7 @@ export function useDiagnosisWorkspace() {
                             const found = diagnosisCatalog.find((item) => item.code === code);
                             return { icd: code, label: found?.label ?? code };
                         }),
+                        sessionProfile,
                         draftOrders: acceptedNames // Send accepted items to update score
                     })
                 });
@@ -251,7 +322,7 @@ export function useDiagnosisWorkspace() {
         }
 
         void loadRecommendations();
-    }, [catalogReady, diagnosisCatalog, selectedCodes, itemStatuses, addToast]);
+    }, [catalogReady, diagnosisCatalog, selectedCodes, itemStatuses, addToast, sessionProfile]);
 
     const searchCatalog = useCallback(async (query: string, type: "CLS" | "MEDICATION") => {
         if (!query || query.length < 2) return [];
@@ -280,6 +351,7 @@ export function useDiagnosisWorkspace() {
         costSegments,
         filteredOptions,
         toasts,
+        feedbackMetrics,
 
         // Actions
         setSearchTerm,
@@ -293,5 +365,8 @@ export function useDiagnosisWorkspace() {
         submitFeedback,
         dismissToast,
         searchCatalog
+        ,
+        sessionProfile,
+        setSessionProfile
     };
 }
