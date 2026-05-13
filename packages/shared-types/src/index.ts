@@ -57,6 +57,8 @@ export interface RecommendationState {
   alerts: AlertItem[];
   riskScore?: number;
   suggestedJustification?: string;
+  aiInsights?: string;
+  interactionInsights?: string;
 }
 
 export interface CostSegment {

@@ -94,7 +94,9 @@ export function normalizeRecommendationPayload(payload: unknown): Recommendation
             : undefined,
         alerts,
         riskScore: typeof rawGuard?.riskScore === "number" ? rawGuard.riskScore : undefined,
-        suggestedJustification: typeof rawGuard?.suggestedJustification === "string" ? rawGuard.suggestedJustification : undefined
+        suggestedJustification: typeof rawGuard?.suggestedJustification === "string" ? rawGuard.suggestedJustification : undefined,
+        aiInsights: typeof raw?.aiInsights === "string" ? raw.aiInsights : undefined,
+        interactionInsights: typeof raw?.interactionInsights === "string" ? raw.interactionInsights : undefined
     };
 }
 

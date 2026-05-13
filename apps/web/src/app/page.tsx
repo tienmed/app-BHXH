@@ -13,6 +13,8 @@ import { FeedbackModal } from "./components/FeedbackModal";
 import { ToastContainer } from "./components/ToastNotification";
 import { EmptyState } from "./components/EmptyState";
 import { IcdCoveragePanel } from "./components/IcdCoveragePanel";
+import { AiChat } from "./components/AiChat";
+import { PatientGuideModal } from "./components/PatientGuideModal";
 
 type SearchMode = "symptom" | "icd";
 
@@ -35,6 +37,7 @@ export default function DoctorWorkspace() {
     types: [],
     recommendedActions: []
   });
+  const [showPatientGuide, setShowPatientGuide] = useState(false);
   const SESSION_TIMEOUT_MS = 60 * 60 * 1000;
 
   useEffect(() => {
@@ -483,10 +486,30 @@ export default function DoctorWorkspace() {
               reimbursementNote={workspace.state.reimbursementNote}
               riskScore={workspace.state.riskScore}
               suggestedJustification={workspace.state.suggestedJustification}
+              aiInsights={workspace.state.aiInsights}
+              interactionInsights={workspace.state.interactionInsights}
             />
+
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "20px", marginBottom: "40px" }}>
+              <button 
+                className="modeBtn modeBtn-active"
+                onClick={() => setShowPatientGuide(true)}
+                style={{ padding: "12px 32px", fontSize: "1rem" }}
+              >
+                ✨ Tạo hướng dẫn cho Bệnh nhân
+              </button>
+            </div>
           </>
         )}
       </section>
+
+      <AiChat context={workspace.state} />
+      
+      <PatientGuideModal 
+        open={showPatientGuide}
+        onClose={() => setShowPatientGuide(false)}
+        context={workspace.state}
+      />
 
       <FeedbackModal
         open={workspace.feedbackOpen}

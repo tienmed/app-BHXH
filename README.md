@@ -5,6 +5,9 @@ App BHXH được định nghĩa là một **trợ lý hỗ trợ bác sĩ ra qu
 
 Mục tiêu cốt lõi:
 - Giúp bác sĩ ra quyết định nhanh hơn, rõ ràng hơn, an toàn hơn.
+- Hệ thống trợ lý lâm sàng thông minh, hỗ trợ bác sĩ đa khoa tối ưu hóa chỉ định và phòng ngừa rủi ro xuất toán BHYT.
+
+👉 **[Xem Hướng dẫn nhanh (Quick Guide) dành cho Bác sĩ tại đây](./QUICK_GUIDE.md)**
 - Giảm sai sót do quá tải thông tin trong ca khám ngoại trú.
 - Giảm rủi ro xuất toán BHYT ngay trong lúc chỉ định.
 - Duy trì cân bằng giữa hiệu quả lâm sàng, chi phí hợp lý, và tính giải trình.

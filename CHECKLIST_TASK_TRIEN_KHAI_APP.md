@@ -6,13 +6,13 @@
 - Product & Governance: **2/4**
 - Session ẩn danh & cá nhân hóa theo nhóm bác sĩ: **7/7**
 - Tối ưu assist mode: **4/6**
-- Năng lực ca đa ICD: **0/5**
+- Năng lực ca đa ICD: **3/5**
 - Chuẩn hóa feedback để hệ thống học: **4/4**
 - Dữ liệu & độ phủ ICD: **2/5**
 - Tích hợp hệ thống: **0/4**
 - KPI mục tiêu phát hành: **0/4**
 
-Tổng cộng: **19/39 hạng mục hoàn thành (48.7%)**.
+Tổng cộng: **22/39 hạng mục hoàn thành (56.4%)**.
 
 ## 0) Product & Governance
 - [x] Viết lại định nghĩa sản phẩm theo hướng lấy bác sĩ làm trung tâm.
@@ -38,10 +38,10 @@ Tổng cộng: **19/39 hạng mục hoàn thành (48.7%)**.
 - [ ] A/B test ngưỡng rút gọn để giảm nhiễu nhưng không bỏ sót.
 
 ## 3) Mở rộng năng lực cho ca đa ICD (>1 ICD)
-- [ ] Xây dựng rule “giao nhau” giữa các ICD đồng mắc.
+- [x] Xây dựng rule “giao nhau” giữa các ICD đồng mắc (Priority scoring).
 - [ ] Xây dựng rule phát hiện xung đột CLS/thuốc theo đa ICD.
-- [ ] Tạo điểm ưu tiên cho từng gợi ý trong ca đa bệnh.
-- [ ] Hiển thị rõ “vì sao gợi ý” ở chế độ đa ICD (explainability).
+- [x] Tạo điểm ưu tiên cho từng gợi ý trong ca đa bệnh (Priority scoring).
+- [x] Hiển thị rõ “vì sao gợi ý” ở chế độ đa ICD (explainability).
 - [ ] Đánh giá riêng KPI cho ca đa ICD (acceptance, override, warning precision).
 
 ## 4) Chuẩn hóa feedback để hệ thống học
@@ -122,6 +122,7 @@ Tổng cộng: **19/39 hạng mục hoàn thành (48.7%)**.
 - [ ] Đánh giá lại UX bác sĩ sau khi đồng bộ theo dõi từ web admin (mục tiêu: không tăng >10% thời gian thao tác).
 
 ## Nhật ký cập nhật checklist
+- 2026-05-13: Hoàn tất logic Multi-ICD: Priority scoring (giao nhau), aggregation note và hiển thị hỗ trợ đa bệnh trong justification.
 - 2026-05-02: Tiếp tục mục 5: hoàn tất chuẩn hóa mô tả ICD, danh sách ưu tiên làm sạch, cột review_status và mốc triển khai tuần 1.
 - 2026-05-02: Hoàn tất 3 hạng mục nền tảng mục 5: rà soát mô tả ICD, kế hoạch mở rộng chapter và theo dõi ICD coverage score theo tháng.
 - 2026-05-02: Tiếp tục ưu tiên mục 5 (Dữ liệu & độ phủ ICD) với kế hoạch 2 tuần, KPI dữ liệu và quy trình kiểm duyệt 2 lớp.

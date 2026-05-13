@@ -6,6 +6,8 @@ export interface RecommendationItem {
   name: string;
   note?: string;
   rationale?: string;
+  priorityScore?: number; // 0-100 (higher means recommended by more ICDs)
+  supportingIcds?: string[]; // ICD codes that recommended this item
 }
 
 export interface ClaimAlert {
@@ -49,15 +51,51 @@ export async function runDecisionEngine(input: EngineInput): Promise<EngineOutpu
   const medicationMap = new Map<string, RecommendationItem>();
   const alerts = [...input.rules.claimRisk];
 
-  // 1. Duyệt qua các giao thức phù hợp để lấy gợi ý
+  // 1. Duyệt qua các giao thức phù hợp để lấy gợi ý và tính điểm ưu tiên
+  const icdCount = input.diagnoses.length;
+  
   for (const protocol of input.protocols) {
+    // Determine which ICDs this protocol is associated with
+    // (In current service, we pass one auto-generated protocol with all items, 
+    // but we can trace them if the input is structured differently in the future)
     for (const item of protocol.items) {
-      if (item.type === "CLS") {
-        investigationMap.set(item.code, item);
-      } else if (item.type === "MEDICATION") {
-        medicationMap.set(item.code, item);
+      const targetMap = item.type === "CLS" ? investigationMap : medicationMap;
+      const existing = targetMap.get(item.code);
+      
+      if (existing) {
+        // Aggregate notes if they are different
+        if (item.note && existing.note && !existing.note.includes(item.note)) {
+          existing.note += ` | ${item.note}`;
+        } else if (item.note && !existing.note) {
+          existing.note = item.note;
+        }
+        
+        // Add supporting ICD to list if provided
+        if (protocol.code !== "AUTO_GENERATED") {
+          existing.supportingIcds = Array.from(new Set([...(existing.supportingIcds || []), protocol.code]));
+        }
+      } else {
+        targetMap.set(item.code, {
+          ...item,
+          supportingIcds: protocol.code !== "AUTO_GENERATED" ? [protocol.code] : []
+        });
       }
     }
+  }
+
+  // Calculate priority score based on frequency
+  // If an item is in X% of diagnosed protocols, it gets a higher score
+  const calculateScore = (item: RecommendationItem) => {
+    if (!item.supportingIcds || item.supportingIcds.length === 0) return 50; // Neutral
+    const frequency = item.supportingIcds.length / icdCount;
+    return Math.min(Math.round(frequency * 100), 100);
+  };
+
+  for (const item of investigationMap.values()) {
+    item.priorityScore = calculateScore(item);
+  }
+  for (const item of medicationMap.values()) {
+    item.priorityScore = calculateScore(item);
   }
 
   // 2. Chạy Dynamic Rule Engine
@@ -160,13 +198,16 @@ export async function runDecisionEngine(input: EngineInput): Promise<EngineOutpu
   itemsToJustify.forEach((item: any) => {
     if (item?.note) {
       const formattedNote = formatNoteHierarchical(item.note);
-      justifications.push(`- ${item.name}:\n    ${formattedNote}`);
+      const supportInfo = item.supportingIcds && item.supportingIcds.length > 1
+        ? ` (Hỗ trợ đa bệnh: ${item.supportingIcds.join(", ")})`
+        : "";
+      justifications.push(`- ${item.name}${supportInfo}:\n    ${formattedNote}`);
     }
   });
 
   const suggestedJustification = justifications.length > 0
-    ? "Căn cứ y học:\n" + justifications.join("\n\n")
-    : "Chỉ định theo phác đồ nội khoa ngoại trú.";
+    ? "Căn cứ y học tối ưu theo đa chẩn đoán:\n" + justifications.join("\n\n")
+    : "Chỉ định theo phác đồ nội khoa ngoại trú phối hợp.";
 
   return {
     investigations: Array.from(investigationMap.values()),

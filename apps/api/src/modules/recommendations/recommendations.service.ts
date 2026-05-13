@@ -4,6 +4,7 @@ import * as path from "path";
 import { parse } from "csv-parse/sync";
 import { runDecisionEngine, EngineInput, RecommendationItem } from "@app-bhxh/decision-engine";
 import { buildClaimRiskRulesWithStats } from "@app-bhxh/domain";
+import { AiService } from "../ai/ai.service";
 
 interface RecommendationPreviewInput {
   encounterCode?: string;
@@ -21,6 +22,8 @@ export class RecommendationsService implements OnModuleInit {
   private readonly logger = new Logger(RecommendationsService.name);
   private readonly seedDir = path.resolve(__dirname, "../../../../../seeds/google-sheets-pilot");
   private cache: any = null;
+
+  constructor(private readonly aiService: AiService) {}
 
   async onModuleInit() {
     this.logger.log("Initializing RecommendationsService (CSV Mode)...");
@@ -72,42 +75,52 @@ export class RecommendationsService implements OnModuleInit {
     const diagnoses = input.diagnoses || [];
     const icdCodes = diagnoses.map(d => d.icd);
 
-    // 1. Build Protocols (based on ICD mapping)
-    const protocolItems: RecommendationItem[] = [];
+    // 1. Build Protocols (based on ICD mapping) - Grouped by ICD for scoring
+    const protocols: Array<{ code: string; items: RecommendationItem[] }> = diagnoses.map(d => ({
+      code: d.icd,
+      items: []
+    }));
 
     // CLS Mappings
     const relatedCls = this.cache.mappingsCls.filter((m: any) => icdCodes.includes(m.icd_code));
     relatedCls.forEach((m: any) => {
       const catalogItem = this.cache.clss.find((c: any) => c.cls_code === m.cls_code);
-      protocolItems.push({
-        type: "CLS",
-        code: m.cls_code,
-        name: catalogItem?.cls_name || m.cls_code,
-        note: m.note
-      });
+      const protocol = protocols.find(p => p.code === m.icd_code);
+      if (protocol) {
+        protocol.items.push({
+          type: "CLS",
+          code: m.cls_code,
+          name: catalogItem?.cls_name || m.cls_code,
+          note: m.note
+        });
+      }
     });
 
     // Med Mappings
     const relatedMed = this.cache.mappingsMed.filter((m: any) => icdCodes.includes(m.icd_code));
     relatedMed.forEach((m: any) => {
       const catalogItem = this.cache.medications.find((c: any) => c.drug_code === m.drug_code);
-      protocolItems.push({
-        type: "MEDICATION",
-        code: m.drug_code,
-        name: catalogItem?.drug_name || m.drug_code,
-        note: m.note
-      });
+      const protocol = protocols.find(p => p.code === m.icd_code);
+      if (protocol) {
+        protocol.items.push({
+          type: "MEDICATION",
+          code: m.drug_code,
+          name: catalogItem?.drug_name || m.drug_code,
+          note: m.note
+        });
+      }
     });
 
     // Handle additional draftOrders that are not in the recommended list
+    const draftProtocol: { code: string; items: RecommendationItem[] } = { code: "DRAFT_EXTRA", items: [] };
     if (input.draftOrders) {
       input.draftOrders.forEach(code => {
-        const isAlreadyAdded = protocolItems.some(item => item.code === code);
+        const isAlreadyAdded = protocols.some(p => p.items.some(item => item.code === code));
         if (!isAlreadyAdded) {
           // Search in CLS catalog
           const clsItem = this.cache.clss.find((c: any) => c.cls_code === code);
           if (clsItem) {
-            protocolItems.push({
+            draftProtocol.items.push({
               type: "CLS",
               code: clsItem.cls_code,
               name: clsItem.cls_name,
@@ -118,7 +131,7 @@ export class RecommendationsService implements OnModuleInit {
           // Search in Med catalog
           const medItem = this.cache.medications.find((m: any) => m.drug_code === code);
           if (medItem) {
-            protocolItems.push({
+            draftProtocol.items.push({
               type: "MEDICATION",
               code: medItem.drug_code,
               name: medItem.drug_name,
@@ -128,6 +141,7 @@ export class RecommendationsService implements OnModuleInit {
         }
       });
     }
+    if (draftProtocol.items.length > 0) protocols.push(draftProtocol);
 
     // 2. Build Claim Risk Rules
     const { rules: relevantRules, stats: ruleStats } = buildClaimRiskRulesWithStats(this.cache.rules, icdCodes, {
@@ -145,7 +159,7 @@ export class RecommendationsService implements OnModuleInit {
     // 3. Run Engine
     const engineInput: EngineInput = {
       diagnoses,
-      protocols: [{ code: "AUTO_GENERATED", items: protocolItems }],
+      protocols: protocols,
       draftOrders: input.draftOrders,
       rules: {
         claimRisk: relevantRules
@@ -161,19 +175,67 @@ export class RecommendationsService implements OnModuleInit {
       return items;
     };
 
+    // AI Clinical Review & Interaction Check
+    let aiReview = "";
+    let interactionWarning = "";
+    
+    if (assistMode === "full" && diagnoses.length > 0) {
+      const selectedMeds = output.medicationGroups.map(m => m.name);
+      
+      const [review, interactions] = await Promise.all([
+        this.aiService.getClinicalReview({
+          diagnoses,
+          recommendations: output.investigations.concat(output.medicationGroups),
+          alerts: output.alerts
+        }),
+        selectedMeds.length >= 2 ? this.aiService.checkAdvancedInteractions(selectedMeds) : Promise.resolve("")
+      ]);
+      
+      aiReview = review;
+      interactionWarning = interactions;
+    }
+
+    // AI Polishing for CSV content
+    const polishedInvestigations = await Promise.all(
+      output.investigations.map(async (item) => ({
+        ...item,
+        note: await this.aiService.rewriteClinicalContent(item.note, "note"),
+        code: item.code || item.name
+      }))
+    );
+
+    const polishedMedications = await Promise.all(
+      output.medicationGroups.map(async (item) => ({
+        ...item,
+        note: await this.aiService.rewriteClinicalContent(item.note, "note"),
+        code: item.code || item.name
+      }))
+    );
+
+    const polishedAlerts = await Promise.all(
+      output.alerts.map(async (alert) => ({
+        ...alert,
+        message: await this.aiService.rewriteClinicalContent(alert.message, "alert")
+      }))
+    );
+
+    const polishedJustification = await this.aiService.rewriteClinicalContent(output.suggestedJustification, "justification");
+
     const result = {
       source: "local-csv",
       timestamp: new Date().toISOString(),
       diagnoses,
       sessionProfile: input.sessionProfile ?? null,
+      aiInsights: aiReview || null,
+      interactionInsights: interactionWarning || null,
       recommendations: {
-        investigations: trimByAssistMode(output.investigations.map(item => ({ ...item, code: item.code || item.name }))),
-        medicationGroups: trimByAssistMode(output.medicationGroups.map(item => ({ ...item, code: item.code || item.name })))
+        investigations: trimByAssistMode(polishedInvestigations),
+        medicationGroups: trimByAssistMode(polishedMedications)
       },
       reimbursementGuard: {
         riskScore: output.riskScore,
-        suggestedJustification: output.suggestedJustification,
-        alerts: assistMode === "risk-only" ? output.alerts : trimByAssistMode(output.alerts)
+        suggestedJustification: polishedJustification,
+        alerts: assistMode === "risk-only" ? polishedAlerts : trimByAssistMode(polishedAlerts)
       }
     };
 

@@ -10,6 +10,8 @@ type Props = {
     reimbursementNote?: string;
     riskScore?: number;
     suggestedJustification?: string;
+    aiInsights?: string;
+    interactionInsights?: string;
 };
 
 export const AlertPanel = memo(function AlertPanel({
@@ -18,7 +20,9 @@ export const AlertPanel = memo(function AlertPanel({
     recommendedAction,
     reimbursementNote,
     riskScore,
-    suggestedJustification
+    suggestedJustification,
+    aiInsights,
+    interactionInsights
 }: Props) {
     const hasContent = warningMessage || recommendedAction || reimbursementNote || alerts.length > 0 || riskScore !== undefined;
 
@@ -34,6 +38,58 @@ export const AlertPanel = memo(function AlertPanel({
                 <h2>Rủi ro & Cảnh báo BHYT</h2>
                 <span>Quy tắc giám định</span>
             </div>
+
+            {aiInsights && (
+                <div className="aiInsightsSection fade-in" style={{ 
+                    background: "linear-gradient(135deg, #f0f7ff 0%, #e0e7ff 100%)",
+                    border: "1px solid #c7d2fe",
+                    borderRadius: "12px",
+                    padding: "16px",
+                    marginBottom: "20px",
+                    boxShadow: "0 4px 12px rgba(99, 102, 241, 0.1)"
+                }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                        <span style={{ fontSize: "20px" }}>✨</span>
+                        <strong style={{ color: "#4338ca", fontSize: "0.95rem" }}>Đánh giá Y khoa từ AI (Gemma4/Qwen3)</strong>
+                        <span className="aiBadge" style={{ 
+                            background: "#4338ca", 
+                            color: "white", 
+                            fontSize: "10px", 
+                            padding: "2px 6px", 
+                            borderRadius: "10px",
+                            marginLeft: "auto",
+                            fontWeight: "bold"
+                        }}>PREMIUM</span>
+                    </div>
+                    <div className="aiText" style={{ 
+                        color: "#1e1b4b", 
+                        fontSize: "0.9rem", 
+                        lineHeight: "1.5",
+                        whiteSpace: "pre-line"
+                    }}>
+                        {aiInsights}
+                    </div>
+                </div>
+            )}
+
+            {interactionInsights && interactionInsights !== "Không phát hiện tương tác thuốc đáng ngại" && (
+                <div className="interactionSection fade-in" style={{ 
+                    background: "#fff1f2",
+                    border: "1px solid #fecdd3",
+                    borderRadius: "12px",
+                    padding: "16px",
+                    marginBottom: "20px",
+                    color: "#9f1239"
+                }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                        <span style={{ fontSize: "20px" }}>⚠️</span>
+                        <strong style={{ fontSize: "0.95rem" }}>Tương tác thuốc Lâm sàng (AI Check)</strong>
+                    </div>
+                    <div style={{ fontSize: "0.9rem", lineHeight: "1.5" }}>
+                        {interactionInsights}
+                    </div>
+                </div>
+            )}
 
             {riskScore !== undefined && (
                 <div className="riskScoreSection">
